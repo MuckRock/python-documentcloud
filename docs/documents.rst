@@ -141,6 +141,10 @@ Document
            >>> obj = client.documents.get('71072-oir-final-report')
            >>> obj.delete()
 
+   .. method:: process()
+
+       This will re-process the document.  Useful if there was an intermittent error.
+
    .. method:: save()
 
        An alias for :meth:`put` that saves changes back to DocumentCloud.

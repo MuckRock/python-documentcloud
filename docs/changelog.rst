@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+2.1.0
+~~~~~
+
+* Add a process method to document
+
 2.0.2
 ~~~~~
 
