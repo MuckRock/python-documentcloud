@@ -39,8 +39,8 @@ class Document(BaseAPIObject):
         "data",
         "description",
         "language",
-        "related_article",
         "published_url",
+        "related_article",
         "source",
         "title",
     ]
@@ -254,6 +254,7 @@ class DocumentClient(BaseAPIClient):
             "access",
             "description",
             "language",
+            "original_extension",
             "related_article",
             "published_url",
             "source",
