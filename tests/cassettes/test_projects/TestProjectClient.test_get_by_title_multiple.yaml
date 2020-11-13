@@ -7,7 +7,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkyMDYwOTEzLCJqdGkiOiIzYTVjM2Y1ZWRhMjI0ZTNmOWM1NzBhYmQzYjE3YTExMyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.diAJDsO8gAJTvltCOZwJjYFKX5mmbZQoM5EtW5vofJMrsxj0fdZ6sXNYcOyAUeictrwf3Osujrdjef-UxI2EJbUt7nsn6wgChcqM6jn67RwKJE_of_tQVMUYI25kjgSQLArMs4m9miJ6T2Ed6be821QMJNdcoeGFS2dRAh95AjB3ls65SlQy18nz9Inrr-W7JDzCQr6M4ja-00f3BJfVdtx9YRdwnKaNsprCitWjmeOWM4H3Qf2rxkQYYlUQY5G_itMOgH57U2MfXdiVCPcjwkT4p9pp3YJXJrTOF5V4--kB6yNH97ZPntRQwdgn4PDS99CtkB769lALcJpf9SqEzg
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
       Connection:
       - keep-alive
       Content-Length:
@@ -20,7 +20,7 @@ interactions:
     uri: http://api.dev.documentcloud.org/api/projects/
   response:
     body:
-      string: '{"id":100342,"created_at":"2020-06-13T15:04:22.620296Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-06-13T15:04:22.620682Z","user":100098}'
+      string: '{"id":100392,"created_at":"2020-11-13T19:22:04.991594Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-11-13T19:22:04.995350Z","user":100098}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -33,7 +33,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 13 Jun 2020 15:04:22 GMT
+      - Fri, 13 Nov 2020 19:22:05 GMT
       Server:
       - nginx/1.15.1
       Vary:
@@ -53,7 +53,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkyMDYwOTEzLCJqdGkiOiIzYTVjM2Y1ZWRhMjI0ZTNmOWM1NzBhYmQzYjE3YTExMyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.diAJDsO8gAJTvltCOZwJjYFKX5mmbZQoM5EtW5vofJMrsxj0fdZ6sXNYcOyAUeictrwf3Osujrdjef-UxI2EJbUt7nsn6wgChcqM6jn67RwKJE_of_tQVMUYI25kjgSQLArMs4m9miJ6T2Ed6be821QMJNdcoeGFS2dRAh95AjB3ls65SlQy18nz9Inrr-W7JDzCQr6M4ja-00f3BJfVdtx9YRdwnKaNsprCitWjmeOWM4H3Qf2rxkQYYlUQY5G_itMOgH57U2MfXdiVCPcjwkT4p9pp3YJXJrTOF5V4--kB6yNH97ZPntRQwdgn4PDS99CtkB769lALcJpf9SqEzg
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
       Connection:
       - keep-alive
       Content-Length:
@@ -66,7 +66,7 @@ interactions:
     uri: http://api.dev.documentcloud.org/api/projects/
   response:
     body:
-      string: '{"id":100343,"created_at":"2020-06-13T15:04:22.773000Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-06-13T15:04:22.773377Z","user":100098}'
+      string: '{"id":100393,"created_at":"2020-11-13T19:22:05.143039Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-11-13T19:22:05.143399Z","user":100098}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -79,7 +79,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 13 Jun 2020 15:04:22 GMT
+      - Fri, 13 Nov 2020 19:22:05 GMT
       Server:
       - nginx/1.15.1
       Vary:
@@ -99,7 +99,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkyMDYwOTEzLCJqdGkiOiIzYTVjM2Y1ZWRhMjI0ZTNmOWM1NzBhYmQzYjE3YTExMyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.diAJDsO8gAJTvltCOZwJjYFKX5mmbZQoM5EtW5vofJMrsxj0fdZ6sXNYcOyAUeictrwf3Osujrdjef-UxI2EJbUt7nsn6wgChcqM6jn67RwKJE_of_tQVMUYI25kjgSQLArMs4m9miJ6T2Ed6be821QMJNdcoeGFS2dRAh95AjB3ls65SlQy18nz9Inrr-W7JDzCQr6M4ja-00f3BJfVdtx9YRdwnKaNsprCitWjmeOWM4H3Qf2rxkQYYlUQY5G_itMOgH57U2MfXdiVCPcjwkT4p9pp3YJXJrTOF5V4--kB6yNH97ZPntRQwdgn4PDS99CtkB769lALcJpf9SqEzg
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
       Connection:
       - keep-alive
       User-Agent:
@@ -108,7 +108,7 @@ interactions:
     uri: http://api.dev.documentcloud.org/api/projects/?title=Dupe&user=100098
   response:
     body:
-      string: '{"count":2,"next":null,"previous":null,"results":[{"id":100342,"created_at":"2020-06-13T15:04:22.620296Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-06-13T15:04:22.620682Z","user":100098},{"id":100343,"created_at":"2020-06-13T15:04:22.773000Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-06-13T15:04:22.773377Z","user":100098}]}'
+      string: '{"count":2,"next":null,"previous":null,"results":[{"id":100392,"created_at":"2020-11-13T19:22:04.991594Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-11-13T19:22:04.995350Z","user":100098},{"id":100393,"created_at":"2020-11-13T19:22:05.143039Z","description":"","edit_access":true,"private":true,"slug":"dupe","title":"Dupe","updated_at":"2020-11-13T19:22:05.143399Z","user":100098}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -121,7 +121,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Sat, 13 Jun 2020 15:04:22 GMT
+      - Fri, 13 Nov 2020 19:22:05 GMT
       Server:
       - nginx/1.15.1
       Vary:

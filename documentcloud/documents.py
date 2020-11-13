@@ -26,6 +26,13 @@ from .sections import SectionClient
 from .toolbox import grouper, is_url, merge_dicts, requests_retry_session
 from .users import User
 
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
+
+
+
 logger = logging.getLogger("documentcloud")
 
 
@@ -119,7 +126,7 @@ class Document(BaseAPIObject):
 
     @property
     def mentions(self):
-        if hasattr(self, "highlights"):
+        if hasattr(self, "highlights") and self.highlights is not None:
             return [
                 Mention(page, text)
                 for page, texts in self.highlights.items()
@@ -155,11 +162,20 @@ class Document(BaseAPIObject):
         return self.organization.slug
 
     def _get_url(self, url, text):
-        response = requests_retry_session().get(
-            url, headers={"User-Agent": "python-documentcloud2"}
-        )
+        base_netloc = urlparse(self._client.base_uri).netloc
+        url_netloc = urlparse(url).netloc
+
+        if base_netloc == url_netloc:
+            # if the url host is the same as the base api host,
+            # sent the request with the client in order to include
+            # authentication credentials
+            response = self._client.get(url, full_url=True)
+        else:
+            response = requests_retry_session().get(
+                url, headers={"User-Agent": "python-documentcloud2"}
+            )
         if text:
-            return response.content.decode("utf8")
+            return response.text
         else:
             return response.content
 

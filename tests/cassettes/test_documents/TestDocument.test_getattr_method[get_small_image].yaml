@@ -6,168 +6,123 @@ interactions:
       - '*/*'
       Accept-Encoding:
       - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
       Connection:
       - keep-alive
       User-Agent:
-      - python-documentcloud2
+      - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/files/documents/10000917/pages/test-p1-small.gif
+    uri: http://api.dev.documentcloud.org/files/documents/10001209/pages/test-p1-small.gif
   response:
     body:
-      string: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta http-equiv=\"content-type\"
-        content=\"text/html; charset=utf-8\">\n  <title>Page not found at /files/documents/10000917/pages/test-p1-small.gif</title>\n
-        \ <meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n  <style type=\"text/css\">\n
-        \   html * { padding:0; margin:0; }\n    body * { padding:10px 20px; }\n    body
-        * * { padding:0; }\n    body { font:small sans-serif; background:#eee; color:#000;
-        }\n    body>div { border-bottom:1px solid #ddd; }\n    h1 { font-weight:normal;
-        margin-bottom:.4em; }\n    h1 span { font-size:60%; color:#666; font-weight:normal;
-        }\n    table { border:none; border-collapse: collapse; width:100%; }\n    td,
-        th { vertical-align:top; padding:2px 3px; }\n    th { width:12em; text-align:right;
-        color:#666; padding-right:.5em; }\n    #info { background:#f6f6f6; }\n    #info
-        ol { margin: 0.5em 4em; }\n    #info ol li { font-family: monospace; }\n    #summary
-        { background: #ffc; }\n    #explanation { background:#eee; border-bottom:
-        0px none; }\n  </style>\n</head>\n<body>\n  <div id=\"summary\">\n    <h1>Page
-        not found <span>(404)</span></h1>\n    <table class=\"meta\">\n      <tr>\n
-        \       <th>Request Method:</th>\n        <td>GET</td>\n      </tr>\n      <tr>\n
-        \       <th>Request URL:</th>\n        <td>http://api.dev.documentcloud.org/files/documents/10000917/pages/test-p1-small.gif</td>\n
-        \     </tr>\n      \n      <tr>\n        <th>Raised by:</th>\n        <td>documentcloud.core.views.FileServer</td>\n
-        \     </tr>\n      \n    </table>\n  </div>\n  <div id=\"info\">\n    \n      <p>No
-        Document matches the given query.</p>\n    \n  </div>\n\n  <div id=\"explanation\">\n
-        \   <p>\n      You're seeing this error because you have <code>DEBUG = True</code>
-        in\n      your Django settings file. Change that to <code>False</code>, and
-        Django\n      will display a standard 404 page.\n    </p>\n  </div>\n\n<link
-        rel=\"stylesheet\" href=\"/static/debug_toolbar/css/print.css\" type=\"text/css\"
-        media=\"print\">\n<link rel=\"stylesheet\" href=\"/static/debug_toolbar/css/toolbar.css\"
-        type=\"text/css\">\n<script src=\"/static/debug_toolbar/js/toolbar.js\" defer></script>\n<div
-        id=\"djDebug\" class=\"djdt-hidden\" dir=\"ltr\"\n     \n     data-store-id=\"08f899bab42e42d98d22380ccf17d7f7\"\n
-        \    data-render-panel-url=\"/__debug__/render_panel/\"\n     \n     >\n\t<div
-        class=\"djdt-hidden\" id=\"djDebugToolbar\">\n\t\t<ul id=\"djDebugPanelList\">\n\t\t\t\n\t\t\t<li><a
-        id=\"djHideToolBarButton\" href=\"#\" title=\"Hide toolbar\">Hide &#187;</a></li>\n\t\t\t\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtVersionsPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Versions\" class=\"VersionsPanel\">\n\t\t\t\t\t\n\t\t\t\t\tVersions\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>Django
-        2.2.5</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtTimerPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Time\" class=\"TimerPanel\">\n\t\t\t\t\t\n\t\t\t\t\tTime\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>CPU:
-        121.33ms (105.80ms)</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtSettingsPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Settings from &lt;code&gt;config.settings.local&lt;/code&gt;\"
-        class=\"SettingsPanel\">\n\t\t\t\t\t\n\t\t\t\t\tSettings\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtHeadersPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Headers\" class=\"HeadersPanel\">\n\t\t\t\t\t\n\t\t\t\t\tHeaders\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtRequestPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Request\" class=\"RequestPanel\">\n\t\t\t\t\t\n\t\t\t\t\tRequest\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>FileServer</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtSQLPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"SQL queries from 1 connection\" class=\"SQLPanel\">\n\t\t\t\t\t\n\t\t\t\t\tSQL\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>1
-        query in 1.86ms</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtStaticFilesPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Static files (193 found, 0 used)\" class=\"StaticFilesPanel\">\n\t\t\t\t\t\n\t\t\t\t\tStatic
-        files\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>0 files used</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtTemplatesPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Templates (1 rendered)\" class=\"TemplatesPanel\">\n\t\t\t\t\t\n\t\t\t\t\tTemplates\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtCachePanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Cache calls from 1 backend\" class=\"CachePanel\">\n\t\t\t\t\t\n\t\t\t\t\tCache\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>0
-        calls in 0.00ms</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtSignalsPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Signals\" class=\"SignalsPanel\">\n\t\t\t\t\t\n\t\t\t\t\tSignals\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>25
-        receivers of 12 signals</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtLoggingPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Log messages\" class=\"LoggingPanel\">\n\t\t\t\t\t\n\t\t\t\t\tLogging\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t<br><small>0
-        messages</small>\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtRedirectsPanel\"
-        title=\"Enable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<div
-        class=\"djdt-contentless djdt-disabled\">\n\t\t\t\t\t\n\t\t\t\t\tIntercept
-        redirects\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t\t\t<li
-        class=\"djDebugPanelButton\">\n\t\t\t\t\t<input type=\"checkbox\" data-cookie=\"djdtProfilingPanel\"
-        checked title=\"Disable for next and successive requests\">\n\t\t\t\t\t\n\t\t\t\t\t\t<a
-        href=\"#\" title=\"Profiling\" class=\"ProfilingPanel\">\n\t\t\t\t\t\n\t\t\t\t\tProfiling\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\n\t\t\t\t\t\t</a>\n\t\t\t\t\t\n\t\t\t\t</li>\n\t\t\t\n\t\t</ul>\n\t</div>\n\t<div
-        class=\"djdt-hidden\" id=\"djDebugToolbarHandle\">\n\t\t<span title=\"Show
-        toolbar\" id=\"djShowToolBarButton\">&#171;</span>\n\t</div>\n\t\n\t\t\n\t\t\t<div
-        id=\"VersionsPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Versions</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"TimerPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Time</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"SettingsPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Settings from <code>config.settings.local</code></h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"HeadersPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Headers</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"RequestPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Request</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"SQLPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>SQL queries from 1 connection</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"StaticFilesPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Static files (193 found,
-        0 used)</h3>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img
-        src=\"/static/debug_toolbar/img/ajax-loader.gif\" alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div
-        class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"TemplatesPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Templates (1 rendered)</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"CachePanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Cache calls from 1 backend</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"SignalsPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Signals</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"LoggingPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Log messages</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t\t\n\t\n\t\t\n\t\t\t<div
-        id=\"ProfilingPanel\" class=\"djdt-panelContent\">\n\t\t\t\t<div class=\"djDebugPanelTitle\">\n\t\t\t\t\t<a
-        href=\"\" class=\"djDebugClose\"></a>\n\t\t\t\t\t<h3>Profiling</h3>\n\t\t\t\t</div>\n\t\t\t\t<div
-        class=\"djDebugPanelContent\">\n\t\t\t\t\t\n\t\t\t\t\t<img src=\"/static/debug_toolbar/img/ajax-loader.gif\"
-        alt=\"loading\" class=\"djdt-loader\">\n\t\t\t\t\t<div class=\"djdt-scroll\"></div>\n\t\t\t\t\t\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\n\t\n\t<div
-        id=\"djDebugWindow\" class=\"djdt-panelContent\"></div>\n</div>\n</body>\n</html>\n"
+      string: ''
     headers:
+      Allow:
+      - GET, HEAD, OPTIONS
       Connection:
       - keep-alive
       Content-Language:
       - en
       Content-Length:
-      - '11583'
+      - '0'
       Content-Type:
-      - text/html
+      - text/html; charset=utf-8
       Date:
-      - Sat, 13 Jun 2020 15:03:35 GMT
+      - Fri, 13 Nov 2020 19:20:56 GMT
+      Location:
+      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/pages/test-p1-small.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192056Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=517cfd7d4154eaffcaec9c60d9d25f07dd7fbded880df34b7c5a91a147dcfd98
       Server:
       - nginx/1.15.1
-      Server-Timing:
-      - TimerPanel_utime=105.207000000064; "User CPU time", TimerPanel_stime=16.125999999985652;
-        "System CPU time", TimerPanel_total=121.33300000004965; "Total CPU time",
-        TimerPanel_total_time=105.80277442932129; "Elapsed time", SQLPanel_sql_time=1.8625259399414062;
-        "SQL 1 queries", CachePanel_total_time=0; "Cache 0 Calls"
       Vary:
-      - Origin, Accept-Language, Cookie
+      - Accept, Origin, Accept-Language, Cookie
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
       - 1; mode=block
     status:
-      code: 404
-      message: Not Found
+      code: 302
+      message: Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/pages/test-p1-small.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192056Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=517cfd7d4154eaffcaec9c60d9d25f07dd7fbded880df34b7c5a91a147dcfd98
+  response:
+    body:
+      string: !!binary |
+        R0lGODdhtADpAIcAAP////7+/v39/fz8/Pv7+/r6+vn5+fj4+Pf39/b29vX19fT09PPz8/Ly8vHx
+        8fDw8O/v7+7u7u3t7ezs7Ovr6+rq6unp6ejo6Ofn5+bm5uXl5eTk5OPj4+Li4uHh4eDg4N/f397e
+        3t3d3dzc3Nvb29ra2tnZ2djY2NfX19bW1tXV1dPT09HR0dDQ0M/Pz87Ozs3NzczMzMvLy8rKysnJ
+        ycjIyMfHx8bGxsPDw8LCwsHBwcDAwL6+vr29vby8vLu7u7q6urm5ubi4uLe3t7a2trW1tbS0tLOz
+        s7KysrGxsbCwsK+vr66urq2traysrKurq6qqqqioqKenp6ampqWlpaSkpKOjo6GhoaCgoJ+fn56e
+        np2dnZycnJubm5qampmZmZiYmJeXl5aWlpWVlZSUlJOTk5GRkZCQkI+Pj42NjYyMjIuLi4qKioiI
+        iIeHh4aGhoWFhYSEhIGBgYCAgH9/f319fXx8fHt7e3l5eXh4eHZ2dnNzc29vb2xsbGtra2lpaWho
+        aGNjY2BgYFFRUVBQUE5OTkpKSkVFRUREREFBQT8/Pzo6Ojc3NzY2NjU1NTQ0NDMzMzExMTAwMCsr
+        KxwcHBkZGRcXFwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAtADpAEAI/wABCBxI
+        sKDBgwgTKlzIsKHDhxAjSpxIsaLFixgzatzIsaPHjyBDCgAAaBGlLUwkRdKxotEkLEAe7QFAAIDN
+        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
+    headers:
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '2498'
+      Content-Type:
+      - image/gif
+      Date:
+      - Fri, 13 Nov 2020 19:20:57 GMT
+      ETag:
+      - '"6e7479d182afae661652ea3b9da822e6"'
+      Last-Modified:
+      - Fri, 13 Nov 2020 19:20:12 GMT
+      Server:
+      - AmazonS3
+      x-amz-id-2:
+      - EUYP22voEh7xTa81oN/mLeoIEVHO/J6JtZ6FkzsOvn5uurzeuK4JQA/TWSMoMhbF1b39vwgXpw0=
+      x-amz-request-id:
+      - A3AF419848491877
+    status:
+      code: 200
+      message: OK
 version: 1

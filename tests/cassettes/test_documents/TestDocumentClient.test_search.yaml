@@ -7,21 +7,21 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTkyMDYwOTEzLCJqdGkiOiIzYTVjM2Y1ZWRhMjI0ZTNmOWM1NzBhYmQzYjE3YTExMyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.diAJDsO8gAJTvltCOZwJjYFKX5mmbZQoM5EtW5vofJMrsxj0fdZ6sXNYcOyAUeictrwf3Osujrdjef-UxI2EJbUt7nsn6wgChcqM6jn67RwKJE_of_tQVMUYI25kjgSQLArMs4m9miJ6T2Ed6be821QMJNdcoeGFS2dRAh95AjB3ls65SlQy18nz9Inrr-W7JDzCQr6M4ja-00f3BJfVdtx9YRdwnKaNsprCitWjmeOWM4H3Qf2rxkQYYlUQY5G_itMOgH57U2MfXdiVCPcjwkT4p9pp3YJXJrTOF5V4--kB6yNH97ZPntRQwdgn4PDS99CtkB769lALcJpf9SqEzg
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/documents/search/?q=document%3A10000917+simple
+    uri: http://api.dev.documentcloud.org/api/documents/search/?q=document%3A10001209+simple
   response:
     body:
-      string: '{"count":1,"next":null,"previous":null,"results":[{"id":"10000917","user":100098,"organization":11343,"access":"private","status":"success","title":"test","slug":"test","source":"MuckRock","description":"A
-        simple test document","language":"eng","created_at":"2020-06-13T15:03:01.059Z","updated_at":"2020-06-13T15:03:36.693Z","page_count":1,"projects":[100340],"highlights":{"description":["A
+      string: '{"count":1,"next":null,"previous":null,"results":[{"id":"10001209","user":100098,"organization":11343,"access":"private","status":"success","title":"test","slug":"test","source":"MuckRock","description":"A
+        simple test document","language":"eng","created_at":"2020-11-13T19:20:06.628Z","updated_at":"2020-11-13T19:20:57.581Z","page_count":1,"projects":[100390],"highlights":{"description":["A
         <em>simple</em> test document"]},"data":{"_tag":["document"]},"asset_url":"http://api.dev.documentcloud.org/files/"}],"escaped":false,"debug":{"text_query":"simple","fq":["!access:invisible","filter(access:public
         AND status:(success readable)) OR (user:100098) OR (access:organization AND
-        organization:(11343)) OR (projects_edit_access:(100341 100278 100340))","id:(10000917)"],"sort":"score
-        desc, created_at desc","rows":25,"start":0}}'
+        organization:(11343)) OR (projects_edit_access:(100391 100278 100390))","id:(10001209)"],"sort":"score
+        desc, created_at desc","rows":25,"start":0,"hl":"on"}}'
     headers:
       Allow:
       - GET, HEAD, OPTIONS
@@ -32,11 +32,11 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '828'
+      - '838'
       Content-Type:
       - application/json
       Date:
-      - Sat, 13 Jun 2020 15:03:45 GMT
+      - Fri, 13 Nov 2020 19:21:11 GMT
       Server:
       - nginx/1.15.1
       Vary:
