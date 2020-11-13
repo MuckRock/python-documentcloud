@@ -76,11 +76,15 @@ DocumentClient
 
            >>> upload("http://ord.legistar.com/Chicago/attachments/e3a0cbcb-044d-4ec3-9848-23c5692b1943.pdf")
 
-       You may set the ``kwargs`` to any of the writable attributes as described
-       in :meth:`documentcloud.documents.Document.put`.  Additionally, you may set ``force_ocr`` in
-       order to force OCR to take place even if the document has embedded text, as
-       well as either ``project`` to the ID of a project to upload the document
-       into, or ``projects``, a list of project IDs to upload the document into.
+       You may set the ``kwargs`` to any of the writable attributes as
+       described in :meth:`documentcloud.documents.Document.put`.
+       Additionally, you may set ``force_ocr`` in order to force OCR to take
+       place even if the document has embedded text, as well as either
+       ``project`` to the ID of a project to upload the document into, or
+       ``projects``, a list of project IDs to upload the document into.
+       If you are uploading a non-PDF document type, you must set
+       ``original_extension`` to the extension of the file type, such as
+       ``docx`` or ``jpg``.
 
 
    .. method:: upload_directory(path, handle_errors=False, **kwargs)

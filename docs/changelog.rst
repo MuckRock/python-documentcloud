@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+2.1.1
+~~~~~
+
+* Added original_extension field to Document
+* Properly send authentication when fetching private assets
+
 2.1.0
 ~~~~~
 
