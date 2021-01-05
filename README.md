@@ -8,7 +8,7 @@ A simple python wrapper for the DocumentCloud API
 
 * Documentation: [http://documentcloud.readthedocs.org/](http://documentcloud.readthedocs.org/)
 * Issues: [https://github.com/muckrock/python-documentcloud/issues](https://github.com/muckrock/python-documentcloud/issues)
-* Packaging: [https://pypi.python.org/pypi/documentcloud](https://pypi.python.org/pypi/documentcloud)
+* Packaging: [https://pypi.python.org/pypi/python-documentcloud](https://pypi.python.org/pypi/python-documentcloud)
 
 Features
 --------
