@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+2.1.2
+~~~~~
+
+* Update base URL from api.beta.documentcloud.org to api.www.documentcloud.org
+
 2.1.1
 ~~~~~
 
