@@ -218,13 +218,9 @@ class DocumentClient(BaseAPIClient):
     def search(self, query, **params):
         """Return documents matching a search query"""
 
+        # legacy parameter mentions renamed to hl
         mentions = params.pop("mentions", None)
-        if mentions is not None:  # pragma: no cover
-            warnings.warn(
-                "The `mentions` argument to `search` is deprecated, "
-                "it will always include mentions from all pages now",
-                DeprecationWarning,
-            )
+        params["hl"] = mentions
         data = params.pop("data", None)
         if data is not None:  # pragma: no cover
             warnings.warn(

@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+2.1.3
+~~~~~
+
+* Re-add support for the mentions parameter
+
 2.1.2
 ~~~~~
 
