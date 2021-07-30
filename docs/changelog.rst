@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+2.1.4
+~~~~~
+
+* Add publish_at field to Document
+
 2.1.3
 ~~~~~
 
