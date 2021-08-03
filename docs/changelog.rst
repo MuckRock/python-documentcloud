@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+2.2.0
+~~~~~
+
+* Add an extension paramater to upload_directory
+
+
 2.1.4
 ~~~~~
 

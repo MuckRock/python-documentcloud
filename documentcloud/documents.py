@@ -329,7 +329,7 @@ class DocumentClient(BaseAPIClient):
 
         return Document(self.client, create_json)
 
-    def _collect_files(self, path):
+    def _collect_files(self, path, extension):
         """Find the paths to all pdfs under a directory"""
         path_list = []
         for (dirpath, _dirname, filenames) in os.walk(path):
@@ -337,19 +337,19 @@ class DocumentClient(BaseAPIClient):
                 [
                     os.path.join(dirpath, i)
                     for i in filenames
-                    if i.lower().endswith(".pdf")
+                    if extension is None or i.lower().endswith(extension)
                 ]
             )
         return path_list
 
-    def upload_directory(self, path, handle_errors=False, **kwargs):
+    def upload_directory(self, path, handle_errors=False, extension=".pdf", **kwargs):
         """Upload all PDFs in a directory"""
 
         # do not set the same title for all documents
         kwargs.pop("title", None)
 
         # Loop through the path and get all the files
-        path_list = self._collect_files(path)
+        path_list = self._collect_files(path, extension)
 
         logger.info(
             "Upload directory on %s: Found %d files to upload", path, len(path_list)
