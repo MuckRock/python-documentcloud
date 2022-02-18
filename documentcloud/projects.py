@@ -30,6 +30,8 @@ class Project(BaseAPIObject):
 
     def save(self):
         """Add the documents to the project as well"""
+        # XXX this is broken due to multiple calls to PUT
+        # conflicting with each other
         super(Project, self).save()
         if self._document_list:
             data = [{"document": d} for d in self.document_ids]

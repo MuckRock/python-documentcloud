@@ -23,5 +23,5 @@ Getting started
 Installation is as easy as...
 
 ```bash
-$ pip install documentcloud
+$ pip install python-documentcloud
 ```

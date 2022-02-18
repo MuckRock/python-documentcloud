@@ -8,7 +8,7 @@ Installation
 
 Provided that you have `pip <http://pypi.python.org/pypi/pip>`_ installed, you can install the library like so: ::
 
-    $ pip install documentcloud
+    $ pip install python-documentcloud
 
 Creating a client
 -----------------

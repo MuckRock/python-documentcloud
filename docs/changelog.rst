@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+2.2.1
+~~~~~
+
+* Fix installation instructions
+
+
 2.2.0
 ~~~~~
 
