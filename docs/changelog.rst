@@ -1,6 +1,13 @@
 Changelog
 ---------
 
+2.3.0
+~~~~~
+
+* Add Add-On module
+* Add a `rate_limit_sleep` option to the base client
+
+
 2.2.1
 ~~~~~
 
