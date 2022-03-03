@@ -39,6 +39,7 @@ class DocumentCloud(object):
         timeout=TIMEOUT,
         loglevel=None,
         rate_limit=True,
+        rate_limit_sleep=True,
     ):
         self.base_uri = base_uri
         self.auth_uri = auth_uri
@@ -67,6 +68,8 @@ class DocumentCloud(object):
             self._request = ratelimit.limits(calls=RATE_LIMIT, period=RATE_PERIOD)(
                 self._request
             )
+            if rate_limit_sleep:
+                self._request = sleep_and_retry(self._request)
 
     def _set_tokens(self):
         """Set the refresh and access tokens"""
