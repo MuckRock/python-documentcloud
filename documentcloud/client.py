@@ -69,7 +69,7 @@ class DocumentCloud(object):
                 self._request
             )
             if rate_limit_sleep:
-                self._request = sleep_and_retry(self._request)
+                self._request = ratelimit.sleep_and_retry(self._request)
 
     def _set_tokens(self):
         """Set the refresh and access tokens"""

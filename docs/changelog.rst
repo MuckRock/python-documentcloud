@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+2.3.1
+~~~~~
+
+* Fix `rate_limit_sleep` call
+
 2.3.0
 ~~~~~
 
