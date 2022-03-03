@@ -102,6 +102,6 @@ class CronAddOn(BaseAddOn):
     """Base functionality for a Cron Add-On"""
 
     def __init__(self):
-        self.client = documentcloud.DocumentCloud(
+        self.client = DocumentCloud(
             username=os.environ["DC_USERNAME"], password=os.environ["DC_PASSWORD"]
         )
