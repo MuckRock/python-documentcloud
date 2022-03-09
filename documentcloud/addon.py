@@ -37,20 +37,24 @@ class BaseAddOn:
         self.data = args.pop("data", None)
 
     def _create_client(self, args):
-        client_kwargs = {k: v for k, v in args.items() if k in ["base_uri", "auth_uri"]}
+        client_kwargs = {
+            k: v
+            for k, v in args.items()
+            if k in ["base_uri", "auth_uri"] and v is not None
+        }
         username = (
-            args["username"] if "username" in args else os.environ.get("DC_USERNAME")
+            args["username"] if args["username"] else os.environ.get("DC_USERNAME")
         )
         password = (
-            args["password"] if "username" in args else os.environ.get("DC_USERNAME")
+            args["password"] if args["password"] else os.environ.get("DC_PASSWORD")
         )
         if username and password:
             client_kwargs["username"] = username
             client_kwargs["password"] = password
         self.client = DocumentCloud(**client_kwargs)
-        if "refresh_token" in args:
+        if args["refresh_token"] is not None:
             self.client.refresh_token = args["refresh_token"]
-        if "token" in args:
+        if args["token"] is not None:
             self.client.session.headers.update(
                 {"Authorization": "Bearer {}".format(args["token"])}
             )
@@ -58,7 +62,7 @@ class BaseAddOn:
         # custom user agent for AddOns
         self.client.session.headers["User-Agent"] += " (DC AddOn)"
 
-    def _parse_arguments():
+    def _parse_arguments(self):
         """Parse command line arguments"""
         parser = argparse.ArgumentParser(
             description="Run a DocumentCloud add on.\n\n"
@@ -83,11 +87,13 @@ class BaseAddOn:
         parser.add_argument("--data", help="Parameter JSON")
         parser.add_argument("--base_uri", help="Set an alternate base URI")
         parser.add_argument("--auth_uri", help="Set an alternate auth URI")
-        parser.add_argument("json", help="JSON blob for passing in arguments")
+        parser.add_argument(
+            "json", nargs="?", default="{}", help="JSON blob for passing in arguments"
+        )
         args = parser.parse_args()
         # convert args to a dictionary
         args = vars(args)
-        if "data" in args:
+        if args["data"] is not None:
             args["data"] = json.loads(args["data"])
         blob = args.pop("json")
         # merge json blob into the arguments

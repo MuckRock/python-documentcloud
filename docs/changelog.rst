@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+2.4.0
+~~~~~
+
+* Incorporate command line testing of Add-Ons into base Add-On class
+* Add-On class can accept refresh tokens for longer running use
+
 2.3.2
 ~~~~~
 
