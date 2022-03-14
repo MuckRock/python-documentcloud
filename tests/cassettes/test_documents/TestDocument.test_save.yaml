@@ -1,7 +1,7 @@
 interactions:
 - request:
     body: '{"access": "private", "data": {"_tag": ["document"]}, "description": "A
-      simple test document", "language": "eng", "original_extension": "pdf", "published_url":
+      simple test document", "language": "eng", "publish_at": null, "published_url":
       "https://www.example.com/article/test.pdf", "related_article": "https://www.example.com/article/",
       "source": "MuckRock", "title": "test"}'
     headers:
@@ -10,21 +10,21 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDcxLCJqdGkiOiI3NGE0NmFmMjllYzI0NTBmODNmMWE2OTEzMzA2ZTA3YSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.WEi8ObI8ghWuVuZBNFVfnheD2mk2h6d9Q4tgAPhLBBFCMX0SA0VcTo0xJZB0593LP8paJpWP2m9ybKtFAXF9rj7A8ObYiCNRku2KoP7RavcCXekRQ1Q2_VnJLtf0XSoIPyx9fNstQvXhhu3mCxh4WgsMBJSDbZhZf3L4JyyltvglYYm1FU5D9Yls_UoXhLCD-G9yXC_cplcMt6zN3uAfRNTOmkz06U60twTiMDjQDekOVluypa5kiy_VDCGiOLxXTxWuNW8uz2oa2Guq3Kt-MsvkxLHM9p7vRmntgATiRtW_0G9cavZc-jvNq_5dO_Eul0h44HneZ-daTKwp0-YOIg
       Connection:
       - keep-alive
       Content-Length:
-      - '297'
+      - '288'
       Content-Type:
       - application/json
       User-Agent:
       - python-requests/2.23.0
     method: PUT
-    uri: http://api.dev.documentcloud.org/api/documents/10001209/
+    uri: http://api.dev.documentcloud.org/api/documents/10001723/?version=2.0
   response:
     body:
-      string: '{"id":10001209,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001209-test","created_at":"2020-11-13T19:20:06.628206Z","data":{"_tag":["document"]},"description":"A
-        simple test document","edit_access":true,"file_hash":"5dcb718cdd5326ce53ccf8b0d801c0fcaffa1c81","language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"612.0x792.0:0","projects":[100390],"related_article":"https://www.example.com/article/","published_url":"https://www.example.com/article/test.pdf","slug":"test","source":"MuckRock","status":"success","title":"test","updated_at":"2020-11-13T19:20:57.581165Z","user":100098}'
+      string: '{"id":10001723,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001723-test","created_at":"2022-03-14T15:06:56.731363Z","data":{"_tag":["document"]},"description":"A
+        simple test document","edit_access":true,"file_hash":"5dcb718cdd5326ce53ccf8b0d801c0fcaffa1c81","language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"612.0x792.0:0","projects":[100458],"publish_at":null,"published_url":"https://www.example.com/article/test.pdf","related_article":"https://www.example.com/article/","slug":"test","source":"MuckRock","status":"success","title":"test","updated_at":"2022-03-14T15:07:49.775513Z","user":100098}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -35,15 +35,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '713'
+      - '731'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:57 GMT
+      - Mon, 14 Mar 2022 15:07:49 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -59,17 +63,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDcxLCJqdGkiOiI3NGE0NmFmMjllYzI0NTBmODNmMWE2OTEzMzA2ZTA3YSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.WEi8ObI8ghWuVuZBNFVfnheD2mk2h6d9Q4tgAPhLBBFCMX0SA0VcTo0xJZB0593LP8paJpWP2m9ybKtFAXF9rj7A8ObYiCNRku2KoP7RavcCXekRQ1Q2_VnJLtf0XSoIPyx9fNstQvXhhu3mCxh4WgsMBJSDbZhZf3L4JyyltvglYYm1FU5D9Yls_UoXhLCD-G9yXC_cplcMt6zN3uAfRNTOmkz06U60twTiMDjQDekOVluypa5kiy_VDCGiOLxXTxWuNW8uz2oa2Guq3Kt-MsvkxLHM9p7vRmntgATiRtW_0G9cavZc-jvNq_5dO_Eul0h44HneZ-daTKwp0-YOIg
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/documents/10001209/
+    uri: http://api.dev.documentcloud.org/api/documents/10001723/?version=2.0
   response:
     body:
-      string: '{"id":10001209,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001209-test","created_at":"2020-11-13T19:20:06.628206Z","data":{"_tag":["document"]},"description":"A
-        simple test document","edit_access":true,"file_hash":"5dcb718cdd5326ce53ccf8b0d801c0fcaffa1c81","language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"612.0x792.0:0","projects":[100390],"related_article":"https://www.example.com/article/","published_url":"https://www.example.com/article/test.pdf","slug":"test","source":"MuckRock","status":"success","title":"test","updated_at":"2020-11-13T19:20:57.581165Z","user":100098}'
+      string: '{"id":10001723,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001723-test","created_at":"2022-03-14T15:06:56.731363Z","data":{"_tag":["document"]},"description":"A
+        simple test document","edit_access":true,"file_hash":"5dcb718cdd5326ce53ccf8b0d801c0fcaffa1c81","language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"612.0x792.0:0","projects":[100458],"publish_at":null,"published_url":"https://www.example.com/article/test.pdf","related_article":"https://www.example.com/article/","slug":"test","source":"MuckRock","status":"success","title":"test","updated_at":"2022-03-14T15:07:49.775513Z","user":100098}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -80,15 +84,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '713'
+      - '731'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:57 GMT
+      - Mon, 14 Mar 2022 15:07:49 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:

@@ -7,18 +7,119 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NDk5LCJqdGkiOiJlMjVlYzMxOGQzNzA0YjUyYTEzMDM3MWU1YjI2ZGM5OCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.SfCTfyO4ltOwqg3wi4yrHBi37NTCPrkDQiTmiMnKwoGx4GXQ9GLLLuwzPzANlyRvRIgTYB8arrl4_s9PY-ipHA1H2pb2OdRcqSFbbObtpcnXgzPueKlwpB8vi8D7IAOT2Py1H1oTML44Twk62vvuFNTMhXpnKGS3FkLn2yOs1ElZAb6T9FrkgpAKoxA4ZCDXXTihpOKB0hoLfyHW4bHD5yXBRDLQJEjLcvDEbaqm7mcGMW3UozcOpWeoYcf4skZx3LuumPh8_YFnSDuB6biJcuo_xJC53ZcEmPCJ1udMm0G8caI6Wtg-RDZZeB4FiMctjjM8JkZEcnJ4zpWh03kmpQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDI2LCJqdGkiOiI0NTNmNTJhMDA5YmQ0ZDNlYmU2YzM1MWU0YjZiZGVhNyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.LPeV5iZVCMxxZDGMb2XFJgC9ksOb9e_wIvAF5UzIQtiqvvbU5Xr_F3y5qEEY3NxrrVDQyNt6OKTvdDUTtVrSP_wzuSDJBwKl295_U1lfUKym0uBirf9QdoFPQV3U2h3MFVTyQCxNSwsbeTa_PlaKELkfnRMH1tHUypIge_Be2dVFn3vK02xPCp1u5B4NSBwNJu5CU-UjP1fKMjjnO7cfHQMw1uIsT07tJVaTYkbMY2q21Cp9yapAU91_ZT9rs-y2b0ObDBmYQClQ-zDuOP2ghdfEsVBHAVWAwE4-ksZ8NHuLBhECul3adtSqVy_HLh2IZ7IQioa0an9rC4t2eSOPRw
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/documents/?per_page=2
+    uri: http://api.dev.documentcloud.org/api/documents/?per_page=2&version=2.0
   response:
     body:
-      string: '{"count":87,"next":"http://api.dev.documentcloud.org/api/documents/?page=2&per_page=2","previous":null,"results":[{"id":609,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/609-foo","created_at":"2010-03-24T21:53:10.411520Z","data":{"a-key":["value"]},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":2,"page_spec":"612.0x790.9200439453125:0-1","projects":[],"related_article":"","published_url":"","slug":"foo","source":"Talking
+      string: '{"detail":"Given token not valid for any token type","code":"token_not_valid","messages":[{"token_class":"AccessToken","token_type":"access","message":"Token
+        ''exp'' claim has expired"}]}'
+    headers:
+      Allow:
+      - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 14 Mar 2022 15:07:06 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.15.1
+      Vary:
+      - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 403
+      message: Forbidden
+- request:
+    body: '{"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzI3MDQyOSwianRpIjoiMjY5ODcwMDcxYmExNDQ4YmE0MmJiZjBjODhhMWI5NDYiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIn0.HoBye0fDt7n7UJDhzd-zEZ3aQybmRiNLFsEf13crsDiJQ48eMPgN9bG88o5bvzMjGA5cco5Ei3CWkoemH15C9O7uvTxztcq4-nhwRNkLRe5Ho6iKKwIk5hPgGF8jqVnIlJfbSGASKBYVlcM8goJO9JcFYzKsIBmZ0yHiq-C2bxdQkdcHW78BRNaFUul7lmTpsTttgkcV24ZMEGCpkc8IjHs2CU9GBP8z1QVnsoKBHqg1S44bLx7jMUStcaL-ynOIJTSwVvKumHtySgJRo9G5pAYiBQ7379x5jKyPKjc8vejhgWm9Sn3P8UGxVsFADuGGRmGGGIeeLivwuaJ_copMGA"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '570'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.23.0
+    method: POST
+    uri: http://dev.squarelet.com/api/refresh/
+  response:
+    body:
+      string: '{"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDI4LCJqdGkiOiJkMzJlM2M2MzNiNGM0YjhmOTM1MTczMTcwY2ZhZjNiMiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.gZCjRJt9HbGNFLkECxZyriSXm2MMBmiTXQmyWV5V4hLG-OKjzrrgRuUl7GrFI5XL0ETCZo0GG0VH44_2iCy241YfMwgBNUrvNRxlTG7dliw95i2HHPXm6EimzcR6hwneVOCz1-kwcBpGkJZbiR5DF14Vq9l7bHmbaOkMQnwqeH_8xEGCRhq-zY-BxHRN_457yd_Z2XHJ-1H2pXcK9cgJdqfbUH-2_IySLdpfoKdfc7bO43KkLG1M7EgCCWhfjgr8j4N8TdPHxnKeXI9ZPxUxAYGKbPUUAeTuaqHukN2Gvb0ZaDt4LDhODSrOGLTwy4yj1kz3v56y1dH0xNUUAkMeUw","refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzI3MDQzMSwianRpIjoiZGZlNTBmOTc4MjMwNDk2MjkzMTZjYWUyMjg3MmI1NWIiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIn0.YD674CIZiWDAUJS9vOSUvSazSacJjUR1RLiHkKAqf4lgP6M6jsN1zxtz5tbFhf9OOZk17hkT0UH8-pAz6cL5i3c1qiZDsr9bfxPAVdGrG-3QqmWFXgPk0IvUIJdHn7jt4zh2HCPWbd8AUTv60DQuiKnaMxSoxLsyRo_yJM8PP4CwLTbHHjToFRb6r9qTCubsLFqAA-EAROf1Ry2XqNkDtqeOoTuNnmjG9-YZJj2b_gZdBrdPoXTj9JjHSSkSpq7wW5HiW-8tTcEJkMGtQ2jYZMfclxG1b9QXOy0fc0YVJfEGsy4_CrISAOLh2aBQSNjp_ocinQNZ1Ef8-qOMBXI4yg"}'
+    headers:
+      Allow:
+      - POST, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1135'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 14 Mar 2022 15:07:06 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.15.1
+      Server-Timing:
+      - TimerPanel_utime;dur=77.15400000006412;desc="User CPU time", TimerPanel_stime;dur=16.599999999925785;desc="System
+        CPU time", TimerPanel_total;dur=93.7539999999899;desc="Total CPU time", TimerPanel_total_time;dur=95.89266777038574;desc="Elapsed
+        time", SQLPanel_sql_time;dur=0.5092620849609375;desc="SQL 2 queries", CachePanel_total_time;dur=0;desc="Cache
+        0 Calls"
+      Set-Cookie:
+      - op_browser_state=2ee53051b4771603207ed004702156a0ad381769d3c645f2e94a3a48;
+        Path=/
+      Vary:
+      - Accept, Origin, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDI4LCJqdGkiOiJkMzJlM2M2MzNiNGM0YjhmOTM1MTczMTcwY2ZhZjNiMiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.gZCjRJt9HbGNFLkECxZyriSXm2MMBmiTXQmyWV5V4hLG-OKjzrrgRuUl7GrFI5XL0ETCZo0GG0VH44_2iCy241YfMwgBNUrvNRxlTG7dliw95i2HHPXm6EimzcR6hwneVOCz1-kwcBpGkJZbiR5DF14Vq9l7bHmbaOkMQnwqeH_8xEGCRhq-zY-BxHRN_457yd_Z2XHJ-1H2pXcK9cgJdqfbUH-2_IySLdpfoKdfc7bO43KkLG1M7EgCCWhfjgr8j4N8TdPHxnKeXI9ZPxUxAYGKbPUUAeTuaqHukN2Gvb0ZaDt4LDhODSrOGLTwy4yj1kz3v56y1dH0xNUUAkMeUw
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: http://api.dev.documentcloud.org/api/documents/?per_page=2&version=2.0
+  response:
+    body:
+      string: '{"next":"http://api.dev.documentcloud.org/api/documents/?cursor=cD02MTM%3D&per_page=2&version=2.0","previous":null,"results":[{"id":609,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/609-foo","created_at":"2010-03-24T21:53:10.411520Z","data":{"a-key":["value"]},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":2,"page_spec":"612.0x790.9200439453125:0-1","projects":[],"publish_at":null,"published_url":"","related_article":"","slug":"foo","source":"Talking
         Points Memo","status":"success","title":"Disputed Memo Purporting To Be Dem
-        Plan for Medicare Change","updated_at":"2020-05-25T19:52:19.500880Z","user":2},{"id":613,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/613-national-conference-2010-letter-from-sue-myrick","created_at":"2010-03-25T14:08:23.066983Z","data":{},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"related_article":"","published_url":"","slug":"national-conference-2010-letter-from-sue-myrick","source":"Talking
+        Plan for Medicare Change","updated_at":"2020-05-25T19:52:19.500880Z","user":2},{"id":613,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/613-national-conference-2010-letter-from-sue-myrick","created_at":"2010-03-25T14:08:23.066983Z","data":{},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","slug":"national-conference-2010-letter-from-sue-myrick","source":"Talking
         Points Memo","status":"success","title":"National Conference 2010 Letter from
         Sue Myrick","updated_at":"2020-04-07T15:37:53.041037Z","user":2}]}'
     headers:
@@ -31,15 +132,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '1425'
+      - '1473'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:18 GMT
+      - Mon, 14 Mar 2022 15:07:06 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -55,17 +160,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NDk5LCJqdGkiOiJlMjVlYzMxOGQzNzA0YjUyYTEzMDM3MWU1YjI2ZGM5OCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.SfCTfyO4ltOwqg3wi4yrHBi37NTCPrkDQiTmiMnKwoGx4GXQ9GLLLuwzPzANlyRvRIgTYB8arrl4_s9PY-ipHA1H2pb2OdRcqSFbbObtpcnXgzPueKlwpB8vi8D7IAOT2Py1H1oTML44Twk62vvuFNTMhXpnKGS3FkLn2yOs1ElZAb6T9FrkgpAKoxA4ZCDXXTihpOKB0hoLfyHW4bHD5yXBRDLQJEjLcvDEbaqm7mcGMW3UozcOpWeoYcf4skZx3LuumPh8_YFnSDuB6biJcuo_xJC53ZcEmPCJ1udMm0G8caI6Wtg-RDZZeB4FiMctjjM8JkZEcnJ4zpWh03kmpQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDI4LCJqdGkiOiJkMzJlM2M2MzNiNGM0YjhmOTM1MTczMTcwY2ZhZjNiMiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.gZCjRJt9HbGNFLkECxZyriSXm2MMBmiTXQmyWV5V4hLG-OKjzrrgRuUl7GrFI5XL0ETCZo0GG0VH44_2iCy241YfMwgBNUrvNRxlTG7dliw95i2HHPXm6EimzcR6hwneVOCz1-kwcBpGkJZbiR5DF14Vq9l7bHmbaOkMQnwqeH_8xEGCRhq-zY-BxHRN_457yd_Z2XHJ-1H2pXcK9cgJdqfbUH-2_IySLdpfoKdfc7bO43KkLG1M7EgCCWhfjgr8j4N8TdPHxnKeXI9ZPxUxAYGKbPUUAeTuaqHukN2Gvb0ZaDt4LDhODSrOGLTwy4yj1kz3v56y1dH0xNUUAkMeUw
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/documents/?page=2&per_page=2
+    uri: http://api.dev.documentcloud.org/api/documents/?cursor=cD02MTM%3D&per_page=2&version=2.0
   response:
     body:
-      string: '{"count":87,"next":"http://api.dev.documentcloud.org/api/documents/?page=3&per_page=2","previous":"http://api.dev.documentcloud.org/api/documents/?per_page=2","results":[{"id":615,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/615-eric-massa-press-statement","created_at":"2010-03-25T14:10:01.627158Z","data":{},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"related_article":"","published_url":"","slug":"eric-massa-press-statement","source":"Talking
-        Points Memo","status":"success","title":"Eric Massa Press Statement","updated_at":"2020-04-07T15:37:53.040258Z","user":2},{"id":617,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/617-torture-memo-august-2002","created_at":"2010-03-25T14:12:20.493540Z","data":{},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":50,"page_spec":"","projects":[111],"related_article":"","published_url":"","slug":"torture-memo-august-2002","source":"Talking
+      string: '{"next":"http://api.dev.documentcloud.org/api/documents/?cursor=cD02MTc%3D&per_page=2&version=2.0","previous":"http://api.dev.documentcloud.org/api/documents/?cursor=cj0xJnA9NjE1&per_page=2&version=2.0","results":[{"id":615,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/615-eric-massa-press-statement","created_at":"2010-03-25T14:10:01.627158Z","data":{},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","slug":"eric-massa-press-statement","source":"Talking
+        Points Memo","status":"success","title":"Eric Massa Press Statement","updated_at":"2020-04-07T15:37:53.040258Z","user":2},{"id":617,"access":"public","asset_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/","canonical_url":"http://www.dev.documentcloud.org/documents/617-torture-memo-august-2002","created_at":"2010-03-25T14:12:20.493540Z","data":{},"description":"","edit_access":false,"file_hash":"","language":"eng","organization":2,"original_extension":"pdf","page_count":50,"page_spec":"","projects":[111],"publish_at":null,"published_url":"","related_article":"","slug":"torture-memo-august-2002","source":"Talking
         Points Memo","status":"success","title":"Torture Memo August 2002","updated_at":"2020-04-07T15:37:53.041659Z","user":2}]}'
     headers:
       Allow:
@@ -77,15 +182,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '1385'
+      - '1465'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:18 GMT
+      - Mon, 14 Mar 2022 15:07:06 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:

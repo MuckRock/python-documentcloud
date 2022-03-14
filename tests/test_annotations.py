@@ -13,15 +13,15 @@ from documentcloud.annotations import Annotation
 
 class TestAnnotation:
     def test_create_delete(self, document):
-        assert len(document.notes) == 1
+        assert len(document.notes.list().results) == 1
         note = document.notes.create(
             "Test Note", 0, "<p>Note content!</p>", x1=0.1, y1=0.1, x2=0.2, y2=0.2
         )
-        assert len(document.notes) == 2
+        assert len(document.notes.list().results) == 2
         for note in document.notes:
             assert isinstance(note, Annotation)
         note.delete()
-        assert len(document.notes) == 1
+        assert len(document.notes.list().results) == 1
 
     def test_create_page_note(self, document):
         note = document.notes.create("Test Note", 0, "<p>Page note!</p>")

@@ -7,13 +7,13 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY5LCJqdGkiOiI0NjM3NjI4NjVmNjU0ZWI4Yjc1NDFkZjVhMzE0YTBkNCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.WspM66JhhLBS8I-1KZ8e1t2PG0FinoV4dny3Sm09C7K_6g9zjLO-ryPSvUSePfiaRuFZRQGJqLmOHpn2VZ8vXSPdKEnCY-LKsbk3ctDEtArvJgtISraXxkF9nk5nwizqwRbQwHj777ONOS4QQNRiHcWjCAxxlsyFLw0ZRRiWi46nWoB4089mm98HMtmjyOn0hXB1iDxVSxr3EaQoSROpUk5VTnN32yZNFX4HpOFkB7RC8wRTykuze94A6PIGJJ_TWrqJp6mTXNsoR9nRy3u5OSCXmrj28BMvSkID-sC7fGbsRlghS-AiUuu7ZAwlWXCSoL8ET6YxD-wbuNOSHdLgzw
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/files/documents/10001209/pages/test-p1-small.gif
+    uri: http://api.dev.documentcloud.org/files/documents/10001723/pages/test-p1-small.gif?version=2.0
   response:
     body:
       string: ''
@@ -29,13 +29,17 @@ interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 13 Nov 2020 19:20:55 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
       Location:
-      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/pages/test-p1-small.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192055Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8d5c35b0746bd7a43edcb00e4b01472d2a53321acce58a3b3b796911f5dfedec
+      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/pages/test-p1-small.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150747Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=364cc703ddecc672ad334443a4e2c92c1882088b37c4febc725678ff98994f22
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -55,7 +59,7 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/pages/test-p1-small.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192055Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8d5c35b0746bd7a43edcb00e4b01472d2a53321acce58a3b3b796911f5dfedec
+    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/pages/test-p1-small.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150747Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=364cc703ddecc672ad334443a4e2c92c1882088b37c4febc725678ff98994f22
   response:
     body:
       string: !!binary |
@@ -73,55 +77,41 @@ interactions:
         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
-        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
+        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
     headers:
       Accept-Ranges:
       - bytes
       Content-Length:
-      - '2498'
+      - '1710'
       Content-Type:
       - image/gif
       Date:
-      - Fri, 13 Nov 2020 19:20:56 GMT
+      - Mon, 14 Mar 2022 15:07:49 GMT
       ETag:
-      - '"6e7479d182afae661652ea3b9da822e6"'
+      - '"74c0f370741595816bb77c55cac95163"'
       Last-Modified:
-      - Fri, 13 Nov 2020 19:20:12 GMT
+      - Mon, 14 Mar 2022 15:07:02 GMT
       Server:
       - AmazonS3
       x-amz-id-2:
-      - UwtB5TAFQXrW66xnF9QFh7dby/tj05pQbCtf5i0CPEFJQIlgQmsEi+Or4OqsnYSeax9G1S+VSHs=
+      - RsnEk7Eo2DH3Ha15BBatgch6/EyQFZBQpCq5GE34rAush6WChdSUcaZpc8vuka1zBUAs6jxoHJc=
       x-amz-request-id:
-      - 32FDE45EC6B09EE8
+      - 4QYHMTM32TF9V2TX
     status:
       code: 200
       message: OK

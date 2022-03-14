@@ -7,17 +7,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -26,15 +26,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:46 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -50,17 +54,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -69,15 +73,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:46 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -93,17 +101,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -112,15 +120,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:46 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -136,17 +148,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -155,15 +167,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -179,17 +195,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -198,15 +214,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -222,17 +242,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -241,15 +261,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -265,17 +289,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -284,15 +308,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -308,17 +336,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -327,15 +355,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -351,17 +383,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -370,15 +402,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -394,17 +430,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTU0LCJqdGkiOiI4MzBkMGQ0YWQyMzE0ODI4YWY5NWFkMjE1Yjk1ZjdhOCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.UlSoRgBlr9orkHZNHD_R6umZzrLkEPfrK8Gc7nhm5neqwnHAR6MpkQwAFBnnVJia22xsyuowSsOrviHmabUDAlvVMFnsHwFlwCk0rB3_s0xuJanYoH0ak4wUyZZgvXyA897ynmz0jc-ws0jtQX7mx-LQ1eGaFqAcU4NY0s8IFCp0NWncL7lA9hlHEZsoYWGxmGZa8RDVaO-F640z5NdPTeIUauGdfjRNS9z2lVxEgQEKCTrhOqImkEjYLbB3TPQkzSVpNvHf7K9lStQ-4mUgiAa52rCkc12Q01D7s-eKSZkYX2fcoxwxQEqVl0giGpUY5-6FotsS6yP2QTm6Elzx9Q
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY4LCJqdGkiOiJlYjZmMGQ4OTc0N2Y0ZjU1YjUzYjkzNDlmMGY4YTlkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.a0HtD6571RvmMjlpv_b6x0IF7QXfN-Wp-g1apsYDQ1KEmAOZeEzvdaRi6A7CW2Hk7ARBLFJkh61h1-4297ntQKTjHYGdDkuXLgI7aKNIOfhGYmhiakUyiN4W1tgfSVJsqoWIvIBwK3Tj13QFHwDwDZtXzevUmX8feJTvWtD-MEc9cOOQ1Et6XbAEKsmqlwBsKwGkouFJhAX9qqPolILnj1P6_EcwNHDf18qDc8hZdv6qKcVswKbk00CXpxJxunt5yuQDh5UNhAwBLQSrtAbja76UVtHBNB7sWZV-KYqyxJ2EsARKFuIQDc3RhZQNN2MIlGvZz_DaJnpHs9moyWFDiA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/me/
+    uri: http://api.dev.documentcloud.org/api/users/me/?version=2.0
   response:
     body:
-      string: '{"id":100098,"avatar_url":"http://dev.squarelet.com/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f"}'
+      string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
+        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -413,15 +449,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '220'
+      - '249'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:

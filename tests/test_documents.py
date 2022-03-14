@@ -74,7 +74,9 @@ class TestDocument:
         assert attr in dir(document)
 
     def test_mentions(self, client, document):
-        document = client.documents.search("document:{} text".format(document.id))[0]
+        document = client.documents.search(
+            "document:{} text".format(document.id), mentions="true"
+        )[0]
         assert document.mentions
         mention = document.mentions[0]
         assert mention.page
@@ -147,7 +149,7 @@ class TestDocument:
 
     def test_section(self, document_factory):
         document = document_factory()
-        assert len(document.sections) == 0
+        assert len(document.sections.list().results) == 0
         section = document.sections.create("Test Section", 0)
         assert str(section) == "Test Section - p0"
         assert section.page == 0
@@ -163,7 +165,7 @@ class TestDocumentClient:
         # list and all are aliases
         all_documents = client.documents.all()
         my_documents = client.documents.list(user=client.user_id)
-        assert len(all_documents) > len(my_documents)
+        assert len(list(all_documents)) > len(list(my_documents.results))
 
     def test_upload_url(self, document_factory):
         document = document_factory()
@@ -215,16 +217,16 @@ class TestMention:
 class TestSection:
     def test_create_delete(self, document_factory):
         document = document_factory()
-        assert len(document.sections) == 0
+        assert len(document.sections.list().results) == 0
         section = document.sections.create("Test Section", 0)
-        assert len(document.sections) == 1
+        assert len(document.sections.list().results) == 1
 
         # may not have two sections on the same page
         with pytest.raises(APIError):
             document.sections.create("Test Section 2", 0)
 
         section.delete()
-        assert len(document.sections) == 0
+        assert len(document.sections.list().results) == 0
 
     def test_str(self, document):
         assert str(document.sections[0])

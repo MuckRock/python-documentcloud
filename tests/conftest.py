@@ -57,6 +57,7 @@ def rate_client():
         base_uri=BASE_URI,
         auth_uri=AUTH_URI,
         timeout=TIMEOUT,
+        rate_limit_sleep=False
     )
 
 

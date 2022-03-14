@@ -7,36 +7,40 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NDk5LCJqdGkiOiJlMjVlYzMxOGQzNzA0YjUyYTEzMDM3MWU1YjI2ZGM5OCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.SfCTfyO4ltOwqg3wi4yrHBi37NTCPrkDQiTmiMnKwoGx4GXQ9GLLLuwzPzANlyRvRIgTYB8arrl4_s9PY-ipHA1H2pb2OdRcqSFbbObtpcnXgzPueKlwpB8vi8D7IAOT2Py1H1oTML44Twk62vvuFNTMhXpnKGS3FkLn2yOs1ElZAb6T9FrkgpAKoxA4ZCDXXTihpOKB0hoLfyHW4bHD5yXBRDLQJEjLcvDEbaqm7mcGMW3UozcOpWeoYcf4skZx3LuumPh8_YFnSDuB6biJcuo_xJC53ZcEmPCJ1udMm0G8caI6Wtg-RDZZeB4FiMctjjM8JkZEcnJ4zpWh03kmpQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDI2LCJqdGkiOiI0NTNmNTJhMDA5YmQ0ZDNlYmU2YzM1MWU0YjZiZGVhNyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.LPeV5iZVCMxxZDGMb2XFJgC9ksOb9e_wIvAF5UzIQtiqvvbU5Xr_F3y5qEEY3NxrrVDQyNt6OKTvdDUTtVrSP_wzuSDJBwKl295_U1lfUKym0uBirf9QdoFPQV3U2h3MFVTyQCxNSwsbeTa_PlaKELkfnRMH1tHUypIge_Be2dVFn3vK02xPCp1u5B4NSBwNJu5CU-UjP1fKMjjnO7cfHQMw1uIsT07tJVaTYkbMY2q21Cp9yapAU91_ZT9rs-y2b0ObDBmYQClQ-zDuOP2ghdfEsVBHAVWAwE4-ksZ8NHuLBhECul3adtSqVy_HLh2IZ7IQioa0an9rC4t2eSOPRw
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/documents/10001209/notes/
+    uri: http://api.dev.documentcloud.org/api/documents/10001723/notes/?version=2.0
   response:
     body:
-      string: '{"count":1,"next":null,"previous":null,"results":[{"id":1000110,"user":100098,"organization":11343,"page_number":0,"access":"private","edit_access":true,"title":"Test
-        Note","content":"<h1>A note!</h1>","x1":0.1,"x2":0.2,"y1":0.1,"y2":0.2,"created_at":"2020-11-13T19:20:13.782343Z","updated_at":"2020-11-13T19:20:13.782761Z"}]}'
+      string: '{"next":null,"previous":null,"results":[{"id":1000224,"user":100098,"organization":11343,"page_number":0,"access":"private","edit_access":true,"title":"Test
+        Note","content":"<h1>A note!</h1>","x1":0.1,"x2":0.2,"y1":0.1,"y2":0.2,"created_at":"2022-03-14T15:07:05.062429Z","updated_at":"2022-03-14T15:07:05.062871Z"}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
       Cache-Control:
-      - no-cache
+      - private, no-cache
       Connection:
       - keep-alive
       Content-Language:
       - en
       Content-Length:
-      - '326'
+      - '316'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:14 GMT
+      - Mon, 14 Mar 2022 15:07:05 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
-      - Accept, Origin, Accept-Language, Cookie
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:

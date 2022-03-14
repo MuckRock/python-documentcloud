@@ -124,9 +124,10 @@ class ProjectClient(BaseAPIClient):
             self.api_path + "/", params={"title": title, "user": self.client.user_id}
         )
         json = response.json()
-        if json["count"] == 0:
+        count = len(json["results"])
+        if count == 0:
             raise DoesNotExistError(response=response)
-        elif json["count"] > 1:
+        elif count > 1:
             raise MultipleObjectsReturnedError(response=response)
 
         return self.resource(self.client, json["results"][0])

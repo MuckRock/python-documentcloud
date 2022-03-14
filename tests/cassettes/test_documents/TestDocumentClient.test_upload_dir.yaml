@@ -7,7 +7,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTA4LCJqdGkiOiI1NDlhNmVkZDBjNTE0MzhiODMyMjEzZDViM2QyN2ZkZSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.ly9jS77TaSUypJeN7g7m9TfIgR0YMShnv3zYrHLPaAMMf8BFQcFQ9ZfISit7MPKQ3N3NCWlT7phsqgspHOJ2YFEWSO1A19q69_Z_G6ZMD3-jN38j9urqv66BNpBmzWI3zBdyKWqpnqqajU-CiOdcUBNuJE1gjaw4uhNEEU6BjYd6Erq6DbGBqaCQXf9haOQ3lXDHo_DL3ZKJvSfJ0QFyxQtjsyqF3niyIFly6nO_AcBHs8osr_9uFsyiUUx8rAGuNqViQDA0yRxcbWuX_Nq2lNnFTEwQ5RjFHmUiqm-C7y2tr7HAsWpAcEiYRFANoUqK9Oou-OExJmVL3CHvQ2SLKg
       Connection:
       - keep-alive
       Content-Length:
@@ -17,10 +17,10 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: POST
-    uri: http://api.dev.documentcloud.org/api/documents/
+    uri: http://api.dev.documentcloud.org/api/documents/?version=2.0
   response:
     body:
-      string: '[{"id":10001218,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001218-test","created_at":"2020-11-13T19:21:32.039608Z","data":{},"description":"","edit_access":true,"file_hash":"","language":"eng","organization":11343,"original_extension":"pdf","page_count":0,"page_spec":"","presigned_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001218/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192132Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=af6992f092415c0336b03a6d88df8a4fbe9d45aa4045ba4b8d51cda999cf4eed","projects":[],"related_article":"","published_url":"","slug":"test","source":"","status":"nofile","title":"test","updated_at":"2020-11-13T19:21:32.040357Z","user":100098},{"id":10001219,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001219-text","created_at":"2020-11-13T19:21:32.066498Z","data":{},"description":"","edit_access":true,"file_hash":"","language":"eng","organization":11343,"original_extension":"pdf","page_count":0,"page_spec":"","presigned_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001219/text.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192132Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=54f2c75b9b2f45b09c9ccfd436b2922f4155804244ed1a58527716dab78b8e64","projects":[],"related_article":"","published_url":"","slug":"text","source":"","status":"nofile","title":"text","updated_at":"2020-11-13T19:21:32.066940Z","user":100098}]'
+      string: '[{"id":10001732,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001732-test","created_at":"2022-03-14T15:08:26.669536Z","data":{},"description":"","edit_access":true,"file_hash":"","language":"eng","organization":11343,"original_extension":"pdf","page_count":0,"page_spec":"","presigned_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001732/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150826Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=401b8abf37a1e6521df73d91191e9ac3be336ae7eba6a8de6a02521e27efee5b","projects":[],"publish_at":null,"published_url":"","related_article":"","slug":"test","source":"","status":"nofile","title":"test","updated_at":"2022-03-14T15:08:26.670125Z","user":100098},{"id":10001733,"access":"private","asset_url":"http://api.dev.documentcloud.org/files/","canonical_url":"http://www.dev.documentcloud.org/documents/10001733-text","created_at":"2022-03-14T15:08:26.669651Z","data":{},"description":"","edit_access":true,"file_hash":"","language":"eng","organization":11343,"original_extension":"pdf","page_count":0,"page_spec":"","presigned_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001733/text.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150826Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c92566fbb154de1367ba852d1eebefd8bf8db4aea006a721dfcf104f4fde4932","projects":[],"publish_at":null,"published_url":"","related_article":"","slug":"text","source":"","status":"nofile","title":"text","updated_at":"2022-03-14T15:08:26.670279Z","user":100098}]'
     headers:
       Allow:
       - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -31,15 +31,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '1785'
+      - '1821'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:21:32 GMT
+      - Mon, 14 Mar 2022 15:08:26 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -348,7 +352,7 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: PUT
-    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001218/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192132Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=af6992f092415c0336b03a6d88df8a4fbe9d45aa4045ba4b8d51cda999cf4eed
+    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001732/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150826Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=401b8abf37a1e6521df73d91191e9ac3be336ae7eba6a8de6a02521e27efee5b
   response:
     body:
       string: ''
@@ -356,15 +360,15 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Fri, 13 Nov 2020 19:21:33 GMT
+      - Mon, 14 Mar 2022 15:08:27 GMT
       ETag:
       - '"000096175e3f8c5b158dbc0b6bbeb666"'
       Server:
       - AmazonS3
       x-amz-id-2:
-      - QXb2CZy6VfQGHKmxNzztBNNnslzk8MT2aFtXLExoXllBqevgCgUs9JxZHMT/DISGWRqyIMakkL8=
+      - 9PS8HqF/9HC4o7hipiecU+6w6xr2xhfPk+fDhPqsv8mds4rh3Glx9wyEEU1OR9g0i95cP0+AVb0=
       x-amz-request-id:
-      - AWCK4MCR2P2KATDG
+      - 1KDGMP08SBE8NFNP
     status:
       code: 200
       message: OK
@@ -498,7 +502,7 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: PUT
-    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001219/text.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192132Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=54f2c75b9b2f45b09c9ccfd436b2922f4155804244ed1a58527716dab78b8e64
+    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001733/text.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150826Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c92566fbb154de1367ba852d1eebefd8bf8db4aea006a721dfcf104f4fde4932
   response:
     body:
       string: ''
@@ -506,27 +510,27 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Fri, 13 Nov 2020 19:21:33 GMT
+      - Mon, 14 Mar 2022 15:08:28 GMT
       ETag:
       - '"b1e7f84f7fd7d908654b11f415651098"'
       Server:
       - AmazonS3
       x-amz-id-2:
-      - T45fDYkcABghqQkso16gxatS40mA2KqpVAR9l678s6hlbLFMpp2XIHVsFehhq4X7rImJMkNPzhQ=
+      - 7tqyXYObEWeNchVo+BvEnwfP6g4inAyNKOiLers60zKWu/CL7zXFo70+VxIpGBQH6BlvYM9kQiE=
       x-amz-request-id:
-      - B899C8541AF72A98
+      - GHQZN9MKBZXJQ9FF
     status:
       code: 200
       message: OK
 - request:
-    body: '{"ids": [10001218, 10001219]}'
+    body: '{"ids": [10001732, 10001733]}'
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTA4LCJqdGkiOiI1NDlhNmVkZDBjNTE0MzhiODMyMjEzZDViM2QyN2ZkZSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.ly9jS77TaSUypJeN7g7m9TfIgR0YMShnv3zYrHLPaAMMf8BFQcFQ9ZfISit7MPKQ3N3NCWlT7phsqgspHOJ2YFEWSO1A19q69_Z_G6ZMD3-jN38j9urqv66BNpBmzWI3zBdyKWqpnqqajU-CiOdcUBNuJE1gjaw4uhNEEU6BjYd6Erq6DbGBqaCQXf9haOQ3lXDHo_DL3ZKJvSfJ0QFyxQtjsyqF3niyIFly6nO_AcBHs8osr_9uFsyiUUx8rAGuNqViQDA0yRxcbWuX_Nq2lNnFTEwQ5RjFHmUiqm-C7y2tr7HAsWpAcEiYRFANoUqK9Oou-OExJmVL3CHvQ2SLKg
       Connection:
       - keep-alive
       Content-Length:
@@ -536,7 +540,7 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: POST
-    uri: http://api.dev.documentcloud.org/api/documents/process/
+    uri: http://api.dev.documentcloud.org/api/documents/process/?version=2.0
   response:
     body:
       string: '"OK"'
@@ -554,11 +558,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:21:33 GMT
+      - Mon, 14 Mar 2022 15:08:27 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:

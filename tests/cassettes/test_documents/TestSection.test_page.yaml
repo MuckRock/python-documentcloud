@@ -7,16 +7,16 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTIyLCJqdGkiOiI3ZWQ5YzUzNjBhN2M0YjEwYWQ4NDZkMDQ1NWQxZTkwYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.p-YNyQGKf5ZwJKDQQereBuTx-ChdMPLNCJPEqOgapNJteVi44sHjTq_I3VgGlaSriRBJ96xwLw761UE5hS2l3zu2vVu5Dy9ioNlt3piKR4O_ueWfUdUItjwXgJxdgOJ0QAKzNYiiVxHrd6zDzOrRTa4V5-Ptw8yca2bI7NPJDDaFUjE8TYthvovnFwLVq_nAIkkaYMksW6hjrwMT4Dgb3zm3k--2onFKRgZN5Rj_EGwrgN_truXIfUEaxTjvazGAPiBxMaBnl0oLC8FXM0WVmDIFCpaFcyX-U1cAnA5qpjKPrO7bi2pueXPEPwGVCVv1tTWgTyc595U1DWfWTiqjYw
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/documents/10001209/sections/
+    uri: http://api.dev.documentcloud.org/api/documents/10001723/sections/?version=2.0
   response:
     body:
-      string: '{"count":1,"next":null,"previous":null,"results":[{"id":743,"page_number":0,"title":"Test
+      string: '{"next":null,"previous":null,"results":[{"id":789,"page_number":0,"title":"Test
         Section"}]}'
     headers:
       Allow:
@@ -28,15 +28,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '101'
+      - '91'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:21:48 GMT
+      - Mon, 14 Mar 2022 15:08:41 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:

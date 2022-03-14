@@ -8,6 +8,7 @@ from __future__ import division, print_function, unicode_literals
 # Standard Library
 import logging
 from functools import partial
+from urllib.parse import parse_qs, urlparse
 
 # Third Party
 import ratelimit
@@ -136,6 +137,12 @@ class DocumentCloud(object):
 
         if not full_url:
             url = "{}{}".format(self.base_uri, url)
+
+        # set the API to version 2.0
+        parsed_url = urlparse(url)
+        if "version" not in parse_qs(parsed_url.query):
+            # check to avoid double setting version
+            kwargs.setdefault("params", {}).update({"version": "2.0"})
 
         response = requests_retry_session(session=self.session).request(
             method, url, timeout=self.timeout, **kwargs

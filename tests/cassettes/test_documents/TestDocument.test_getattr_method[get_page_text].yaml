@@ -7,13 +7,13 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY5LCJqdGkiOiI0NjM3NjI4NjVmNjU0ZWI4Yjc1NDFkZjVhMzE0YTBkNCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.WspM66JhhLBS8I-1KZ8e1t2PG0FinoV4dny3Sm09C7K_6g9zjLO-ryPSvUSePfiaRuFZRQGJqLmOHpn2VZ8vXSPdKEnCY-LKsbk3ctDEtArvJgtISraXxkF9nk5nwizqwRbQwHj777ONOS4QQNRiHcWjCAxxlsyFLw0ZRRiWi46nWoB4089mm98HMtmjyOn0hXB1iDxVSxr3EaQoSROpUk5VTnN32yZNFX4HpOFkB7RC8wRTykuze94A6PIGJJ_TWrqJp6mTXNsoR9nRy3u5OSCXmrj28BMvSkID-sC7fGbsRlghS-AiUuu7ZAwlWXCSoL8ET6YxD-wbuNOSHdLgzw
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/files/documents/10001209/pages/test-p1.txt
+    uri: http://api.dev.documentcloud.org/files/documents/10001723/pages/test-p1.txt?version=2.0
   response:
     body:
       string: ''
@@ -29,13 +29,17 @@ interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 13 Nov 2020 19:20:56 GMT
+      - Mon, 14 Mar 2022 15:07:48 GMT
       Location:
-      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192056Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2075d3a4474c9195e6e663126c118c667dfd4170a35be41a0614655e593d2b5b
+      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150748Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dbb846e3e290c16e70e54e0a5202715b59103057e186dba61e2186dffb6a442c
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -55,7 +59,7 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192056Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2075d3a4474c9195e6e663126c118c667dfd4170a35be41a0614655e593d2b5b
+    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150748Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dbb846e3e290c16e70e54e0a5202715b59103057e186dba61e2186dffb6a442c
   response:
     body:
       string: "doc1\nThis is a simple text PDF containing one page of info\0"
@@ -67,17 +71,17 @@ interactions:
       Content-Type:
       - text/plain
       Date:
-      - Fri, 13 Nov 2020 19:20:57 GMT
+      - Mon, 14 Mar 2022 15:07:49 GMT
       ETag:
       - '"4700f7f139b61ff25447bfc6352ff2c0"'
       Last-Modified:
-      - Fri, 13 Nov 2020 19:20:13 GMT
+      - Mon, 14 Mar 2022 15:07:02 GMT
       Server:
       - AmazonS3
       x-amz-id-2:
-      - tVsPrlc2uDkifOiXhiG/CXBsyKxO/ZQmKPtzHqSeyH1tiKNQM9JQwDXzdjwpLqdBzr/h8sWQrCA=
+      - iYDrdFh1eX6c7WRIZNH/dhoeTNyGrssgEGRk2zLU3aMT29LofWu/Vm4V1jT4TEBvqjNRfZPuV/w=
       x-amz-request-id:
-      - 558E9421A6D8CB19
+      - 4QYSA0QQS77M3G37
     status:
       code: 200
       message: OK

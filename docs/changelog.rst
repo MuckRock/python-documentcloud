@@ -1,6 +1,16 @@
 Changelog
 ---------
 
+3.0.0
+~~~~~
+
+* Use version 2.0 of the DocumentCloud API
+
+  DocumentCloud's API now uses cursor pagination instead of page number pagination.  This allows for more efficient paging deep into the results of an API call.  It also removes the need for a costly count of all the results.  This will improve the performance of many API calls to DocumentCloud.  The tradeoff is that you can no longer randomly access pages of result, instead needing to go through them one at a time.  You also do not get a full count of all results for most API calls (searches still return a full count).
+
+  The major change for API users is there no longer being a `__len__` method implemented for `APIResults`.  You also cannot directly pass in a page number for list calls.  Iterating through results still works as before - the next page will be automatically fetched.
+
+
 2.4.0
 ~~~~~
 

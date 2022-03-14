@@ -66,8 +66,10 @@ class TestProjectClient:
     def test_list(self, client):
         all_projects = client.projects.list()
         my_projects = client.projects.all()
-        assert len(all_projects) > len(my_projects)
-        assert len(client.projects.list(user=client.user_id)) == len(my_projects)
+        assert len(all_projects.results) > len(my_projects.results)
+        assert len(client.projects.list(user=client.user_id).results) == len(
+            my_projects.results
+        )
 
     def test_get_id(self, client, project):
         assert client.projects.get(id=project.id)

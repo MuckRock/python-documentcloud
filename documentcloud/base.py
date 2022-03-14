@@ -13,14 +13,9 @@ from future.utils import python_2_unicode_compatible
 from .exceptions import DuplicateObjectError
 from .toolbox import get_id, merge_dicts
 
-try:
-    from collections.abc import Sequence
-except ImportError:
-    from collections import Sequence
-
 
 @python_2_unicode_compatible
-class APIResults(Sequence):
+class APIResults(object):
     """Class for encapsulating paginated list results from the API"""
 
     def __init__(
@@ -33,7 +28,7 @@ class APIResults(Sequence):
         self.client = client
         json = response.json()
 
-        self.count = json["count"]
+        self.count = json.get("count")
         self.next_url = json["next"]
         self.previous_url = json["previous"]
         self._next = next_
@@ -50,17 +45,12 @@ class APIResults(Sequence):
 
     def __getitem__(self, key):
         # pylint: disable=unsubscriptable-object
-        if key >= len(self):
-            raise IndexError
-
         length = len(self.results)
         if key < length:
             return self.results[key]
-        else:
+        elif self.next_url:
             return self.next[key - length]
-
-    def __len__(self):
-        return self.count
+        raise IndexError
 
     def __iter__(self):
         for result in self.results:
@@ -145,9 +135,6 @@ class ChildAPIClient(BaseAPIClient):
     # try to emulate old behavior by making it act as the list of returned resources
     def __iter__(self):
         return iter(self.list())
-
-    def __len__(self):
-        return len(self.list())
 
     def __getitem__(self, key):
         return self.list()[key]

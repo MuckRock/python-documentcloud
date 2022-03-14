@@ -7,7 +7,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NDk5LCJqdGkiOiJlMjVlYzMxOGQzNzA0YjUyYTEzMDM3MWU1YjI2ZGM5OCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.SfCTfyO4ltOwqg3wi4yrHBi37NTCPrkDQiTmiMnKwoGx4GXQ9GLLLuwzPzANlyRvRIgTYB8arrl4_s9PY-ipHA1H2pb2OdRcqSFbbObtpcnXgzPueKlwpB8vi8D7IAOT2Py1H1oTML44Twk62vvuFNTMhXpnKGS3FkLn2yOs1ElZAb6T9FrkgpAKoxA4ZCDXXTihpOKB0hoLfyHW4bHD5yXBRDLQJEjLcvDEbaqm7mcGMW3UozcOpWeoYcf4skZx3LuumPh8_YFnSDuB6biJcuo_xJC53ZcEmPCJ1udMm0G8caI6Wtg-RDZZeB4FiMctjjM8JkZEcnJ4zpWh03kmpQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDM4LCJqdGkiOiI3NTU5ZWM2NDExMzQ0YzliOWY0NzgxNDgwNGRmNjc0NCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.COzaW0B14fLr2PqB0VdHz8RgwQHZbDDjdrAVVJPDMqEoXiZPa5EKk0NLZgrrkdusm-Dow5cN5oWJMSzWRBPbZlPYUPkR3Ag3L19s9zsHU6Z_5xSIam3THWiQZh27h9_LhHeR50dcUeVMqnoTplMzzMwnFT2ONH91mHD2zKqRerNfb3dDy-kKccswZGPAjT7N2gqy7swyqbOCGr4sOACTTv8Ew-Jk4B1HL9SutnyCNki1Lg0Sy5puq77M7E3lp9PzyuSBB5GVAPiXtiUh3ks3KepEeyeQ-uRKnlEB4aZb3O7L-a8LlrwQu6n_2Ib5LLoaqpWnV7pXF-jtvlo9VrCVew
       Connection:
       - keep-alive
       Content-Length:
@@ -17,11 +17,11 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: POST
-    uri: http://api.dev.documentcloud.org/api/projects/
+    uri: http://api.dev.documentcloud.org/api/projects/?version=2.0
   response:
     body:
-      string: '{"id":100391,"created_at":"2020-11-13T19:20:33.492465Z","description":"","edit_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2020-11-13T19:20:33.492809Z","user":100098}'
+      string: '{"id":100459,"created_at":"2022-03-14T15:07:16.892958Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2022-03-14T15:07:16.893239Z","user":100098}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -30,15 +30,19 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '215'
+      - '240'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:33 GMT
+      - Mon, 14 Mar 2022 15:07:16 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -54,33 +58,39 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NDk5LCJqdGkiOiJlMjVlYzMxOGQzNzA0YjUyYTEzMDM3MWU1YjI2ZGM5OCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.SfCTfyO4ltOwqg3wi4yrHBi37NTCPrkDQiTmiMnKwoGx4GXQ9GLLLuwzPzANlyRvRIgTYB8arrl4_s9PY-ipHA1H2pb2OdRcqSFbbObtpcnXgzPueKlwpB8vi8D7IAOT2Py1H1oTML44Twk62vvuFNTMhXpnKGS3FkLn2yOs1ElZAb6T9FrkgpAKoxA4ZCDXXTihpOKB0hoLfyHW4bHD5yXBRDLQJEjLcvDEbaqm7mcGMW3UozcOpWeoYcf4skZx3LuumPh8_YFnSDuB6biJcuo_xJC53ZcEmPCJ1udMm0G8caI6Wtg-RDZZeB4FiMctjjM8JkZEcnJ4zpWh03kmpQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDM4LCJqdGkiOiI3NTU5ZWM2NDExMzQ0YzliOWY0NzgxNDgwNGRmNjc0NCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.COzaW0B14fLr2PqB0VdHz8RgwQHZbDDjdrAVVJPDMqEoXiZPa5EKk0NLZgrrkdusm-Dow5cN5oWJMSzWRBPbZlPYUPkR3Ag3L19s9zsHU6Z_5xSIam3THWiQZh27h9_LhHeR50dcUeVMqnoTplMzzMwnFT2ONH91mHD2zKqRerNfb3dDy-kKccswZGPAjT7N2gqy7swyqbOCGr4sOACTTv8Ew-Jk4B1HL9SutnyCNki1Lg0Sy5puq77M7E3lp9PzyuSBB5GVAPiXtiUh3ks3KepEeyeQ-uRKnlEB4aZb3O7L-a8LlrwQu6n_2Ib5LLoaqpWnV7pXF-jtvlo9VrCVew
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/projects/100391/documents/?per_page=100&expand=document
+    uri: http://api.dev.documentcloud.org/api/projects/100459/documents/?per_page=100&expand=document&version=2.0
   response:
     body:
-      string: '{"count":0,"next":null,"previous":null,"results":[]}'
+      string: '{"next":null,"previous":null,"results":[]}'
     headers:
       Allow:
       - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
       Connection:
       - keep-alive
       Content-Language:
       - en
       Content-Length:
-      - '52'
+      - '42'
       Content-Type:
       - application/json
       Date:
-      - Fri, 13 Nov 2020 19:20:33 GMT
+      - Mon, 14 Mar 2022 15:07:17 GMT
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
-      - Accept, Origin, Accept-Language, Cookie
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:

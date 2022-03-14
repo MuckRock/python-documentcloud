@@ -28,13 +28,13 @@ class TestAPIResults:
     def test_getitem_index_error(self, client):
         # pylint: disable=pointless-statement
         results = client.documents.list()
-        index = len(results) + 1
+        index = len(list(results)) + 1
         with pytest.raises(IndexError):
             results[index]
 
     def test_len(self, client):
         results = client.documents.list()
-        assert len(results) > 0
+        assert len(results.results) > 0
 
     def test_iter(self, client):
         results = client.documents.list()
@@ -43,12 +43,12 @@ class TestAPIResults:
 
     def test_next(self, client):
         results = client.documents.list(user=client.user_id, per_page=1)
-        assert len(results) > 0
+        assert len(results.results) > 0
         while results.next is not None:
             results = results.next
 
     def test_previous(self, client):
-        results = client.documents.list(user=client.user_id, per_page=1, page=2)
+        results = client.documents.list(user=client.user_id, per_page=1).next
         assert results.previous
         assert results.previous.previous is None
 

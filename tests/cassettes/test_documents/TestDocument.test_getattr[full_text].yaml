@@ -7,13 +7,112 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjA1Mjk1NTUzLCJqdGkiOiIzYjk0NzhmYzM3NTM0ZDNlYTdjMWE2MTNiMmY4MDcyYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.H6yucQ_OnqB42YDisUbF4gvF1wNmi0AxNCnH3s1mNUACCCCEZMaQhf8xKEyMB-hOyFAHnj-oI05QoFAVLYtDwgIU-wPLOXURxvWAdYoGpvbpgWP3a97YeztSUql7pyImxIx3S02X9PMNDSiuReWtCphqvy3NOx77dWE4yg41qpv2jQZ2Gb3xzughIH1DyUw2qM6k4dw-l1OUwAT9JUD7zgd_1tQBuDcPFmH7azZ8mJTdb7p5W9rKE2P1H1QD4zFYq2NxDz_lxkOJ2yJeJMHB7z4FA9G68W1wmqPkffQhcd4-mmDm_oRxMYxYUKcKM3KAfNDVKqoWCpELXRrQUxoPQQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY3LCJqdGkiOiJjNzczOTlkNjM2ZTg0MDhiYmZlNjM1MjY3OGZmMDBkZiIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.dJWtPcw7Br55rKlJyWe2Jx9lpyesJNp9CNYIE_xp8uJ18ubCDmtao_tnKlpmyT0d8hffXV39rBe2A_H904ZBv2rfK_6EyAVfGuNq4yJ2Fftk0_LEL85dQ6YRPXlwNEA0tXGr9GWuolUznnBhIJbJoNiRo55eTGdYuS8HYYIFMwc0dKAJ8tevV5I8f8juKb9hFQuMX0GNSGjflbOkgKKX6iM6vbC1TLBR3i3Kf-7YCD0k5KZP-lbFTJXw_ICtKbOvCyhyh3g3B_qfQcvmlyrv4vZEjmjYcTc2903vM4MhQREqzZ3GKCCsD7qwGrQkbK6tx5qDog3BTTBUcMlJBL_8aQ
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: http://api.dev.documentcloud.org/files/documents/10001209/test.txt
+    uri: http://api.dev.documentcloud.org/files/documents/10001723/test.txt?version=2.0
+  response:
+    body:
+      string: '{"detail":"Given token not valid for any token type","code":"token_not_valid","messages":[{"token_class":"AccessToken","token_type":"access","message":"Token
+        ''exp'' claim has expired"}]}'
+    headers:
+      Allow:
+      - GET, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '185'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.15.1
+      Vary:
+      - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 403
+      message: Forbidden
+- request:
+    body: '{"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzI3MDQ3MCwianRpIjoiYTc4YjA1NTVhZTdkNGI3MjgxOWE1OWFjZTBjMWQwZGUiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIn0.kIIqbtxE9wHuqEjS28xMn9Mh_D0svavfKTbBsFlswPUdIJaW1K4BtlsVhQg3zXfQ6jS2rn_vTuVirQKRPiOTIISMbcUZaOaq1FHgkrlqQ2-Cxdg7xuFx_Xv8Fwf0HYDMbb5Qi7XoZOP7Zi3ZkrTOnlmN1b-PkmXq5LAoNjRklO4ibeXxO6mC1AGdakjVAb65e5GJI3vCInw_vYOhPlR0W1MCFZGmSmkZN8VLkHKRBq1mHw5HnU8QEE1PZJNEFUUPghqGQvNdU_c1Joo-wJJ9IQ9LDfRXXmHVT2aL1K1_OPKxvWBUwbMw0yd8rEHSM-kn941iQd9yCJZutQ8O_O2agA"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '570'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.23.0
+    method: POST
+    uri: http://dev.squarelet.com/api/refresh/
+  response:
+    body:
+      string: '{"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY5LCJqdGkiOiI0NjM3NjI4NjVmNjU0ZWI4Yjc1NDFkZjVhMzE0YTBkNCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.WspM66JhhLBS8I-1KZ8e1t2PG0FinoV4dny3Sm09C7K_6g9zjLO-ryPSvUSePfiaRuFZRQGJqLmOHpn2VZ8vXSPdKEnCY-LKsbk3ctDEtArvJgtISraXxkF9nk5nwizqwRbQwHj777ONOS4QQNRiHcWjCAxxlsyFLw0ZRRiWi46nWoB4089mm98HMtmjyOn0hXB1iDxVSxr3EaQoSROpUk5VTnN32yZNFX4HpOFkB7RC8wRTykuze94A6PIGJJ_TWrqJp6mTXNsoR9nRy3u5OSCXmrj28BMvSkID-sC7fGbsRlghS-AiUuu7ZAwlWXCSoL8ET6YxD-wbuNOSHdLgzw","refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzI3MDQ3MiwianRpIjoiNmNlNGRhZjI4MDNlNGI0YzkyNmIyYzM0ZTdjNmIxYjIiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIn0.n-bwUZKpANS7EjPmFGynt7mpu5IB2dkfbUSQnEtTVMk-o6oWMSefGXrmdrVgp41KEDqIiM7W7iuAV4FMzSvYiJ--j5UqfLC4R5z1HenGOHmuW6uTlW-sPsBdkpaPAXrhsE1ubmEhBpHMHe3BhzMRiiWhLzMQEGFpjVgC0fTz1PEF7TqCLfDbGewfM6_ys6BJG96Kp2VSk7RMymaC18T0ee_DlLSfa33ncsUhY4lo8-HCDZ6LzTHtU6wVpwbl4jgYd7K-3N37rQVOM1fpI2D98WRyjxvqzpcJTffsEEvRKJ90f6Ey2qEJwzAmgepmjonh3wKEZpDi8SY8FdwIwFNIjA"}'
+    headers:
+      Allow:
+      - POST, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1135'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 14 Mar 2022 15:07:47 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.15.1
+      Server-Timing:
+      - TimerPanel_utime;dur=100.54699999977856;desc="User CPU time", TimerPanel_stime;dur=59.84499999999571;desc="System
+        CPU time", TimerPanel_total;dur=160.39199999977427;desc="Total CPU time",
+        TimerPanel_total_time;dur=131.06632232666016;desc="Elapsed time", SQLPanel_sql_time;dur=3.116607666015625;desc="SQL
+        2 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
+      Set-Cookie:
+      - op_browser_state=2ee53051b4771603207ed004702156a0ad381769d3c645f2e94a3a48;
+        Path=/
+      Vary:
+      - Accept, Origin, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY5LCJqdGkiOiI0NjM3NjI4NjVmNjU0ZWI4Yjc1NDFkZjVhMzE0YTBkNCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.WspM66JhhLBS8I-1KZ8e1t2PG0FinoV4dny3Sm09C7K_6g9zjLO-ryPSvUSePfiaRuFZRQGJqLmOHpn2VZ8vXSPdKEnCY-LKsbk3ctDEtArvJgtISraXxkF9nk5nwizqwRbQwHj777ONOS4QQNRiHcWjCAxxlsyFLw0ZRRiWi46nWoB4089mm98HMtmjyOn0hXB1iDxVSxr3EaQoSROpUk5VTnN32yZNFX4HpOFkB7RC8wRTykuze94A6PIGJJ_TWrqJp6mTXNsoR9nRy3u5OSCXmrj28BMvSkID-sC7fGbsRlghS-AiUuu7ZAwlWXCSoL8ET6YxD-wbuNOSHdLgzw
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
+    method: GET
+    uri: http://api.dev.documentcloud.org/files/documents/10001723/test.txt?version=2.0
   response:
     body:
       string: ''
@@ -29,13 +128,17 @@ interactions:
       Content-Type:
       - text/html; charset=utf-8
       Date:
-      - Fri, 13 Nov 2020 19:20:54 GMT
+      - Mon, 14 Mar 2022 15:07:47 GMT
       Location:
-      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192054Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4769a97d401458c52c6dd86bef0e4e63d4d6b48c9431273f353f8aa04f3663e4
+      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150747Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dd8ad054d1eb3668661900a9cb1c909ecd1ac7875d82025658adb24339a86f0d
+      Referrer-Policy:
+      - same-origin
       Server:
       - nginx/1.15.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
       X-Frame-Options:
       - DENY
       X-XSS-Protection:
@@ -55,7 +158,7 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001209/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20201113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20201113T192054Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4769a97d401458c52c6dd86bef0e4e63d4d6b48c9431273f353f8aa04f3663e4
+    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/test.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150747Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dd8ad054d1eb3668661900a9cb1c909ecd1ac7875d82025658adb24339a86f0d
   response:
     body:
       string: "doc1\nThis is a simple text PDF containing one page of info\0"
@@ -67,17 +170,17 @@ interactions:
       Content-Type:
       - text/plain
       Date:
-      - Fri, 13 Nov 2020 19:20:56 GMT
+      - Mon, 14 Mar 2022 15:07:48 GMT
       ETag:
       - '"4700f7f139b61ff25447bfc6352ff2c0"'
       Last-Modified:
-      - Fri, 13 Nov 2020 19:20:13 GMT
+      - Mon, 14 Mar 2022 15:07:04 GMT
       Server:
       - AmazonS3
       x-amz-id-2:
-      - GaY1SSNZKvGpfJIOG/vWyg3iS3OdV7OlEDYMTocBw6DsFoa0Y0nxWQr7MJ4ohTLc7yJrGkZmr+k=
+      - POJi78bzncLjgYedsyo5bWOKKDbDDP5tSv6cez6rZU+tvtV3jV1Uzjlqa6OdAGJyg0nsXyKxSYw=
       x-amz-request-id:
-      - 95A517B0B7724832
+      - J1MQVT01DQJEKFW2
     status:
       code: 200
       message: OK
