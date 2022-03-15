@@ -233,7 +233,6 @@ class DocumentClient(BaseAPIClient):
         if query:
             params["q"] = query
         response = self.client.get("documents/search/", params=params)
-        print(response.json())
         return APIResults(self.resource, self.client, response)
 
     def upload(self, pdf, **kwargs):
