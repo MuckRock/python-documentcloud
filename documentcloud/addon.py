@@ -10,7 +10,9 @@ import os
 import sys
 
 # Third Party
+import fastjsonschema
 import requests
+import yaml
 
 # Local
 from .client import DocumentCloud
@@ -93,11 +95,23 @@ class BaseAddOn:
         args = parser.parse_args()
         # convert args to a dictionary
         args = vars(args)
-        if args["data"] is not None:
+        if args["data"] is None:
+            args["data"] = {}
+        else:
             args["data"] = json.loads(args["data"])
         blob = args.pop("json")
         # merge json blob into the arguments
         args.update(json.loads(blob))
+        # validate parameter data
+        try:
+            with open("config.yaml") as config:
+                schema = yaml.safe_load(config)
+                args["data"] = fastjsonschema.validate(schema, args["data"])
+        except FileNotFoundError:
+            pass
+        except fastjsonschema.JsonSchemaException as exc:
+            print(exc.message)
+            sys.exit(1)
         return args
 
     def send_mail(self, subject, content):
@@ -144,8 +158,3 @@ class AddOn(BaseAddOn):
 
 class CronAddOn(BaseAddOn):
     """Base functionality for a Cron Add-On"""
-
-    def __init__(self):
-        self.client = DocumentCloud(
-            username=os.environ["DC_USERNAME"], password=os.environ["DC_PASSWORD"]
-        )

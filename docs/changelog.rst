@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.0.1
+~~~~~
+
+* Validate add-on data using `fastjsonschema`.  This allows add-ons to set and use default values in their config.yaml files, which is very convenient for cron add-ons.
+
 3.0.0
 ~~~~~
 
