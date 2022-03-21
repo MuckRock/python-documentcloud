@@ -99,9 +99,14 @@ class BaseAddOn:
             args["data"] = {}
         else:
             args["data"] = json.loads(args["data"])
+
         blob = args.pop("json")
-        # merge json blob into the arguments
-        args.update(json.loads(blob))
+        if blob:
+            blob = json.loads(blob)
+            if blob:
+                # merge json blob into the arguments
+                args.update(json.loads(blob))
+
         # validate parameter data
         try:
             with open("config.yaml") as config:
