@@ -105,7 +105,7 @@ class BaseAddOn:
             blob = json.loads(blob)
             if blob:
                 # merge json blob into the arguments
-                args.update(json.loads(blob))
+                args.update(blob)
 
         # validate parameter data
         try:
