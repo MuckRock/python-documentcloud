@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.0.3
+~~~~~
+
+* Convert list passed in to `DocumentClient.list` `id__in` parameter to string automatically.
+
 3.0.2
 ~~~~~
 

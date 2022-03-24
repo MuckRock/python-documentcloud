@@ -235,6 +235,12 @@ class DocumentClient(BaseAPIClient):
         response = self.client.get("documents/search/", params=params)
         return APIResults(self.resource, self.client, response)
 
+    def list(self, **params):
+        """Convert id__in from list to string if needed"""
+        if "id__in" in params and isinstance(params["id__in"], list):
+            params["id__in"] = ",".join(str(i) for i in params["id__in"])
+        return super().list(**params)
+
     def upload(self, pdf, **kwargs):
         """Upload a document"""
         # if they pass in a URL, use the URL upload flow
