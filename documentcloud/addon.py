@@ -153,8 +153,14 @@ class AddOn(BaseAddOn):
             f"addon_runs/{self.id}/", params={"upload_file": file_name}
         )
         presigned_url = resp.json()["presigned_url"]
-        # use buffer as it should always be binary, which requests wants
-        response = requests.put(presigned_url, data=file.buffer)
+        # we want data to be in binary mode
+        if 'b' in file.mode:
+            # already binary
+            data = file
+        else:
+            # text file's buffer is in binary mode
+            data = file.buffer
+        response = requests.put(presigned_url, data=data)
         response.raise_for_status()
         return self.client.patch(
             f"addon_runs/{self.id}/", json={"file_name": file_name}

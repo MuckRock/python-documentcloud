@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.0.5
+~~~~~
+
+* Fix issue with Add-On upload_file when uploading binary files
+
 3.0.4
 ~~~~~
 
