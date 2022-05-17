@@ -19,7 +19,7 @@ from .client import DocumentCloud
 
 
 class BaseAddOn:
-    """Functionality shared between normal Add-On's and Cron Add-On's"""
+    """Functionality shared between all Add-On types"""
 
     def __init__(self):
         args = self._parse_arguments()
@@ -27,6 +27,8 @@ class BaseAddOn:
 
         # a unique identifier for this run
         self.id = args.pop("id", None)
+        # a unique identifier for the event that triggered this run
+        self.event_id = args.pop("event_id", None)
         # Documents is a list of document IDs which were selected to run with this
         # addon activation
         self.documents = args.pop("documents", None)
@@ -154,7 +156,7 @@ class AddOn(BaseAddOn):
         )
         presigned_url = resp.json()["presigned_url"]
         # we want data to be in binary mode
-        if 'b' in file.mode:
+        if "b" in file.mode:
             # already binary
             data = file
         else:
@@ -166,6 +168,24 @@ class AddOn(BaseAddOn):
             f"addon_runs/{self.id}/", json={"file_name": file_name}
         )
 
+    def load_event_data(self):
+        """Load persistent data for this event"""
+        if not self.event_id:
+            return None
+
+        response = self.client.get(f"addon_events/{self.event_id}/")
+        response.raise_for_status()
+        return response.json()["scratch"]
+
+    def store_event_data(self, scratch):
+        """Store persistent data for this event"""
+        if not self.event_id:
+            return
+
+        return self.client.patch(
+            f"addon_events/{self.event_id}/", json={"scratch": scratch}
+        )
+
 
 class CronAddOn(BaseAddOn):
-    """Base functionality for a Cron Add-On"""
+    """DEPREACTED"""

@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.0.6
+~~~~~
+
+* Add support for event add-ons
+
 3.0.5
 ~~~~~
 
