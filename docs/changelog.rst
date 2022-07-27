@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.1.0
+~~~~~
+
+* Add `get_documents` method to `AddOn` for iterating over documents from either a selection or query
+
 3.0.6
 ~~~~~
 

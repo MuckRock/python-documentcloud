@@ -186,6 +186,16 @@ class AddOn(BaseAddOn):
             f"addon_events/{self.event_id}/", json={"scratch": scratch}
         )
 
+    def get_documents(self):
+        """Get documents from either selected or queried documents"""
+        if self.documents:
+            for document in self.client.documents.list(id__in=self.documents):
+                yield document
+        elif self.query:
+            documents = self.client.documents.search(self.query)
+            for document in documents:
+                yield document
+
 
 class CronAddOn(BaseAddOn):
     """DEPREACTED"""
