@@ -186,6 +186,14 @@ class AddOn(BaseAddOn):
             f"addon_events/{self.event_id}/", json={"scratch": scratch}
         )
 
+    def get_document_count(self):
+        """Get document count from either selected or queried documents"""
+        if self.documents:
+            return len(self.documents)
+        elif self.query:
+            documents = self.client.documents.search(self.query)
+            return documents.count
+
     def get_documents(self):
         """Get documents from either selected or queried documents"""
         if self.documents:

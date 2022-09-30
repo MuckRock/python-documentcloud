@@ -1,6 +1,16 @@
 Changelog
 ---------
 
+3.1.3
+~~~~~
+
+* Add method `get_document_count` to `AddOn`
+
+3.1.2
+~~~~~
+
+* Add support for setting `delayed_index`
+
 3.1.0
 ~~~~~
 
