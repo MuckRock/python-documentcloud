@@ -250,6 +250,14 @@ Document
        >>> print txt.decode().split("\n")[0]
        STATE OF CALIFORNIA- HEALTH AND HUMAN SERVICES AGENCY
 
+   .. method:: get_page_position_json(page)
+
+       Submit a page number and receive the page text position information in
+       JSON format
+
+       >>> obj = client.documents.get('1088501-adventuretime-alta')
+       >>> json = obj.get_page_position_json(1)
+
    .. attribute:: id
 
        The unique identifer of the document in DocumentCloud's system. This is a number.

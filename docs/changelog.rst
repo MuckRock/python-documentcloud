@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.1.4
+~~~~~
+
+* Add method `get_page_position_json_url` to `Document`
+
 3.1.3
 ~~~~~
 

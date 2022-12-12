@@ -84,6 +84,8 @@ class Document(BaseAPIObject):
         get = attr.startswith("get_")
         url = attr.endswith("_url")
         text = attr.endswith("_text")
+        json = attr.endswith("_json")
+        fmt = "text" if text else "json" if json else None
         # this allows dropping `get_` to act like a property, ie
         # .full_text_url
         if not get and hasattr(self, "get_{}".format(attr)):
@@ -92,7 +94,7 @@ class Document(BaseAPIObject):
         # .get_full_text()
         if not url and hasattr(self, "{}_url".format(attr)):
             return lambda *a, **k: self._get_url(
-                getattr(self, "{}_url".format(attr))(*a, **k), text
+                getattr(self, "{}_url".format(attr))(*a, **k), fmt
             )
         # this genericizes the image sizes
         m_image = p_image.match(attr)
@@ -162,7 +164,7 @@ class Document(BaseAPIObject):
     def contributor_organization_slug(self):
         return self.organization.slug
 
-    def _get_url(self, url, text):
+    def _get_url(self, url, fmt=None):
         base_netloc = urlparse(self._client.base_uri).netloc
         url_netloc = urlparse(url).netloc
 
@@ -175,8 +177,10 @@ class Document(BaseAPIObject):
             response = requests_retry_session().get(
                 url, headers={"User-Agent": "python-documentcloud2"}
             )
-        if text:
+        if fmt == "text":
             return response.text
+        elif fmt == "json":
+            return response.json()
         else:
             return response.content
 
@@ -186,6 +190,11 @@ class Document(BaseAPIObject):
 
     def get_page_text_url(self, page=1):
         return "{}documents/{}/pages/{}-p{}.txt".format(
+            self.asset_url, self.id, self.slug, page
+        )
+
+    def get_page_position_json_url(self, page=1):
+        return "{}documents/{}/pages/{}-p{}.position.json".format(
             self.asset_url, self.id, self.slug, page
         )
 
