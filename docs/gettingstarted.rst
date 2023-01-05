@@ -82,6 +82,16 @@ You can also provide URLs that link to PDFs, if that's the kind of thing you're 
 
     >>> client.documents.upload("http://ord.legistar.com/Chicago/attachments/e3a0cbcb-044d-4ec3-9848-23c5692b1943.pdf")
 
+Uploading a document that is not a PDF
+-------------------------------------------------
+
+You can upload a document whose file extension is one of the seventy supported filetypes by including the original_extension parameter 
+ (See https://www.documentcloud.org/help/api#supported-file-types for supported filetypes)
+ Example: Uploading a JPG file that is stored in your home directory. 
+
+    >>> obj = self.client.documents.upload("~/test.jpg", original_extension='jpg')
+
+
 Interacting with a newly uploaded public document
 -------------------------------------------------
 
