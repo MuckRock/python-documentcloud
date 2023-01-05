@@ -138,3 +138,14 @@ How to read a PDF document from a URL on the World Wide Web and upload it to Doc
     >>> client = DocumentCloud(DOCUMENTCLOUD_USERNAME, DOCUMENTCLOUD_PASSWORD)
     >>> # Upload the specified URL to the given client
     >>> obj = client.documents.upload(url)
+
+
+Uploading a document with a different supported file type from URL
+--------------------------
+Here is an example of how to read a document with another supported file type from a URL and upload it to DocumentCloud without saving it to your local hard drive. 
+
+    >>> from documentcloud import DocumentCloud
+    >>> url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"
+    >>> client = DocumentCloud(DOCUMENTCLOUD_USERNAME, DOCUMENTCLOUD_PASSWORD)
+    >>> # Upload the specified URL to the given client
+    >>> obj = client.documents.upload(url, original_extension='png')
