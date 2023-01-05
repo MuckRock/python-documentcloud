@@ -86,7 +86,7 @@ Uploading a document that is not a PDF
 -------------------------------------------------
 
 You can upload a document whose file extension is one of the seventy supported filetypes by including the original_extension parameter 
- (See https://www.muckrock.com/news/archives/2020/nov/10/release-notes-beta-document-types/ for supported filetypes)
+ (See https://www.documentcloud.org/help/api#supported-file-types for supported filetypes)
  Example: Uploading a JPG file that is stored in your home directory. 
 
     >>> obj = self.client.documents.upload("~/test.jpg", original_extension='jpg')
