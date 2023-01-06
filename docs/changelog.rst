@@ -1,6 +1,13 @@
 Changelog
 ---------
 
+3.2.0
+~~~~~
+
+* Add `SoftTimeOutAddOn` class
+* Have `AddOn` methods which require an ID print debug information when ID is
+  missing instead of doing nothing
+
 3.1.4
 ~~~~~
 
