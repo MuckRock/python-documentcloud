@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.2.1
+~~~~~
+
+* `SoftTimeOutAddOn` class dismisses current run after creating a new run
+
 3.2.0
 ~~~~~
 

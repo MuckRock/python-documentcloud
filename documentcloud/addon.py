@@ -235,14 +235,18 @@ class SoftTimeOutAddOn(AddOn):
             self.set_message("No progress was made, not re-running")
             return
 
-        # XXX dismiss the current run?
-
         self.client.post(
             "addon_runs/",
             json={
                 "addon": self.addon_id,
                 "parameters": self.data,
                 "documents": document_ids,
+            },
+        )
+        self.client.patch(
+            f"addon_runs/{self.id}/",
+            json={
+                "dismissed": True
             },
         )
 
