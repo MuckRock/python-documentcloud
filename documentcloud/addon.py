@@ -8,6 +8,7 @@ import argparse
 import json
 import os
 import sys
+import time
 
 # Third Party
 import fastjsonschema
@@ -27,6 +28,8 @@ class BaseAddOn:
 
         # a unique identifier for this run
         self.id = args.pop("id", None)
+        # the id of the add-on
+        self.addon_id = args.pop("addon_id", None)
         # a unique identifier for the event that triggered this run
         self.event_id = args.pop("event_id", None)
         # Documents is a list of document IDs which were selected to run with this
@@ -134,6 +137,7 @@ class AddOn(BaseAddOn):
     def set_progress(self, progress):
         """Set the progress as a percentage between 0 and 100."""
         if not self.id:
+            print(f"Progress: {progress}%")
             return None
         assert 0 <= progress <= 100
         return self.client.patch(f"addon_runs/{self.id}/", json={"progress": progress})
@@ -141,12 +145,14 @@ class AddOn(BaseAddOn):
     def set_message(self, message):
         """Set the progress message."""
         if not self.id:
+            print(message)
             return None
         return self.client.patch(f"addon_runs/{self.id}/", json={"message": message})
 
     def upload_file(self, file):
         """Uploads a file to the addon run."""
         if not self.id:
+            print(f"Uploading: {file.name}")
             return None
         # go to the beginning of the file
         file.seek(0)
@@ -180,7 +186,7 @@ class AddOn(BaseAddOn):
     def store_event_data(self, scratch):
         """Store persistent data for this event"""
         if not self.event_id:
-            return
+            return None
 
         return self.client.patch(
             f"addon_events/{self.event_id}/", json={"scratch": scratch}
@@ -197,13 +203,69 @@ class AddOn(BaseAddOn):
     def get_documents(self):
         """Get documents from either selected or queried documents"""
         if self.documents:
-            for document in self.client.documents.list(id__in=self.documents):
-                yield document
+            documents = self.client.documents.list(id__in=self.documents)
         elif self.query:
             documents = self.client.documents.search(self.query)
-            for document in documents:
-                yield document
+
+        yield from documents
 
 
 class CronAddOn(BaseAddOn):
     """DEPREACTED"""
+
+
+class SoftTimeOutAddOn(AddOn):
+    """
+    An add-on which can automatically rerun itself on soft-timeout with the
+    remaining documents
+    """
+
+    # default to a 5 minute soft timeout
+    soft_time_limit = 300
+
+    def __init__(self):
+        super().__init__()
+        # record starting time to track when the soft timeout is reached
+        self._start = time.time()
+
+    def rerun_addon(self, documents):
+        """Re-run the add on with the same parameters with the remaining documents"""
+        document_ids = [d.id for d in documents]
+        if len(document_ids) >= self.get_document_count():
+            self.set_message("No progress was made, not re-running")
+            return
+
+        # XXX dismiss the current run?
+
+        self.client.post(
+            "addon_runs/",
+            json={
+                "addon": self.addon_id,
+                "parameters": self.data,
+                "documents": document_ids,
+            },
+        )
+
+    def get_documents(self):
+        """Get documents from either selected or queried documents"""
+
+        if self.documents:
+            documents = self.client.documents.list(id__in=self.documents)
+        elif self.query:
+            documents = self.client.documents.search(self.query)
+
+        # turn documents into an iterator, so that documents that get yielded are
+        # consumed and not re-used when we rerun
+        documents = iter(documents)
+        for document in documents:
+            yield document
+            if self.soft_timeout():
+                self.rerun_addon(documents)
+                self.set_message(
+                    "Soft time out, continuing rest of documents in a new run"
+                )
+                break
+
+    def soft_timeout(self):
+        """Check if enough time has elapsed for a soft timeout"""
+        return time.time() - self._start > self.soft_time_limit
