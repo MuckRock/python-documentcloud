@@ -108,8 +108,11 @@ class BaseAddOn:
         blob = args.pop("json")
         if blob:
             blob = json.loads(blob)
-            if blob:
-                # merge json blob into the arguments
+            if "payload" in blob:
+                # merge v2 json blob into the arguments
+                args.update(blob["payload"])
+            elif blob:
+                # merge v1 json blob into the arguments
                 args.update(blob)
 
         # validate parameter data
@@ -245,9 +248,7 @@ class SoftTimeOutAddOn(AddOn):
         )
         self.client.patch(
             f"addon_runs/{self.id}/",
-            json={
-                "dismissed": True
-            },
+            json={"dismissed": True},
         )
 
     def get_documents(self):

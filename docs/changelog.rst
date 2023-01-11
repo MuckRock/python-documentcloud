@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.3.0
+~~~~~
+
+* Support v2 configuration for passing more than 10 properties into an add-on
+
 3.2.1
 ~~~~~
 
