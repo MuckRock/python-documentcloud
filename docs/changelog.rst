@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.3.1
+~~~~~
+
+* Soft time out scales better
+
 3.3.0
 ~~~~~
 
