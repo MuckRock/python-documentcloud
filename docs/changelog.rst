@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.3.2
+~~~~~
+
+* Fix bug in soft time out rerunning
+
 3.3.1
 ~~~~~
 

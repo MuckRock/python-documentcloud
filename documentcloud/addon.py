@@ -236,7 +236,7 @@ class SoftTimeOutAddOn(AddOn):
         options = {}
         if self.documents:
             # If documents were passed in by ID, pass in the remaining documents by ID
-            options["documents"] = [d.id for d in documents]
+            options["documents"] = [d.id for d in remaining_documents]
         elif self.query:
             # If documents were passed in by query, get the id from the last
             # document, and add that in to the data under a reserved name, so
