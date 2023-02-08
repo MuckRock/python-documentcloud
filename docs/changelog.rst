@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.3.3
+~~~~~
+
+* Fix bug in `AddOn.get_documents` if no documents are passed in
+
 3.3.2
 ~~~~~
 

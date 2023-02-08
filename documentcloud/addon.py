@@ -209,6 +209,8 @@ class AddOn(BaseAddOn):
             documents = self.client.documents.list(id__in=self.documents)
         elif self.query:
             documents = self.client.documents.search(self.query)
+        else:
+            documents = []
 
         yield from documents
 
@@ -269,6 +271,8 @@ class SoftTimeOutAddOn(AddOn):
             )
         elif self.query:
             documents = self.client.documents.search(self.query, sort="id")
+        else:
+            documents = []
 
         # turn documents into an iterator, so that documents that get yielded are
         # consumed and not re-used when we rerun
