@@ -233,17 +233,26 @@ class SoftTimeOutAddOn(AddOn):
         # record starting time to track when the soft timeout is reached
         self._start = time.time()
 
-    def rerun_addon(self, last_document, remaining_documents):
+        self._documents_iter = None
+        self._current_document = None
+
+    def rerun_addon(self, include_current=False):
         """Re-run the add on with the same parameters"""
         options = {}
         if self.documents:
             # If documents were passed in by ID, pass in the remaining documents by ID
-            options["documents"] = [d.id for d in remaining_documents]
+            options["documents"] = [d.id for d in self._documents_iter]
+            if include_current:
+                options["documents"].insert(0, self._current_document)
         elif self.query:
-            # If documents were passed in by query, get the id from the last
+            # If documents were passed in by query, get the id from the next
             # document, and add that in to the data under a reserved name, so
             # that the next run can filter out documents before that id
-            self.data["_id_start"] = last_document.id
+            if include_current:
+                next_document = self._current_document
+            else:
+                next_document = next(self._documents_iter)
+            self.data["_id_start"] = next_document.id
             options["query"] = self.query
 
         self.client.post(
@@ -267,7 +276,7 @@ class SoftTimeOutAddOn(AddOn):
             documents = self.client.documents.list(id__in=self.documents)
         elif self.query and "_id_start" in self.data:
             documents = self.client.documents.search(
-                self.query, sort="id", id=f"{{{self.data['_id_start']} TO *}}"
+                self.query, sort="id", id=f"[{self.data['_id_start']} TO *]"
             )
         elif self.query:
             documents = self.client.documents.search(self.query, sort="id")
@@ -276,12 +285,12 @@ class SoftTimeOutAddOn(AddOn):
 
         # turn documents into an iterator, so that documents that get yielded are
         # consumed and not re-used when we rerun
-        documents = iter(documents)
-        for i, document in enumerate(documents):
-            yield document
+        self._documents_iter = iter(documents)
+        for i, self._current_document in enumerate(self._documents_iter):
+            yield self._current_document
             if self.soft_timeout():
                 self.cleanup()
-                self.rerun_addon(document, documents)
+                self.rerun_addon()
                 self.set_message(
                     f"Soft time out, processed {i+1} documents, "
                     "continuing rest of documents in a new run"

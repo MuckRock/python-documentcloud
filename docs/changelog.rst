@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.3.4
+~~~~~
+
+* Refactor `rerun_addon` to allow including the current document in the next run
+
 3.3.3
 ~~~~~
 
