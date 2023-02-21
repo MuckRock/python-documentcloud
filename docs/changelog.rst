@@ -1,6 +1,12 @@
 Changelog
 ---------
 
+3.3.5
+~~~~~
+
+* Fix bug of child client's not properly setting the parent attribute after
+  paginating past the first page
+
 3.3.4
 ~~~~~
 

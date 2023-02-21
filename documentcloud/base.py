@@ -23,6 +23,7 @@ class APIResults(object):
     ):
         if extra is None:
             extra = {}
+        self.extra = extra
 
         self.resource = resource
         self.client = client
@@ -34,7 +35,7 @@ class APIResults(object):
         self._next = next_
         self._previous = previous
         self.results = [
-            resource(client, merge_dicts(r, extra)) for r in json["results"]
+            resource(client, merge_dicts(r, self.extra)) for r in json["results"]
         ]
 
     def __repr__(self):
@@ -66,7 +67,12 @@ class APIResults(object):
         if url:
             response = self.client.get(url, full_url=True)
             return APIResults(
-                self.resource, self.client, response, next_=next_, previous=previous
+                self.resource,
+                self.client,
+                response,
+                extra=self.extra,
+                next_=next_,
+                previous=previous,
             )
         else:
             return None
