@@ -243,7 +243,7 @@ class SoftTimeOutAddOn(AddOn):
             # If documents were passed in by ID, pass in the remaining documents by ID
             options["documents"] = [d.id for d in self._documents_iter]
             if include_current:
-                options["documents"].insert(0, self._current_document)
+                options["documents"].insert(0, self._current_document.id)
         elif self.query:
             # If documents were passed in by query, get the id from the next
             # document, and add that in to the data under a reserved name, so

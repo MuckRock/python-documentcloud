@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.3.6
+~~~~~
+
+* Fix bug when re-running Add-On with selected documents
+
 3.3.5
 ~~~~~
 
