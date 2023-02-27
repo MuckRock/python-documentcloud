@@ -40,6 +40,7 @@ DoesNotExistError
 -----------------
 
 .. class:: documentcloud.exceptions.DoesNotExistError(APIError)
+    
     Raised when the user asks the API for something it cannot find.
 
 MultipleObjectsReturnedError
