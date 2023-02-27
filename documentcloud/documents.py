@@ -84,8 +84,8 @@ class Document(BaseAPIObject):
         get = attr.startswith("get_")
         url = attr.endswith("_url")
         text = attr.endswith("_text")
-        json = attr.endswith("_json")
-        fmt = "text" if text else "json" if json else None
+        json = attr.endswith(("_json", "_json_text"))
+        fmt = "json" if json else "text" if text else None
         # this allows dropping `get_` to act like a property, ie
         # .full_text_url
         if not get and hasattr(self, "get_{}".format(attr)):
@@ -178,7 +178,7 @@ class Document(BaseAPIObject):
                 url, headers={"User-Agent": "python-documentcloud2"}
             )
         if fmt == "text":
-            return response.text
+            return response.content.decode("utf8")
         elif fmt == "json":
             return response.json()
         else:

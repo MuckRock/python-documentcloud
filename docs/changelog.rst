@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.3.7
+~~~~~
+
+* Fix bug with document text files decoding
+
 3.3.6
 ~~~~~
 
