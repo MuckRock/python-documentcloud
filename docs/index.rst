@@ -23,6 +23,7 @@ Documentation
    sections
    users
    organizations
+   exceptions
    changelog
    credits
 
