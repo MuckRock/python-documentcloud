@@ -255,6 +255,7 @@ class SoftTimeOutAddOn(AddOn):
             self.data["_id_start"] = next_document.id
             options["query"] = self.query
 
+        self.data["_restore_key"] = self.id
         self.client.post(
             "addon_runs/",
             json={
