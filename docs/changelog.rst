@@ -1,6 +1,16 @@
 Changelog
 ---------
 
+3.3.9
+~~~~~
+
+* Make APIResults iteration non-recursive to avoid maximum rescursion limit errors
+
+3.3.8
+~~~~~
+
+* Support for soft time out caching
+
 3.3.7
 ~~~~~
 

@@ -54,14 +54,12 @@ class APIResults(object):
         raise IndexError
 
     def __iter__(self):
-        for result in self.results:
-            yield result
-        if self.next_url:
-            # pylint: disable=not-an-iterable
-            for result in self.next:
-                yield result
-        else:
-            return
+        yield from self.results
+
+        api_results = self
+        while api_results.next_url:
+            api_results = api_results.next
+            yield from api_results.results
 
     def _fetch(self, url, next_=None, previous=None):
         if url:
