@@ -462,14 +462,6 @@ class DocumentClient(BaseAPIClient):
         if extensions and not isinstance(extensions, list):
             extensions = [extensions]
 
-        # Ensure the provided extensions are from the approved list
-        if extensions is not None:
-            invalid_extensions = set(extensions) - set(supported_extensions)
-            if invalid_extensions:
-                raise ValueError(
-                    f"Invalid extensions provided: {', '.join(invalid_extensions)}"
-                )
-
         # Loop through the path and get all the files with matching extensions
         path_list = self._collect_files(path, extensions, supported_extensions)
 
