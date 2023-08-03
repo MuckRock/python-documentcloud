@@ -11,12 +11,12 @@ import os
 import re
 import warnings
 from functools import partial
-import magic 
-import mimetypes 
+import mimetypes
 
 # Third Party
 from future.utils import python_2_unicode_compatible
 from requests.exceptions import RequestException
+import magic
 
 # Local
 from .annotations import AnnotationClient
@@ -356,9 +356,10 @@ class DocumentClient(BaseAPIClient):
         """
         path_list = []
         for dirpath, _, filenames in os.walk(path):
-            path_list.extend([os.path.join(dirpath, filename) for filename in filenames])
+            path_list.extend(
+                [os.path.join(dirpath, filename) for filename in filenames]
+            )
         return path_list
-
 
     def _get_valid_extension(self, filepath, supported_extensions):
         """Get the valid extension for a given file path.
@@ -372,10 +373,9 @@ class DocumentClient(BaseAPIClient):
         content_type = magic.from_file(filepath, mime=True)
         extension = mimetypes.guess_extension(content_type)
         if extension and extension.lower() in supported_extensions:
-         return extension
+            return extension
         else:
             return ""
-
 
     def upload_directory(self, path, handle_errors=False, **kwargs):
         """Upload supported files in a directory.
@@ -391,15 +391,97 @@ class DocumentClient(BaseAPIClient):
 
         # List of supported file extensions
         supported_extensions = [
-            ".abw", ".zabw", ".md", ".pm3", ".pm4", ".pm5", ".pm6", ".p65", ".cwk", ".agd",
-            ".fhd", ".kth", ".key", ".numbers", ".pages", ".bmp", ".csv", ".txt", ".cdr", ".cmx",
-            ".cgm", ".dif", ".dbf", ".xml", ".eps", ".emf", ".fb2", ".gnm", ".gnumeric", ".gif",
-            ".hwp", ".plt", ".html", ".htm", ".jtd", ".jtt", ".jpg", ".jpeg", ".wk1", ".wks", ".123",
-            ".wk3", ".wk4", ".pct", ".mml", ".xls", ".xlw", ".xlt", ".xlsx", ".docx", ".pptx", ".ppt",
-            ".pps", ".pot", ".pptx", ".pub", ".rtf", ".xml", ".doc", ".dot", ".docx", ".wps", ".wks",
-            ".wdb", ".wri", ".vsd", ".pgm", ".pbm", ".ppm", ".odt", ".fodt", ".ods", ".fods", ".odp",
-            ".fodp", ".odg", ".fodg", ".odf", ".odb", ".sxw", ".stw", ".sxc", ".stc", ".sxi", ".sti",
-            ".sxd", ".std", ".sxm", ".pcx", ".pcd", ".psd"
+            ".abw",
+            ".zabw",
+            ".md",
+            ".pm3",
+            ".pm4",
+            ".pm5",
+            ".pm6",
+            ".p65",
+            ".cwk",
+            ".agd",
+            ".fhd",
+            ".kth",
+            ".key",
+            ".numbers",
+            ".pages",
+            ".bmp",
+            ".csv",
+            ".txt",
+            ".cdr",
+            ".cmx",
+            ".cgm",
+            ".dif",
+            ".dbf",
+            ".xml",
+            ".eps",
+            ".emf",
+            ".fb2",
+            ".gnm",
+            ".gnumeric",
+            ".gif",
+            ".hwp",
+            ".plt",
+            ".html",
+            ".htm",
+            ".jtd",
+            ".jtt",
+            ".jpg",
+            ".jpeg",
+            ".wk1",
+            ".wks",
+            ".123",
+            ".wk3",
+            ".wk4",
+            ".pct",
+            ".mml",
+            ".xls",
+            ".xlw",
+            ".xlt",
+            ".xlsx",
+            ".docx",
+            ".pptx",
+            ".ppt",
+            ".pps",
+            ".pot",
+            ".pptx",
+            ".pub",
+            ".rtf",
+            ".xml",
+            ".doc",
+            ".dot",
+            ".docx",
+            ".wps",
+            ".wks",
+            ".wdb",
+            ".wri",
+            ".vsd",
+            ".pgm",
+            ".pbm",
+            ".ppm",
+            ".odt",
+            ".fodt",
+            ".ods",
+            ".fods",
+            ".odp",
+            ".fodp",
+            ".odg",
+            ".fodg",
+            ".odf",
+            ".odb",
+            ".sxw",
+            ".stw",
+            ".sxc",
+            ".stc",
+            ".sxi",
+            ".sti",
+            ".sxd",
+            ".std",
+            ".sxm",
+            ".pcx",
+            ".pcd",
+            ".psd",
         ]
 
         # Do not set the same title for all documents
@@ -407,10 +489,14 @@ class DocumentClient(BaseAPIClient):
 
         # Loop through the path and get all the files with supported extensions
         path_list = [
-            file for file in self._collect_files(path) if os.path.splitext(file)[1].lower() in supported_extensions
+            file
+            for file in self._collect_files(path)
+            if os.path.splitext(file)[1].lower() in supported_extensions
         ]
 
-        logger.info("Upload directory on %s: Found %d files to upload", path, len(path_list))
+        logger.info(
+            "Upload directory on %s: Found %d files to upload", path, len(path_list)
+        )
 
         # Upload all the files using the bulk API to reduce the number of API calls and improve performance
         obj_list = []
@@ -425,7 +511,15 @@ class DocumentClient(BaseAPIClient):
             logger.info("Creating the documents...")
             try:
                 documents = [
-                    merge_dicts(params, {"title": self._get_title(p), "original_extension": self._get_valid_extension(p, supported_extensions).lstrip('.')})
+                    merge_dicts(
+                        params,
+                        {
+                            "title": self._get_title(p),
+                            "original_extension": self._get_valid_extension(
+                                p, supported_extensions
+                            ).lstrip("."),
+                        },
+                    )
                     for p in file_paths
                 ]
                 response = self.client.post("documents/", json=documents)
