@@ -482,6 +482,7 @@ class DocumentClient(BaseAPIClient):
             ".pcx",
             ".pcd",
             ".psd",
+            ".pdf",
         ]
 
         # Do not set the same title for all documents
