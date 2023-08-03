@@ -11,12 +11,10 @@ import os
 import re
 import warnings
 from functools import partial
-import mimetypes
 
 # Third Party
 from future.utils import python_2_unicode_compatible
 from requests.exceptions import RequestException
-import magic
 
 # Local
 from .annotations import AnnotationClient
@@ -345,51 +343,23 @@ class DocumentClient(BaseAPIClient):
 
         return Document(self.client, create_json)
 
-    def _collect_files(self, path):
-        """Find the paths to all files under a directory.
-
-        Args:
-            path (str): The path to the directory containing the files.
-
-        Returns:
-            list[str]: List of file paths found under the directory.
-        """
+    def _collect_files(self, path, extensions, supported_extensions):
+        """Find the paths to files with specified extensions under a directory"""
         path_list = []
         for dirpath, _, filenames in os.walk(path):
             path_list.extend(
-                [os.path.join(dirpath, filename) for filename in filenames]
+                [
+                    os.path.join(dirpath, filename)
+                    for filename in filenames
+                    if self._has_valid_extension(
+                        filename, extensions, supported_extensions
+                    )
+                ]
             )
         return path_list
 
-    def _get_valid_extension(self, filepath, supported_extensions):
-        """Get the valid extension for a given file path.
-
-        Args:
-            filepath (str): The file path.
-
-        Returns:
-            str: The valid extension (including the dot) or an empty string if not supported.
-        """
-        content_type = magic.from_file(filepath, mime=True)
-        extension = mimetypes.guess_extension(content_type)
-        if extension and extension.lower() in supported_extensions:
-            return extension
-        else:
-            return ""
-
-    def upload_directory(self, path, handle_errors=False, **kwargs):
-        """Upload supported files in a directory.
-
-        Args:
-            path (str): The path to the directory containing the files.
-            handle_errors (bool, optional): Whether to handle errors gracefully. Defaults to False.
-            **kwargs: Additional keyword arguments to pass to the upload process.
-
-        Returns:
-            list[Document]: List of uploaded Document objects.
-        """
-
-        # List of supported file extensions
+    def upload_directory(self, path, handle_errors=False, extensions=None, **kwargs):
+        """Upload files with specified extensions in a directory"""
         supported_extensions = [
             ".abw",
             ".zabw",
@@ -488,18 +458,27 @@ class DocumentClient(BaseAPIClient):
         # Do not set the same title for all documents
         kwargs.pop("title", None)
 
-        # Loop through the path and get all the files with supported extensions
-        path_list = [
-            file
-            for file in self._collect_files(path)
-            if os.path.splitext(file)[1].lower() in supported_extensions
-        ]
+        # Convert single extension to a list if provided
+        if extensions and not isinstance(extensions, list):
+            extensions = [extensions]
+
+        # Ensure the provided extensions are from the approved list
+        if extensions is not None:
+            invalid_extensions = set(extensions) - set(supported_extensions)
+            if invalid_extensions:
+                raise ValueError(
+                    f"Invalid extensions provided: {', '.join(invalid_extensions)}"
+                )
+
+        # Loop through the path and get all the files with matching extensions
+        path_list = self._collect_files(path, extensions, supported_extensions)
 
         logger.info(
             "Upload directory on %s: Found %d files to upload", path, len(path_list)
         )
 
-        # Upload all the files using the bulk API to reduce the number of API calls and improve performance
+        # Upload all the files using the bulk API to reduce the number
+        # of API calls and improve performance
         obj_list = []
         params = self._format_upload_parameters("", **kwargs)
         for i, file_paths in enumerate(grouper(path_list, BULK_LIMIT)):
@@ -511,19 +490,23 @@ class DocumentClient(BaseAPIClient):
             # Create the documents
             logger.info("Creating the documents...")
             try:
-                documents = [
-                    merge_dicts(
-                        params,
-                        {
-                            "title": self._get_title(p),
-                            "original_extension": self._get_valid_extension(
-                                p, supported_extensions
-                            ).lstrip("."),
-                        },
-                    )
-                    for p in file_paths
-                ]
-                response = self.client.post("documents/", json=documents)
+                response = self.client.post(
+                    "documents/",
+                    json=[
+                        merge_dicts(
+                            params,
+                            {
+                                "title": self._get_title(p),
+                                "original_extension": os.path.splitext(
+                                    os.path.basename(p)
+                                )[1]
+                                .lower()
+                                .lstrip("."),
+                            },
+                        )
+                        for p in file_paths
+                    ],
+                )
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
@@ -577,6 +560,21 @@ class DocumentClient(BaseAPIClient):
 
         # Pass back the list of documents
         return [Document(self.client, d) for d in obj_list]
+
+    def _has_valid_extension(self, filename, extensions, supported_extensions):
+        """Check if the file has a valid extension"""
+        if extensions is None:
+            return True
+
+        # Ensure the provided extensions are from the approved list
+        invalid_extensions = set(extensions) - set(supported_extensions)
+        if invalid_extensions:
+            raise ValueError(
+                f"Invalid extensions provided: {', '.join(invalid_extensions)}"
+            )
+
+        file_extension = os.path.splitext(filename)[1].lower()
+        return file_extension in extensions
 
 
 @python_2_unicode_compatible
