@@ -19,7 +19,7 @@ from requests.exceptions import RequestException
 # Local
 from .annotations import AnnotationClient
 from .base import APIResults, BaseAPIClient, BaseAPIObject
-from .constants import BULK_LIMIT
+from .constants import BULK_LIMIT, SUPPORTED_EXTENSIONS
 from .exceptions import APIError
 from .organizations import Organization
 from .sections import SectionClient
@@ -30,7 +30,6 @@ try:
     from urllib.parse import urlparse
 except ImportError:
     from urlparse import urlparse
-
 
 
 logger = logging.getLogger("documentcloud")
@@ -55,7 +54,6 @@ class Document(BaseAPIObject):
     date_fields = ["created_at", "updated_at"]
 
     def __init__(self, client, dict_):
-
         # deal with potentially nested objects
         objs = [("user", User), ("organization", Organization)]
         for name, resource in objs:
@@ -345,50 +343,75 @@ class DocumentClient(BaseAPIClient):
 
         return Document(self.client, create_json)
 
-    def _collect_files(self, path, extension):
-        """Find the paths to all pdfs under a directory"""
+    def _collect_files(self, path, extensions):
+        """Find the paths to files with specified extensions under a directory"""
         path_list = []
-        for (dirpath, _dirname, filenames) in os.walk(path):
+        for dirpath, _, filenames in os.walk(path):
             path_list.extend(
                 [
-                    os.path.join(dirpath, i)
-                    for i in filenames
-                    if extension is None or i.lower().endswith(extension)
+                    os.path.join(dirpath, filename)
+                    for filename in filenames
+                    if os.path.splitext(filename)[1].lower() in extensions
                 ]
             )
         return path_list
 
-    def upload_directory(self, path, handle_errors=False, extension=".pdf", **kwargs):
-        """Upload all PDFs in a directory"""
+    def upload_directory(self, path, handle_errors=False, extensions=".pdf", **kwargs):
+        """Upload files with specified extensions in a directory"""
 
-        # do not set the same title for all documents
+        # Do not set the same title for all documents
         kwargs.pop("title", None)
 
-        # Loop through the path and get all the files
-        path_list = self._collect_files(path, extension)
+        # If extensions is specified as None, it will check for all suported filetypes.
+        if extensions is None:
+            extensions = SUPPORTED_EXTENSIONS
+
+        # Convert single extension to a list if provided
+        if extensions and not isinstance(extensions, list):
+            extensions = [extensions]
+
+        # Checks to see if the extensions are supported, raises an error if not.
+        invalid_extensions = set(extensions) - set(SUPPORTED_EXTENSIONS)
+        if invalid_extensions:
+            raise ValueError(
+                f"Invalid extensions provided: {', '.join(invalid_extensions)}"
+            )
+
+        # Loop through the path and get all the files with matching extensions
+        path_list = self._collect_files(path, extensions)
 
         logger.info(
             "Upload directory on %s: Found %d files to upload", path, len(path_list)
         )
 
-        # Upload all the pdfs using the bulk API to reduce the number
+        # Upload all the files using the bulk API to reduce the number
         # of API calls and improve performance
         obj_list = []
         params = self._format_upload_parameters("", **kwargs)
-        for i, pdf_paths in enumerate(grouper(path_list, BULK_LIMIT)):
+        for i, file_paths in enumerate(grouper(path_list, BULK_LIMIT)):
             # Grouper will put None's on the end of the last group
-            pdf_paths = [p for p in pdf_paths if p is not None]
+            file_paths = [p for p in file_paths if p is not None]
 
-            logger.info("Uploading group %d: %s", i + 1, "\n".join(pdf_paths))
+            logger.info("Uploading group %d: %s", i + 1, "\n".join(file_paths))
 
-            # create the documents
+            # Create the documents
             logger.info("Creating the documents...")
             try:
                 response = self.client.post(
                     "documents/",
                     json=[
-                        merge_dicts(params, {"title": self._get_title(p)})
-                        for p in pdf_paths
+                        merge_dicts(
+                            params,
+                            {
+                                "title": self._get_title(p),
+                                "original_extension": os.path.splitext(
+                                    os.path.basename(p)
+                                )[1]
+                                .lower()
+                                .lstrip("."),
+                            },
+                        )
+                        for p in file_paths
                     ],
                 )
             except (APIError, RequestException) as exc:
@@ -396,21 +419,21 @@ class DocumentClient(BaseAPIClient):
                     logger.info(
                         "Error creating the following documents: %s %s",
                         exc,
-                        "\n".join(pdf_paths),
+                        "\n".join(file_paths),
                     )
                     continue
                 else:
                     raise
 
-            # upload the files directly to storage
+            # Upload the files directly to storage
             create_json = response.json()
             obj_list.extend(create_json)
             presigned_urls = [j["presigned_url"] for j in create_json]
-            for url, pdf_path in zip(presigned_urls, pdf_paths):
-                logger.info("Uploading %s to S3...", pdf_path)
+            for url, file_path in zip(presigned_urls, file_paths):
+                logger.info("Uploading %s to S3...", file_path)
                 try:
                     response = requests_retry_session().put(
-                        url, data=open(pdf_path, "rb").read()
+                        url, data=open(file_path, "rb").read()
                     )
                     self.client.raise_for_status(response)
                 except (APIError, RequestException) as exc:
@@ -418,13 +441,13 @@ class DocumentClient(BaseAPIClient):
                         logger.info(
                             "Error uploading the following document: %s %s",
                             exc,
-                            pdf_path,
+                            file_path,
                         )
                         continue
                     else:
                         raise
 
-            # begin processing the documents
+            # Begin processing the documents
             logger.info("Processing the documents...")
             doc_ids = [j["id"] for j in create_json]
             try:
@@ -434,7 +457,7 @@ class DocumentClient(BaseAPIClient):
                     logger.info(
                         "Error creating the following documents: %s %s",
                         exc,
-                        "\n".join(pdf_paths),
+                        "\n".join(file_paths),
                     )
                     continue
                 else:

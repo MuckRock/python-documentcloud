@@ -87,7 +87,7 @@ DocumentClient
        ``docx`` or ``jpg``.
 
 
-   .. method:: upload_directory(path, handle_errors=False, **kwargs)
+   .. method:: upload_directory(path, handle_errors=False, extensions=".pdf" **kwargs)
 
       Searches through the provided path and attempts to upload all the PDFs it
       can find. Metadata, which accepts the same keywords as :meth:`upload`,
@@ -99,11 +99,23 @@ DocumentClient
       network request or the DocumentCloud API, log them, and try to continue
       processing.  This might be useful if you are uploading a very large
       directory and do not want temporary network problems to stop the entire
-      upload.
-
+      upload. By default, extensions is set to ".pdf", so it will only upload 
+      PDFs in the specified directory. You can specify a different extension, 
+      a list of extensions, or None. If None is explicitly specified, it will 
+      upload any documents that are supported by DocumentCloud in the present directory. 
+      If you pass a file extension type that is not supported by DocumentCloud, 
+      ValueError will be raised telling you which extension is not supported. 
+        
+      The following will upload all PDFs in the groucho_marx directory: 
            >>> from documentcloud import DocumentCloud
            >>> client = DocumentCloud(DOCUMENTCLOUD_USERNAME, DOCUMENTCLOUD_PASSWORD)
            >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/')
+    
+       The following will upload all .txt and .jpg files in the groucho_marx directory: 
+           >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions = ['.txt', '.jpg'])
+     
+      The following will upload all files that are supported by DocumentCloud in the groucho_marx directory:
+           >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions=None)
 
 
 Document
