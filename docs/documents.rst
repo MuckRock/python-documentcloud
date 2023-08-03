@@ -107,15 +107,15 @@ DocumentClient
       ValueError will be raised telling you which extension is not supported. 
         
       The following will upload all PDFs in the groucho_marx directory: 
-           >>> from documentcloud import DocumentCloud
-           >>> client = DocumentCloud(DOCUMENTCLOUD_USERNAME, DOCUMENTCLOUD_PASSWORD)
-           >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/')
+         >>> from documentcloud import DocumentCloud
+         >>> client = DocumentCloud(DOCUMENTCLOUD_USERNAME, DOCUMENTCLOUD_PASSWORD)
+         >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/')
     
-       The following will upload all .txt and .jpg files in the groucho_marx directory: 
-           >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions = ['.txt', '.jpg'])
-     
+      The following will upload all .txt and .jpg files in the groucho_marx directory: 
+         >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions = ['.txt', '.jpg'])
+
       The following will upload all files that are supported by DocumentCloud in the groucho_marx directory:
-           >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions=None)
+         >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions=None)
 
 
 Document
