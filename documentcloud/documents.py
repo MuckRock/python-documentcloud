@@ -19,7 +19,7 @@ from requests.exceptions import RequestException
 # Local
 from .annotations import AnnotationClient
 from .base import APIResults, BaseAPIClient, BaseAPIObject
-from .constants import BULK_LIMIT
+from .constants import BULK_LIMIT, SUPPORTED_EXTENSIONS
 from .exceptions import APIError
 from .organizations import Organization
 from .sections import SectionClient
@@ -343,7 +343,7 @@ class DocumentClient(BaseAPIClient):
 
         return Document(self.client, create_json)
 
-    def _collect_files(self, path, extensions, supported_extensions):
+    def _collect_files(self, path, extensions):
         """Find the paths to files with specified extensions under a directory"""
         path_list = []
         for dirpath, _, filenames in os.walk(path):
@@ -351,119 +351,34 @@ class DocumentClient(BaseAPIClient):
                 [
                     os.path.join(dirpath, filename)
                     for filename in filenames
-                    if self._has_valid_extension(
-                        filename, extensions, supported_extensions
-                    )
+                    if os.path.splitext(filename)[1].lower() in extensions
                 ]
             )
         return path_list
 
-    def upload_directory(self, path, handle_errors=False, extensions=None, **kwargs):
+    def upload_directory(self, path, handle_errors=False, extensions=".pdf", **kwargs):
         """Upload files with specified extensions in a directory"""
-        supported_extensions = [
-            ".abw",
-            ".zabw",
-            ".md",
-            ".pm3",
-            ".pm4",
-            ".pm5",
-            ".pm6",
-            ".p65",
-            ".cwk",
-            ".agd",
-            ".fhd",
-            ".kth",
-            ".key",
-            ".numbers",
-            ".pages",
-            ".bmp",
-            ".csv",
-            ".txt",
-            ".cdr",
-            ".cmx",
-            ".cgm",
-            ".dif",
-            ".dbf",
-            ".xml",
-            ".eps",
-            ".emf",
-            ".fb2",
-            ".gnm",
-            ".gnumeric",
-            ".gif",
-            ".hwp",
-            ".plt",
-            ".html",
-            ".htm",
-            ".jtd",
-            ".jtt",
-            ".jpg",
-            ".jpeg",
-            ".wk1",
-            ".wks",
-            ".123",
-            ".wk3",
-            ".wk4",
-            ".pct",
-            ".mml",
-            ".xls",
-            ".xlw",
-            ".xlt",
-            ".xlsx",
-            ".docx",
-            ".pptx",
-            ".ppt",
-            ".pps",
-            ".pot",
-            ".pptx",
-            ".pub",
-            ".rtf",
-            ".xml",
-            ".doc",
-            ".dot",
-            ".docx",
-            ".wps",
-            ".wks",
-            ".wdb",
-            ".wri",
-            ".vsd",
-            ".pgm",
-            ".pbm",
-            ".ppm",
-            ".odt",
-            ".fodt",
-            ".ods",
-            ".fods",
-            ".odp",
-            ".fodp",
-            ".odg",
-            ".fodg",
-            ".odf",
-            ".odb",
-            ".sxw",
-            ".stw",
-            ".sxc",
-            ".stc",
-            ".sxi",
-            ".sti",
-            ".sxd",
-            ".std",
-            ".sxm",
-            ".pcx",
-            ".pcd",
-            ".psd",
-            ".pdf",
-        ]
 
         # Do not set the same title for all documents
         kwargs.pop("title", None)
+
+        # If extensions is specified as None, it will check for all suported filetypes.
+        if extensions is None:
+            extensions = SUPPORTED_EXTENSIONS
 
         # Convert single extension to a list if provided
         if extensions and not isinstance(extensions, list):
             extensions = [extensions]
 
+        # Checks to see if the extensions are supported, raises an error if not.
+        invalid_extensions = set(extensions) - set(SUPPORTED_EXTENSIONS)
+        if invalid_extensions:
+            raise ValueError(
+                f"Invalid extensions provided: {', '.join(invalid_extensions)}"
+            )
+
         # Loop through the path and get all the files with matching extensions
-        path_list = self._collect_files(path, extensions, supported_extensions)
+        path_list = self._collect_files(path, extensions)
 
         logger.info(
             "Upload directory on %s: Found %d files to upload", path, len(path_list)
@@ -552,21 +467,6 @@ class DocumentClient(BaseAPIClient):
 
         # Pass back the list of documents
         return [Document(self.client, d) for d in obj_list]
-
-    def _has_valid_extension(self, filename, extensions, supported_extensions):
-        """Check if the file has a valid extension"""
-        if extensions is None:
-            return True
-
-        # Ensure the provided extensions are from the approved list
-        invalid_extensions = set(extensions) - set(supported_extensions)
-        if invalid_extensions:
-            raise ValueError(
-                f"Invalid extensions provided: {', '.join(invalid_extensions)}"
-            )
-
-        file_extension = os.path.splitext(filename)[1].lower()
-        return file_extension in extensions
 
 
 @python_2_unicode_compatible
