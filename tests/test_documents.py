@@ -54,6 +54,7 @@ class TestDocument:
             "get_page_text",
             "get_json_text_url",
             "get_pdf",
+            "get_errors"
         ],
     )
     def test_getattr_method(self, document, attr):

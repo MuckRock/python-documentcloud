@@ -212,6 +212,12 @@ class Document(BaseAPIObject):
             self.get_image_url(page=i, size=size) for i in range(1, self.page_count + 1)
         ]
 
+    def get_errors(self):
+        """Retrieve errors for the document"""
+        endpoint = "documents/{}/errors/".format(self.id)
+        response = self._client.get(endpoint)
+        return response.json()
+        
     def process(self):
         """Reprocess the document"""
         self._client.post("{}/{}/process/".format(self.api_path, self.id))
