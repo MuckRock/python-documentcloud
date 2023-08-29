@@ -79,8 +79,11 @@ DocumentClient
        You may set the ``kwargs`` to any of the writable attributes as
        described in :meth:`documentcloud.documents.Document.put`.
        Additionally, you may set ``force_ocr`` in order to force OCR to take
-       place even if the document has embedded text, as well as either
-       ``project`` to the ID of a project to upload the document into, or
+       place even if the document has embedded text. You may specify which
+       OCR engine to use for OCR by setting ``ocr_engine`` to either ``tess4`` for tesseract
+       or ``textract`` for Amazon Textract. 
+       Note that Amazon Textract uses AI Credits and requires a DocumentCloud Premium account. 
+       You may set ``project`` to the ID of a project to upload the document into, or
        ``projects``, a list of project IDs to upload the document into.
        If you are uploading a non-PDF document type, you must set
        ``original_extension`` to the extension of the file type, such as
