@@ -224,6 +224,13 @@ Document
       A boolean indicating whether or not you have the ability to save this
       document.
 
+   .. attribute:: errors
+      Returns JSON pertaining to the errors on the document. 
+      >>> new = client.documents.upload("https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf")
+      >>> client.documents.get(new.id).errors
+      {'next': None, 'previous': None, 'results': [{'id': 95612, 'created_at': '2023-08-29T17:30:20.142958Z', 'message': '404 Client Error: Not Found for url: https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf'}]}
+
+
    .. attribute:: file_hash
 
        A hash representation of the raw PDF data as a hexadecimal string.
