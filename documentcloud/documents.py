@@ -489,6 +489,54 @@ class DocumentClient(BaseAPIClient):
         # Pass back the list of documents
         return [Document(self.client, d) for d in obj_list]
 
+    def upload_urls(self, url_list, handle_errors=False, **kwargs):
+        """Upload documents from a list of URLs"""
+
+        # Do not set the same title for all documents
+        kwargs.pop("title", None)
+
+        obj_list = []
+        params = self._format_upload_parameters("", **kwargs)
+        for i, url_group in enumerate(grouper(url_list, BULK_LIMIT)):
+            # Grouper will put None's on the end of the last group
+            url_group = [url for url in url_group if url is not None]
+
+            logger.info("Uploading group %d: %s", i + 1, "\n".join(url_group))
+
+            # Create the documents
+            logger.info("Creating the documents...")
+            try:
+                response = self.client.post(
+                    "documents/",
+                    json=[
+                        merge_dicts(
+                            params,
+                            {
+                                "title": self._get_title(url),
+                                "file_url": url,
+                            },
+                        )
+                        for url in url_group
+                    ],
+                )
+            except (APIError, RequestException) as exc:
+                if handle_errors:
+                    logger.info(
+                        "Error creating the following documents: %s %s",
+                        exc,
+                        "\n".join(url_group),
+                    )
+                    continue
+                else:
+                    raise
+
+            create_json = response.json()
+            obj_list.extend(create_json)
+
+        logger.info("Upload URLs complete")
+
+        # Pass back the list of documents
+        return [Document(self.client, d) for d in obj_list]
 
 @python_2_unicode_compatible
 class Mention:
