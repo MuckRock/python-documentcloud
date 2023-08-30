@@ -10,6 +10,7 @@ import logging
 import os
 import re
 import warnings
+import datetime
 from functools import partial
 
 # Third Party
@@ -215,8 +216,22 @@ class Document(BaseAPIObject):
     def get_errors(self):
         """Retrieve errors for the document"""
         endpoint = "documents/{}/errors/".format(self.id)
-        response = self._client.get(endpoint)
-        return response.json()
+        all_results = []
+
+        while endpoint:
+            response = self._client.get(endpoint)
+            data = response.json()
+
+            results = data.get('results', [])
+            for entry in results:
+                created_at_str = entry.get('created_at')
+                if created_at_str:
+                    entry['created_at'] = datetime.datetime.strptime(created_at_str, '%Y-%m-%dT%H:%M:%S.%fZ')
+
+            all_results.extend(results)
+            endpoint = data.get('next')
+
+        return all_results
         
     def process(self):
         """Reprocess the document"""

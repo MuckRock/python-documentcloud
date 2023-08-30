@@ -225,10 +225,11 @@ Document
       document.
 
    .. attribute:: errors
-      Returns JSON pertaining to the errors on the document. 
+      Returns a list containing entries for each error on the document. 
       >>> new = client.documents.upload("https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf")
       >>> client.documents.get(new.id).errors
-      {'next': None, 'previous': None, 'results': [{'id': 95612, 'created_at': '2023-08-29T17:30:20.142958Z', 'message': '404 Client Error: Not Found for url: https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf'}]}
+      [{'id': 96136, 'created_at': datetime.datetime(2023, 8, 30, 16, 28, 8, 594859), 'message': '404 Client Error: Not Found for url: https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf'}]
+
 
 
    .. attribute:: file_hash
