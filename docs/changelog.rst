@@ -1,5 +1,11 @@
 Changelog
 ---------
+3.6.0
+~~~~~
+
+* Added upload_urls() to documents, which allows you to upload a list of URLs via a bulk API call, instead of just one at a time. 
+
+
 3.5.0
 ~~~~~
 
