@@ -1,5 +1,14 @@
 Changelog
 ---------
+3.5.0
+~~~~~
+
+* Added get_errors() to documents, which allows you to see errors for particular documents. 
+
+3.4.0
+~~~~~
+
+* Improved upload_directory() to handle uploading directories containing all supported file types
 
 3.3.9
 ~~~~~
