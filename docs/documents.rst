@@ -64,30 +64,30 @@ DocumentClient
       the object representing the new record you've created. You can submit either
       a file path or a file object.
 
-           >>> from documentcloud import DocumentCloud
-           >>> client = DocumentCloud(USERNAME, PASSWORD)
-           >>> new_id = client.documents.upload("/home/ben/test.pdf", "Test PDF")
-           >>> # Now fetch it
-           >>> client.documents.get(new_id)
-           <Document: Test PDF>
+      >>> from documentcloud import DocumentCloud
+      >>> client = DocumentCloud(USERNAME, PASSWORD)
+      >>> new_id = client.documents.upload("/home/ben/test.pdf", "Test PDF")
+      >>> # Now fetch it
+      >>> client.documents.get(new_id)
+      <Document: Test PDF>
 
-       You can also use URLs which link to PDFs, if that's the kind of thing you
-       want to do.
+      You can also use URLs which link to PDFs, if that's the kind of thing you
+      want to do.
 
-           >>> upload("http://ord.legistar.com/Chicago/attachments/e3a0cbcb-044d-4ec3-9848-23c5692b1943.pdf")
+      >>> upload("http://ord.legistar.com/Chicago/attachments/e3a0cbcb-044d-4ec3-9848-23c5692b1943.pdf")
 
-       You may set the ``kwargs`` to any of the writable attributes as
-       described in :meth:`documentcloud.documents.Document.put`.
-       Additionally, you may set ``force_ocr`` in order to force OCR to take
-       place even if the document has embedded text. You may specify which
-       OCR engine to use for OCR by setting ``ocr_engine`` to either ``tess4`` for tesseract
-       or ``textract`` for Amazon Textract. 
-       Note that Amazon Textract uses AI Credits and requires a DocumentCloud Premium account. 
-       You may set ``project`` to the ID of a project to upload the document into, or
-       ``projects``, a list of project IDs to upload the document into.
-       If you are uploading a non-PDF document type, you must set
-       ``original_extension`` to the extension of the file type, such as
-       ``docx`` or ``jpg``.
+      You may set the ``kwargs`` to any of the writable attributes as
+      described in :meth:`documentcloud.documents.Document.put`.
+      Additionally, you may set ``force_ocr`` in order to force OCR to take
+      place even if the document has embedded text. You may specify which
+      OCR engine to use for OCR by setting ``ocr_engine`` to either ``tess4`` for tesseract
+      or ``textract`` for Amazon Textract. 
+      Note that Amazon Textract uses AI Credits and requires a DocumentCloud Premium account. 
+      You may set ``project`` to the ID of a project to upload the document into, or
+      ``projects``, a list of project IDs to upload the document into.
+      If you are uploading a non-PDF document type, you must set
+      ``original_extension`` to the extension of the file type, such as
+      ``docx`` or ``jpg``.
 
 
    .. method:: upload_directory(path, handle_errors=False, extensions=".pdf" **kwargs)
