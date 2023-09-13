@@ -44,14 +44,14 @@ DocumentClient
 
 
    .. method:: search(query, **params)
-
-       Return a list of documents that match the provided query. ::
-
-               >>> from documentcloud import DocumentCloud
-               >>> client = DocumentCloud()
-               >>> obj_list = client.documents.search('Ruben Salazar')
-               >>> obj_list[0]
-               <Document: Final OIR Report>
+      
+      Return a list of documents that match the provided query. ::
+      
+      >>> from documentcloud import DocumentCloud
+      >>> client = DocumentCloud()
+      >>> obj_list = client.documents.search('Ruben Salazar')
+      >>> obj_list[0]
+      <Document: Final OIR Report>
 
       The params may be set to any parameters that the search end point takes.
       Please see the full `search documentation`_ for query syntax and available
