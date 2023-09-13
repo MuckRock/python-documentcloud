@@ -123,12 +123,12 @@ DocumentClient
 
    .. method:: upload_urls(self, url_list, handle_errors=False, **kwargs):
    
-   Given a list of urls, it will attempt to upload the URLs in batches of 25 at a time. 
+      Given a list of urls, it will attempt to upload the URLs in batches of 25 at a time. 
 
-   >>> urls = ["https://www.chicago.gov/content/dam/city/depts/dcd/tif/22reports/T_072_24thMichiganAR22.pdf", "https://www.chicago.gov/content/dam/city/depts/dcd/tif/22reports/T_063_CanalCongressAR22.pdf"]
-   >>> new = client.documents.upload_urls(urls)
-   >>> new
-   [<Document: 23932356 - T_072_24thMichiganAR22>, <Document: 23932357 - T_063_CanalCongressAR22>]
+      >>> urls = ["https://www.chicago.gov/content/dam/city/depts/dcd/tif/22reports/T_072_24thMichiganAR22.pdf", "https://www.chicago.gov/content/dam/city/depts/dcd/tif/22reports/T_063_CanalCongressAR22.pdf"]
+      >>> new = client.documents.upload_urls(urls)
+      >>> new
+      [<Document: 23932356 - T_072_24thMichiganAR22>, <Document: 23932357 - T_063_CanalCongressAR22>]
 
 
 
