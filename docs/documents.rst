@@ -265,7 +265,9 @@ Document
        from the original PDF by DocumentCloud.
 
    .. method:: get_errors()
+      
       Returns a list containing entries for each error on the document. 
+
       >>> new = client.documents.upload("https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf")
       >>> client.documents.get(new.id).get_errors()
       [{'id': 96136, 'created_at': datetime.datetime(2023, 8, 30, 16, 28, 8, 594859), 'message': '404 Client Error: Not Found for url: https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf'}]
