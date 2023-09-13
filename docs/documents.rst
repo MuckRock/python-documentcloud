@@ -121,7 +121,7 @@ DocumentClient
          >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions=None)
 
 
-   .. method:: upload_urls(self, url_list, handle_errors=False, **kwargs):
+   .. method:: upload_urls(self, url_list, handle_errors=False, **kwargs)
    
       Given a list of urls, it will attempt to upload the URLs in batches of 25 at a time. 
 
