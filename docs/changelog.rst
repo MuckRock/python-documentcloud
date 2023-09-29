@@ -1,5 +1,13 @@
 Changelog
 ---------
+
+3.7.0
+~~~~~
+
+* Add `clear_documents` and `add_documents` to `Project`.
+* Use these new methods to fix altering a `Project`'s document list and saving it, preventing succesive API calls from over writing each other.
+
+
 3.6.0
 ~~~~~
 

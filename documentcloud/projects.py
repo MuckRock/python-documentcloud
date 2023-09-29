@@ -30,17 +30,10 @@ class Project(BaseAPIObject):
 
     def save(self):
         """Add the documents to the project as well"""
-        # XXX this is broken due to multiple calls to PUT
-        # conflicting with each other
         super(Project, self).save()
         if self._document_list:
-            data = [{"document": d} for d in self.document_ids]
-            for data_group in grouper(data, BULK_LIMIT):
-                # Grouper will put None's on the end of the last group
-                data_group = [d for d in data_group if d is not None]
-                self._client.put(
-                    "{}/{}/documents/".format(self.api_path, self.id), json=data_group
-                )
+            self.clear_documents()
+            self.add_documents(self._document_list)
 
     @property
     def document_list(self):
@@ -89,6 +82,22 @@ class Project(BaseAPIObject):
             params={"expand": ["document"]},
         )
         return Document(self._client, response.json()["document"])
+
+    def clear_documents(self):
+        """Remove all documents from this project"""
+        self._client.put(
+            "{}/{}/documents/".format(self.api_path, self.id), json=[]
+        )
+
+    def add_documents(self, documents):
+        """Efficient way to bulk add documents to a project"""
+            data = [{"document": d.id} for d in documents]
+            for data_group in grouper(data, BULK_LIMIT):
+                # Grouper will put None's on the end of the last group
+                data_group = [d for d in data_group if d is not None]
+                self._client.patch(
+                    "{}/{}/documents/".format(self.api_path, self.id), json=data_group
+                )
 
 
 class ProjectClient(BaseAPIClient):
