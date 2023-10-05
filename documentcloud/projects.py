@@ -91,13 +91,13 @@ class Project(BaseAPIObject):
 
     def add_documents(self, documents):
         """Efficient way to bulk add documents to a project"""
-            data = [{"document": d.id} for d in documents]
-            for data_group in grouper(data, BULK_LIMIT):
-                # Grouper will put None's on the end of the last group
-                data_group = [d for d in data_group if d is not None]
-                self._client.patch(
-                    "{}/{}/documents/".format(self.api_path, self.id), json=data_group
-                )
+        data = [{"document": d.id} for d in documents]
+        for data_group in grouper(data, BULK_LIMIT):
+            # Grouper will put None's on the end of the last group
+            data_group = [d for d in data_group if d is not None]
+            self._client.patch(
+                "{}/{}/documents/".format(self.api_path, self.id), json=data_group
+            )
 
 
 class ProjectClient(BaseAPIClient):
