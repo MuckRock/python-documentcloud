@@ -1,0 +1,48 @@
+
+This library interacts with the API for DocumentCloud.  Running the test suite
+against the live server provides many challenges - it is slow, will not work
+without an internet connection, and could give false failures for intermitent
+network failures.  To resolve these issues we use VCR.py
+(https://github.com/kevin1024/vcrpy) to record the HTTP requests.  When new
+HTTP requests are needed for the tests, they are recorded against a
+localinstance of the server.  Then the tests can be run against the
+pre-recorded responses, quickly and without interacting with any other
+software.
+
+To record the HTTP requests, you must have a local dev environment of Squarelet
+and DocumentCloud running.  You can find instructions for those here:
+https://github.com/MuckRock/squarelet and
+https://github.com/MuckRock/DocumentCloud.  You should create a test user
+locally, with the username `test-user` and password `test-password`.
+
+There are some tests which require the access and refresh tokens to be expired.  To accomodate this, those tests are expected to be run with the local Squarelet instance configured with very short lifetimes for those tokens.  You should record the regular tests, change the settings, run the short tests, then change the settings back.  The settings to change are located in `config/settings/base.py` in the Squarelet code base.  Find the follow lines and uncomment the second two:
+
+```
+    # These are used for testing token expiration
+    # "ACCESS_TOKEN_LIFETIME": timedelta(seconds=2),
+    # "REFRESH_TOKEN_LIFETIME": timedelta(seconds=5),
+```
+
+There is a Makefile included to help run the tests.  The following commands are available:
+
+`test-clean` - This will clean all of the pre-recorded requests for the non-short tests
+
+`test-clean-short` - This will clean all of the pre-recorded requests for the short tests
+
+`test-create` - This will clean the non-short tests and then run all of them and record the HTTP requests.
+
+`test-create-short` - This will clean the short tests and then run all of them and record the HTTP requests.
+
+`test` - run all tests using the pre-recorded HTTP requests.  If an HTTP request is missing, it will fail.
+
+`test-dev` - run all tests using the pre-recorded HTTP requests.  If an HTTP request is missing, record it.
+
+`tox` - run all tests under multiple Python versions using tox.
+
+`coverage` - run as `make test`, except generate a coverage report as well.
+
+`check` - Run `pylint`, `black`, and `isort` on all of the source files.
+
+`ship` - Release a new version of the library on PyPI.
+
+A normal workflow would be to use `test-create` to create the intial saved requests, or if you want to re-record all of them for some reason.  You would then change the short settings as described above, and run `test-create-short`.  Running `test` should now pass while making no actual HTTP requests.  If you add a new test with a new request, you can run `test-dev` to record just the new request while leaving the existing ones in place.  The saved requests should be checked in to git.
