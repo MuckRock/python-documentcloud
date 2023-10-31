@@ -1,0 +1,28 @@
+name: Run Pre-recorded Tests
+
+on:
+  push:
+    branches:
+      - master 
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 
+      
+      - name: Install dependencies
+        run: |
+          pip install vcrpy pytest-vcr pytest requests pytest-mock
+        
+      - name: Run pre-recorded tests
+        run: |
+          make test
+        working-directory: .
