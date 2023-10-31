@@ -7,18 +7,18 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTM4LCJqdGkiOiI1OWMzMGRhNWI4MjM0OWYyYmE5NThiMjk0NGYxNDUwMSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.FDHfeRlh_l_KLUu0ZOPM-Ys7RgZgZnH7R_x3EOXAmrmX81kJTB8PrWrVVOLGLbmGnkmh7mfbE3TOjrK5EsSkfdLSqTRwq24-oq2yxTWWAJyWyCbZz8TGfXRhecmaLbjkyzyi-EjxjAMY9SvRgMlTCaU_VDv9GGd65vXkkyPNj2aKzbffSXbEWuOHWmInt76zSdRV_YmwbF9_lzjQp7y7uINlnRYAXqBIgaVspQsSowJKhsGmpVxaKBwZprqvCPHQ3QGfn96DFY4hLN6J5uMD2UrEAoXBMKSSJDLQLXc_VJ4mF22igM6Da91fdf63UxG2Ql8N4mNnlxnDmjP0F9PKSQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4NzY1NTI1LCJqdGkiOiJhMDIwOGQ5OGRiYmY0MjczYWFiN2ZhMjljMjQ4YTM0NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.a19HIswrTe12mJjxVf8auDYOyMXJuWzvT3rwz6XZzEU9bPaoaeBxhgW6BDG3cm8gH4jZGSKbaq7ncleTJNzGtKmhr9Wv7-XPBbWgW8UTZCqUzov9Cd-kSXY8dhviqGnq-Vi7O_e6XRvdn8VPVe4_riDNe5uYGvaQs-C_p57yS7bA8MaWsy_CypoarjrhBFG0zefzw4Aj7EClOoIpsA5SgNV6xy4WtPkzfBSB134525KMc7K-XcgtVwG7zW3dIlcbOa1G49e5mtUiTL3JsmQ-DQLk_x74QxmEjzMJMhNDgojyyG4MGSzB2eH6QuztifJnPkrpkGz7Zl0YGEdEOlZcaw
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/projects/100458/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/projects/200042/?version=2.0
   response:
     body:
-      string: '{"id":100458,"created_at":"2022-03-14T15:06:56.576519Z","description":"This
-        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-81412953-2d43-4c1c-89c8-1c7911465137","title":"This
-        is a project for testing 81412953-2d43-4c1c-89c8-1c7911465137","updated_at":"2022-03-14T15:08:48.933601Z","user":100098}'
+      string: '{"id":200042,"created_at":"2023-10-31T15:12:37.057208Z","description":"This
+        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-08409edd-9ab7-4d23-9be2-f8de39232b2f","title":"This
+        is a project for testing 08409edd-9ab7-4d23-9be2-f8de39232b2f","updated_at":"2023-10-31T15:16:08.906100Z","user":100002}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -30,20 +30,20 @@ interactions:
       - '371'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:08:57 GMT
+      - Tue, 31 Oct 2023 15:16:27 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 200
       message: OK

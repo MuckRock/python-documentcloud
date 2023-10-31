@@ -7,16 +7,16 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTIyLCJqdGkiOiI3ZWQ5YzUzNjBhN2M0YjEwYWQ4NDZkMDQ1NWQxZTkwYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.p-YNyQGKf5ZwJKDQQereBuTx-ChdMPLNCJPEqOgapNJteVi44sHjTq_I3VgGlaSriRBJ96xwLw761UE5hS2l3zu2vVu5Dy9ioNlt3piKR4O_ueWfUdUItjwXgJxdgOJ0QAKzNYiiVxHrd6zDzOrRTa4V5-Ptw8yca2bI7NPJDDaFUjE8TYthvovnFwLVq_nAIkkaYMksW6hjrwMT4Dgb3zm3k--2onFKRgZN5Rj_EGwrgN_truXIfUEaxTjvazGAPiBxMaBnl0oLC8FXM0WVmDIFCpaFcyX-U1cAnA5qpjKPrO7bi2pueXPEPwGVCVv1tTWgTyc595U1DWfWTiqjYw
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4NzY1NTI1LCJqdGkiOiJhMDIwOGQ5OGRiYmY0MjczYWFiN2ZhMjljMjQ4YTM0NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.a19HIswrTe12mJjxVf8auDYOyMXJuWzvT3rwz6XZzEU9bPaoaeBxhgW6BDG3cm8gH4jZGSKbaq7ncleTJNzGtKmhr9Wv7-XPBbWgW8UTZCqUzov9Cd-kSXY8dhviqGnq-Vi7O_e6XRvdn8VPVe4_riDNe5uYGvaQs-C_p57yS7bA8MaWsy_CypoarjrhBFG0zefzw4Aj7EClOoIpsA5SgNV6xy4WtPkzfBSB134525KMc7K-XcgtVwG7zW3dIlcbOa1G49e5mtUiTL3JsmQ-DQLk_x74QxmEjzMJMhNDgojyyG4MGSzB2eH6QuztifJnPkrpkGz7Zl0YGEdEOlZcaw
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/documents/10001723/sections/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000159/sections/?version=2.0
   response:
     body:
-      string: '{"next":null,"previous":null,"results":[{"id":789,"page_number":0,"title":"Test
+      string: '{"next":null,"previous":null,"results":[{"id":33,"page_number":0,"title":"Test
         Section"}]}'
     headers:
       Allow:
@@ -28,23 +28,23 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '91'
+      - '90'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:08:41 GMT
+      - Tue, 31 Oct 2023 15:15:52 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 200
       message: OK

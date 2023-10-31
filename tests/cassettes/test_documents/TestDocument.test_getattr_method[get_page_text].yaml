@@ -7,13 +7,13 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDY5LCJqdGkiOiI0NjM3NjI4NjVmNjU0ZWI4Yjc1NDFkZjVhMzE0YTBkNCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.WspM66JhhLBS8I-1KZ8e1t2PG0FinoV4dny3Sm09C7K_6g9zjLO-ryPSvUSePfiaRuFZRQGJqLmOHpn2VZ8vXSPdKEnCY-LKsbk3ctDEtArvJgtISraXxkF9nk5nwizqwRbQwHj777ONOS4QQNRiHcWjCAxxlsyFLw0ZRRiWi46nWoB4089mm98HMtmjyOn0hXB1iDxVSxr3EaQoSROpUk5VTnN32yZNFX4HpOFkB7RC8wRTykuze94A6PIGJJ_TWrqJp6mTXNsoR9nRy3u5OSCXmrj28BMvSkID-sC7fGbsRlghS-AiUuu7ZAwlWXCSoL8ET6YxD-wbuNOSHdLgzw
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4NzY1NTI1LCJqdGkiOiJhMDIwOGQ5OGRiYmY0MjczYWFiN2ZhMjljMjQ4YTM0NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.a19HIswrTe12mJjxVf8auDYOyMXJuWzvT3rwz6XZzEU9bPaoaeBxhgW6BDG3cm8gH4jZGSKbaq7ncleTJNzGtKmhr9Wv7-XPBbWgW8UTZCqUzov9Cd-kSXY8dhviqGnq-Vi7O_e6XRvdn8VPVe4_riDNe5uYGvaQs-C_p57yS7bA8MaWsy_CypoarjrhBFG0zefzw4Aj7EClOoIpsA5SgNV6xy4WtPkzfBSB134525KMc7K-XcgtVwG7zW3dIlcbOa1G49e5mtUiTL3JsmQ-DQLk_x74QxmEjzMJMhNDgojyyG4MGSzB2eH6QuztifJnPkrpkGz7Zl0YGEdEOlZcaw
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: http://api.dev.documentcloud.org/files/documents/10001723/pages/test-p1.txt?version=2.0
+    uri: https://api.dev.documentcloud.org/files/documents/20000159/pages/test-p1.txt?version=2.0
   response:
     body:
       string: ''
@@ -28,22 +28,22 @@ interactions:
       - '0'
       Content-Type:
       - text/html; charset=utf-8
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:07:48 GMT
+      - Tue, 31 Oct 2023 15:13:50 GMT
       Location:
-      - https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150748Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dbb846e3e290c16e70e54e0a5202715b59103057e186dba61e2186dffb6a442c
+      - https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000159/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20231031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231031T151350Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b8b016fd4ddf04030a5a9fdaae7e78356b18e273e530708ec38dbcc8a609a0e6
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 302
       message: Found
@@ -57,9 +57,9 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10001723/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20220314%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20220314T150748Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dbb846e3e290c16e70e54e0a5202715b59103057e186dba61e2186dffb6a442c
+    uri: https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000159/pages/test-p1.txt?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20231031%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231031T151350Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b8b016fd4ddf04030a5a9fdaae7e78356b18e273e530708ec38dbcc8a609a0e6
   response:
     body:
       string: "doc1\nThis is a simple text PDF containing one page of info\0"
@@ -71,17 +71,19 @@ interactions:
       Content-Type:
       - text/plain
       Date:
-      - Mon, 14 Mar 2022 15:07:49 GMT
+      - Tue, 31 Oct 2023 15:13:52 GMT
       ETag:
       - '"4700f7f139b61ff25447bfc6352ff2c0"'
       Last-Modified:
-      - Mon, 14 Mar 2022 15:07:02 GMT
+      - Tue, 31 Oct 2023 15:12:49 GMT
       Server:
       - AmazonS3
       x-amz-id-2:
-      - iYDrdFh1eX6c7WRIZNH/dhoeTNyGrssgEGRk2zLU3aMT29LofWu/Vm4V1jT4TEBvqjNRfZPuV/w=
+      - bPRvXY78yVl+bHu8EFED76jFg/3RIw2z0w0pRQSKegJwgB+X5F9NZHe79tU2tip3Tq0z8ygfeJw=
       x-amz-request-id:
-      - 4QYSA0QQS77M3G37
+      - JD7Z1DRPHXYZ9NQX
+      x-amz-server-side-encryption:
+      - AES256
     status:
       code: 200
       message: OK

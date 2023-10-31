@@ -13,34 +13,36 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: POST
-    uri: http://dev.squarelet.com/api/token/
+    uri: https://dev.squarelet.com/api/token/
   response:
     body:
-      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NzI3MDQxMSwianRpIjoiOTcwNjUxZmUyNDQ5NDVjZGFhMWMxNTAyMGRjNTUzMzkiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIn0.YrxvrrGk5vWY2pvdcRw7d1gvjgVOAtNdVBILhbIkwBedXMBXDFTVXuPahaB7qQXVDbHu-34ykywEFI5wShtgRbhNFp_n0LWEpboP7GERsoJ_fjU1O_DcjVLjqpLxDK8qz683YTLOJ000Bh6Bk0OHK0cLYk9hhAmentHBl30BrKLSrK38Xw59agYYv2YbYMFsCKMcx9sMoft6_bSWdb9_LyWG9jwpIXqNEswex2uOWYL4U02mutjMbIUJJA6Ui3oD_xlIYOi1STrEETfzghxUyaP0hhLXagdiCmpI5XKFmISNL249NADhEc8JfSTs04V6dcCJirRt8wiFe94Iv-OPow","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDA4LCJqdGkiOiI5M2Q5YjkyMjMyMzg0MjBlYTY5N2UyNTFkZTc3NzhhNSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.eTlwO9nof8P5armPc4GqQ71lueVLELkcEThgH09kPZHXzi3yThlcWSgi07kj6icksnie-B061D7M6hJW7ZdzEIXn85mGN4dt48MKi2kBzeFlH0zPhnOVNi5sUmVfgPE-U1R5EErupsLzbMQBPv0Gvlu8FDspMNfpVLB6Ih5F0OZKzboqgSAjLQrCTB685smpwVAnT2y8jc6hN5V0TBwipdR_fkP3x4vlBp8ktSKP-S-aBi3r75beSDcGdPVSkldypJnEBznqwD_PJ3r3Bac3rfFZ-nso28cv1h-Y-zfHvBuetyzS5wc2OV5BaAmhatAZPl4sjnbuen6nuI5WoC4iqA"}'
+      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5ODg1MTU0MCwianRpIjoiYTM4OWNhNDk5Njk1NDAyZWE4YTZkMDVkZDU5ZmI0ZjIiLCJ1c2VyX2lkIjoiOWE3MzJmNGItMDU0Zi00ZDQ0LWFiYjAtZDg0MjE3ZGNhMzMzIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.Vq8E0HaO9182KL2bdzyYJ5B5t0B_oT7tCT4zCDDrXlQ1S29IIn6NU2hr9rb4UsxlFIG4OdWCJ3pOd8HCpyUEFUQZbg4WeAlycRuRdlVlEZ7_0id8HiXiX2unamxoLSlae3ub7mwc3ZXF0DWUiLSZbQa9Y4zfpERRjPMgJnInkAbmv4YOogA5OwHQpy3YEKz6smZ22Vv8AVZsDyP77VTjRH7JimH3c-F0bXJTGFP1pVnzzzTZEZICPHHILODv5FzFIL92_wV_d31uq3o4CqFg4YOkLvXzLwgwU68uHOm7dPUB6LPfJ-wDE5zhHRg3ayiRcye3duN2xdkb4Da2Xa8DyQ","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4NzY1NDQwLCJqdGkiOiI2ZGJkZDY5OWQ2NWU0ZjQxYmIyY2ZmZTNlYzg2OTY2ZSIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.TiZgmXLgd-staJw1ct-_4DFBWg4PrBt6XUsUfTulrpgRSZfCud62988KNmfjhuc37mdXSYP0rFTOoXY6JmQ5It6Lb0vcC6dP4sEqYF99ycD66C88Q7T4VYoVCmBbof1niiKRcilbG8W_A4GyBppnlJ9YDeDjuEN-H-jhqdmUAh93rI-Q4cUj9hCMLARv9EGNhYz3chw5LqZP3zpOLntiFvvhNQ4LXkLSi9_OFnliZm6bcEAaE5ZAyyQya0hzIYpfrrom30p8ZD9o22LNlZ-3KAsMGFaKSIMNHo1KVCCe74oJP02xqxmPBXRETlq5RjGxc_Swhbagau8bOF7Uzd-z0A"}'
     headers:
       Allow:
       - POST, OPTIONS
       Connection:
       - keep-alive
       Content-Length:
-      - '1135'
+      - '1313'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:06:47 GMT
+      - Tue, 31 Oct 2023 15:12:20 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.25.2
       Server-Timing:
-      - TimerPanel_utime;dur=298.14299999998184;desc="User CPU time", TimerPanel_stime;dur=80.22400000004382;desc="System
-        CPU time", TimerPanel_total;dur=378.36700000002566;desc="Total CPU time",
-        TimerPanel_total_time;dur=181.2272071838379;desc="Elapsed time", SQLPanel_sql_time;dur=2.23541259765625;desc="SQL
-        3 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
+      - TimerPanel_utime;dur=75.67999999999131;desc="User CPU time", TimerPanel_stime;dur=22.729999999995698;desc="System
+        CPU time", TimerPanel_total;dur=98.40999999998701;desc="Total CPU time", TimerPanel_total_time;dur=64.31365013122559;desc="Elapsed
+        time", SQLPanel_sql_time;dur=3.7102699279785156;desc="SQL 3 queries", CachePanel_total_time;dur=0;desc="Cache
+        0 Calls"
       Set-Cookie:
-      - op_browser_state=2ee53051b4771603207ed004702156a0ad381769d3c645f2e94a3a48;
+      - op_browser_state=a693ff4d740f6797bfa768e6e8ac345fc63d2a9eb905e3b2a006d576;
         Path=/
       Vary:
       - Accept, Origin, Cookie
