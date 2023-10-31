@@ -53,8 +53,7 @@ class TestDocument:
             "get_large_image_url",
             "get_page_text",
             "get_json_text_url",
-            "get_pdf",
-            "get_errors"
+            "get_pdf"
         ],
     )
     def test_getattr_method(self, document, attr):

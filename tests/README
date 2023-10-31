@@ -12,8 +12,9 @@ software.
 To record the HTTP requests, you must have a local dev environment of Squarelet
 and DocumentCloud running.  You can find instructions for those here:
 https://github.com/MuckRock/squarelet and
-https://github.com/MuckRock/DocumentCloud.  You should create a test user
-locally, with the username `test-user` and password `test-password`.
+https://github.com/MuckRock/DocumentCloud.  
+
+You should create a test user locally, with the username `test-user` and password `test-password`.
 
 There are some tests which require the access and refresh tokens to be expired.  To accomodate this, those tests are expected to be run with the local Squarelet instance configured with very short lifetimes for those tokens.  You should record the regular tests, change the settings, run the short tests, then change the settings back.  The settings to change are located in `config/settings/base.py` in the Squarelet code base.  Find the follow lines and uncomment the second two:
 
@@ -46,3 +47,37 @@ There is a Makefile included to help run the tests.  The following commands are 
 `ship` - Release a new version of the library on PyPI.
 
 A normal workflow would be to use `test-create` to create the intial saved requests, or if you want to re-record all of them for some reason.  You would then change the short settings as described above, and run `test-create-short`.  Running `test` should now pass while making no actual HTTP requests.  If you add a new test with a new request, you can run `test-dev` to record just the new request while leaving the existing ones in place.  The saved requests should be checked in to git.
+
+## Troubleshooting
+
+### Token Errors 
+If you receive a lot of errors that are 405's with E requests.exceptions.HTTPError: 405 Client Error: Method Not Allowed for url: https://dev.squarelet.com/api/token/
+You need to change the BASE_URI and AUTH_URI to https. 
+
+### SSL Errors
+If you receive a bunch of 500/SSL errors when running the tests, it is likely that your local dev environment doesn't have access to the necessary certificates to authenticate with your local DocumentCloud environment. 
+You can copy the .PEM/.CRT file that is inside the docker container to your local environment and pass this file in so make the SSL errors go away. 
+
+To resolve this you will want to have your local DocumentCloud environment running, including the Django container. You can find the container ID of a running container by running 
+```docker ps```
+
+Then, to retrieve the certificate run:
+```docker cp container_id_here:/etc/ssl/certs/ca-certificates.crt ~```
+Substitute ~ with the location where you would like to copy the certificate file, as ~ is the home directory. 
+
+You can then run the full test-suite by re-recording results  and passing in the necessary certificate like so:
+```REQUESTS_CA_BUNDLE=/path/to/ca-certificates.crt make test-create```
+/path/to should be replaced by the actual location. 
+
+### Assertion Errors
+
+If you get a failure for the contributor method, it is because you need to set a full name for the test user within Squarelet. 
+
+If you receive the following failure:
+```assert len(list(all_documents)) > len(list(my_documents.results))```
+It is because you need to have another user created on your local dev environment on Squarelet, have them verified, and have them upload at least one document. 
+This tests asserts that the total sum of documents in your local dev environment is larger than those owned by you. This wouldn't hold true if your test user was the only user who has uploaded a document. 
+
+If you receive this similar assertion failure:
+```assert len(all_projects.results) > len(my_projects.results)```
+You will need to have that other user create a project as well. This is to pass this assertion. 
