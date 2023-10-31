@@ -14,8 +14,8 @@ from documentcloud.client import DocumentCloud
 from documentcloud.exceptions import DoesNotExistError
 
 # Test against a development environment documentcloud instance
-BASE_URI = "http://api.dev.documentcloud.org/api/"
-AUTH_URI = "http://dev.squarelet.com/api/"
+BASE_URI = "https://api.dev.documentcloud.org/api/"
+AUTH_URI = "https://dev.squarelet.com/api/"
 USERNAME = "test-user"
 PASSWORD = "test-password"
 TIMEOUT = 2.0
