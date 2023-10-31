@@ -5,7 +5,7 @@ sphinx/*
 doctrees/*
 examples.py
 build/*
-*.egg-info/*
+*.egg-info/
 dist/*
 *.pyc
 private_settings.py
@@ -13,3 +13,7 @@ private_settings.py
 scratch.py
 htmlcov/
 _build/
+
+Pipfile
+Pipfile.lock
+.env

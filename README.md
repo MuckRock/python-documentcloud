@@ -6,19 +6,17 @@
 
 A simple python wrapper for the DocumentCloud API
 
-* Documentation: [http://documentcloud.readthedocs.org/](http://documentcloud.readthedocs.org/)
-* Issues: [https://github.com/muckrock/python-documentcloud/issues](https://github.com/muckrock/python-documentcloud/issues)
-* Packaging: [https://pypi.python.org/pypi/python-documentcloud](https://pypi.python.org/pypi/python-documentcloud)
+- Documentation: [http://documentcloud.readthedocs.org/](http://documentcloud.readthedocs.org/)
+- Issues: [https://github.com/muckrock/python-documentcloud/issues](https://github.com/muckrock/python-documentcloud/issues)
+- Packaging: [https://pypi.python.org/pypi/python-documentcloud](https://pypi.python.org/pypi/python-documentcloud)
 
-Features
---------
+## Features
 
-* Retrieve and edit documents and projects, both public and private, from documentcloud.org
-* Upload PDFs into your documentcloud.org account and organize them into projects
-* Download text and images extracted from your PDFs by DocumentCloud
+- Retrieve and edit documents and projects, both public and private, from documentcloud.org
+- Upload PDFs into your documentcloud.org account and organize them into projects
+- Download text and images extracted from your PDFs by DocumentCloud
 
-Getting started
----------------
+## Getting started
 
 Installation is as easy as...
 

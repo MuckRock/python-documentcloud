@@ -35,6 +35,8 @@ except ImportError:
 
 logger = logging.getLogger("documentcloud")
 
+IMAGE_SIZES = ["thumbnail", "small", "normal", "large", "xlarge"]
+
 
 @python_2_unicode_compatible
 class Document(BaseAPIObject):
@@ -111,7 +113,7 @@ class Document(BaseAPIObject):
         attrs += [a[len("get_") :] for a in getters]
         attrs += [a[: -len("_url")] for a in getters if a.endswith("url")]
         attrs += [a[len("get_") : -len("_url")] for a in getters if a.endswith("url")]
-        for size in ["thumbnail", "small", "normal", "large"]:
+        for size in IMAGE_SIZES:
             attrs += [
                 "get_{}_image_url".format(size),
                 "{}_image_url".format(size),
@@ -222,17 +224,19 @@ class Document(BaseAPIObject):
             response = self._client.get(endpoint)
             data = response.json()
 
-            results = data.get('results', [])
+            results = data.get("results", [])
             for entry in results:
-                created_at_str = entry.get('created_at')
+                created_at_str = entry.get("created_at")
                 if created_at_str:
-                    entry['created_at'] = datetime.datetime.strptime(created_at_str, '%Y-%m-%dT%H:%M:%S.%fZ')
+                    entry["created_at"] = datetime.datetime.strptime(
+                        created_at_str, "%Y-%m-%dT%H:%M:%S.%fZ"
+                    )
 
             all_results.extend(results)
-            endpoint = data.get('next')
+            endpoint = data.get("next")
 
         return all_results
-        
+
     def process(self):
         """Reprocess the document"""
         self._client.post("{}/{}/process/".format(self.api_path, self.id))
@@ -537,6 +541,7 @@ class DocumentClient(BaseAPIClient):
 
         # Pass back the list of documents
         return [Document(self.client, d) for d in obj_list]
+
 
 @python_2_unicode_compatible
 class Mention:
