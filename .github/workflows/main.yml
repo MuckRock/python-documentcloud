@@ -23,7 +23,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install vcrpy pytest-vcr pytest requests pytest-mock python-documentcloud
+          pip install vcrpy pytest-vcr pytest requests pytest-mock python-documentcloud pytest-xdist
         
       - name: Run pre-recorded tests
         run: |
