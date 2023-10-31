@@ -1,4 +1,3 @@
-
 This library interacts with the API for DocumentCloud.  Running the test suite
 against the live server provides many challenges - it is slow, will not work
 without an internet connection, and could give false failures for intermitent
