@@ -7,17 +7,17 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTQ3LCJqdGkiOiJiZTg5YjE1ZDZlNGY0ZjVlYjA4MWI3NTYzODU0ZGRmYSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.VB7qHoHrvPsr59keDR45kWn9J1yWkFafzoK7143nToopPqBhIUEypRnARMXs7JhHF-bQfCoJDDMiXBypAWMgD4-7ZS__8l4jGkcn0jRcrAgWkbZTRz-kpqvXxRCde1APV7jXjlt7M2mD0qD5b7UlYynv2DSlOIlQkS0aT8rYuNUOzdkx5Mtm6Sb4cb54UhwYAWnjlV8rUQ1LNJROyrdA9D7aXbeeOsiJTuDlcLezTcx9G9mOAE2C4_s9SoUkzhK5X1IFuFcAuyZSuaN4kQMFCIaCjexEJoQNgOWVO5ElStRTVxUL-OPzKX4HBIf4NTvPnJ6unqN_Ip8Qfek5l5mwXg
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/users/100098/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/users/100098/?version=2.0
   response:
     body:
       string: '{"id":100098,"avatar_url":"http://dev.squarelet.local/static/images/avatars/profile.png","name":"Test
-        User","organization":11343,"organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
+        User","organization":11343,"organizations":[11343],"admin_organizations":[11343],"username":"test-user","uuid":"a7a1bf27-4f5a-4c06-96c2-2d812c51b61f","verified_journalist":true}'
     headers:
       Allow:
       - GET, PUT, PATCH, HEAD, OPTIONS
@@ -26,23 +26,23 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '249'
+      - '279'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:09:06 GMT
+      - Fri, 03 Nov 2023 19:40:29 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.23.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 200
       message: OK

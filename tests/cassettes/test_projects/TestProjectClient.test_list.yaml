@@ -7,23 +7,24 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTM4LCJqdGkiOiI1OWMzMGRhNWI4MjM0OWYyYmE5NThiMjk0NGYxNDUwMSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.FDHfeRlh_l_KLUu0ZOPM-Ys7RgZgZnH7R_x3EOXAmrmX81kJTB8PrWrVVOLGLbmGnkmh7mfbE3TOjrK5EsSkfdLSqTRwq24-oq2yxTWWAJyWyCbZz8TGfXRhecmaLbjkyzyi-EjxjAMY9SvRgMlTCaU_VDv9GGd65vXkkyPNj2aKzbffSXbEWuOHWmInt76zSdRV_YmwbF9_lzjQp7y7uINlnRYAXqBIgaVspQsSowJKhsGmpVxaKBwZprqvCPHQ3QGfn96DFY4hLN6J5uMD2UrEAoXBMKSSJDLQLXc_VJ4mF22igM6Da91fdf63UxG2Ql8N4mNnlxnDmjP0F9PKSQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/projects/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/projects/?version=2.0
   response:
     body:
       string: '{"next":null,"previous":null,"results":[{"id":111,"created_at":"2020-04-07T13:22:20.384987Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"torture-docs","title":"Torture
         Docs","updated_at":"2020-04-07T13:22:20.386028Z","user":18},{"id":100003,"created_at":"2020-03-30T20:39:35.944849Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"test-2","title":"Test
         2","updated_at":"2020-03-30T20:39:35.945376Z","user":100002},{"id":100004,"created_at":"2020-03-30T20:39:40.232047Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"test-3","title":"Test
         3","updated_at":"2020-03-30T20:39:40.232303Z","user":100002},{"id":100278,"created_at":"2020-06-11T12:05:14.998707Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-418f70d4-f99a-4cc0-984d-6f90de112003","title":"This
-        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100458,"created_at":"2022-03-14T15:06:56.576519Z","description":"This
-        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-81412953-2d43-4c1c-89c8-1c7911465137","title":"This
-        is a project for testing 81412953-2d43-4c1c-89c8-1c7911465137","updated_at":"2022-03-14T15:08:48.933601Z","user":100098},{"id":100459,"created_at":"2022-03-14T15:07:16.892958Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2022-03-14T15:07:16.893239Z","user":100098}]}'
+        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100494,"created_at":"2023-11-03T19:10:37.703650Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-96cb19fc-6051-4a8d-8204-9db83aa75692","title":"This
+        is a project for testing 96cb19fc-6051-4a8d-8204-9db83aa75692","updated_at":"2023-11-03T19:10:37.703850Z","user":100098},{"id":100501,"created_at":"2023-11-03T19:38:01.896950Z","description":"This
+        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-57fd83fd-22f8-422f-b45d-b5275fd264da","title":"This
+        is a project for testing 57fd83fd-22f8-422f-b45d-b5275fd264da","updated_at":"2023-11-03T19:40:10.479999Z","user":100098},{"id":100502,"created_at":"2023-11-03T19:38:22.999370Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2023-11-03T19:38:22.999621Z","user":100098}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -32,23 +33,23 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '1674'
+      - '2017'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:08:56 GMT
+      - Fri, 03 Nov 2023 19:40:21 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.23.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 200
       message: OK
@@ -60,20 +61,21 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTM4LCJqdGkiOiI1OWMzMGRhNWI4MjM0OWYyYmE5NThiMjk0NGYxNDUwMSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.FDHfeRlh_l_KLUu0ZOPM-Ys7RgZgZnH7R_x3EOXAmrmX81kJTB8PrWrVVOLGLbmGnkmh7mfbE3TOjrK5EsSkfdLSqTRwq24-oq2yxTWWAJyWyCbZz8TGfXRhecmaLbjkyzyi-EjxjAMY9SvRgMlTCaU_VDv9GGd65vXkkyPNj2aKzbffSXbEWuOHWmInt76zSdRV_YmwbF9_lzjQp7y7uINlnRYAXqBIgaVspQsSowJKhsGmpVxaKBwZprqvCPHQ3QGfn96DFY4hLN6J5uMD2UrEAoXBMKSSJDLQLXc_VJ4mF22igM6Da91fdf63UxG2Ql8N4mNnlxnDmjP0F9PKSQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/projects/?user=100098&version=2.0
+    uri: https://api.dev.documentcloud.org/api/projects/?user=100098&version=2.0
   response:
     body:
       string: '{"next":null,"previous":null,"results":[{"id":100278,"created_at":"2020-06-11T12:05:14.998707Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-418f70d4-f99a-4cc0-984d-6f90de112003","title":"This
-        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100458,"created_at":"2022-03-14T15:06:56.576519Z","description":"This
-        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-81412953-2d43-4c1c-89c8-1c7911465137","title":"This
-        is a project for testing 81412953-2d43-4c1c-89c8-1c7911465137","updated_at":"2022-03-14T15:08:48.933601Z","user":100098},{"id":100459,"created_at":"2022-03-14T15:07:16.892958Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2022-03-14T15:07:16.893239Z","user":100098}]}'
+        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100494,"created_at":"2023-11-03T19:10:37.703650Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-96cb19fc-6051-4a8d-8204-9db83aa75692","title":"This
+        is a project for testing 96cb19fc-6051-4a8d-8204-9db83aa75692","updated_at":"2023-11-03T19:10:37.703850Z","user":100098},{"id":100501,"created_at":"2023-11-03T19:38:01.896950Z","description":"This
+        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-57fd83fd-22f8-422f-b45d-b5275fd264da","title":"This
+        is a project for testing 57fd83fd-22f8-422f-b45d-b5275fd264da","updated_at":"2023-11-03T19:40:10.479999Z","user":100098},{"id":100502,"created_at":"2023-11-03T19:38:22.999370Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2023-11-03T19:38:22.999621Z","user":100098}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -82,23 +84,23 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '997'
+      - '1340'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:08:56 GMT
+      - Fri, 03 Nov 2023 19:40:21 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.23.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 200
       message: OK
@@ -110,20 +112,21 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNTM4LCJqdGkiOiI1OWMzMGRhNWI4MjM0OWYyYmE5NThiMjk0NGYxNDUwMSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.FDHfeRlh_l_KLUu0ZOPM-Ys7RgZgZnH7R_x3EOXAmrmX81kJTB8PrWrVVOLGLbmGnkmh7mfbE3TOjrK5EsSkfdLSqTRwq24-oq2yxTWWAJyWyCbZz8TGfXRhecmaLbjkyzyi-EjxjAMY9SvRgMlTCaU_VDv9GGd65vXkkyPNj2aKzbffSXbEWuOHWmInt76zSdRV_YmwbF9_lzjQp7y7uINlnRYAXqBIgaVspQsSowJKhsGmpVxaKBwZprqvCPHQ3QGfn96DFY4hLN6J5uMD2UrEAoXBMKSSJDLQLXc_VJ4mF22igM6Da91fdf63UxG2Ql8N4mNnlxnDmjP0F9PKSQ
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: GET
-    uri: http://api.dev.documentcloud.org/api/projects/?user=100098&version=2.0
+    uri: https://api.dev.documentcloud.org/api/projects/?user=100098&version=2.0
   response:
     body:
       string: '{"next":null,"previous":null,"results":[{"id":100278,"created_at":"2020-06-11T12:05:14.998707Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-418f70d4-f99a-4cc0-984d-6f90de112003","title":"This
-        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100458,"created_at":"2022-03-14T15:06:56.576519Z","description":"This
-        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-81412953-2d43-4c1c-89c8-1c7911465137","title":"This
-        is a project for testing 81412953-2d43-4c1c-89c8-1c7911465137","updated_at":"2022-03-14T15:08:48.933601Z","user":100098},{"id":100459,"created_at":"2022-03-14T15:07:16.892958Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2022-03-14T15:07:16.893239Z","user":100098}]}'
+        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100494,"created_at":"2023-11-03T19:10:37.703650Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-96cb19fc-6051-4a8d-8204-9db83aa75692","title":"This
+        is a project for testing 96cb19fc-6051-4a8d-8204-9db83aa75692","updated_at":"2023-11-03T19:10:37.703850Z","user":100098},{"id":100501,"created_at":"2023-11-03T19:38:01.896950Z","description":"This
+        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-57fd83fd-22f8-422f-b45d-b5275fd264da","title":"This
+        is a project for testing 57fd83fd-22f8-422f-b45d-b5275fd264da","updated_at":"2023-11-03T19:40:10.479999Z","user":100098},{"id":100502,"created_at":"2023-11-03T19:38:22.999370Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2023-11-03T19:38:22.999621Z","user":100098}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -132,23 +135,23 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '997'
+      - '1340'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:08:57 GMT
+      - Fri, 03 Nov 2023 19:40:21 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.23.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 200
       message: OK

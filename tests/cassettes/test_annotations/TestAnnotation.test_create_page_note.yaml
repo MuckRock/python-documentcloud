@@ -8,7 +8,7 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDI2LCJqdGkiOiI0NTNmNTJhMDA5YmQ0ZDNlYmU2YzM1MWU0YjZiZGVhNyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.LPeV5iZVCMxxZDGMb2XFJgC9ksOb9e_wIvAF5UzIQtiqvvbU5Xr_F3y5qEEY3NxrrVDQyNt6OKTvdDUTtVrSP_wzuSDJBwKl295_U1lfUKym0uBirf9QdoFPQV3U2h3MFVTyQCxNSwsbeTa_PlaKELkfnRMH1tHUypIge_Be2dVFn3vK02xPCp1u5B4NSBwNJu5CU-UjP1fKMjjnO7cfHQMw1uIsT07tJVaTYkbMY2q21Cp9yapAU91_ZT9rs-y2b0ObDBmYQClQ-zDuOP2ghdfEsVBHAVWAwE4-ksZ8NHuLBhECul3adtSqVy_HLh2IZ7IQioa0an9rC4t2eSOPRw
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNTc0LCJqdGkiOiI3NWI3OTc3NTNkMWE0OThiODkyODk2Y2Q2YTFkY2E0MSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.BR92_pMMOrO0gduqhadz1ggljBwyV9f95yFbWKDa3YyETErIjxSs-e5HP2aaOEwJOhEUbshsV3BDhRLgxCsnQY1ApZPBW0nBZWf5g19nx1t_ZvzkF2M9syZLPFCR7B3HhU52hTIVpjHYcwlKyuPxCo9KWQXP9T-Hw0YgNzpn8YF0eZbzZ06Cozvh7IeCbrwHaRvZ5uqJ90IbyuDuBfS6RaVzFj8Ssig7-4W5Pj49ot-HYV28rWwRGNrdO5nxp3CgRIK237xb8I-639JFZEg7fQKlAZ0CsC1TXx-oI2syiHXsqA-W1NDLDtN8ayvuzYgqTrS0GrBXbdGFEREwDF1u0A
       Connection:
       - keep-alive
       Content-Length:
@@ -16,13 +16,13 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: POST
-    uri: http://api.dev.documentcloud.org/api/documents/10001723/notes/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/10002172/notes/?version=2.0
   response:
     body:
-      string: '{"id":1000226,"user":100098,"organization":11343,"page_number":0,"access":"private","edit_access":true,"title":"Test
-        Note","content":"<p>Page note!</p>","x1":null,"x2":null,"y1":null,"y2":null,"created_at":"2022-03-14T15:07:05.533873Z","updated_at":"2022-03-14T15:07:05.534173Z"}'
+      string: '{"id":1000260,"user":100098,"organization":11343,"page_number":0,"access":"private","edit_access":true,"title":"Test
+        Note","content":"<p>Page note!</p>","x1":null,"x2":null,"y1":null,"y2":null,"created_at":"2023-11-03T19:38:11.121546Z","updated_at":"2023-11-03T19:38:11.121755Z"}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -36,20 +36,20 @@ interactions:
       - '279'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:07:05 GMT
+      - Fri, 03 Nov 2023 19:38:11 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.23.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 201
       message: Created
@@ -61,15 +61,15 @@ interactions:
       Accept-Encoding:
       - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ3MjcwNDI2LCJqdGkiOiI0NTNmNTJhMDA5YmQ0ZDNlYmU2YzM1MWU0YjZiZGVhNyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYifQ.LPeV5iZVCMxxZDGMb2XFJgC9ksOb9e_wIvAF5UzIQtiqvvbU5Xr_F3y5qEEY3NxrrVDQyNt6OKTvdDUTtVrSP_wzuSDJBwKl295_U1lfUKym0uBirf9QdoFPQV3U2h3MFVTyQCxNSwsbeTa_PlaKELkfnRMH1tHUypIge_Be2dVFn3vK02xPCp1u5B4NSBwNJu5CU-UjP1fKMjjnO7cfHQMw1uIsT07tJVaTYkbMY2q21Cp9yapAU91_ZT9rs-y2b0ObDBmYQClQ-zDuOP2ghdfEsVBHAVWAwE4-ksZ8NHuLBhECul3adtSqVy_HLh2IZ7IQioa0an9rC4t2eSOPRw
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNTc0LCJqdGkiOiI3NWI3OTc3NTNkMWE0OThiODkyODk2Y2Q2YTFkY2E0MSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.BR92_pMMOrO0gduqhadz1ggljBwyV9f95yFbWKDa3YyETErIjxSs-e5HP2aaOEwJOhEUbshsV3BDhRLgxCsnQY1ApZPBW0nBZWf5g19nx1t_ZvzkF2M9syZLPFCR7B3HhU52hTIVpjHYcwlKyuPxCo9KWQXP9T-Hw0YgNzpn8YF0eZbzZ06Cozvh7IeCbrwHaRvZ5uqJ90IbyuDuBfS6RaVzFj8Ssig7-4W5Pj49ot-HYV28rWwRGNrdO5nxp3CgRIK237xb8I-639JFZEg7fQKlAZ0CsC1TXx-oI2syiHXsqA-W1NDLDtN8ayvuzYgqTrS0GrBXbdGFEREwDF1u0A
       Connection:
       - keep-alive
       Content-Length:
       - '0'
       User-Agent:
-      - python-requests/2.23.0
+      - python-requests/2.31.0
     method: DELETE
-    uri: http://api.dev.documentcloud.org/api/documents/10001723/notes/1000226/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/10002172/notes/1000260/?version=2.0
   response:
     body:
       string: ''
@@ -84,20 +84,20 @@ interactions:
       - en
       Content-Length:
       - '0'
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Mon, 14 Mar 2022 15:07:05 GMT
+      - Fri, 03 Nov 2023 19:38:11 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.15.1
+      - nginx/1.23.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
-      X-XSS-Protection:
-      - 1; mode=block
     status:
       code: 204
       message: No Content

@@ -10,28 +10,28 @@ interactions:
       - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
       Connection:
       - keep-alive
+      Content-Length:
+      - '0'
       User-Agent:
       - python-requests/2.31.0
-    method: GET
-    uri: https://api.dev.documentcloud.org/api/projects/?title=Created+Title&user=100098&version=2.0
+    method: DELETE
+    uri: https://api.dev.documentcloud.org/api/projects/100502/?version=2.0
   response:
     body:
-      string: '{"next":null,"previous":null,"results":[]}'
+      string: ''
     headers:
       Allow:
-      - GET, POST, HEAD, OPTIONS
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
       Connection:
       - keep-alive
       Content-Language:
       - en
       Content-Length:
-      - '42'
-      Content-Type:
-      - application/json
+      - '0'
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:40:21 GMT
+      - Fri, 03 Nov 2023 19:40:31 GMT
       Referrer-Policy:
       - same-origin
       Server:
@@ -43,59 +43,8 @@ interactions:
       X-Frame-Options:
       - DENY
     status:
-      code: 200
-      message: OK
-- request:
-    body: '{"title": "Created Title", "description": "", "private": true}'
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '62'
-      Content-Type:
-      - application/json
-      User-Agent:
-      - python-requests/2.31.0
-    method: POST
-    uri: https://api.dev.documentcloud.org/api/projects/?version=2.0
-  response:
-    body:
-      string: '{"id":100505,"created_at":"2023-11-03T19:40:21.809270Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"created-title","title":"Created
-        Title","updated_at":"2023-11-03T19:40:21.809462Z","user":100098}'
-    headers:
-      Allow:
-      - GET, POST, HEAD, OPTIONS
-      Connection:
-      - keep-alive
-      Content-Language:
-      - en
-      Content-Length:
-      - '236'
-      Content-Type:
-      - application/json
-      Cross-Origin-Opener-Policy:
-      - same-origin
-      Date:
-      - Fri, 03 Nov 2023 19:40:21 GMT
-      Referrer-Policy:
-      - same-origin
-      Server:
-      - nginx/1.23.1
-      Vary:
-      - Accept, Origin, Accept-Language, Cookie
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-    status:
-      code: 201
-      message: Created
+      code: 204
+      message: No Content
 - request:
     body: null
     headers:
@@ -112,7 +61,7 @@ interactions:
       User-Agent:
       - python-requests/2.31.0
     method: DELETE
-    uri: https://api.dev.documentcloud.org/api/projects/100505/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/projects/100503/?version=2.0
   response:
     body:
       string: ''
@@ -128,7 +77,53 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:40:21 GMT
+      - Fri, 03 Nov 2023 19:40:31 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.23.1
+      Vary:
+      - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.31.0
+    method: DELETE
+    uri: https://api.dev.documentcloud.org/api/projects/100504/?version=2.0
+  response:
+    body:
+      string: ''
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '0'
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Fri, 03 Nov 2023 19:40:31 GMT
       Referrer-Policy:
       - same-origin
       Server:
