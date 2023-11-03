@@ -18,7 +18,7 @@ interactions:
     uri: https://dev.squarelet.com/api/token/
   response:
     body:
-      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5ODg1MTU0MCwianRpIjoiYTM4OWNhNDk5Njk1NDAyZWE4YTZkMDVkZDU5ZmI0ZjIiLCJ1c2VyX2lkIjoiOWE3MzJmNGItMDU0Zi00ZDQ0LWFiYjAtZDg0MjE3ZGNhMzMzIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.Vq8E0HaO9182KL2bdzyYJ5B5t0B_oT7tCT4zCDDrXlQ1S29IIn6NU2hr9rb4UsxlFIG4OdWCJ3pOd8HCpyUEFUQZbg4WeAlycRuRdlVlEZ7_0id8HiXiX2unamxoLSlae3ub7mwc3ZXF0DWUiLSZbQa9Y4zfpERRjPMgJnInkAbmv4YOogA5OwHQpy3YEKz6smZ22Vv8AVZsDyP77VTjRH7JimH3c-F0bXJTGFP1pVnzzzTZEZICPHHILODv5FzFIL92_wV_d31uq3o4CqFg4YOkLvXzLwgwU68uHOm7dPUB6LPfJ-wDE5zhHRg3ayiRcye3duN2xdkb4Da2Xa8DyQ","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk4NzY1NDQwLCJqdGkiOiI2ZGJkZDY5OWQ2NWU0ZjQxYmIyY2ZmZTNlYzg2OTY2ZSIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.TiZgmXLgd-staJw1ct-_4DFBWg4PrBt6XUsUfTulrpgRSZfCud62988KNmfjhuc37mdXSYP0rFTOoXY6JmQ5It6Lb0vcC6dP4sEqYF99ycD66C88Q7T4VYoVCmBbof1niiKRcilbG8W_A4GyBppnlJ9YDeDjuEN-H-jhqdmUAh93rI-Q4cUj9hCMLARv9EGNhYz3chw5LqZP3zpOLntiFvvhNQ4LXkLSi9_OFnliZm6bcEAaE5ZAyyQya0hzIYpfrrom30p8ZD9o22LNlZ-3KAsMGFaKSIMNHo1KVCCe74oJP02xqxmPBXRETlq5RjGxc_Swhbagau8bOF7Uzd-z0A"}'
+      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5OTEyNjY3NCwianRpIjoiM2JkN2VkNjMyODIyNDhlNjg4Mjg0YjAwYzExYjZhY2EiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.NOhMT_5STqvV7TJrhkKg8Q1NqFYPIY0EJ6VUt6c6TcgHWmDZg5qrFhfOrwvXov1OGOEpL7QxrdeqTBJwQYlvKD6HxO9aFfX3nZayH3RpsJqgNER_7BkRiPU0XgUagd1gD5XLd4gSSt0VEtbzlk2DZCiEmM0HMkF0sIR8NB5O181HwdemikjJ3yzMDa3orBerJvicR5-iZSHxD2ecajQyWcB18TF-OXXaG7ly3cPiQTFZpdi5AQ89H-xLmFIMHFekXvejxaK6desOAZAV9QwsTJq7Dx8ty6RgDrhCGtvFpQWDMEg35tdliEWVlM0Y5fnXlbAJjVlmZd9BzBgTlHskog","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNTc0LCJqdGkiOiI3NWI3OTc3NTNkMWE0OThiODkyODk2Y2Q2YTFkY2E0MSIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.BR92_pMMOrO0gduqhadz1ggljBwyV9f95yFbWKDa3YyETErIjxSs-e5HP2aaOEwJOhEUbshsV3BDhRLgxCsnQY1ApZPBW0nBZWf5g19nx1t_ZvzkF2M9syZLPFCR7B3HhU52hTIVpjHYcwlKyuPxCo9KWQXP9T-Hw0YgNzpn8YF0eZbzZ06Cozvh7IeCbrwHaRvZ5uqJ90IbyuDuBfS6RaVzFj8Ssig7-4W5Pj49ot-HYV28rWwRGNrdO5nxp3CgRIK237xb8I-639JFZEg7fQKlAZ0CsC1TXx-oI2syiHXsqA-W1NDLDtN8ayvuzYgqTrS0GrBXbdGFEREwDF1u0A"}'
     headers:
       Allow:
       - POST, OPTIONS
@@ -28,21 +28,19 @@ interactions:
       - '1313'
       Content-Type:
       - application/json
-      Cross-Origin-Opener-Policy:
-      - same-origin
       Date:
-      - Tue, 31 Oct 2023 15:12:20 GMT
+      - Fri, 03 Nov 2023 19:37:54 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.25.2
+      - nginx/1.23.1
       Server-Timing:
-      - TimerPanel_utime;dur=75.67999999999131;desc="User CPU time", TimerPanel_stime;dur=22.729999999995698;desc="System
-        CPU time", TimerPanel_total;dur=98.40999999998701;desc="Total CPU time", TimerPanel_total_time;dur=64.31365013122559;desc="Elapsed
-        time", SQLPanel_sql_time;dur=3.7102699279785156;desc="SQL 3 queries", CachePanel_total_time;dur=0;desc="Cache
-        0 Calls"
+      - TimerPanel_utime;dur=299.0890000000004;desc="User CPU time", TimerPanel_stime;dur=28.29700000000024;desc="System
+        CPU time", TimerPanel_total;dur=327.38600000000065;desc="Total CPU time",
+        TimerPanel_total_time;dur=127.46310234069824;desc="Elapsed time", SQLPanel_sql_time;dur=9.727001190185547;desc="SQL
+        3 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
       Set-Cookie:
-      - op_browser_state=a693ff4d740f6797bfa768e6e8ac345fc63d2a9eb905e3b2a006d576;
+      - op_browser_state=a65d397bd2e066c643dd80ba21918e6b815229469d827ea8c5226471;
         Path=/
       Vary:
       - Accept, Origin, Cookie

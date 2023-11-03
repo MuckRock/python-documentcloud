@@ -29,11 +29,11 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Tue, 31 Oct 2023 15:13:45 GMT
+      - Fri, 03 Nov 2023 19:38:53 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.25.2
+      - nginx/1.23.1
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:

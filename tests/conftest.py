@@ -96,25 +96,25 @@ def _wait_document(document, client, record_mode):
 
 
 @pytest.fixture(scope="session")
-@vcr.use_cassette("tests/cassettes/fixtures/document.yaml")
 def document(project, client, record_mode):
-    document = client.documents.upload(
-        DEFAULT_DOCUMENT_URI,
-        access="private",
-        data={"_tag": ["document"]},
-        description="A simple test document",
-        source="DocumentCloud",
-        related_article="https://www.example.com/article/",
-        published_url="https://www.example.com/article/test.pdf",
-        projects=[project.id],
-    )
-    document = _wait_document(document, client, record_mode)
-    document.sections.create("Test Section", 0)
-    document.annotations.create(
-        "Test Note", 0, "<h1>A note!</h1>", x1=0.1, y1=0.1, x2=0.2, y2=0.2
-    )
-    yield document
-    document.delete()
+    with vcr.use_cassette("tests/cassettes/fixtures/document.yaml"):
+        document = client.documents.upload(
+            DEFAULT_DOCUMENT_URI,
+            access="private",
+            data={"_tag": ["document"]},
+            description="A simple test document",
+            source="DocumentCloud",
+            related_article="https://www.example.com/article/",
+            published_url="https://www.example.com/article/test.pdf",
+            projects=[project.id],
+        )
+        document = _wait_document(document, client, record_mode)
+        document.sections.create("Test Section", 0)
+        document.annotations.create(
+            "Test Note", 0, "<h1>A note!</h1>", x1=0.1, y1=0.1, x2=0.2, y2=0.2
+        )
+        yield document
+        document.delete()
 
 
 @pytest.fixture(scope="session")
@@ -129,24 +129,25 @@ def document_factory(client, record_mode):
 
     yield make_document
 
-    for document in documents:
-        try:
-            document.delete()
-        except DoesNotExistError:
-            # test deleted the document
-            pass
+    with vcr.use_cassette("tests/cassettes/fixtures/document_factory.yaml"):
+        for document in documents:
+            try:
+                document.delete()
+            except DoesNotExistError:
+                # test deleted the document
+                pass
 
 
 @pytest.fixture(scope="session")
-@vcr.use_cassette("tests/cassettes/fixtures/project.yaml")
 def project(client, document_factory):
-    document = document_factory()
-    title = "This is a project for testing {}".format(uuid4())
-    project = client.projects.create(
-        title, "This is a project for testing", document_ids=[document.id]
-    )
-    yield project
-    project.delete()
+    with vcr.use_cassette("tests/cassettes/fixtures/project.yaml"):
+        document = document_factory()
+        title = "This is a project for testing {}".format(uuid4())
+        project = client.projects.create(
+            title, "This is a project for testing", document_ids=[document.id]
+        )
+        yield project
+        project.delete()
 
 
 @pytest.fixture(scope="session")
@@ -163,9 +164,10 @@ def project_factory(client):
 
     yield make_project
 
-    for project in projects:
-        try:
-            project.delete()
-        except DoesNotExistError:
-            # test deleted the project
-            pass
+    with vcr.use_cassette("tests/cassettes/fixtures/project_factory.yaml"):
+        for project in projects:
+            try:
+                project.delete()
+            except DoesNotExistError:
+                # test deleted the project
+                pass
