@@ -105,6 +105,10 @@ Project
            >>> obj.title = "Brand new title"
            >>> obj.put()
 
+   .. method:: save()
+
+       An alias for :meth:`put` that saves changes back to DocumentCloud.
+
    .. method:: delete()
 
       Delete a project from DocumentCloud. You must be authorized to make these
@@ -112,10 +116,23 @@ Project
 
            >>> obj = client.projects.get('816')
            >>> obj.delete()
+   
+   .. method:: clear_documents()
 
-   .. method:: save()
+      Removes all documents from a project. 
 
-       An alias for :meth:`put` that saves changes back to DocumentCloud.
+         >>> obj = client.projects.get('816')
+         >>> obj.clear_documents()
+   
+   .. method:: add_documents()
+
+      Efficiently adds a lot of documents to a project. 
+      Adds the documents 25 at a time using bulk API calls. 
+
+         >>> documents_to_add = [client.documents.get('23745990'), client.documents.get('23745988')]
+         >>> obj = client.projects.get('816')
+         >>> obj.add_documents(documents_to_add)
+         >>> obj.put()
 
    .. attribute:: created_at
 
