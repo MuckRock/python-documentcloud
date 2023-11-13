@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+3.7.1
+~~~~~
+* Fixes an indentation bug present in 3.7.1 
+
+
 3.7.0
 ~~~~~
 
