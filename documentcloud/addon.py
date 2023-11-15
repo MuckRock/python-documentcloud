@@ -42,6 +42,8 @@ class BaseAddOn:
         self.org_id = args.pop("organization", None)
         # add on specific data
         self.data = args.pop("data", None)
+        # title of the addon
+        self.title = args.pop("title", None)
 
     def _create_client(self, args):
         client_kwargs = {
@@ -120,6 +122,8 @@ class BaseAddOn:
             with open("config.yaml") as config:
                 schema = yaml.safe_load(config)
                 args["data"] = fastjsonschema.validate(schema, args["data"])
+                # add title in case the add-on wants to reference its own title
+                args["title"] = schema.get("title")
         except FileNotFoundError:
             pass
         except fastjsonschema.JsonSchemaException as exc:
@@ -213,6 +217,29 @@ class AddOn(BaseAddOn):
             documents = []
 
         yield from documents
+
+    def charge_credits(self, amount):
+        """Charge the organization a certain amount of premium credits"""
+
+        if not self.id:
+            print(f"Charge credits: {amount}")
+            return None
+        elif not self.org_id:
+            self.set_message("No organization to charge.")
+            raise ValueError
+
+        resp = self.client.post(
+            f"organizations/{self.org_id}/ai_credits/",
+            json={
+                "ai_credits": amount,
+                "addonrun_id": self.id,
+                "note": f"AddOn run: {self.title} - {self.id}",
+            },
+        )
+        if resp.status_code != 200:
+            self.set_message("Error charging AI credits.")
+            raise ValueError
+        return resp
 
 
 class CronAddOn(BaseAddOn):
