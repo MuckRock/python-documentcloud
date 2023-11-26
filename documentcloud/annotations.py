@@ -1,16 +1,10 @@
-# Future
-from __future__ import division, print_function, unicode_literals
-
 # Third Party
-from future.utils import python_2_unicode_compatible
 from listcrunch.listcrunch import uncrunch
 
 # Local
 from .base import BaseAPIObject, ChildAPIClient
 from .toolbox import merge_dicts
 
-
-@python_2_unicode_compatible
 class Annotation(BaseAPIObject):
     """A note on a document"""
 
@@ -30,7 +24,7 @@ class Annotation(BaseAPIObject):
 
     @property
     def api_path(self):
-        return "documents/{}/notes".format(self.document.id)
+        return f"documents/{self.document.id}/notes"
 
     @property
     def location(self):
@@ -71,7 +65,7 @@ class AnnotationClient(ChildAPIClient):
 
     @property
     def api_path(self):
-        return "documents/{}/notes".format(self.parent.id)
+        return f"documents/{self.parent.id}/notes"
 
     def create(
         self,
@@ -102,7 +96,7 @@ class AnnotationClient(ChildAPIClient):
             "x2": x2,
             "y2": y2,
         }
-        response = self.client.post(self.api_path + "/", json=data)
+        response = self.client.post(f"{self.api_path}/", json=data)
         return Annotation(
             self.client, merge_dicts(response.json(), {"document": self.parent})
         )
