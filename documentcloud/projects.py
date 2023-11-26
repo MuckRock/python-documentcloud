@@ -1,9 +1,3 @@
-# Future
-from __future__ import division, print_function, unicode_literals
-
-# Third Party
-from future.utils import python_2_unicode_compatible
-
 # Local
 from .base import APISet, BaseAPIClient, BaseAPIObject
 from .constants import BULK_LIMIT, PER_PAGE_MAX
@@ -11,8 +5,6 @@ from .documents import Document
 from .exceptions import DoesNotExistError, MultipleObjectsReturnedError
 from .toolbox import get_id, grouper
 
-
-@python_2_unicode_compatible
 class Project(BaseAPIObject):
     """A documentcloud project"""
 
@@ -39,7 +31,7 @@ class Project(BaseAPIObject):
     def document_list(self):
         if self._document_list is None:
             response = self._client.get(
-                "{}/{}/documents/".format(self.api_path, get_id(self.id)),
+                f"{self.api_path}/{get_id(self.id)}/documents/",
                 params={"per_page": self._per_page, "expand": ["document"]},
             )
             json = response.json()
@@ -78,7 +70,7 @@ class Project(BaseAPIObject):
 
     def get_document(self, doc_id):
         response = self._client.get(
-            "{}/{}/documents/{}".format(self.api_path, get_id(self.id), doc_id),
+            f"{self.api_path}/{get_id(self.id)}/documents/{doc_id}",
             params={"expand": ["document"]},
         )
         return Document(self._client, response.json()["document"])
@@ -86,7 +78,7 @@ class Project(BaseAPIObject):
     def clear_documents(self):
         """Remove all documents from this project"""
         self._client.put(
-            "{}/{}/documents/".format(self.api_path, self.id), json=[]
+            f"{self.api_path}/{self.id}/documents/", json=[]
         )
 
     def add_documents(self, documents):
@@ -96,7 +88,7 @@ class Project(BaseAPIObject):
             # Grouper will put None's on the end of the last group
             data_group = [d for d in data_group if d is not None]
             self._client.patch(
-                "{}/{}/documents/".format(self.api_path, self.id), json=data_group
+                f"{self.api_path}/{self.id}/documents/", json=data_group
             )
 
 
@@ -106,7 +98,7 @@ class ProjectClient(BaseAPIClient):
     api_path = "projects"
     resource = Project
 
-    # all is overriden to filter by the current user for backward compatibility
+    # all is overridden to filter by the current user for backward compatibility
     def all(self, **params):
         return self.list(user=self.client.user_id, **params)
 
@@ -130,7 +122,7 @@ class ProjectClient(BaseAPIClient):
 
     def get_by_title(self, title):
         response = self.client.get(
-            self.api_path + "/", params={"title": title, "user": self.client.user_id}
+            f"{self.api_path}/", params={"title": title, "user": self.client.user_id}
         )
         json = response.json()
         count = len(json["results"])
@@ -148,7 +140,7 @@ class ProjectClient(BaseAPIClient):
         if document_ids:
             data = [{"document": d} for d in document_ids]
             response = self.client.put(
-                "{}/{}/documents/".format(self.api_path, project.id), json=data
+                f"{self.api_path}/{project.id}/documents/", json=data
             )
         return project
 
@@ -160,3 +152,4 @@ class ProjectClient(BaseAPIClient):
             project = self.create(title=title)
             created = True
         return project, created
+
