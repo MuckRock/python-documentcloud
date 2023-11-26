@@ -57,7 +57,7 @@ def rate_client():
         base_uri=BASE_URI,
         auth_uri=AUTH_URI,
         timeout=TIMEOUT,
-        rate_limit_sleep=False
+        rate_limit_sleep=False,
     )
 
 
@@ -155,7 +155,6 @@ def project_factory(client):
     projects = []
 
     def make_project(*args, **kwargs):
-
         title = kwargs.pop("title", "Project Factory")
 
         project = client.projects.create(title, *args, **kwargs)

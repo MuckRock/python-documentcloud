@@ -5,6 +5,7 @@ from .documents import Document
 from .exceptions import DoesNotExistError, MultipleObjectsReturnedError
 from .toolbox import get_id, grouper
 
+
 class Project(BaseAPIObject):
     """A documentcloud project"""
 
@@ -77,9 +78,7 @@ class Project(BaseAPIObject):
 
     def clear_documents(self):
         """Remove all documents from this project"""
-        self._client.put(
-            f"{self.api_path}/{self.id}/documents/", json=[]
-        )
+        self._client.put(f"{self.api_path}/{self.id}/documents/", json=[])
 
     def add_documents(self, documents):
         """Efficient way to bulk add documents to a project"""
@@ -87,9 +86,7 @@ class Project(BaseAPIObject):
         for data_group in grouper(data, BULK_LIMIT):
             # Grouper will put None's on the end of the last group
             data_group = [d for d in data_group if d is not None]
-            self._client.patch(
-                f"{self.api_path}/{self.id}/documents/", json=data_group
-            )
+            self._client.patch(f"{self.api_path}/{self.id}/documents/", json=data_group)
 
 
 class ProjectClient(BaseAPIClient):
@@ -152,4 +149,3 @@ class ProjectClient(BaseAPIClient):
             project = self.create(title=title)
             created = True
         return project, created
-

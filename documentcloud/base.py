@@ -8,6 +8,7 @@ from dateutil.parser import parse as dateparser
 from .exceptions import DuplicateObjectError
 from .toolbox import get_id, merge_dicts
 
+
 class APIResults(object):
     """Class for encapsulating paginated list results from the API"""
 
@@ -165,6 +166,7 @@ class BaseAPIObject(object):
     def delete(self):
         self._client.delete(f"{self.api_path}/{self.id}")
 
+
 class APISet(list):
     def __init__(self, iterable, resource):
         super(APISet, self).__init__(iterable)
@@ -212,4 +214,3 @@ class APISet(list):
                     f"Object with ID {id_} appears in the list more than once"
                 )
         super(APISet, self).extend(copy(obj) for obj in list_)
-

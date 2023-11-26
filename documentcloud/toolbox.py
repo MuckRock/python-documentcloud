@@ -9,6 +9,7 @@ from urllib3.util.retry import Retry
 from urllib.parse import urlparse
 from itertools import zip_longest
 
+
 def requests_retry_session(
     retries=3, backoff_factor=0.3, status_forcelist=(500, 502, 504), session=None
 ):

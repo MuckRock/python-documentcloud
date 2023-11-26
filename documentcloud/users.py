@@ -1,6 +1,7 @@
 # Local
 from .base import BaseAPIClient, BaseAPIObject
 
+
 class User(BaseAPIObject):
     """A documentcloud user"""
 

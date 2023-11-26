@@ -5,6 +5,7 @@ from listcrunch.listcrunch import uncrunch
 from .base import BaseAPIObject, ChildAPIClient
 from .toolbox import merge_dicts
 
+
 class Annotation(BaseAPIObject):
     """A note on a document"""
 

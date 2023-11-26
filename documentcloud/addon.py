@@ -44,8 +44,12 @@ class BaseAddOn:
             for k, v in args.items()
             if k in ["base_uri", "auth_uri"] and v is not None
         }
-        username = args["username"] if args["username"] else os.environ.get("DC_USERNAME")
-        password = args["password"] if args["password"] else os.environ.get("DC_PASSWORD")
+        username = (
+            args["username"] if args["username"] else os.environ.get("DC_USERNAME")
+        )
+        password = (
+            args["password"] if args["password"] else os.environ.get("DC_PASSWORD")
+        )
         if username and password:
             client_kwargs["username"] = username
             client_kwargs["password"] = password
@@ -198,6 +202,32 @@ class AddOn(BaseAddOn):
         """Get documents from either selected or queried documents"""
         if self.documents:
             documents = self.client.documents.list(id__in=self.documents)
+        elif self.query and "_id_start" in self.data:
+            documents = self.client.documents.search(
+                self.query, sort="id", id=f"[{self.data['_id_start']} TO *]"
+            )
         elif self.query:
-           
+            documents = self.client.documents.search(self.query, sort="id")
+        else:
+            documents = []
 
+        # turn documents into an iterator, so that documents that get yielded are
+        # consumed and not re-used when we rerun
+        self._documents_iter = iter(documents)
+        for i, self._current_document in enumerate(self._documents_iter):
+            yield self._current_document
+            if self.soft_timeout():
+                self.cleanup()
+                self.rerun_addon()
+                self.set_message(
+                    f"Soft time out, processed {i+1} documents, "
+                    "continuing rest of documents in a new run"
+                )
+                break
+
+    def soft_timeout(self):
+        """Check if enough time has elapsed for a soft timeout"""
+        return time.time() - self._start > self.soft_time_limit
+
+    def cleanup(self):
+        """Hook to run code before automatic re-run"""

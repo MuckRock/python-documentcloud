@@ -2,6 +2,7 @@
 Custom exceptions for python-documentcloud
 """
 
+
 class DocumentCloudError(Exception):
     """Base class for errors for python-documentcloud"""
 

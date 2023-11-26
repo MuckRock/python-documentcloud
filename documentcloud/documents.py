@@ -32,6 +32,7 @@ logger = logging.getLogger("documentcloud")
 
 IMAGE_SIZES = ["thumbnail", "small", "normal", "large", "xlarge"]
 
+
 class Document(BaseAPIObject):
     """A single DocumentCloud document"""
 
@@ -195,7 +196,9 @@ class Document(BaseAPIObject):
         return f"{self.asset_url}documents/{self.id}/{self.slug}.pdf"
 
     def get_image_url(self, page=1, size="normal"):
-        return f"{self.asset_url}documents/{self.id}/pages/{self.slug}-p{page}-{size}.gif"
+        return (
+            f"{self.asset_url}documents/{self.id}/pages/{self.slug}-p{page}-{size}.gif"
+        )
 
     def get_image_url_list(self, size="normal"):
         return [
@@ -227,6 +230,7 @@ class Document(BaseAPIObject):
     def process(self):
         """Reprocess the document"""
         self._client.post(f"{self.api_path}/{self.id}/process/")
+
 
 class DocumentClient(BaseAPIClient):
     """Client for interacting with Documents"""
@@ -317,9 +321,7 @@ class DocumentClient(BaseAPIClient):
 
         for param in ignored_parameters:
             if param in kwargs:
-                warnings.warn(
-                    f"The parameter `{param}` is not currently supported"
-                )
+                warnings.warn(f"The parameter `{param}` is not currently supported")
 
         return params
 
@@ -368,159 +370,162 @@ class DocumentClient(BaseAPIClient):
         return path_list
 
     def upload_directory(self, path, handle_errors=False, extensions=".pdf", **kwargs):
-    """Upload files with specified extensions in a directory"""
+        """Upload files with specified extensions in a directory"""
 
-    # Do not set the same title for all documents
-    kwargs.pop("title", None)
+        # Do not set the same title for all documents
+        kwargs.pop("title", None)
 
-    # If extensions are specified as None, it will check for all supported filetypes.
-    if extensions is None:
-        extensions = SUPPORTED_EXTENSIONS
+        # If extensions are specified as None, it will check for all supported filetypes.
+        if extensions is None:
+            extensions = SUPPORTED_EXTENSIONS
 
-    # Convert single extension to a list if provided
-    if extensions and not isinstance(extensions, list):
-        extensions = [extensions]
+        # Convert single extension to a list if provided
+        if extensions and not isinstance(extensions, list):
+            extensions = [extensions]
 
-    # Checks to see if the extensions are supported, raises an error if not.
-    invalid_extensions = set(extensions) - set(SUPPORTED_EXTENSIONS)
-    if invalid_extensions:
-        raise ValueError(
-            f"Invalid extensions provided: {', '.join(invalid_extensions)}"
+        # Checks to see if the extensions are supported, raises an error if not.
+        invalid_extensions = set(extensions) - set(SUPPORTED_EXTENSIONS)
+        if invalid_extensions:
+            raise ValueError(
+                f"Invalid extensions provided: {', '.join(invalid_extensions)}"
+            )
+
+        # Loop through the path and get all the files with matching extensions
+        path_list = self._collect_files(path, extensions)
+
+        logger.info(
+            f"Upload directory on {path}: Found {len(path_list)} files to upload"
         )
 
-    # Loop through the path and get all the files with matching extensions
-    path_list = self._collect_files(path, extensions)
+        # Upload all the files using the bulk API to reduce the number
+        # of API calls and improve performance
+        obj_list = []
+        params = self._format_upload_parameters("", **kwargs)
+        for i, file_paths in enumerate(grouper(path_list, BULK_LIMIT)):
+            # Grouper will put None's on the end of the last group
+            file_paths = [p for p in file_paths if p is not None]
 
-    logger.info(
-        f"Upload directory on {path}: Found {len(path_list)} files to upload"
-    )
+            logger.info(f"Uploading group {i + 1}:\n" + "\n".join(file_paths))
 
-    # Upload all the files using the bulk API to reduce the number
-    # of API calls and improve performance
-    obj_list = []
-    params = self._format_upload_parameters("", **kwargs)
-    for i, file_paths in enumerate(grouper(path_list, BULK_LIMIT)):
-        # Grouper will put None's on the end of the last group
-        file_paths = [p for p in file_paths if p is not None]
-
-        logger.info(f"Uploading group {i + 1}: {'\n'.join(file_paths)}")
-
-        # Create the documents
-        logger.info("Creating the documents...")
-        try:
-            response = self.client.post(
-                "documents/",
-                json=[
-                    merge_dicts(
-                        params,
-                        {
-                            "title": self._get_title(p),
-                            "original_extension": os.path.splitext(
-                                os.path.basename(p)
-                            )[1]
-                            .lower()
-                            .lstrip("."),
-                        },
-                    )
-                    for p in file_paths
-                ],
-            )
-        except (APIError, RequestException) as exc:
-            if handle_errors:
-                logger.info(
-                    f"Error creating the following documents: {exc} {'\n'.join(file_paths)}"
-                )
-                continue
-            else:
-                raise
-
-        # Upload the files directly to storage
-        create_json = response.json()
-        obj_list.extend(create_json)
-        presigned_urls = [j["presigned_url"] for j in create_json]
-        for url, file_path in zip(presigned_urls, file_paths):
-            logger.info(f"Uploading {file_path} to S3...")
+            # Create the documents
+            logger.info("Creating the documents...")
             try:
-                response = requests_retry_session().put(
-                    url, data=open(file_path, "rb").read()
+                response = self.client.post(
+                    "documents/",
+                    json=[
+                        merge_dicts(
+                            params,
+                            {
+                                "title": self._get_title(p),
+                                "original_extension": os.path.splitext(
+                                    os.path.basename(p)
+                                )[1]
+                                .lower()
+                                .lstrip("."),
+                            },
+                        )
+                        for p in file_paths
+                    ],
                 )
-                self.client.raise_for_status(response)
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        f"Error uploading the following document: {exc} {file_path}"
+                        f"Error creating the following documents: {exc}\n"
+                        + "\n".join(file_paths)
                     )
                     continue
                 else:
                     raise
 
-        # Begin processing the documents
-        logger.info("Processing the documents...")
-        doc_ids = [j["id"] for j in create_json]
-        try:
-            response = self.client.post(
-                "documents/process/", json={"ids": doc_ids}
-            )
-        except (APIError, RequestException) as exc:
-            if handle_errors:
-                logger.info(
-                    f"Error creating the following documents: {exc} {'\n'.join(file_paths)}"
-                )
-                continue
-            else:
-                raise
-
-    logger.info("Upload directory complete")
-
-    # Pass back the list of documents
-    return [Document(self.client, d) for d in obj_list]
-
-def upload_urls(self, url_list, handle_errors=False, **kwargs):
-    """Upload documents from a list of URLs"""
-
-    # Do not set the same title for all documents
-    kwargs.pop("title", None)
-
-    obj_list = []
-    params = self._format_upload_parameters("", **kwargs)
-    for i, url_group in enumerate(grouper(url_list, BULK_LIMIT)):
-        # Grouper will put None's on the end of the last group
-        url_group = [url for url in url_group if url is not None]
-
-        logger.info(f"Uploading group {i + 1}: {'\n'.join(url_group)}")
-
-        # Create the documents
-        logger.info("Creating the documents...")
-        try:
-            response = self.client.post(
-                "documents/",
-                json=[
-                    merge_dicts(
-                        params,
-                        {
-                            "title": self._get_title(url),
-                            "file_url": url,
-                        },
+            # Upload the files directly to storage
+            create_json = response.json()
+            obj_list.extend(create_json)
+            presigned_urls = [j["presigned_url"] for j in create_json]
+            for url, file_path in zip(presigned_urls, file_paths):
+                logger.info(f"Uploading {file_path} to S3...")
+                try:
+                    response = requests_retry_session().put(
+                        url, data=open(file_path, "rb").read()
                     )
-                    for url in url_group
-                ],
-            )
-        except (APIError, RequestException) as exc:
-            if handle_errors:
-                logger.info(
-                    f"Error creating the following documents: {exc} {'\n'.join(url_group)}"
+                    self.client.raise_for_status(response)
+                except (APIError, RequestException) as exc:
+                    if handle_errors:
+                        logger.info(
+                            f"Error uploading the following document: {exc} {file_path}"
+                        )
+                        continue
+                    else:
+                        raise
+
+            # Begin processing the documents
+            logger.info("Processing the documents...")
+            doc_ids = [j["id"] for j in create_json]
+            try:
+                response = self.client.post("documents/process/", json={"ids": doc_ids})
+            except (APIError, RequestException) as exc:
+                if handle_errors:
+                    logger.info(
+                        f"Error creating the following documents: {exc}\n"
+                        + "\n".join(file_paths)
+                    )
+                    continue
+                else:
+                    raise
+
+        logger.info("Upload directory complete")
+
+        # Pass back the list of documents
+        return [Document(self.client, d) for d in obj_list]
+
+    def upload_urls(self, url_list, handle_errors=False, **kwargs):
+        """Upload documents from a list of URLs"""
+
+        # Do not set the same title for all documents
+        kwargs.pop("title", None)
+
+        obj_list = []
+        params = self._format_upload_parameters("", **kwargs)
+        for i, url_group in enumerate(grouper(url_list, BULK_LIMIT)):
+            # Grouper will put None's on the end of the last group
+            url_group = [url for url in url_group if url is not None]
+
+            logger.info("Uploading group {}: {}".format(i + 1, "\n".join(url_group)))
+
+            # Create the documents
+            logger.info("Creating the documents...")
+            try:
+                response = self.client.post(
+                    "documents/",
+                    json=[
+                        merge_dicts(
+                            params,
+                            {
+                                "title": self._get_title(url),
+                                "file_url": url,
+                            },
+                        )
+                        for url in url_group
+                    ],
                 )
-                continue
-            else:
-                raise
+            except (APIError, RequestException) as exc:
+                if handle_errors:
+                    logger.info(
+                        "Error creating the following documents: "
+                        + str(exc)
+                        + "\n".join(url_group)
+                    )
+                    continue
+                else:
+                    raise
 
-        create_json = response.json()
-        obj_list.extend(create_json)
+            create_json = response.json()
+            obj_list.extend(create_json)
 
-    logger.info("Upload URLs complete")
+        logger.info("Upload URLs complete")
 
-    # Pass back the list of documents
-    return [Document(self.client, d) for d in obj_list]
+        # Pass back the list of documents
+        return [Document(self.client, d) for d in obj_list]
+
 
 class Mention:
     """A snippet from a document search"""

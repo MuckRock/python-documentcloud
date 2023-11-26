@@ -81,9 +81,7 @@ class DocumentCloud(object):
             access_token = None
 
         if access_token:
-            self.session.headers.update(
-                {"Authorization": f"Bearer {access_token}"}
-            )
+            self.session.headers.update({"Authorization": f"Bearer {access_token}"})
 
     def _get_tokens(self, username, password):
         """Get an access and refresh token in exchange for the username and password"""
@@ -174,4 +172,3 @@ class DocumentCloud(object):
                 raise DoesNotExistError(response=exc.response)
             else:
                 raise APIError(response=exc.response)
-

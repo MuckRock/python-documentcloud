@@ -2,6 +2,7 @@
 from .base import BaseAPIObject, ChildAPIClient
 from .toolbox import merge_dicts
 
+
 class Section(BaseAPIObject):
     """A section of a document"""
 
@@ -18,6 +19,7 @@ class Section(BaseAPIObject):
     def page(self):
         return self.page_number
 
+
 class SectionClient(ChildAPIClient):
     """Client for interacting with Sections"""
 
@@ -33,4 +35,3 @@ class SectionClient(ChildAPIClient):
         return Section(
             self.client, merge_dicts(response.json(), {"document": self.parent})
         )
-
