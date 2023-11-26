@@ -1,9 +1,6 @@
 """
 Custom exceptions for python-documentcloud
 """
-# Future
-from __future__ import division, print_function, unicode_literals
-
 
 class DocumentCloudError(Exception):
     """Base class for errors for python-documentcloud"""
@@ -14,7 +11,7 @@ class DocumentCloudError(Exception):
             self.error = self.response.text
             self.status_code = self.response.status_code
             if not args:
-                args = ["{} - {}".format(self.status_code, self.error)]
+                args = [f"{self.status_code} - {self.error}"]
         else:
             self.error = None
             self.status_code = None
