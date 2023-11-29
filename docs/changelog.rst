@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+4.0.0
+~~~~~
+* Removes support for Python2
+
+
 3.8.0
 ~~~~~
 * Add `charge_credits` to `AddOn`
