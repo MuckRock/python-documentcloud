@@ -1,9 +1,14 @@
 Changelog
 ---------
 
+3.8.0
+~~~~~
+* Add `charge_credits` to `AddOn`
+
+
 3.7.1
 ~~~~~
-* Fixes an indentation bug present in 3.7.1 
+* Fixes an indentation bug present in 3.7.0
 
 
 3.7.0

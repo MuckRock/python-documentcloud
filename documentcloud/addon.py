@@ -1,3 +1,8 @@
+"""
+This is a base class for DocumentCloud Add-Ons to inherit from.
+It provides some common Add-On functionality.
+"""
+
 # Standard Library
 import argparse
 import json
@@ -35,8 +40,10 @@ class BaseAddOn:
         # user and org IDs
         self.user_id = args.pop("user", None)
         self.org_id = args.pop("organization", None)
-        # add-on specific data
+        # add on specific data
         self.data = args.pop("data", None)
+        # title of the addon
+        self.title = args.pop("title", None)
 
     def _create_client(self, args):
         client_kwargs = {
@@ -58,7 +65,7 @@ class BaseAddOn:
             self.client.refresh_token = args["refresh_token"]
         if args["token"] is not None:
             self.client.session.headers.update(
-                {"Authorization": f"Bearer {args['token']}"}
+                {"Authorization": "Bearer {}".format(args["token"])}
             )
 
         # custom user agent for AddOns
@@ -115,6 +122,8 @@ class BaseAddOn:
             with open("config.yaml") as config:
                 schema = yaml.safe_load(config)
                 args["data"] = fastjsonschema.validate(schema, args["data"])
+                # add title in case the add-on wants to reference its own title
+                args["title"] = schema.get("title")
         except FileNotFoundError:
             pass
         except fastjsonschema.JsonSchemaException as exc:
@@ -200,6 +209,97 @@ class AddOn(BaseAddOn):
 
     def get_documents(self):
         """Get documents from either selected or queried documents"""
+        if self.documents:
+            documents = self.client.documents.list(id__in=self.documents)
+        elif self.query:
+            documents = self.client.documents.search(self.query)
+        else:
+            documents = []
+
+        yield from documents
+
+    def charge_credits(self, amount):
+        """Charge the organization a certain amount of premium credits"""
+
+        if not self.id:
+            print(f"Charge credits: {amount}")
+            return None
+        elif not self.org_id:
+            self.set_message("No organization to charge.")
+            raise ValueError
+
+        resp = self.client.post(
+            f"organizations/{self.org_id}/ai_credits/",
+            json={
+                "ai_credits": amount,
+                "addonrun_id": self.id,
+                "note": f"AddOn run: {self.title} - {self.id}",
+            },
+        )
+        if resp.status_code != 200:
+            self.set_message("Error charging AI credits.")
+            raise ValueError
+        return resp
+
+
+class CronAddOn(BaseAddOn):
+    """DEPREACTED"""
+
+
+class SoftTimeOutAddOn(AddOn):
+    """
+    An add-on which can automatically rerun itself on soft-timeout with the
+    remaining documents
+    """
+
+    # default to a 5 minute soft timeout
+    soft_time_limit = 300
+
+    def __init__(self):
+        super().__init__()
+        # record starting time to track when the soft timeout is reached
+        self._start = time.time()
+
+        self._documents_iter = None
+        self._current_document = None
+
+    def rerun_addon(self, include_current=False):
+        """Re-run the add on with the same parameters"""
+        options = {}
+        if self.documents:
+            # If documents were passed in by ID, pass in the remaining documents by ID
+            options["documents"] = [d.id for d in self._documents_iter]
+            if include_current:
+                options["documents"].insert(0, self._current_document.id)
+        elif self.query:
+            # If documents were passed in by query, get the id from the next
+            # document, and add that in to the data under a reserved name, so
+            # that the next run can filter out documents before that id
+            if include_current:
+                next_document = self._current_document
+            else:
+                next_document = next(self._documents_iter)
+            self.data["_id_start"] = next_document.id
+            options["query"] = self.query
+
+        self.data["_restore_key"] = self.id
+        self.client.post(
+            "addon_runs/",
+            json={
+                "addon": self.addon_id,
+                "parameters": self.data,
+                **options,
+            },
+        )
+        # dismiss the current add-on run from the dashboard
+        self.client.patch(
+            f"addon_runs/{self.id}/",
+            json={"dismissed": True},
+        )
+
+    def get_documents(self):
+        """Get documents from either selected or queried documents"""
+
         if self.documents:
             documents = self.client.documents.list(id__in=self.documents)
         elif self.query and "_id_start" in self.data:
