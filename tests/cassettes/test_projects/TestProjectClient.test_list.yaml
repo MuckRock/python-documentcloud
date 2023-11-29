@@ -5,9 +5,9 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
@@ -16,15 +16,12 @@ interactions:
     uri: https://api.dev.documentcloud.org/api/projects/?version=2.0
   response:
     body:
-      string: '{"next":null,"previous":null,"results":[{"id":111,"created_at":"2020-04-07T13:22:20.384987Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"torture-docs","title":"Torture
-        Docs","updated_at":"2020-04-07T13:22:20.386028Z","user":18},{"id":100003,"created_at":"2020-03-30T20:39:35.944849Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"test-2","title":"Test
-        2","updated_at":"2020-03-30T20:39:35.945376Z","user":100002},{"id":100004,"created_at":"2020-03-30T20:39:40.232047Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"test-3","title":"Test
-        3","updated_at":"2020-03-30T20:39:40.232303Z","user":100002},{"id":100278,"created_at":"2020-06-11T12:05:14.998707Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-418f70d4-f99a-4cc0-984d-6f90de112003","title":"This
-        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100494,"created_at":"2023-11-03T19:10:37.703650Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-96cb19fc-6051-4a8d-8204-9db83aa75692","title":"This
-        is a project for testing 96cb19fc-6051-4a8d-8204-9db83aa75692","updated_at":"2023-11-03T19:10:37.703850Z","user":100098},{"id":100501,"created_at":"2023-11-03T19:38:01.896950Z","description":"This
-        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-57fd83fd-22f8-422f-b45d-b5275fd264da","title":"This
-        is a project for testing 57fd83fd-22f8-422f-b45d-b5275fd264da","updated_at":"2023-11-03T19:40:10.479999Z","user":100098},{"id":100502,"created_at":"2023-11-03T19:38:22.999370Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2023-11-03T19:38:22.999621Z","user":100098}]}'
+      string: '{"next":null,"previous":null,"results":[{"id":200030,"created_at":"2023-10-31T13:18:35.918387Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"tester2-project","title":"tester2
+        project","updated_at":"2023-10-31T13:18:35.918832Z","user":100000},{"id":200036,"created_at":"2023-10-31T13:30:30.203154Z","description":"","edit_access":null,"add_remove_access":null,"private":false,"slug":"new-project","title":"new
+        project","updated_at":"2023-10-31T13:30:30.203565Z","user":100001},{"id":200052,"created_at":"2023-11-29T21:02:19.745965Z","description":"This
+        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-53db01f5-c5c8-4169-b7b1-c0b70f989e3b","title":"This
+        is a project for testing 53db01f5-c5c8-4169-b7b1-c0b70f989e3b","updated_at":"2023-11-29T21:06:48.977588Z","user":100002},{"id":200053,"created_at":"2023-11-29T21:02:42.802927Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2023-11-29T21:02:42.803124Z","user":100002}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -33,17 +30,17 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '2017'
+      - '1130'
       Content-Type:
       - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:40:21 GMT
+      - Wed, 29 Nov 2023 21:07:13 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
@@ -59,23 +56,21 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/projects/?user=100098&version=2.0
+    uri: https://api.dev.documentcloud.org/api/projects/?user=100002&version=2.0
   response:
     body:
-      string: '{"next":null,"previous":null,"results":[{"id":100278,"created_at":"2020-06-11T12:05:14.998707Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-418f70d4-f99a-4cc0-984d-6f90de112003","title":"This
-        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100494,"created_at":"2023-11-03T19:10:37.703650Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-96cb19fc-6051-4a8d-8204-9db83aa75692","title":"This
-        is a project for testing 96cb19fc-6051-4a8d-8204-9db83aa75692","updated_at":"2023-11-03T19:10:37.703850Z","user":100098},{"id":100501,"created_at":"2023-11-03T19:38:01.896950Z","description":"This
-        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-57fd83fd-22f8-422f-b45d-b5275fd264da","title":"This
-        is a project for testing 57fd83fd-22f8-422f-b45d-b5275fd264da","updated_at":"2023-11-03T19:40:10.479999Z","user":100098},{"id":100502,"created_at":"2023-11-03T19:38:22.999370Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2023-11-03T19:38:22.999621Z","user":100098}]}'
+      string: '{"next":null,"previous":null,"results":[{"id":200052,"created_at":"2023-11-29T21:02:19.745965Z","description":"This
+        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-53db01f5-c5c8-4169-b7b1-c0b70f989e3b","title":"This
+        is a project for testing 53db01f5-c5c8-4169-b7b1-c0b70f989e3b","updated_at":"2023-11-29T21:06:48.977588Z","user":100002},{"id":200053,"created_at":"2023-11-29T21:02:42.802927Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2023-11-29T21:02:42.803124Z","user":100002}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -84,17 +79,17 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '1340'
+      - '654'
       Content-Type:
       - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:40:21 GMT
+      - Wed, 29 Nov 2023 21:07:13 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
@@ -110,23 +105,21 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/projects/?user=100098&version=2.0
+    uri: https://api.dev.documentcloud.org/api/projects/?user=100002&version=2.0
   response:
     body:
-      string: '{"next":null,"previous":null,"results":[{"id":100278,"created_at":"2020-06-11T12:05:14.998707Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-418f70d4-f99a-4cc0-984d-6f90de112003","title":"This
-        is a project for testing 418f70d4-f99a-4cc0-984d-6f90de112003","updated_at":"2020-06-11T12:05:14.999171Z","user":100098},{"id":100494,"created_at":"2023-11-03T19:10:37.703650Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-96cb19fc-6051-4a8d-8204-9db83aa75692","title":"This
-        is a project for testing 96cb19fc-6051-4a8d-8204-9db83aa75692","updated_at":"2023-11-03T19:10:37.703850Z","user":100098},{"id":100501,"created_at":"2023-11-03T19:38:01.896950Z","description":"This
-        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-57fd83fd-22f8-422f-b45d-b5275fd264da","title":"This
-        is a project for testing 57fd83fd-22f8-422f-b45d-b5275fd264da","updated_at":"2023-11-03T19:40:10.479999Z","user":100098},{"id":100502,"created_at":"2023-11-03T19:38:22.999370Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2023-11-03T19:38:22.999621Z","user":100098}]}'
+      string: '{"next":null,"previous":null,"results":[{"id":200052,"created_at":"2023-11-29T21:02:19.745965Z","description":"This
+        is a project for testing","edit_access":true,"add_remove_access":true,"private":true,"slug":"this-is-a-project-for-testing-53db01f5-c5c8-4169-b7b1-c0b70f989e3b","title":"This
+        is a project for testing 53db01f5-c5c8-4169-b7b1-c0b70f989e3b","updated_at":"2023-11-29T21:06:48.977588Z","user":100002},{"id":200053,"created_at":"2023-11-29T21:02:42.802927Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2023-11-29T21:02:42.803124Z","user":100002}]}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -135,17 +128,17 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '1340'
+      - '654'
       Content-Type:
       - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:40:21 GMT
+      - Wed, 29 Nov 2023 21:07:13 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:

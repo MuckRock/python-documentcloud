@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -18,7 +18,7 @@ interactions:
     uri: https://dev.squarelet.com/api/token/
   response:
     body:
-      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5OTA0MDQ2OCwianRpIjoiMmVmYWUyY2E0ZWZkNGUyODkwNWFhNDgwNzg1ZTFhYjIiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.M2Dalu_d8Vt90f_wXKPj3sD3PkzzEpZgTo2aNcwgL1AtjTLWwINTLpfq8I9AhvREQALH7k6GpeeQaAY4wTpyfyEnDRhNpt_Hz-VdeYLEkrK0_I0uatqMcOgIE-1wtHIcGgJjw_ZCOfjQ-QjU_XHwqO6qvqK7doyq4aoqLAvhJ8rP14qVcxq3jxBjZmfmEaNP7DpD4WWRPguMQRGc4-unrxoOAzyrezWqNee9de_fMrlXvIPzjICl-Bn6kFsrnh2nWPFHm1EztAHKpaTK2WK-EDvnOglS-nTowjWqbOE4p9jr2brjrwAV8Q-bysrkNSJOodtyVERrpfRK85mgx_5GQA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNDY1LCJqdGkiOiIwNWIxYzg5ZTFlZmY0NDkxODUxY2RjNGY3NmJhNDE4YyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.eIcqz8_qd0lRqF-3Yr4ZaWDoYgah_Um1vUXcyTJhgiVnCWGtjcayt8Mz7avt_ROi8yQ1RXJIp3jOGCqoGiX0frEDEcjuEg_daPs56jxvAudstooTMcaPwIF6rE-QR6EhpLCAtpOOWctYH81GPbV_B8yjYvV21u6p4nLYY1rmLD94wjyCp6AR7WxHBJNDqJDfinMXSNXte-kz5jRCy6j7ofynjOExmDkiA0jvFZT9sQaRKenBRGp0dRTc3MSKfiT4kpn20O3iF_65frELB5V6tXRgGvr2eKUUXqwF141fuSsSny9lYzMeZkbFHQheDXhS1zIID5KVYgaS2Ear40sZkA"}'
+      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMTI5MjU0NSwianRpIjoiZmFjODM4ZDRhZTcxNDU1N2JiZTAzMjYwMTFkZjg0NWQiLCJ1c2VyX2lkIjoiOWE3MzJmNGItMDU0Zi00ZDQ0LWFiYjAtZDg0MjE3ZGNhMzMzIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.FzC9elNqC0NsyZzd7Q2rJgwnS3tjgWDKjp_XfE_IR3_1od2ej0Q1oxn-OooX2H1K8TjFs3BMrbdZ-p2T79PFJfLlitT3FpZW-AkUI2Qni1TDqOxDCRU-AkhQ4P2bV3pAOgaxEJwmp_NOwaiTVgWfcUVR1iaBXPs9NIgQby7j0vKJytnZ12CRwIoicocqcEKw5bURnuAS_2-TVxKhZjmH5AE1lnC_s_EZZE6WD_bVcpnon3TX3DInZwLFB-8-tp0ktmTikOXcbg_tn938hyavWgN1DXzluQm8_8Gj3fxbWvkluIeN5Gpvq3A8ku2JaFhxNBF3R1mWQ1CPv1cj8_tsvg","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyNTQyLCJqdGkiOiI1MmU0NmQzMDA4Yjk0NDAyOGFjMzZiNWRhMzNjMTY5MCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Rat__7k0ole9V3DZbYNDyEkwltVTlFitfQzAdzS_CJ2CDQiTBEGs_QKDSglxLygdscXM_vJ4M4sfdI--vdRHsxrT5GZRHfmU_zBUaVS4lgXoQ5p98nwcPM9wa6RL53IZY6czawQzpKJAk_I4qQJVTs-TvqEKgKy8OOA0hB1BEv2WAkVkAzIiAS-B1GViSiVlKGQZ6Kx274ksNPc-mXhu7vNoueA4a9JF_i5YUBm91fEEz5sY7URQI2HFCol0cc-pu0z8e-PGJzz7hOaTsrZvHOhbJMuHTFOwcF-5x-iR7SyG45P3LpQLVHr50FTyV9BfSoPtEH_bR2yeDa7RSipCHg"}'
     headers:
       Allow:
       - POST, OPTIONS
@@ -28,19 +28,21 @@ interactions:
       - '1313'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:41:03 GMT
+      - Wed, 29 Nov 2023 21:15:40 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Server-Timing:
-      - TimerPanel_utime;dur=402.67999999999995;desc="User CPU time", TimerPanel_stime;dur=85.845;desc="System
-        CPU time", TimerPanel_total;dur=488.525;desc="Total CPU time", TimerPanel_total_time;dur=308.96663665771484;desc="Elapsed
-        time", SQLPanel_sql_time;dur=10.05244255065918;desc="SQL 3 queries", CachePanel_total_time;dur=0;desc="Cache
-        0 Calls"
+      - TimerPanel_utime;dur=150.358;desc="User CPU time", TimerPanel_stime;dur=57.271000000000015;desc="System
+        CPU time", TimerPanel_total;dur=207.62900000000002;desc="Total CPU time",
+        TimerPanel_total_time;dur=173.70176315307617;desc="Elapsed time", SQLPanel_sql_time;dur=4.902124404907227;desc="SQL
+        3 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
       Set-Cookie:
-      - op_browser_state=e238723cddd90b5416b9ab621c0282a6054b0d5ec4b103bfa33f3648;
+      - op_browser_state=2cecec1b700989b0f037aa1b7a0aa0be1614414914cc28bb19e49520;
         Path=/
       Vary:
       - Accept, Origin, Cookie
