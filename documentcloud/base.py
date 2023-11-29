@@ -161,7 +161,7 @@ class BaseAPIObject(object):
 
     def save(self):
         data = {f: getattr(self, f) for f in self.writable_fields if hasattr(self, f)}
-        self._client.put(f"{self.api_path}/{self.id}", json=data)
+        self._client.put(f"{self.api_path}/{self.id}/", json=data)
 
     def delete(self):
         self._client.delete(f"{self.api_path}/{self.id}")
