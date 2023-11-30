@@ -3,11 +3,11 @@ Documents
 """
 
 # Standard Library
+import datetime
 import logging
 import os
 import re
 import warnings
-import datetime
 from functools import partial
 
 # Third Party
@@ -62,7 +62,7 @@ class Document(BaseAPIObject):
                 dict_[f"_{name}"] = None
                 dict_[f"{name}_id"] = value
 
-        super(Document, self).__init__(client, dict_)
+        super().__init__(client, dict_)
 
         self.sections = SectionClient(client, self)
         self.annotations = AnnotationClient(client, self)
@@ -187,7 +187,10 @@ class Document(BaseAPIObject):
         return f"{self.asset_url}documents/{self.id}/pages/{self.slug}-p{page}.txt"
 
     def get_page_position_json_url(self, page=1):
-        return f"{self.asset_url}documents/{self.id}/pages/{self.slug}-p{page}.position.json"
+        return (
+            f"{self.asset_url}documents/{self.id}/pages/"
+            f"{self.slug}-p{page}.position.json"
+        )
 
     def get_json_text_url(self):
         return f"{self.asset_url}documents/{self.id}/{self.slug}.txt.json"
@@ -265,6 +268,16 @@ class DocumentClient(BaseAPIClient):
 
     def upload(self, pdf, **kwargs):
         """Upload a document"""
+
+        def check_size(size):
+            # DocumentCloud's size limit is set to 501MB to give people a little leeway
+            # for OS rounding
+            if size >= 501 * 1024 * 1024:
+                raise ValueError(
+                    "The pdf you have submitted is over the DocumentCloud API's 500MB "
+                    "file size limit. Split it into smaller pieces and try again."
+                )
+
         # if they pass in a URL, use the URL upload flow
         if is_url(pdf):
             return self._upload_url(pdf, **kwargs)
@@ -275,19 +288,13 @@ class DocumentClient(BaseAPIClient):
                 size = os.fstat(pdf.fileno()).st_size
             except (AttributeError, OSError):  # pragma: no cover
                 size = 0
+            check_size(size)
+            return self._upload_file(pdf, **kwargs)
         else:
             size = os.path.getsize(pdf)
-            pdf = open(pdf, "rb")
-
-        # DocumentCloud's size limit is set to 501MB to give people a little leeway
-        # for OS rounding
-        if size >= 501 * 1024 * 1024:
-            raise ValueError(
-                "The pdf you have submitted is over the DocumentCloud API's 500MB "
-                "file size limit. Split it into smaller pieces and try again."
-            )
-
-        return self._upload_file(pdf, **kwargs)
+            check_size(size)
+            with open(pdf, "rb") as pdf_file:
+                return self._upload_file(pdf_file, **kwargs)
 
     def _format_upload_parameters(self, name, **kwargs):
         """Prepare upload parameters from kwargs"""
@@ -371,11 +378,13 @@ class DocumentClient(BaseAPIClient):
 
     def upload_directory(self, path, handle_errors=False, extensions=".pdf", **kwargs):
         """Upload files with specified extensions in a directory"""
+        # pylint: disable=too-many-locals, too-many-branches
 
         # Do not set the same title for all documents
         kwargs.pop("title", None)
 
-        # If extensions are specified as None, it will check for all supported filetypes.
+        # If extensions are specified as None, it will check for all supported
+        # filetypes.
         if extensions is None:
             extensions = SUPPORTED_EXTENSIONS
 
@@ -444,9 +453,8 @@ class DocumentClient(BaseAPIClient):
             for url, file_path in zip(presigned_urls, file_paths):
                 logger.info(f"Uploading {file_path} to S3...")
                 try:
-                    response = requests_retry_session().put(
-                        url, data=open(file_path, "rb").read()
-                    )
+                    with open(file_path, "rb") as file:
+                        response = requests_retry_session().put(url, data=file.read())
                     self.client.raise_for_status(response)
                 except (APIError, RequestException) as exc:
                     if handle_errors:

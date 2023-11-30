@@ -169,6 +169,6 @@ class DocumentCloud(object):
             response.raise_for_status()
         except requests.exceptions.RequestException as exc:
             if exc.response.status_code == 404:
-                raise DoesNotExistError(response=exc.response)
+                raise DoesNotExistError(response=exc.response) from exc
             else:
-                raise APIError(response=exc.response)
+                raise APIError(response=exc.response) from exc

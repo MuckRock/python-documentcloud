@@ -2,12 +2,14 @@
 A few toys the API will use.
 """
 
+# Standard Library
+from itertools import zip_longest
+from urllib.parse import urlparse
+
 # Third Party
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from urllib.parse import urlparse
-from itertools import zip_longest
 
 
 def requests_retry_session(
