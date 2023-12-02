@@ -175,6 +175,7 @@ class AddOn(BaseAddOn):
         else:
             # text file's buffer is in binary mode
             data = file.buffer
+        # pylint: disable=W3101
         response = requests.put(presigned_url, data=data)
         response.raise_for_status()
         return self.client.patch(
