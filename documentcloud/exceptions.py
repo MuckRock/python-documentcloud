@@ -16,7 +16,7 @@ class DocumentCloudError(Exception):
         else:
             self.error = None
             self.status_code = None
-        super(DocumentCloudError, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
 
 
 class DuplicateObjectError(DocumentCloudError):

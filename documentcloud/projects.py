@@ -14,7 +14,7 @@ class Project(BaseAPIObject):
 
     def __init__(self, *args, **kwargs):
         per_page = kwargs.pop("per_page", PER_PAGE_MAX)
-        super(Project, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self._document_list = None
         self._per_page = per_page
 
@@ -23,7 +23,7 @@ class Project(BaseAPIObject):
 
     def save(self):
         """Add the documents to the project as well"""
-        super(Project, self).save()
+        super().save()
         if self._document_list:
             self.clear_documents()
             self.add_documents(self._document_list)
@@ -100,7 +100,7 @@ class ProjectClient(BaseAPIClient):
         return self.list(user=self.client.user_id, **params)
 
     def get(self, id=None, title=None):
-        # pylint:disable=redefined-builtin, arguments-differ
+        # pylint:disable=redefined-builtin, arguments-renamed
         # pylint disables are necessary for backward compatibility
         if id is not None and title is not None:
             raise ValueError(
@@ -115,7 +115,7 @@ class ProjectClient(BaseAPIClient):
             return self.get_by_title(title)
 
     def get_by_id(self, id_):
-        return super(ProjectClient, self).get(id_)
+        return super().get(id_)
 
     def get_by_title(self, title):
         response = self.client.get(

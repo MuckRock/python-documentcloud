@@ -98,9 +98,7 @@ class BaseAPIClient(object):
             params = {"expand": ",".join(expand)}
         else:
             params = {}
-        response = self.client.get(
-            "{}/{}/".format(self.api_path, get_id(id_)), params=params
-        )
+        response = self.client.get(f"{self.api_path}/{get_id(id_)}/", params=params)
         # pylint: disable=not-callable
         return self.resource(self.client, response.json())
 
@@ -120,7 +118,7 @@ class ChildAPIClient(BaseAPIClient):
     """Base client for sub resources"""
 
     def __init__(self, client, parent):
-        super(ChildAPIClient, self).__init__(client)
+        super().__init__(client)
         self.parent = parent
 
     def list(self, **params):
@@ -169,7 +167,7 @@ class BaseAPIObject(object):
 
 class APISet(list):
     def __init__(self, iterable, resource):
-        super(APISet, self).__init__(iterable)
+        super().__init__(iterable)
         self.resource = resource
         if not all(isinstance(obj, self.resource) for obj in self):
             raise TypeError(
@@ -191,7 +189,7 @@ class APISet(list):
             raise DuplicateObjectError(
                 f"Object with ID {obj.id} appears in the list more than once"
             )
-        super(APISet, self).append(copy(obj))
+        super().append(copy(obj))
 
     def add(self, obj):
         if not isinstance(obj, self.resource):
@@ -200,7 +198,7 @@ class APISet(list):
             )
         # skip duplicates silently
         if obj.id not in [i.id for i in self]:
-            super(APISet, self).append(copy(obj))
+            super().append(copy(obj))
 
     def extend(self, list_):
         if not all(isinstance(obj, self.resource) for obj in list_):
@@ -213,4 +211,4 @@ class APISet(list):
                 raise DuplicateObjectError(
                     f"Object with ID {id_} appears in the list more than once"
                 )
-        super(APISet, self).extend(copy(obj) for obj in list_)
+        super().extend(copy(obj) for obj in list_)
