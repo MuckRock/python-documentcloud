@@ -51,7 +51,6 @@ jobs:
         run: |
           pip install pylint black
 
-      - name: Run pylint and black
+      - name: Run pylint and black on ./documentcloud and ./tests
         run: |
-          pylint ./documentcloud
-          black  ./documentcloud
+          pylint ./documentcloud ./tests; black ./documentcloud ./tests
