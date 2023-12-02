@@ -2,19 +2,15 @@
 Documents
 """
 
-# Future
-from __future__ import division, print_function, unicode_literals
-
 # Standard Library
+import datetime
 import logging
 import os
 import re
 import warnings
-import datetime
 from functools import partial
 
 # Third Party
-from future.utils import python_2_unicode_compatible
 from requests.exceptions import RequestException
 
 # Local
@@ -32,13 +28,11 @@ try:
 except ImportError:
     from urlparse import urlparse
 
-
 logger = logging.getLogger("documentcloud")
 
 IMAGE_SIZES = ["thumbnail", "small", "normal", "large", "xlarge"]
 
 
-@python_2_unicode_compatible
 class Document(BaseAPIObject):
     """A single DocumentCloud document"""
 
@@ -62,13 +56,13 @@ class Document(BaseAPIObject):
         for name, resource in objs:
             value = dict_.get(name)
             if isinstance(value, dict):
-                dict_["_" + name] = resource(client, value)
-                dict_[name + "_id"] = value.get("id")
+                dict_[f"_{name}"] = resource(client, value)
+                dict_[f"{name}_id"] = value.get("id")
             elif isinstance(value, int):
-                dict_["_" + name] = None
-                dict_[name + "_id"] = value
+                dict_[f"_{name}"] = None
+                dict_[f"{name}_id"] = value
 
-        super(Document, self).__init__(client, dict_)
+        super().__init__(client, dict_)
 
         self.sections = SectionClient(client, self)
         self.annotations = AnnotationClient(client, self)
@@ -89,13 +83,13 @@ class Document(BaseAPIObject):
         fmt = "json" if json else "text" if text else None
         # this allows dropping `get_` to act like a property, ie
         # .full_text_url
-        if not get and hasattr(self, "get_{}".format(attr)):
-            return getattr(self, "get_{}".format(attr))()
+        if not get and hasattr(self, f"get_{attr}"):
+            return getattr(self, f"get_{attr}")()
         # this allows dropping `_url` to fetch the url, ie
         # .get_full_text()
-        if not url and hasattr(self, "{}_url".format(attr)):
+        if not url and hasattr(self, f"{attr}_url"):
             return lambda *a, **k: self._get_url(
-                getattr(self, "{}_url".format(attr))(*a, **k), fmt
+                getattr(self, f"{attr}_url")(*a, **k), fmt
             )
         # this genericizes the image sizes
         m_image = p_image.match(attr)
@@ -104,7 +98,7 @@ class Document(BaseAPIObject):
         if m_image and not m_image.group("list"):
             return partial(self.get_image_url, size=m_image.group("size"))
         raise AttributeError(
-            "'{}' object has no attribute '{}'".format(self.__class__.__name__, attr)
+            f"'{self.__class__.__name__}' object has no attribute '{attr}'"
         )
 
     def __dir__(self):
@@ -115,12 +109,12 @@ class Document(BaseAPIObject):
         attrs += [a[len("get_") : -len("_url")] for a in getters if a.endswith("url")]
         for size in IMAGE_SIZES:
             attrs += [
-                "get_{}_image_url".format(size),
-                "{}_image_url".format(size),
-                "get_{}_image".format(size),
-                "{}_image".format(size),
-                "get_{}_image_url_list".format(size),
-                "{}_image_url_list".format(size),
+                f"get_{size}_image_url",
+                f"{size}_image_url",
+                f"get_{size}_image",
+                f"{size}_image",
+                f"get_{size}_image_url_list",
+                f"{size}_image_url_list",
             ]
         return sorted(attrs)
 
@@ -187,27 +181,26 @@ class Document(BaseAPIObject):
 
     # Resource URLs
     def get_full_text_url(self):
-        return "{}documents/{}/{}.txt".format(self.asset_url, self.id, self.slug)
+        return f"{self.asset_url}documents/{self.id}/{self.slug}.txt"
 
     def get_page_text_url(self, page=1):
-        return "{}documents/{}/pages/{}-p{}.txt".format(
-            self.asset_url, self.id, self.slug, page
-        )
+        return f"{self.asset_url}documents/{self.id}/pages/{self.slug}-p{page}.txt"
 
     def get_page_position_json_url(self, page=1):
-        return "{}documents/{}/pages/{}-p{}.position.json".format(
-            self.asset_url, self.id, self.slug, page
+        return (
+            f"{self.asset_url}documents/{self.id}/pages/"
+            f"{self.slug}-p{page}.position.json"
         )
 
     def get_json_text_url(self):
-        return "{}documents/{}/{}.txt.json".format(self.asset_url, self.id, self.slug)
+        return f"{self.asset_url}documents/{self.id}/{self.slug}.txt.json"
 
     def get_pdf_url(self):
-        return "{}documents/{}/{}.pdf".format(self.asset_url, self.id, self.slug)
+        return f"{self.asset_url}documents/{self.id}/{self.slug}.pdf"
 
     def get_image_url(self, page=1, size="normal"):
-        return "{}documents/{}/pages/{}-p{}-{}.gif".format(
-            self.asset_url, self.id, self.slug, page, size
+        return (
+            f"{self.asset_url}documents/{self.id}/pages/{self.slug}-p{page}-{size}.gif"
         )
 
     def get_image_url_list(self, size="normal"):
@@ -217,7 +210,7 @@ class Document(BaseAPIObject):
 
     def get_errors(self):
         """Retrieve errors for the document"""
-        endpoint = "documents/{}/errors/".format(self.id)
+        endpoint = f"documents/{self.id}/errors/"
         all_results = []
 
         while endpoint:
@@ -239,7 +232,7 @@ class Document(BaseAPIObject):
 
     def process(self):
         """Reprocess the document"""
-        self._client.post("{}/{}/process/".format(self.api_path, self.id))
+        self._client.post(f"{self.api_path}/{self.id}/process/")
 
 
 class DocumentClient(BaseAPIClient):
@@ -275,6 +268,16 @@ class DocumentClient(BaseAPIClient):
 
     def upload(self, pdf, **kwargs):
         """Upload a document"""
+
+        def check_size(size):
+            # DocumentCloud's size limit is set to 501MB to give people a little leeway
+            # for OS rounding
+            if size >= 501 * 1024 * 1024:
+                raise ValueError(
+                    "The pdf you have submitted is over the DocumentCloud API's 500MB "
+                    "file size limit. Split it into smaller pieces and try again."
+                )
+
         # if they pass in a URL, use the URL upload flow
         if is_url(pdf):
             return self._upload_url(pdf, **kwargs)
@@ -285,19 +288,13 @@ class DocumentClient(BaseAPIClient):
                 size = os.fstat(pdf.fileno()).st_size
             except (AttributeError, OSError):  # pragma: no cover
                 size = 0
+            check_size(size)
+            return self._upload_file(pdf, **kwargs)
         else:
             size = os.path.getsize(pdf)
-            pdf = open(pdf, "rb")
-
-        # DocumentCloud's size limit is set to 501MB to give people a little leeway
-        # for OS rounding
-        if size >= 501 * 1024 * 1024:
-            raise ValueError(
-                "The pdf you have submitted is over the DocumentCloud API's 500MB "
-                "file size limit. Split it into smaller pieces and try again."
-            )
-
-        return self._upload_file(pdf, **kwargs)
+            check_size(size)
+            with open(pdf, "rb") as pdf_file:
+                return self._upload_file(pdf_file, **kwargs)
 
     def _format_upload_parameters(self, name, **kwargs):
         """Prepare upload parameters from kwargs"""
@@ -331,9 +328,7 @@ class DocumentClient(BaseAPIClient):
 
         for param in ignored_parameters:
             if param in kwargs:
-                warnings.warn(
-                    "The parameter `{}` is not currently supported".format(param)
-                )
+                warnings.warn(f"The parameter `{param}` is not currently supported")
 
         return params
 
@@ -363,7 +358,7 @@ class DocumentClient(BaseAPIClient):
         # begin processing the document
         doc_id = create_json["id"]
         response = self.client.post(
-            "documents/{}/process/".format(doc_id), json={"force_ocr": force_ocr}
+            f"documents/{doc_id}/process/", json={"force_ocr": force_ocr}
         )
 
         return Document(self.client, create_json)
@@ -383,11 +378,13 @@ class DocumentClient(BaseAPIClient):
 
     def upload_directory(self, path, handle_errors=False, extensions=".pdf", **kwargs):
         """Upload files with specified extensions in a directory"""
+        # pylint: disable=too-many-locals, too-many-branches
 
         # Do not set the same title for all documents
         kwargs.pop("title", None)
 
-        # If extensions is specified as None, it will check for all suported filetypes.
+        # If extensions are specified as None, it will check for all supported
+        # filetypes.
         if extensions is None:
             extensions = SUPPORTED_EXTENSIONS
 
@@ -406,7 +403,9 @@ class DocumentClient(BaseAPIClient):
         path_list = self._collect_files(path, extensions)
 
         logger.info(
-            "Upload directory on %s: Found %d files to upload", path, len(path_list)
+            "Upload directory on %s: Found %d files to upload",
+            path,
+            len(path_list)
         )
 
         # Upload all the files using the bulk API to reduce the number
@@ -417,7 +416,7 @@ class DocumentClient(BaseAPIClient):
             # Grouper will put None's on the end of the last group
             file_paths = [p for p in file_paths if p is not None]
 
-            logger.info("Uploading group %d: %s", i + 1, "\n".join(file_paths))
+            logger.info("Uploading group %d:\n%s", i + 1, "\n".join(file_paths))
 
             # Create the documents
             logger.info("Creating the documents...")
@@ -442,9 +441,9 @@ class DocumentClient(BaseAPIClient):
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        "Error creating the following documents: %s %s",
+                        "Error creating the following documents: %s\n%s",
                         exc,
-                        "\n".join(file_paths),
+                        "\n".join(file_paths)
                     )
                     continue
                 else:
@@ -457,16 +456,15 @@ class DocumentClient(BaseAPIClient):
             for url, file_path in zip(presigned_urls, file_paths):
                 logger.info("Uploading %s to S3...", file_path)
                 try:
-                    response = requests_retry_session().put(
-                        url, data=open(file_path, "rb").read()
-                    )
+                    with open(file_path, "rb") as file:
+                        response = requests_retry_session().put(url, data=file.read())
                     self.client.raise_for_status(response)
                 except (APIError, RequestException) as exc:
                     if handle_errors:
                         logger.info(
                             "Error uploading the following document: %s %s",
                             exc,
-                            file_path,
+                            file_path
                         )
                         continue
                     else:
@@ -480,9 +478,9 @@ class DocumentClient(BaseAPIClient):
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        "Error creating the following documents: %s %s",
+                        "Error creating the following documents: %s\n%s",
                         exc,
-                        "\n".join(file_paths),
+                        "\n".join(file_paths)
                     )
                     continue
                 else:
@@ -505,7 +503,11 @@ class DocumentClient(BaseAPIClient):
             # Grouper will put None's on the end of the last group
             url_group = [url for url in url_group if url is not None]
 
-            logger.info("Uploading group %d: %s", i + 1, "\n".join(url_group))
+            logger.info(
+                "Uploading group %d: %s",
+                i + 1,
+                "\n".join(url_group)
+            )
 
             # Create the documents
             logger.info("Creating the documents...")
@@ -526,9 +528,9 @@ class DocumentClient(BaseAPIClient):
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        "Error creating the following documents: %s %s",
-                        exc,
-                        "\n".join(url_group),
+                        "Error creating the following documents: %s\n%s",
+                        str(exc),
+                        "\n".join(url_group)
                     )
                     continue
                 else:
@@ -543,7 +545,6 @@ class DocumentClient(BaseAPIClient):
         return [Document(self.client, d) for d in obj_list]
 
 
-@python_2_unicode_compatible
 class Mention:
     """A snippet from a document search"""
 
@@ -554,7 +555,7 @@ class Mention:
         self.text = text
 
     def __repr__(self):
-        return "<{}: {}>".format(self.__class__.__name__, self)  # pragma: no cover
+        return f"<{self.__class__.__name__}: {self}>"  # pragma: no cover
 
     def __str__(self):
-        return '{} - "{}"'.format(self.page, self.text)
+        return f'{self.page} - "{self.text}"'

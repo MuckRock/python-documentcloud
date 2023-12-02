@@ -24,7 +24,7 @@ class BaseAddOn:
 
     def __init__(self):
         args = self._parse_arguments()
-        client = self._create_client(args)
+        self._create_client(args)
 
         # a unique identifier for this run
         self.id = args.pop("id", None)
@@ -65,7 +65,7 @@ class BaseAddOn:
             self.client.refresh_token = args["refresh_token"]
         if args["token"] is not None:
             self.client.session.headers.update(
-                {"Authorization": "Bearer {}".format(args["token"])}
+                {"Authorization": f"Bearer {args['token']}"}
             )
 
         # custom user agent for AddOns
@@ -119,7 +119,7 @@ class BaseAddOn:
 
         # validate parameter data
         try:
-            with open("config.yaml") as config:
+            with open("config.yaml", encoding="utf-8") as config:
                 schema = yaml.safe_load(config)
                 args["data"] = fastjsonschema.validate(schema, args["data"])
                 # add title in case the add-on wants to reference its own title
@@ -175,6 +175,7 @@ class AddOn(BaseAddOn):
         else:
             # text file's buffer is in binary mode
             data = file.buffer
+        # pylint: disable=W3101
         response = requests.put(presigned_url, data=data)
         response.raise_for_status()
         return self.client.patch(
@@ -206,6 +207,8 @@ class AddOn(BaseAddOn):
         elif self.query:
             documents = self.client.documents.search(self.query)
             return documents.count
+
+        return 0
 
     def get_documents(self):
         """Get documents from either selected or queried documents"""

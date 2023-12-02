@@ -321,10 +321,11 @@ Document
    .. attribute:: mentions
 
        When the document has been retrieved via a search, this returns a list of
-       places the search keywords appear in the text. The data are modeled by
-       their own Python class, :class:`documentcloud.documents.Mention`.
+       places the search keywords appear in the text. You must pass
+       mentions = True into the search. The data is modeled by
+       its own Python class, :class:`documentcloud.documents.Mention`.
 
-           >>> obj_list = client.documents.search('Christopher Wallace')
+           >>> obj_list = client.documents.search('Christopher Wallace', mentions=True)
            >>> obj = obj_list[0]
            >>> obj.mentions
            [<Mention: Page 2>, <Mention: Page 3> ....

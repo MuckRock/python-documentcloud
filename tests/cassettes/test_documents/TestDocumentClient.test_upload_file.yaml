@@ -5,9 +5,9 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       Content-Length:
@@ -20,7 +20,7 @@ interactions:
     uri: https://api.dev.documentcloud.org/api/documents/?version=2.0
   response:
     body:
-      string: '{"id":10002179,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/10002179-test","created_at":"2023-11-03T19:39:28.566484Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":11343,"original_extension":"pdf","page_count":0,"page_spec":"","presigned_url":"https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10002179/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20231103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231103T193928Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bbf93a5c5268a9bedb3d1fa40ffbef1bc2306c7c15bc4cbc69c38b39deaaa3c5","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"nofile","title":"test","updated_at":"2023-11-03T19:39:28.566798Z","user":100098}'
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":0,"page_spec":"","presigned_url":"https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000200/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20231129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231129T210458Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0e2b0f54f19583a9c2951aff0b8bbc2a53b55135ac63460fe92d66bbdaa461a9","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"nofile","title":"test","updated_at":"2023-11-29T21:04:58.719529Z","user":100002}'
     headers:
       Allow:
       - GET, POST, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -31,17 +31,17 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '974'
+      - '977'
       Content-Type:
       - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:28 GMT
+      - Wed, 29 Nov 2023 21:04:58 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
@@ -173,7 +173,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -181,7 +181,7 @@ interactions:
       User-Agent:
       - python-requests/2.31.0
     method: PUT
-    uri: https://documentcloud-dev-mjk.s3.amazonaws.com/documents/10002179/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7KWPNZQB7I%2F20231103%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231103T193928Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bbf93a5c5268a9bedb3d1fa40ffbef1bc2306c7c15bc4cbc69c38b39deaaa3c5
+    uri: https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000200/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20231129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231129T210458Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0e2b0f54f19583a9c2951aff0b8bbc2a53b55135ac63460fe92d66bbdaa461a9
   response:
     body:
       string: ''
@@ -189,15 +189,15 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Fri, 03 Nov 2023 19:39:29 GMT
+      - Wed, 29 Nov 2023 21:05:00 GMT
       ETag:
       - '"b1e7f84f7fd7d908654b11f415651098"'
       Server:
       - AmazonS3
       x-amz-id-2:
-      - foY1GE04fabrUR9/5N29v7Bu95PzFlEbKKAXzLZCVwcsimAKeg6dQXntZl8LgOkSuRZtdaleXKs=
+      - fH94IktewuxkE2ELAMuX7Df5sQ0ggaiYaIwQUJ18ZIWML9AYD+1OuVWdeFty3djbOX+bzd0KQuE=
       x-amz-request-id:
-      - BAXSBCT59AK5Q43S
+      - CFKR8GA4HYT9ZT2E
       x-amz-server-side-encryption:
       - AES256
     status:
@@ -209,9 +209,9 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       Content-Length:
@@ -221,7 +221,7 @@ interactions:
       User-Agent:
       - python-requests/2.31.0
     method: POST
-    uri: https://api.dev.documentcloud.org/api/documents/10002179/process/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/process/?version=2.0
   response:
     body:
       string: '"OK"'
@@ -241,11 +241,11 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:28 GMT
+      - Wed, 29 Nov 2023 21:04:59 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
@@ -261,18 +261,18 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/documents/10002179/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
   response:
     body:
-      string: '{"id":10002179,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/10002179-test","created_at":"2023-11-03T19:39:28.566484Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":11343,"original_extension":"pdf","page_count":0,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-03T19:39:28.957673Z","user":100098}'
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":0,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:04:59.749721Z","user":100002}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -289,11 +289,11 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:30 GMT
+      - Wed, 29 Nov 2023 21:05:00 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Cookie, Accept, Origin, Accept-Language
       X-Content-Type-Options:
@@ -309,18 +309,18 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/documents/10002179/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
   response:
     body:
-      string: '{"id":10002179,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/10002179-test","created_at":"2023-11-03T19:39:28.566484Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-03T19:39:30.284093Z","user":100098}'
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":0,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:04:59.749721Z","user":100002}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -337,11 +337,11 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:31 GMT
+      - Wed, 29 Nov 2023 21:05:02 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Cookie, Accept, Origin, Accept-Language
       X-Content-Type-Options:
@@ -357,18 +357,18 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/documents/10002179/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
   response:
     body:
-      string: '{"id":10002179,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/10002179-test","created_at":"2023-11-03T19:39:28.566484Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-03T19:39:30.284093Z","user":100098}'
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:02.283297Z","user":100002}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -385,11 +385,11 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:32 GMT
+      - Wed, 29 Nov 2023 21:05:03 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Cookie, Accept, Origin, Accept-Language
       X-Content-Type-Options:
@@ -405,18 +405,306 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/documents/10002179/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
   response:
     body:
-      string: '{"id":10002179,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/10002179-test","created_at":"2023-11-03T19:39:28.566484Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-03T19:39:32.956374Z","user":100098}'
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:02.283297Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:04 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:02.283297Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:05 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:02.283297Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:06 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:02.283297Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:07 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:02.283297Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:09 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:02.283297Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '616'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:10 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -433,11 +721,11 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:33 GMT
+      - Wed, 29 Nov 2023 21:05:11 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Cookie, Accept, Origin, Accept-Language
       X-Content-Type-Options:
@@ -453,18 +741,18 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/documents/10002179/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
   response:
     body:
-      string: '{"id":10002179,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/10002179-test","created_at":"2023-11-03T19:39:28.566484Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-03T19:39:32.956374Z","user":100098}'
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -481,11 +769,11 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:34 GMT
+      - Wed, 29 Nov 2023 21:05:12 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Vary:
       - Cookie, Accept, Origin, Accept-Language
       X-Content-Type-Options:
@@ -501,18 +789,18 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
       Connection:
       - keep-alive
       User-Agent:
       - python-requests/2.31.0
     method: GET
-    uri: https://api.dev.documentcloud.org/api/documents/10002179/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
   response:
     body:
-      string: '{"id":10002179,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/10002179-test","created_at":"2023-11-03T19:39:28.566484Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":11343,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"success","title":"test","updated_at":"2023-11-03T19:39:35.229362Z","user":100098}'
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
     headers:
       Allow:
       - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
@@ -529,11 +817,299 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:39:35 GMT
+      - Wed, 29 Nov 2023 21:05:13 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '687'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:14 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '687'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:15 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '687'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:17 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '687'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:18 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"pending","title":"test","updated_at":"2023-11-29T21:05:10.392124Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '687'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:19 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
+      Vary:
+      - Cookie, Accept, Origin, Accept-Language
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, br
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/documents/20000200/?version=2.0
+  response:
+    body:
+      string: '{"id":20000200,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000200-test","created_at":"2023-11-29T21:04:58.719124Z","data":{},"description":"","edit_access":true,"file_hash":"a718e87a363da29eabc5a847d2c74f76d3e8e89c","noindex":false,"language":"eng","organization":10002,"original_extension":"pdf","page_count":1,"page_spec":"611.9716796875x791.9716796875:0","projects":[],"publish_at":null,"published_url":"","related_article":"","revision_control":false,"slug":"test","source":"","status":"success","title":"test","updated_at":"2023-11-29T21:05:20.109584Z","user":100002}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Cache-Control:
+      - private, no-cache
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '687'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Wed, 29 Nov 2023 21:05:20 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.25.2
       Vary:
       - Cookie, Accept, Origin, Accept-Language
       X-Content-Type-Options:

@@ -1,20 +1,15 @@
 """
 A few toys the API will use.
 """
-# Future
-from __future__ import division, print_function, unicode_literals
+
+# Standard Library
+from itertools import zip_longest
+from urllib.parse import urlparse
 
 # Third Party
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-
-try:
-    from urllib.parse import urlparse
-    from itertools import zip_longest
-except ImportError:
-    from urlparse import urlparse
-    from itertools import izip_longest as zip_longest
 
 
 def requests_retry_session(

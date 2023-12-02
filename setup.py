@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="python-documentcloud",
-    version="3.8.0",
+    version="4.0.0",
     description="A simple Python wrapper for the DocumentCloud API",
     author="Mitchell Kotler",
     author_email="mitch@muckrock.com",
@@ -48,13 +48,12 @@ setup(
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Internet :: WWW/HTTP",
     ),
 )

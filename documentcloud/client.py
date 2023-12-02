@@ -2,9 +2,6 @@
 The public interface for the DocumentCloud API
 """
 
-# Future
-from __future__ import division, print_function, unicode_literals
-
 # Standard Library
 import logging
 from functools import partial
@@ -84,20 +81,18 @@ class DocumentCloud(object):
             access_token = None
 
         if access_token:
-            self.session.headers.update(
-                {"Authorization": "Bearer {}".format(access_token)}
-            )
+            self.session.headers.update({"Authorization": f"Bearer {access_token}"})
 
     def _get_tokens(self, username, password):
         """Get an access and refresh token in exchange for the username and password"""
         response = requests_retry_session().post(
-            "{}token/".format(self.auth_uri),
+            f"{self.auth_uri}token/",
             json={"username": username, "password": password},
             timeout=self.timeout,
         )
 
         if response.status_code == requests.codes.UNAUTHORIZED:
-            raise CredentialsFailedError("The username and password is incorrect")
+            raise CredentialsFailedError("The username and password are incorrect")
 
         self.raise_for_status(response)
 
@@ -107,7 +102,7 @@ class DocumentCloud(object):
     def _refresh_tokens(self, refresh_token):
         """Refresh the access and refresh tokens"""
         response = requests_retry_session().post(
-            "{}refresh/".format(self.auth_uri),
+            f"{self.auth_uri}refresh/",
             json={"refresh": refresh_token},
             timeout=self.timeout,
         )
@@ -136,7 +131,7 @@ class DocumentCloud(object):
         full_url = kwargs.pop("full_url", False)
 
         if not full_url:
-            url = "{}{}".format(self.base_uri, url)
+            url = f"{self.base_uri}{url}"
 
         # set the API to version 2.0
         parsed_url = urlparse(url)
@@ -165,7 +160,7 @@ class DocumentCloud(object):
         if attr in methods:
             return partial(self._request, attr)
         raise AttributeError(
-            "'{}' object has no attribute '{}'".format(self.__class__.__name__, attr)
+            f"'{self.__class__.__name__}' object has no attribute '{attr}'"
         )
 
     def raise_for_status(self, response):
@@ -174,6 +169,6 @@ class DocumentCloud(object):
             response.raise_for_status()
         except requests.exceptions.RequestException as exc:
             if exc.response.status_code == 404:
-                raise DoesNotExistError(response=exc.response)
+                raise DoesNotExistError(response=exc.response) from exc
             else:
-                raise APIError(response=exc.response)
+                raise APIError(response=exc.response) from exc

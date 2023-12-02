@@ -5,7 +5,7 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -18,7 +18,7 @@ interactions:
     uri: https://dev.squarelet.com/api/token/
   response:
     body:
-      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5OTEyNjczMiwianRpIjoiYzdiZjcwOGViNjU4NGUyYjg0M2UzNTAyZmY1OGE1ZmQiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.OLztYeNXHYyqD_idaOfW6Y8DKk9jO64MdXm98bkf1lLtv0fF8YzYhWxyTPBI2nha5XuAxpBtk-6GAKcd_iajImHZNjmXiJnjRyaNQ8Qi6_k6GbkVceYSqpvlZcwSOqLLhbrhd0A6EIlTTjdRiVTrygWWbA_mrACWK4MPs_MnE3QriiFORoGSmcYtyFsw8-fl_7tUF4tyrviT1i0z2UqPtfFkI3e4r57XwLg3TBKzmipfBgm4zDp50MqgPxAiifhwixuwpK1r94ZEaLhY8VDtcSsEXoYrvHXVl6bnCUDNQGq23vDFUp7lHdE-2HfuCwTGMBgGJIayRYLYCJ30uvYzJg","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiJiMjgyZWViYzZlY2Q0NTU3Yjc3MmUxOGRjM2MyMDg0OCIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.CwOb96sY3I79X-Pgk_NEtn2Hk7tvu05NufKk_tk9SABY1AKKQs3MITzPPTgI7BYINSFyGJPoCnOZBXdCznzzG_uzT_T9zEGFzA9gomGxGBMEnw4XZln7mXATShZQ11rUH7cIzJWCTgTkSC8yCkzDA4Bfu4YNRkzVpPoosmUN14uE16tLuwKMevym_wp8GG08gfB1-vHT925F2iNaI4XVdy58r2a0_gpnNmSpk7AQrKBpaHhwjAGvCE9w9qQ8x9ACzKlgdi2OwaQ5PnajZjZjuQlXZvYmxMrBrNzCN0wrn8DW9k5eCmECYXkbbVLxawT3ZJJuRIiaKrwhsqnttQuGtg"}'
+      string: '{"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMTM3ODIyMywianRpIjoiZWY0Mjc0OGZkZWUwNDE2ZTk4OTAzZDE5OWEzMWUzNjEiLCJ1c2VyX2lkIjoiOWE3MzJmNGItMDU0Zi00ZDQ0LWFiYjAtZDg0MjE3ZGNhMzMzIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.bRR1FMmqGtJOFBX0F19UkDiO4bpzWGtJH1G8tp88_ws5WPNKwLjIsIm5v9norfw6kxs9_33LNRizAxRRpHyzuzUFXy7wJnds4yL-GaSuU9WY3XubRMHPyEfByemxgdgMbm8zKVS5fcxFFGO_dOdq3ZaRYwWkAZYYUxn__G1GPLqO1yZ2H8-lYUEUuCnxX9lpeeXv3Bahn3HV58mIAr5ipAruvg3dqFI8oiGjGjhTd0rOL2nmCYUf0RbaeTqts3v5EVPwYpoqHgc5A5j6p5RJZhyuWzioW9RD-jfmmYOVpPaU3KaOrm8ZFmnMieqXkb_26m5xeGjoTuOoAg0w5JQZzQ","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhNTIyZDFmYjVlMzA0NmQxYTY0ODEwNDcwNzhmYzMwNiIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.PADm3vVV-blcXRwkD7YjThrtm8P3pMXQblDc532eOEWQSYqcttEFauLMzYBMU--OAzY27eZCK_YEhpqNFpYx8lY5x9t8_rbF1C3FO7ZnpXniJIlD12N3zwGNqv2Il9FO0w1UQ2z3oLeQ-0MJ50yFfs96FWZGu9RllQfYV-p_0EZpem5sru1Gy78XbagyIMiNoOuaYPZVxx3-nS8_jZe8sJ_9abF5S6TGwuu_J0LEfveVmm_oxWyXnj_WJCYoa3J4g15qkRZOXCzup9m-qlKN2l948pXXL_ajk59Tbp-55W2sqEMaOe1Ce6_8w_B2_uG1IbCmCc_0gE676BSKKirKFg"}'
     headers:
       Allow:
       - POST, OPTIONS
@@ -28,19 +28,21 @@ interactions:
       - '1313'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:38:52 GMT
+      - Wed, 29 Nov 2023 21:03:43 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Server-Timing:
-      - TimerPanel_utime;dur=266.71699999999987;desc="User CPU time", TimerPanel_stime;dur=67.74900000000005;desc="System
-        CPU time", TimerPanel_total;dur=334.4659999999999;desc="Total CPU time", TimerPanel_total_time;dur=127.16889381408691;desc="Elapsed
-        time", SQLPanel_sql_time;dur=10.712623596191406;desc="SQL 3 queries", CachePanel_total_time;dur=0;desc="Cache
-        0 Calls"
+      - TimerPanel_utime;dur=224.18099999999797;desc="User CPU time", TimerPanel_stime;dur=62.50899999999859;desc="System
+        CPU time", TimerPanel_total;dur=286.68999999999653;desc="Total CPU time",
+        TimerPanel_total_time;dur=151.27015113830566;desc="Elapsed time", SQLPanel_sql_time;dur=7.661342620849609;desc="SQL
+        3 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
       Set-Cookie:
-      - op_browser_state=a65d397bd2e066c643dd80ba21918e6b815229469d827ea8c5226471;
+      - op_browser_state=930bcb9f92aa00b3e00e7153710d38427af67a791fe1107e19e2fe88;
         Path=/
       Vary:
       - Accept, Origin, Cookie
@@ -52,12 +54,12 @@ interactions:
       code: 200
       message: OK
 - request:
-    body: '{"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5OTEyNjczMiwianRpIjoiYzdiZjcwOGViNjU4NGUyYjg0M2UzNTAyZmY1OGE1ZmQiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.OLztYeNXHYyqD_idaOfW6Y8DKk9jO64MdXm98bkf1lLtv0fF8YzYhWxyTPBI2nha5XuAxpBtk-6GAKcd_iajImHZNjmXiJnjRyaNQ8Qi6_k6GbkVceYSqpvlZcwSOqLLhbrhd0A6EIlTTjdRiVTrygWWbA_mrACWK4MPs_MnE3QriiFORoGSmcYtyFsw8-fl_7tUF4tyrviT1i0z2UqPtfFkI3e4r57XwLg3TBKzmipfBgm4zDp50MqgPxAiifhwixuwpK1r94ZEaLhY8VDtcSsEXoYrvHXVl6bnCUDNQGq23vDFUp7lHdE-2HfuCwTGMBgGJIayRYLYCJ30uvYzJg"}'
+    body: '{"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMTM3ODIyMywianRpIjoiZWY0Mjc0OGZkZWUwNDE2ZTk4OTAzZDE5OWEzMWUzNjEiLCJ1c2VyX2lkIjoiOWE3MzJmNGItMDU0Zi00ZDQ0LWFiYjAtZDg0MjE3ZGNhMzMzIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.bRR1FMmqGtJOFBX0F19UkDiO4bpzWGtJH1G8tp88_ws5WPNKwLjIsIm5v9norfw6kxs9_33LNRizAxRRpHyzuzUFXy7wJnds4yL-GaSuU9WY3XubRMHPyEfByemxgdgMbm8zKVS5fcxFFGO_dOdq3ZaRYwWkAZYYUxn__G1GPLqO1yZ2H8-lYUEUuCnxX9lpeeXv3Bahn3HV58mIAr5ipAruvg3dqFI8oiGjGjhTd0rOL2nmCYUf0RbaeTqts3v5EVPwYpoqHgc5A5j6p5RJZhyuWzioW9RD-jfmmYOVpPaU3KaOrm8ZFmnMieqXkb_26m5xeGjoTuOoAg0w5JQZzQ"}'
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, br
       Connection:
       - keep-alive
       Content-Length:
@@ -70,7 +72,7 @@ interactions:
     uri: https://dev.squarelet.com/api/refresh/
   response:
     body:
-      string: '{"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk5MDQwNjMyLCJqdGkiOiI4ODRjNGVjMWMyNmY0OTBlOTUyMzM4MWIwZmI3ODg1NyIsInVzZXJfaWQiOiJhN2ExYmYyNy00ZjVhLTRjMDYtOTZjMi0yZDgxMmM1MWI2MWYiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.WAFNIp-5HMkQ_6-Bqj_tuj1IpiO9jDzs4Pmb0XZpYMXtisEWbkaj0V4qXDsF1vHCoCDjA3jT31IyIrbNdmEixVTTuDG-eMT_PCPpdm25jP8ECErZNv-TaUiMOMYRaXvt3ENPBckE4SMjHiDSR_Prr34kY_LxCnDITp8JsjTIcsM1Wr8x5sFd6TQ-gshw0NbqILas1wLMBo9Lpmh0uuJ7498uxX_Kdb6cLuSVbZeN7iwO1F2IuU90NDYvsKdBz-6ajS-fkwSKbFRWRCushLhfrDBJH5dv-rRgq87CQ-IjeXkxpuqEPqRyarnelAewgc1_jw6WbBPz9xXJmaHjdZys_A","refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5OTEyNjczMiwianRpIjoiOTg4ZTRhZDUzOGQxNGYzOGFlMzQxMmVhOGEwNGJhYzUiLCJ1c2VyX2lkIjoiYTdhMWJmMjctNGY1YS00YzA2LTk2YzItMmQ4MTJjNTFiNjFmIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.BcrbfoN15owiHaHCms1TixWVhH_WSD0kuqsiKnkNfohU8znGg6aU5uvi7GFeTEMtea-thKh8sm_21AjKOljojAMFFjqri-hjrA4OKVVLzMrH0BHsk1bK4G7z3PPTgaolCRK5ihPnHOUNGDQauatoqo_UoYEhNpvmA6b1IuVKrfwIzY8cXRYg-fXWSXzJqGRbAOrxjKqeZY5F1bhM88TPDQLvnrVyW2cwkUhLliKuMIHV3DyOfu61F79hi1nTHXOvBN59_TEvHLtDdIeMtqszo8dmHTVHdTxARQVCo3A6pIb4Puk8-ORu32JOoYYl_GzC0XcPtRqAyZAy1zS_7yqaxA"}'
+      string: '{"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA","refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcwMTM3ODIyMywianRpIjoiYmJiODhkMjQzN2Q4NDllOWI4MjUxZjFlZDc5NmMzZjYiLCJ1c2VyX2lkIjoiOWE3MzJmNGItMDU0Zi00ZDQ0LWFiYjAtZDg0MjE3ZGNhMzMzIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.M9o76IAM42GtgWMCnoy_fExi3VZknpvwKYScWDODm6LauYVu8UC-fnUkWrOFK0GqDw9t8tHy5wIZXgBp-2paBmhVbtngiEjj4PM_NIhKfmFCclYxftQHmiLtt7o221xv4YqPRuDTfce-o3MIL4QbULo3kC5C5h-t_LbAd9fCwrFe0NCupTpSMRweffh3pyiGHvIAfkDIgcBs62MFGdHuBtuQ0kMclpCRpne2UzSeAYYjx6YLucHA1HTADIP733U-DfJffMwyTP1zQFWPcrrfOrnwIF1d67PWsLxlx34aNE2POpgTTCd1aG-zS63mn2eAYp8na2cB8GEF-pQMT2w30g"}'
     headers:
       Allow:
       - POST, OPTIONS
@@ -80,19 +82,21 @@ interactions:
       - '1313'
       Content-Type:
       - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
       Date:
-      - Fri, 03 Nov 2023 19:38:52 GMT
+      - Wed, 29 Nov 2023 21:03:43 GMT
       Referrer-Policy:
       - same-origin
       Server:
-      - nginx/1.23.1
+      - nginx/1.25.2
       Server-Timing:
-      - TimerPanel_utime;dur=44.302999999999315;desc="User CPU time", TimerPanel_stime;dur=3.09399999999993;desc="System
-        CPU time", TimerPanel_total;dur=47.396999999999245;desc="Total CPU time",
-        TimerPanel_total_time;dur=50.77052116394043;desc="Elapsed time", SQLPanel_sql_time;dur=0.5311965942382812;desc="SQL
+      - TimerPanel_utime;dur=30.129999999999768;desc="User CPU time", TimerPanel_stime;dur=0.0;desc="System
+        CPU time", TimerPanel_total;dur=30.129999999999768;desc="Total CPU time",
+        TimerPanel_total_time;dur=34.08312797546387;desc="Elapsed time", SQLPanel_sql_time;dur=0.4181861877441406;desc="SQL
         2 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
       Set-Cookie:
-      - op_browser_state=a65d397bd2e066c643dd80ba21918e6b815229469d827ea8c5226471;
+      - op_browser_state=930bcb9f92aa00b3e00e7153710d38427af67a791fe1107e19e2fe88;
         Path=/
       Vary:
       - Accept, Origin, Cookie
