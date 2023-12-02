@@ -31,3 +31,27 @@ jobs:
         run: |
           make test
         working-directory: .
+
+  pylint-and-black:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+          
+      - name: Install dependencies for imports
+        run: |
+           pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml
+           
+      - name: Install pylint and black
+        run: |
+          pip install pylint black
+
+      - name: Run pylint and black
+        run: |
+          pylint ./documentcloud
+          black  ./documentcloud
