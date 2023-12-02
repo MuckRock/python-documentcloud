@@ -394,7 +394,9 @@ class DocumentClient(BaseAPIClient):
         path_list = self._collect_files(path, extensions)
 
         logger.info(
-            f"Upload directory on {path}: Found {len(path_list)} files to upload"
+            "Upload directory on %s: Found %d files to upload",
+            path,
+            len(path_list)
         )
 
         # Upload all the files using the bulk API to reduce the number
@@ -405,7 +407,7 @@ class DocumentClient(BaseAPIClient):
             # Grouper will put None's on the end of the last group
             file_paths = [p for p in file_paths if p is not None]
 
-            logger.info(f"Uploading group {i + 1}:\n" + "\n".join(file_paths))
+            logger.info("Uploading group %d:\n%s", i + 1, "\n".join(file_paths))
 
             # Create the documents
             logger.info("Creating the documents...")
@@ -430,8 +432,9 @@ class DocumentClient(BaseAPIClient):
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        f"Error creating the following documents: {exc}\n"
-                        + "\n".join(file_paths)
+                        "Error creating the following documents: %s\n%s",
+                        exc,
+                        "\n".join(file_paths)
                     )
                     continue
                 else:
@@ -442,7 +445,7 @@ class DocumentClient(BaseAPIClient):
             obj_list.extend(create_json)
             presigned_urls = [j["presigned_url"] for j in create_json]
             for url, file_path in zip(presigned_urls, file_paths):
-                logger.info(f"Uploading {file_path} to S3...")
+                logger.info("Uploading %s to S3...", file_path)
                 try:
                     response = requests_retry_session().put(
                         url, data=open(file_path, "rb").read()
@@ -451,7 +454,9 @@ class DocumentClient(BaseAPIClient):
                 except (APIError, RequestException) as exc:
                     if handle_errors:
                         logger.info(
-                            f"Error uploading the following document: {exc} {file_path}"
+                            "Error uploading the following document: %s %s",
+                            exc,
+                            file_path
                         )
                         continue
                     else:
@@ -465,8 +470,9 @@ class DocumentClient(BaseAPIClient):
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        f"Error creating the following documents: {exc}\n"
-                        + "\n".join(file_paths)
+                        "Error creating the following documents: %s\n%s",
+                        exc,
+                        "\n".join(file_paths)
                     )
                     continue
                 else:
@@ -489,7 +495,11 @@ class DocumentClient(BaseAPIClient):
             # Grouper will put None's on the end of the last group
             url_group = [url for url in url_group if url is not None]
 
-            logger.info("Uploading group {}: {}".format(i + 1, "\n".join(url_group)))
+            logger.info(
+                "Uploading group %d: %s",
+                i + 1,
+                "\n".join(url_group)
+            )
 
             # Create the documents
             logger.info("Creating the documents...")
@@ -510,9 +520,9 @@ class DocumentClient(BaseAPIClient):
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        "Error creating the following documents: "
-                        + str(exc)
-                        + "\n".join(url_group)
+                        "Error creating the following documents: %s\n%s",
+                        str(exc),
+                        "\n".join(url_group)
                     )
                     continue
                 else:

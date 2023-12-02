@@ -126,7 +126,7 @@ class DocumentCloud(object):
     def _request(self, method, url, raise_error=True, **kwargs):
         """Generic method to make API requests"""
         # pylint: disable=method-hidden
-        logger.info(f"request: {method} - {url} - {kwargs}")
+        logger.info("request: %s - %s - %s", method, url, kwargs)
         set_tokens = kwargs.pop("set_tokens", True)
         full_url = kwargs.pop("full_url", False)
 
@@ -142,7 +142,7 @@ class DocumentCloud(object):
         response = requests_retry_session(session=self.session).request(
             method, url, timeout=self.timeout, **kwargs
         )
-        logger.debug(f"response: {response.status_code} - {response.content}")
+        logger.debug("response: %s - %s", response.status_code, response.content)
         if response.status_code == requests.codes.FORBIDDEN and set_tokens:
             self._set_tokens()
             # track set_tokens to not enter an infinite loop

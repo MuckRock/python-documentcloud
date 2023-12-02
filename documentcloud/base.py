@@ -33,7 +33,7 @@ class APIResults(object):
         ]
 
     def __repr__(self):
-        return f"<APIResults: {self.results}>"  # pragma: no cover
+        return f"<APIResults: {self.results!r}>"  # pragma: no cover
 
     def __str__(self):
         return f"[{', '.join(str(r) for r in self.results)}]"
