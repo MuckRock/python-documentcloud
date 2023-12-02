@@ -42,7 +42,11 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.8
-
+          
+      - name: Install dependencies for imports
+        run: |
+           pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch
+           
       - name: Install pylint and black
         run: |
           pip install pylint black
