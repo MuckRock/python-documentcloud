@@ -26,7 +26,7 @@ You can also specify a custom uri if you have installed your own version of Docu
 
     >>> client = DocumentCloud(USERNAME, PASSWORD, base_uri="https://your.documentcloud.domain/api/", auth_uri="https://your.account.server.domain/api/")
 
-If you need to debug, you can pass a logging level as a parameter to the client when you instantiate. You will need to import logging first. There are several `logging levels <https://docs.python.org/3/library/logging.html#logging-levels>`_ depending on your needs. For this example, we will use the DEBUG level. 
+If you need to debug, you can pass a logging level as a parameter to the client when you instantiate. You will need to import logging first. There are several `logging levels <https://docs.python.org/3/library/logging.html#logging-levels>`_ depending on your needs. For this example, we will use the DEBUG level. ::
 
     >>> import logging
     >>> client = DocumentCloud(USERNAME, PASSWORD, loglevel=logging.DEBUG)
@@ -47,13 +47,13 @@ Interacting with a document
 
 Once you have you hands on a document object, you can interact with the metadata stored at documentcloud.org. Here's a sample: ::
 
-    >>> print obj.title
+    >>> print(obj.title)
     Final OIR Report
-    >>> print obj.id
+    >>> print(obj.id)
     71072
-    >>> print obj.contributor_organization
+    >>> print(obj.contributor_organization)
     Los Angeles Times
-    >>> print obj.canonical_url
+    >>> print(obj.canonical_url)
     http://www.documentcloud.org/documents/71072-oir-final-report.html
 
 You can even download the PDF, page images and full text. ::
@@ -92,7 +92,7 @@ Uploading a document that is not a PDF
 
 You can upload a document whose file extension is one of the seventy supported filetypes by including the original_extension parameter 
  (See https://www.documentcloud.org/help/api#supported-file-types for supported filetypes)
- Example: Uploading a JPG file that is stored in your home directory. 
+ Example: Uploading a JPG file that is stored in your home directory. ::
 
     >>> obj = self.client.documents.upload("~/test.jpg", original_extension='jpg')
 
@@ -108,7 +108,7 @@ First upload the document as normal. ::
     >>> from documentcloud import DocumentCloud
     >>> client = DocumentCloud(DOCUMENTCLOUD_USERNAME, DOCUMENTCLOUD_PASSWORD)
     >>> obj = client.documents.upload("/home/ben/pdfs/myfile.pdf", access='public')
-    
+
 Then refresh your local document object from the server. If it is does not show up as public, then it is still processing, and you'll have to check again. ::
 
     >>> obj = client.documents.get(obj.id)
@@ -119,7 +119,7 @@ Then refresh your local document object from the server. If it is does not show 
 Uploading a directory of documents as a project
 -----------------------------------------------
 
-Here's how to upload a directory full of documents and add them all to a new project. Be warned, this will upload any documents in directories inside the path you specify. ::
+Here's how to upload a directory full of PDFs and add them all to a new project. Be warned, this will upload any documents in directories inside the path you specify. ::
 
     >>> # Connect to documentcloud
     >>> from documentcloud import DocumentCloud
@@ -133,10 +133,19 @@ Here's how to upload a directory full of documents and add them all to a new pro
     >>> # Save the changes to the project
     >>> project.put()
 
+If you want to upload a directory of other file types, you can specify the extensions you want. 
+For example, the following will upload all .txt and .jpg files in the groucho_marx directory. ::
+    >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions = ['.txt', '.jpg'])
+
+If you pass extensions='None' it will upload all files that DocumentCloud supprots, regardless of extension type. 
+For example, the following will upload all files that are supported by DocumentCloud in the groucho_marx directory. ::
+    >>> obj_list = client.documents.upload_directory('/home/ben/pdfs/groucho_marx/', extensions=None)
+
+
 Uploading a PDF from a URL
 --------------------------
 
-How to read a PDF document from a URL on the World Wide Web and upload it to DocumentCloud without saving it to your local hard drive.
+You can upload a PDF from a remote URL in the following way. ::
 
     >>> from documentcloud import DocumentCloud
     >>> url = "http://myhost.org/interesting-doc.pdf"
@@ -146,11 +155,23 @@ How to read a PDF document from a URL on the World Wide Web and upload it to Doc
 
 
 Uploading a document with a different supported file type from URL
---------------------------
-Here is an example of how to read a document with another supported file type from a URL and upload it to DocumentCloud without saving it to your local hard drive. 
+------------------------------------------------------------------
+
+You can specify the original_extension on upload to to handle other extension types. ::
 
     >>> from documentcloud import DocumentCloud
     >>> url = "https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"
     >>> client = DocumentCloud(DOCUMENTCLOUD_USERNAME, DOCUMENTCLOUD_PASSWORD)
     >>> # Upload the specified URL to the given client
     >>> obj = client.documents.upload(url, original_extension='png')
+
+Upload a list of URLs as documents to DocumentCloud
+---------------------------------------------------
+
+If you are trying to upload a lot of URLs regularly, there is a bulk method to upload them 25 at a time - upload_urls(). ::
+
+    >>> urls = ["https://www.chicago.gov/content/dam/city/depts/dcd/tif/22reports/T_072_24thMichiganAR22.pdf", "https://www.chicago.gov/content/dam/city/depts/dcd/tif/22reports/T_063_CanalCongressAR22.pdf"]
+    >>> new = client.documents.upload_urls(urls)
+    >>> new
+    [<Document: 23932356 - T_072_24thMichiganAR22>, <Document: 23932357 - T_063_CanalCongressAR22>]
+

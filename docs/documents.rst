@@ -155,11 +155,11 @@ Document
 
            >>> # Grab a document
            >>> obj = client.documents.get('71072')
-           >>> print obj.title
+           >>> print(obj.title)
            Draft OIR Report
            >>> # Change its title
            >>> obj.title = "Brand new title"
-           >>> print obj.title
+           >>> print(obj.title)
            Brand New Title
            >>> # Save those changes
            >>> obj.put()
@@ -282,7 +282,7 @@ Document
        >>> obj = client.documents.get('1088501-adventuretime-alta')
        >>> txt = obj.get_page_text(1)
        # Let's print just the first line
-       >>> print txt.decode().split("\n")[0]
+       >>> print(txt.split("\n")[0])
        STATE OF CALIFORNIA- HEALTH AND HUMAN SERVICES AGENCY
 
    .. method:: get_page_position_json(page)
