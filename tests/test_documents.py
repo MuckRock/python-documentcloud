@@ -75,7 +75,7 @@ class TestDocument:
 
     def test_mentions(self, client, document):
         document = client.documents.search(
-            "document:{} text".format(document.id), mentions="true"
+            f"document:{document.id} text", mentions="true"
         )[0]
         assert document.mentions
         mention = document.mentions[0]
@@ -158,7 +158,9 @@ class TestDocument:
 
 class TestDocumentClient:
     def test_search(self, client, document):
-        documents = client.documents.search("document:{} simple".format(document.id))
+        documents = client.documents.search(
+            f"document:{document.id} simple"
+        )
         assert documents
 
     def test_list(self, client):
@@ -176,9 +178,10 @@ class TestDocumentClient:
             public_client.documents.upload("tests/test.pdf")
 
     def test_upload_file(self, document_factory):
-        pdf = open("tests/test.pdf", "rb")
-        document = document_factory(pdf)
+        with open("tests/test.pdf", "rb") as pdf:
+            document = document_factory(pdf)
         assert document.status == "success"
+
 
     def test_upload_file_path(self, document_factory):
         document = document_factory("tests/test.pdf")

@@ -45,13 +45,12 @@ jobs:
           
       - name: Install dependencies for imports
         run: |
-           pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml
+           pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml pytest vcrpy
            
       - name: Install pylint and black
         run: |
           pip install pylint black
 
-      - name: Run pylint and black
+      - name: Run pylint and black on ./documentcloud and ./tests
         run: |
-          pylint ./documentcloud
-          black  ./documentcloud
+          pylint ./documentcloud ./tests; black ./documentcloud ./tests

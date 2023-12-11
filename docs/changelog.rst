@@ -1,5 +1,9 @@
 Changelog
 ---------
+4.0.1
+~~~~~
+* Reformats some strings in tests to conform to pylint standards.
+
 
 4.0.0
 ~~~~~

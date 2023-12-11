@@ -142,7 +142,7 @@ def document_factory(client, record_mode):
 def project(client, document_factory):
     with vcr.use_cassette("tests/cassettes/fixtures/project.yaml"):
         document = document_factory()
-        title = "This is a project for testing {}".format(uuid4())
+        title = f"This is a project for testing {uuid4()}"
         project = client.projects.create(
             title, "This is a project for testing", document_ids=[document.id]
         )

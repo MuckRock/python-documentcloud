@@ -26,7 +26,7 @@ ProjectClient
    .. method:: create(title, description="", private=True, document_ids=None)
 
       Create a new project on DocumentCloud. You must be authorized to do this.
-      Returns the object representing the new record you've created.
+      Returns the object representing the new record you've created. ::
 
            >>> from documentcloud import DocumentCloud
            >>> client = DocumentCloud(USERNAME, PASSWORD)
@@ -56,7 +56,7 @@ ProjectClient
       must be authorized to do this. Returns a tuple. An object representing the
       record comes first. A boolean that reports whether or not the objects was
       created fresh comes second. It is true when the record was created, false
-      when it was found on the site already.
+      when it was found on the site already.  ::
 
            >>> from documentcloud import DocumentCloud
            >>> client = DocumentCloud(USERNAME, PASSWORD)
@@ -119,7 +119,7 @@ Project
    
    .. method:: clear_documents()
 
-      Removes all documents from a project. 
+      Removes all documents from a project. ::
 
          >>> obj = client.projects.get('816')
          >>> obj.clear_documents()
@@ -127,7 +127,7 @@ Project
    .. method:: add_documents()
 
       Efficiently adds a lot of documents to a project. 
-      Adds the documents 25 at a time using bulk API calls. 
+      Adds the documents 25 at a time using bulk API calls. ::
 
          >>> documents_to_add = [client.documents.get('23745990'), client.documents.get('23745988')]
          >>> obj = client.projects.get('816')
@@ -145,7 +145,7 @@ Project
    .. attribute:: document_ids
 
        A list that contains the unique identifier of the documents assigned to
-       this project. Cannot be edited. Edit the document_list instead.
+       this project. Cannot be edited. Edit the document_list instead. ::
 
            >>> obj = client.projects.get('816')
            >>> obj.document_ids
@@ -155,7 +155,7 @@ Project
 
        A list that documents assigned to this project. Can be expanded by
        appending new documents to the list or cleared by reassigning it as an
-       empty list and then issuing the put command.
+       empty list and then issuing the put command. ::
 
            >>> obj = client.projects.get('816')
            >>> obj.document_list
