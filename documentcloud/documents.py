@@ -312,6 +312,7 @@ class DocumentClient(BaseAPIClient):
             "force_ocr",
             "projects",
             "delayed_index",
+            "revision_control",
         ]
         # these parameters currently do not work, investigate...
         ignored_parameters = ["secure"]

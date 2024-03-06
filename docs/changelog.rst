@@ -1,5 +1,10 @@
 Changelog
 ---------
+
+4.1.0
+~~~~~
+* Add `revision_control` as an allowed upload parameter.
+
 4.0.1
 ~~~~~
 * Reformats some strings in tests to conform to pylint standards.
