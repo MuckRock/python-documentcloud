@@ -66,7 +66,7 @@ DocumentClient
 
       >>> from documentcloud import DocumentCloud
       >>> client = DocumentCloud(USERNAME, PASSWORD)
-      >>> new_id = client.documents.upload("/home/ben/test.pdf", "Test PDF")
+      >>> new_id = client.documents.upload("/home/ben/test.pdf", title="Test PDF")
       >>> # Now fetch it
       >>> client.documents.get(new_id)
       <Document: Test PDF>
