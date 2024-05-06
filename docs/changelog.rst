@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+4.1.1
+~~~~~
+* Refresh tokens on 429 response codes
+
 4.1.0
 ~~~~~
 * Add `revision_control` as an allowed upload parameter.

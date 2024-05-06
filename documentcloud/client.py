@@ -143,7 +143,10 @@ class DocumentCloud(object):
             method, url, timeout=self.timeout, **kwargs
         )
         logger.debug("response: %s - %s", response.status_code, response.content)
-        if response.status_code == requests.codes.FORBIDDEN and set_tokens:
+        if (
+            response.status_code in [requests.codes.FORBIDDEN, requests.codes.TOO_MANY]
+            and set_tokens
+        ):
             self._set_tokens()
             # track set_tokens to not enter an infinite loop
             kwargs["set_tokens"] = False
