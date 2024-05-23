@@ -104,7 +104,7 @@ class BaseAPIClient(object):
 
     def delete(self, id_):
         """Deletes a resource"""
-        self.client.delete(f"{self.api_path}/{get_id(id_)}")
+        self.client.delete(f"{self.api_path}/{get_id(id_)}/")
 
     def all(self, **params):
         return self.list(**params)

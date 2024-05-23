@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+4.1.2
+~~~~~
+* Fix DELETE URL for documents
+
 4.1.1
 ~~~~~
 * Refresh tokens on 429 response codes
