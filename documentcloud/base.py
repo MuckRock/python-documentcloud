@@ -162,7 +162,7 @@ class BaseAPIObject(object):
         self._client.put(f"{self.api_path}/{self.id}/", json=data)
 
     def delete(self):
-        self._client.delete(f"{self.api_path}/{self.id}")
+        self._client.delete(f"{self.api_path}/{self.id}/")
 
 
 class APISet(list):
