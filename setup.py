@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="python-documentcloud",
-    version="4.1.3",
+    version="4.3.0",
     description="A simple Python wrapper for the DocumentCloud API",
     author="Mitchell Kotler",
     author_email="mitch@muckrock.com",
@@ -26,6 +26,7 @@ setup(
         "urllib3",
         "pyyaml",
         "fastjsonschema",
+        "python-squarelet",
     ),
     extras_require={
         "dev": [
