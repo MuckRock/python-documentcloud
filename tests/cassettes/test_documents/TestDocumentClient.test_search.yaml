@@ -7,20 +7,20 @@ interactions:
       Accept-Encoding:
       - gzip, deflate, br
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAxMjkyMTIzLCJqdGkiOiJhZTQyNGI4NzAwYTg0Njg3YWVjNTEzZjI5MWFjMTU1NCIsInVzZXJfaWQiOiI5YTczMmY0Yi0wNTRmLTRkNDQtYWJiMC1kODQyMTdkY2EzMzMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Fd5PFPqGPAoUMpjgXNvwVqR1rKGx_AkjLbztX1DGtbjdiTjg6WF_D-OtETag2Ky_bqTr9TEXJ2lQswUJJ5_YES3accK7P-W4cUAQoQRfdvmavI-U3q-6EJNXNJ9Ej4ZIco5S-n7CoU_oSfVOBm15MuhXw42PsWcvYPV-m_2IiQ4TEiEuaW8niyE4Ogim9DlrAM2DZc-0ZOyXLsRuJKDuGNuLNRSf62Z9ICOK5A9aRFzMnTqN-ON3OxksYbbJ26MKlMEN3zzbst_PnMT5roPZ65qhb2CFCWZvK8v5i2xqLIVI6KHh0TOdSLljlNO4CSRpf3L7NCaO8SEa5oWEnU_KRA
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1ODUwMDcxLCJqdGkiOiIxZWRlYWQxNzEyMmM0N2E1YWZlNjQ2NzdkMzViZWNhZiIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.agRzHD2uUmaNZ4WZ_QMYzrJ5MsoHgN0diKORZmNPDjxXtkYXozxbgSrOXZjYG3jeGUsZ1inYW9j6nZtP0AOwe-FBo5-hVtxKB8_T6zSTUlsdONNcFNqWVMaWPyp3tADnbT7ziGmCJvP8YJEq9LwR157hoGjiEEALK83x4FT8vyIjIALnpPmu3udPpwu6231-MwpXreytKBkmoaHLb5kMXwefF7sX3LcbE_9j7i29Kr8QMcZdq5AAM3P31q8A4rxB_FADxlqYt3qSjSZ64r0kqmNx2CWo9eJeQ35bPAI0uc-mobk4xCMU-MW6U9sPzQsC-FZ6VVUKt-hwphd_-dziEg
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: GET
-    uri: https://api.dev.documentcloud.org/api/documents/search/?q=document%3A20000193+simple&version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/search/?q=document%3A20000273+simple
   response:
     body:
-      string: '{"count":1,"next":"https://api.dev.documentcloud.org/api/documents/search/?q=document%3A20000193+simple&version=2.0&cursor=AoMIPnUz4XW1%2BbiOjAMoMjAwMDAxOTM%3D","previous":null,"results":[{"id":"20000193","user":100002,"organization":10002,"access":"private","status":"success","title":"test","slug":"test","source":"MuckRock","description":"A
-        simple test document","language":"eng","created_at":"2023-11-29T21:02:19.989Z","updated_at":"2023-11-29T21:03:52.369Z","page_count":1,"projects":[200052],"original_extension":"pdf","file_hash":"5dcb718cdd5326ce53ccf8b0d801c0fcaffa1c81","related_article":"https://www.example.com/article/","published_url":"https://www.example.com/article/test.pdf","noindex":false,"edit_access":true,"notes":[],"highlights":null,"data":{"_tag":["document"]},"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000193-test"}],"escaped":false,"debug":{"text_query":"simple","qtime":5,"fq":["!access:invisible","filter(access:public
-        AND status:(success readable)) OR (user:100002) OR (access:organization AND
-        organization:(10002)) OR (projects_edit_access:(200053 200052))","id:(20000193)"],"sort":"score
-        desc, created_at desc, id desc","hl":"off","hl.highlightMultiTerm":"true","rows":25,"cursorMark":"*","qq_user":100002,"notes.qq_user":100002,"qq_organizations":"10002","qq_projects":"200053,200052"}}'
+      string: '{"count":1,"next":null,"previous":null,"results":[{"id":"20000273","user":100000,"organization":10004,"access":"private","status":"success","title":"test","slug":"test","source":"MuckRock","description":"A
+        simple test document","language":"eng","created_at":"2025-01-02T20:28:57.927Z","updated_at":"2025-01-02T20:29:36.132Z","page_count":1,"projects":[200070],"original_extension":"pdf","file_hash":"5dcb718cdd5326ce53ccf8b0d801c0fcaffa1c81","related_article":"https://www.example.com/article/","published_url":"https://www.example.com/article/test.pdf","noindex":false,"edit_access":true,"notes":[],"highlights":null,"data":{"_tag":["document"]},"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000273-test"}],"escaped":false,"debug":{"text_query":"simple","qtime":3,"fq":["!access:invisible","filter(access:public
+        AND status:(success readable)) OR (user:100000) OR (access:organization AND
+        organization:(10000 10004)) OR (projects_edit_access:(200071 200000 200001
+        200070))","id:(20000273)"],"sort":"score desc, created_at desc, id desc","hl":"off","hl.highlightMultiTerm":"true","rows":25,"start":0,"qq_user":100000,"notes.qq_user":100000,"qq_organizations":"10000,10004","qq_projects":"200071,200000,200001,200070"}}'
     headers:
       Allow:
       - GET, HEAD, OPTIONS
@@ -31,13 +31,13 @@ interactions:
       Content-Language:
       - en
       Content-Length:
-      - '1394'
+      - '1289'
       Content-Type:
       - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Wed, 29 Nov 2023 21:04:36 GMT
+      - Thu, 02 Jan 2025 20:29:55 GMT
       Referrer-Policy:
       - same-origin
       Server:

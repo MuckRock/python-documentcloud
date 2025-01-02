@@ -14,7 +14,7 @@ from .users import UserClient
 
 logger = logging.getLogger("documentcloud")
 
-class DocumentCloud:
+class DocumentCloud(SquareletClient):
     """
     The public interface for the DocumentCloud API, now integrated with SquareletClient
     """
@@ -30,8 +30,8 @@ class DocumentCloud:
         rate_limit=True,
         rate_limit_sleep=True,
     ):
-        # Initialize SquareletClient for authentication and request handling
-        self.squarelet_client = SquareletClient(
+       # Initialize SquareletClient for authentication and request handling
+        super().__init__(
             base_uri=base_uri,
             username=username,
             password=password,
@@ -51,17 +51,12 @@ class DocumentCloud:
             logger.addHandler(logging.NullHandler())
 
         # Initialize the sub-clients using SquareletClient
-        self.documents = DocumentClient(self.squarelet_client)
-        self.projects = ProjectClient(self.squarelet_client)
-        self.users = UserClient(self.squarelet_client)
-        self.organizations = OrganizationClient(self.squarelet_client)
+        self.documents = DocumentClient(self)
+        self.projects = ProjectClient(self)
+        self.users = UserClient(self)
+        self.organizations = OrganizationClient(self)
 
-    def _request(self, method, url, raise_error=True, **kwargs):
-        """Delegates request to the SquareletClient's _request method"""
+    """def _request(self, method, url, raise_error=True, **kwargs):
+        Delegates request to the SquareletClient's _request method
         return self.squarelet_client.request(method, url, raise_error, **kwargs)
-
-    @property
-    def user_id(self):
-        """Get the user ID of the authenticated user"""
-        user = self.users.get("me")
-        return user.id
+        """
