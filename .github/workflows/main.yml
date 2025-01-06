@@ -25,7 +25,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install vcrpy pytest==7.4.2 requests pytest-mock python-documentcloud pytest-xdist pytest-recording
+          pip install vcrpy pytest==7.4.2 requests pytest-mock python-documentcloud pytest-xdist pytest-recording python-squarelet
         
       - name: Run pre-recorded tests
         run: |
@@ -45,7 +45,7 @@ jobs:
           
       - name: Install dependencies for imports
         run: |
-           pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml pytest vcrpy
+           pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml pytest vcrpy python-squarelet
            
       - name: Install pylint and black
         run: |

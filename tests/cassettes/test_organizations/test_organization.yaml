@@ -13,36 +13,38 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://api.dev.documentcloud.org/api/projects/200070/documents/20000273?expand=document
+    uri: https://api.dev.documentcloud.org/api/users/100000/
   response:
     body:
-      string: ''
+      string: '{"id":100000,"avatar_url":"https://dev.squarelet.com/static/images/avatars/profile.png","is_staff":true,"name":"test-user","organization":10004,"organizations":[10000,10004],"admin_organizations":[10000,10004],"username":"test-user","uuid":"f6029e8a-d8a2-4188-8a21-cd073a02ee5c","verified_journalist":true}'
     headers:
+      Allow:
+      - GET, PUT, PATCH, HEAD, OPTIONS
       Connection:
       - keep-alive
       Content-Language:
       - en
+      Content-Length:
+      - '306'
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Thu, 02 Jan 2025 20:30:50 GMT
-      Location:
-      - /api/projects/200070/documents/20000273/?expand=document
+      - Thu, 02 Jan 2025 20:30:43 GMT
       Referrer-Policy:
       - same-origin
       Server:
       - nginx/1.25.2
-      Transfer-Encoding:
-      - chunked
       Vary:
-      - Origin, Accept-Language, Cookie
+      - Accept, Origin, Accept-Language, Cookie
       X-Content-Type-Options:
       - nosniff
+      X-Frame-Options:
+      - DENY
     status:
-      code: 301
-      message: Moved Permanently
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
@@ -57,28 +59,26 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://api.dev.documentcloud.org/api/projects/200070/documents/20000273/?expand=document
+    uri: https://api.dev.documentcloud.org/api/organizations/10004/
   response:
     body:
-      string: '{"document":{"id":20000273,"access":"private","admin_noindex":false,"asset_url":"https://api.dev.documentcloud.org/files/","canonical_url":"https://www.dev.documentcloud.org/documents/20000273-test","created_at":"2025-01-02T20:28:57.927312Z","data":{"_tag":["document"]},"description":"A
-        simple test document","edit_access":true,"file_hash":"5dcb718cdd5326ce53ccf8b0d801c0fcaffa1c81","noindex":false,"language":"eng","organization":10004,"original_extension":"pdf","page_count":1,"page_spec":"612.0x792.0:0","presigned_url":"https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000273/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20250102%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250102T203050Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=40e2eb8087e1ca8d8615724dc3e2d25e79ee154c0f1b44c7cdb7171c43d1cb87","projects":[200070],"publish_at":null,"published_url":"https://www.example.com/article/test.pdf","related_article":"https://www.example.com/article/","revision_control":false,"slug":"test","source":"MuckRock","status":"success","title":"test","updated_at":"2025-01-02T20:30:50.124619Z","user":100000},"edit_access":true}'
+      string: '{"id":10004,"avatar_url":"https://dev.squarelet.com/static/images/avatars/organization.png","individual":false,"name":"test
+        org","slug":"test-org","uuid":"155d99ef-e77d-4a8e-8db1-1c49c8916e87","monthly_credits":0,"purchased_credits":0,"credit_reset_date":null,"monthly_credit_allowance":0,"plan":"Free"}'
     headers:
       Allow:
-      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
-      Cache-Control:
-      - no-cache
+      - GET, HEAD, OPTIONS
       Connection:
       - keep-alive
       Content-Language:
       - en
       Content-Length:
-      - '1190'
+      - '303'
       Content-Type:
       - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Thu, 02 Jan 2025 20:30:50 GMT
+      - Thu, 02 Jan 2025 20:30:43 GMT
       Referrer-Policy:
       - same-origin
       Server:

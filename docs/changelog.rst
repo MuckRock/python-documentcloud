@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+4.3.0
+~~~~~
+* Uses python-squarelet to client handle authentication.
+
 4.1.3
 ~~~~~
 * Fix DELETE URL for documents

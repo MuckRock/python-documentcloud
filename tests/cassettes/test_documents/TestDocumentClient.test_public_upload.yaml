@@ -13,9 +13,9 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: POST
-    uri: https://api.dev.documentcloud.org/api/documents/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/
   response:
     body:
       string: '{"detail":"Authentication credentials were not provided."}'
@@ -35,7 +35,7 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Wed, 29 Nov 2023 21:04:58 GMT
+      - Thu, 02 Jan 2025 20:30:02 GMT
       Referrer-Policy:
       - same-origin
       Server:
@@ -63,9 +63,9 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.31.0
+      - python-requests/2.32.3
     method: POST
-    uri: https://api.dev.documentcloud.org/api/documents/?version=2.0
+    uri: https://api.dev.documentcloud.org/api/documents/
   response:
     body:
       string: '{"detail":"Authentication credentials were not provided."}'
@@ -85,7 +85,7 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Wed, 29 Nov 2023 21:04:58 GMT
+      - Thu, 02 Jan 2025 20:30:02 GMT
       Referrer-Policy:
       - same-origin
       Server:
