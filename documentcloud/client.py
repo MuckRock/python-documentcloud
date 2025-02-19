@@ -14,11 +14,12 @@ from .users import UserClient
 
 logger = logging.getLogger("documentcloud")
 
+
 class DocumentCloud(SquareletClient):
     """
     The public interface for the DocumentCloud API, now integrated with SquareletClient
     """
-    # pylint:disable=too-many-positional-arguments
+
     def __init__(
         self,
         username=None,
@@ -30,7 +31,7 @@ class DocumentCloud(SquareletClient):
         rate_limit=True,
         rate_limit_sleep=True,
     ):
-       # Initialize SquareletClient for authentication and request handling
+        # Initialize SquareletClient for authentication and request handling
         super().__init__(
             base_uri=base_uri,
             username=username,
@@ -38,7 +39,7 @@ class DocumentCloud(SquareletClient):
             auth_uri=auth_uri,
             timeout=timeout,
             rate_limit=rate_limit,
-            rate_limit_sleep=rate_limit_sleep
+            rate_limit_sleep=rate_limit_sleep,
         )
 
         # Set up logging
@@ -55,8 +56,3 @@ class DocumentCloud(SquareletClient):
         self.projects = ProjectClient(self)
         self.users = UserClient(self)
         self.organizations = OrganizationClient(self)
-
-    """def _request(self, method, url, raise_error=True, **kwargs):
-        Delegates request to the SquareletClient's _request method
-        return self.squarelet_client.request(method, url, raise_error, **kwargs)
-        """

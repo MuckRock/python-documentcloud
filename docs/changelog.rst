@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+4.4.0
+~~~~~
+* Removes support for Python 3.7. 
+
 4.3.0
 ~~~~~
 * Uses python-squarelet to client handle authentication.
