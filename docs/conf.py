@@ -206,7 +206,7 @@ latex_documents = [
         "index",
         "python-documentcloud.tex",
         "python-documentcloud Documentation",
-        "Los Angeles Times Data Desk",
+        "MuckRock Foundation",
         "manual",
     ),
 ]
@@ -241,7 +241,7 @@ man_pages = [
         "index",
         "python-documentcloud",
         "python-documentcloud Documentation",
-        ["Los Angeles Times Data Desk"],
+        ["MuckRock Foundation"],
         1,
     )
 ]
@@ -260,7 +260,7 @@ texinfo_documents = [
         "index",
         "python-documentcloud",
         "python-documentcloud Documentation",
-        "Los Angeles Times Data Desk",
+        "MuckRock Foundation",
         "python-documentcloud",
         "One line description of project.",
         "Miscellaneous",
