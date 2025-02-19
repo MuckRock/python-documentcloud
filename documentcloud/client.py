@@ -18,7 +18,6 @@ class DocumentCloud(SquareletClient):
     """
     The public interface for the DocumentCloud API, now integrated with SquareletClient
     """
-    # pylint:disable=too-many-positional-arguments
     def __init__(
         self,
         username=None,
@@ -55,8 +54,3 @@ class DocumentCloud(SquareletClient):
         self.projects = ProjectClient(self)
         self.users = UserClient(self)
         self.organizations = OrganizationClient(self)
-
-    """def _request(self, method, url, raise_error=True, **kwargs):
-        Delegates request to the SquareletClient's _request method
-        return self.squarelet_client.request(method, url, raise_error, **kwargs)
-        """
