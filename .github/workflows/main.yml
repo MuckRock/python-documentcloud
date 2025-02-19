@@ -53,4 +53,4 @@ jobs:
 
       - name: Run pylint and black on ./documentcloud and ./tests
         run: |
-          pylint ./documentcloud ./tests; black ./documentcloud ./tests
+          pylint ./documentcloud ./tests; black --check ./documentcloud ./tests

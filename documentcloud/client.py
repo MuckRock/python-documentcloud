@@ -14,10 +14,12 @@ from .users import UserClient
 
 logger = logging.getLogger("documentcloud")
 
+
 class DocumentCloud(SquareletClient):
     """
     The public interface for the DocumentCloud API, now integrated with SquareletClient
     """
+
     def __init__(
         self,
         username=None,
@@ -29,7 +31,7 @@ class DocumentCloud(SquareletClient):
         rate_limit=True,
         rate_limit_sleep=True,
     ):
-       # Initialize SquareletClient for authentication and request handling
+        # Initialize SquareletClient for authentication and request handling
         super().__init__(
             base_uri=base_uri,
             username=username,
@@ -37,7 +39,7 @@ class DocumentCloud(SquareletClient):
             auth_uri=auth_uri,
             timeout=timeout,
             rate_limit=rate_limit,
-            rate_limit_sleep=rate_limit_sleep
+            rate_limit_sleep=rate_limit_sleep,
         )
 
         # Set up logging

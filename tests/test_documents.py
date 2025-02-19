@@ -158,9 +158,7 @@ class TestDocument:
 
 class TestDocumentClient:
     def test_search(self, client, document):
-        documents = client.documents.search(
-            f"document:{document.id} simple"
-        )
+        documents = client.documents.search(f"document:{document.id} simple")
         assert documents
 
     def test_list(self, client):
@@ -181,7 +179,6 @@ class TestDocumentClient:
         with open("tests/test.pdf", "rb") as pdf:
             document = document_factory(pdf)
         assert document.status == "success"
-
 
     def test_upload_file_path(self, document_factory):
         document = document_factory("tests/test.pdf")
