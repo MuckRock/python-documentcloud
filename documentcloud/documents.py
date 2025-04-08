@@ -74,7 +74,7 @@ class Document(BaseAPIObject):
     def __getattr__(self, attr):
         """Generate methods for fetching resources"""
         p_image = re.compile(
-            r"^get_(?P<size>thumbnail|small|normal|large)_image_url(?P<list>_list)?$"
+            r"^get_(?P<size>thumbnail|small|normal|large|xlarge)_image_url(?P<list>_list)?$"
         )
         get = attr.startswith("get_")
         url = attr.endswith("_url")
