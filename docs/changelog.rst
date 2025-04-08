@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+4.4.1
+~~~~~
+* Fixes access to xlarge images. 
+
 4.4.0
 ~~~~~
 * Removes support for Python 3.7. 
