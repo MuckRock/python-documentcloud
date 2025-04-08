@@ -404,9 +404,7 @@ class DocumentClient(BaseAPIClient):
         path_list = self._collect_files(path, extensions)
 
         logger.info(
-            "Upload directory on %s: Found %d files to upload",
-            path,
-            len(path_list)
+            "Upload directory on %s: Found %d files to upload", path, len(path_list)
         )
 
         # Upload all the files using the bulk API to reduce the number
@@ -444,7 +442,7 @@ class DocumentClient(BaseAPIClient):
                     logger.info(
                         "Error creating the following documents: %s\n%s",
                         exc,
-                        "\n".join(file_paths)
+                        "\n".join(file_paths),
                     )
                     continue
                 else:
@@ -465,7 +463,7 @@ class DocumentClient(BaseAPIClient):
                         logger.info(
                             "Error uploading the following document: %s %s",
                             exc,
-                            file_path
+                            file_path,
                         )
                         continue
                     else:
@@ -481,7 +479,7 @@ class DocumentClient(BaseAPIClient):
                     logger.info(
                         "Error creating the following documents: %s\n%s",
                         exc,
-                        "\n".join(file_paths)
+                        "\n".join(file_paths),
                     )
                     continue
                 else:
@@ -504,11 +502,7 @@ class DocumentClient(BaseAPIClient):
             # Grouper will put None's on the end of the last group
             url_group = [url for url in url_group if url is not None]
 
-            logger.info(
-                "Uploading group %d: %s",
-                i + 1,
-                "\n".join(url_group)
-            )
+            logger.info("Uploading group %d: %s", i + 1, "\n".join(url_group))
 
             # Create the documents
             logger.info("Creating the documents...")
@@ -531,7 +525,7 @@ class DocumentClient(BaseAPIClient):
                     logger.info(
                         "Error creating the following documents: %s\n%s",
                         str(exc),
-                        "\n".join(url_group)
+                        "\n".join(url_group),
                     )
                     continue
                 else:
