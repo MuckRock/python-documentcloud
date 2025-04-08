@@ -208,6 +208,10 @@ Document
    .. attribute:: contributor_organization
 
        The organizational affiliation of the user who originally uploaded the document.
+   
+   .. attribute:: contributor_organization_slug
+
+       The slug (url friendly identifier) of the organization that the user who originally uploaded the document belongs to. 
 
    .. attribute:: created_at
 
@@ -224,7 +228,6 @@ Document
            {'category': 'hip-hop', 'byline': 'Ben Welsh', 'pub_date': datetime.date(2011, 3, 1)}
 
        Keys must be strings and only contain alphanumeric characters.
-
 
    .. attribute:: description
 
@@ -274,6 +277,9 @@ Document
       >>> client.documents.get(new.id).get_errors()
       [{'id': 96136, 'created_at': datetime.datetime(2023, 8, 30, 16, 28, 8, 594859), 'message': '404 Client Error: Not Found for url: https://www.launchcamden.com/wp-content/uploads/2023/08/7.13.23_01002.pdf'}]
 
+   .. method:: get_json_text()
+
+       Returns the full text of the document, in a custom JSON format, indexed by page. May also be referenced shorthand as ``json_text``. Useful if trying to compare text throughout the document without making an API call to get the text of each page. Consult the full API documentation for more details. 
 
    .. method:: get_page_text(page)
 
@@ -284,6 +290,10 @@ Document
        # Let's print just the first line
        >>> print(txt.split("\n")[0])
        STATE OF CALIFORNIA- HEALTH AND HUMAN SERVICES AGENCY
+   
+   .. method:: get_page_text_url(page)
+
+       Retrieve the link to the static asset where the page's plaintext is available. If the document is public, the URL will point to S3, otherwise it will point to an internal DocumentCloud URL to verify that the user has permissions to view the page.
 
    .. method:: get_page_position_json(page)
 
@@ -293,10 +303,18 @@ Document
        >>> obj = client.documents.get('1088501-adventuretime-alta')
        >>> json = obj.get_page_position_json(1)
 
+   .. method:: get_page_position_json_url(page)
+
+       Submit a page number and receive a link to the static asset where page text position information is in JSON format. If the document is public, the URL will point to S3, otherwise it will point to an internal DocumentCloud URL to verify that the user has permissions to view the page.
+
    .. attribute:: id
 
        The unique identifer of the document in DocumentCloud's system. This is a number.
        ``83251``
+
+   .. attribute:: json_text_url 
+
+       A link to the static resource where the full text of the document, in a custom JSON format, indexed by page is available. 
 
    .. attribute:: language
 
@@ -330,6 +348,11 @@ Document
            >>> obj.mentions
            [<Mention: Page 2>, <Mention: Page 3> ....
 
+   .. attribute:: noindex
+
+       A boolean indicating whether the document is hidden from search engines and DocumentCloud search.
+       A document may be public and embedded on a site, but still have noindex set to True so that the document isn't indexed on search engines. Private documents of course are not searchable on search engines regardless. 
+
    .. attribute:: normal_image
 
        Returns the binary data for the "normal" sized image of the document's
@@ -356,6 +379,10 @@ Document
 
       The ID for the organization which owns this document
 
+   .. attribute:: original_extension
+
+      The original file extension of the document before it was converted into a PDF during DocumentCloud processing. 
+
    .. attribute:: page_count
 
        Alias for :attr:`pages`.
@@ -370,6 +397,24 @@ Document
 
        The number of pages in the document.
 
+   .. attribute:: page_position_json
+
+       The raw positions of text on the first page, in a custom JSON format. Consult the API documentation for more details. Each unit (word or letter) in the document will have coordinates. To get a different page use ``get_page_position_json(page)``. 
+
+   .. attribute:: page_position_json_url
+
+       A link to the static asset where the first page of page positions in custom JSON format is available. Each unit (word or letter) in the document will have coordinates. To get a link to a different page use 
+       ``get_page_position_json_url(page)``. If the document is public, the URL will point to S3, otherwise it will point to an internal DocumentCloud URL to verify that the user has permissions to view the page.
+
+   .. attribute:: page_text
+
+       The document's first page in plaintext format. To get a different page use 
+       ``get_page_text(page)``. 
+
+   .. attribute:: page_text_url
+
+       A link to the static asset where the document's first page in plaintext format is available. To get a different page use ``get_page_text_url(page)``. If the document is public, the URL will point to S3, otherwise it will point to an internal DocumentCloud URL to verify that the user has permissions to view the page.
+
    .. attribute:: pdf
 
        Returns the binary data for document's original PDF file.
@@ -382,6 +427,10 @@ Document
 
       Returns a list of IDs for the projects this document is in.
 
+   .. attribute:: publish_at
+
+       A timestamp (Date Time) when to automatically make this document public in a scheduled manner.
+
    .. attribute:: published_url
 
        Returns an URL outside of documentcloud.org where this document has been published.
@@ -389,6 +438,11 @@ Document
    .. attribute:: related_article
 
        Returns an URL for a news story related to this document.
+   
+   .. attribute:: revision_control
+
+       A boolean indicating whether or not this document has revision control enabled. 
+       Revision control is only available to DocumentCloud premium users. 
 
    .. attribute:: sections
 
@@ -439,11 +493,11 @@ Document
 
        Returns a URL containing the "thumbnail" sized image of the document's
        first page. If you would like the URL for some other page, pass the page
-       number into ``get_small_thumbnail_url(page)``.
+       number into ``get_thumbnail_image_url(page)``.
 
    .. attribute:: thumbnail_image_url_list
 
-       Returns a list of URLs for the "small" sized image of every page in the document.
+       Returns a list of URLs for the "thumbnail" sized image of every page in the document.
 
    .. attribute:: title
 
@@ -462,6 +516,28 @@ Document
    .. attribute:: user_id
 
       The ID for the user which owns this document
+
+   .. attribute:: writable_fields
+
+      Useful quick reference list for which fields a user may modify. 
+      Includes `access`, `data`, `description`, `language`, `publish_at`, `published_url`, `related_article`, `source`, and `title`. 
+
+   .. attribute:: xlarge_image
+
+       Returns the binary data for the "xlarge" sized image of the document's
+       first page. If you would like the data for some other page, pass the page
+       number into ``get_xlarge_image(page)``.
+
+   .. attribute:: xlarge_image_url
+
+       Returns a URL containing the "xlarge" sized image of the document's
+       first page. If you would like the URL for some other page, pass the page
+       number into ``get_xlarge_image_url(page)``.
+
+   .. attribute:: xlarge_image_url_list
+
+       Returns a list of URLs for the "xlarge" sized image of every page in the document.
+
 
 Mentions
 --------
