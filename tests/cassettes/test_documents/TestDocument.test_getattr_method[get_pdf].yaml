@@ -5,15 +5,15 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1ODUwMDcxLCJqdGkiOiIxZWRlYWQxNzEyMmM0N2E1YWZlNjQ2NzdkMzViZWNhZiIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.agRzHD2uUmaNZ4WZ_QMYzrJ5MsoHgN0diKORZmNPDjxXtkYXozxbgSrOXZjYG3jeGUsZ1inYW9j6nZtP0AOwe-FBo5-hVtxKB8_T6zSTUlsdONNcFNqWVMaWPyp3tADnbT7ziGmCJvP8YJEq9LwR157hoGjiEEALK83x4FT8vyIjIALnpPmu3udPpwu6231-MwpXreytKBkmoaHLb5kMXwefF7sX3LcbE_9j7i29Kr8QMcZdq5AAM3P31q8A4rxB_FADxlqYt3qSjSZ64r0kqmNx2CWo9eJeQ35bPAI0uc-mobk4xCMU-MW6U9sPzQsC-FZ6VVUKt-hwphd_-dziEg
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4NzMwNDkxLCJpYXQiOjE3NTg3MzAxOTEsImp0aSI6Ijk2N2ZlOTkxMDgzMjQyZmQ4NWUwZDBkYTJhOTJjMjE0IiwidXNlcl9pZCI6ImY2MDI5ZThhLWQ4YTItNDE4OC04YTIxLWNkMDczYTAyZWU1YyIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjpbInNxdWFyZWxldCJdfQ.qiTrZeLNkzJe0_Ydn30VayDALDLMe9W1BrdZe0c6NICPtRckGHsr06fqF9pPsMmeWeiQ346x_CYsCrMqeN5twtcqnaRXFUtnvumAuAcxFeQetirhlOr5GhLLNPyNqdcmwCB-t1fbn6sx3rNd3g5j-aY0T8Ic5qBlhRkLZGn_QollLu9Wi_airw9OfnPYuDJzh8s6D7vnpVEH6Ft8Q7kEHeA_-yydsv1q-WFgm1gJMamwz94i9TT-tAZIJc3N98W1fBjmBCy1qV36P74PYKYzkbebhSuJMRsL1qDRskm32a6j3CsVYQA2KQro9EYE1zjJ62n6e4GSELVo9CAOZiM04Q
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.32.3
+      - python-requests/2.32.5
     method: GET
-    uri: https://api.dev.documentcloud.org/files/documents/20000273/test.pdf
+    uri: https://api.dev.documentcloud.org/files/documents/20000200/test.pdf
   response:
     body:
       string: ''
@@ -31,9 +31,9 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Thu, 02 Jan 2025 20:29:35 GMT
+      - Wed, 24 Sep 2025 16:09:54 GMT
       Location:
-      - https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000273/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20250102%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250102T202935Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=16db509ec1e644cfd55ddb135b3acb91784d0a03a3eecd493c9a08c505d9cb83
+      - https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000200/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20250924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250924T160954Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=74de52284b39c9dd617186b153340cade24c8f6c8a5ac51f3697c7401f4855af
       Referrer-Policy:
       - same-origin
       Server:
@@ -53,13 +53,13 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.32.3
+      - python-requests/2.32.5
     method: GET
-    uri: https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000273/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20250102%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250102T202935Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=16db509ec1e644cfd55ddb135b3acb91784d0a03a3eecd493c9a08c505d9cb83
+    uri: https://documentcloud-dev-sanjin.s3.amazonaws.com/documents/20000200/test.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4JBBEJ7K7BVMXVOU%2F20250924%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250924T160954Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=74de52284b39c9dd617186b153340cade24c8f6c8a5ac51f3697c7401f4855af
   response:
     body:
       string: !!binary |
@@ -345,7 +345,7 @@ interactions:
         IDAwMDAwIG4gCjAwMDAwMDE3MzIgMDAwMDAgbiAKMDAwMDAwNTIwMSAwMDAwMCBuIAowMDAwMDA1
         NDYxIDAwMDAwIG4gCjAwMDAwMDU3MTMgMDAwMDAgbiAKMDAwMDAwOTIzOSAwMDAwMCBuIAp0cmFp
         bGVyIDw8IC9JbmZvIDIgMCBSIC9Sb290IDEgMCBSIC9TaXplIDIxIC9JRCBbPDZlNGM3OGNmY2E1
-        ZWYwY2ZjYzBhNjE3NDNkMDI1MGNjPjwxOWY3MmJkYzg4MTRkNzk4YTA3ZWJmZjFhZjU5NGFiNz5d
+        ZWYwY2ZjYzBhNjE3NDNkMDI1MGNjPjw5MjAzZmE0ZjI0YTdhOTUzNmI0MTdmMDFhNGNjZWFiYz5d
         ID4+CnN0YXJ0eHJlZgoxNTU4MwolJUVPRgo=
     headers:
       Accept-Ranges:
@@ -355,17 +355,17 @@ interactions:
       Content-Type:
       - application/pdf
       Date:
-      - Thu, 02 Jan 2025 20:23:31 GMT
+      - Wed, 24 Sep 2025 16:09:56 GMT
       ETag:
-      - '"f44d8f84ca688eff053c27cccda044fa-1"'
+      - '"1f99342b8205c9b565f551bf7279bb8a-1"'
       Last-Modified:
-      - Thu, 02 Jan 2025 20:22:59 GMT
+      - Wed, 24 Sep 2025 16:09:12 GMT
       Server:
       - AmazonS3
       x-amz-id-2:
-      - MJHJwMsILPGoFXqqL3AxlfMTGrrp6WyDsZ/cM43NlYsLC6/EUBKlSF0WxwvW5YlJ+pW4TSi5QtU=
+      - PBpCkza0ji8oUqC5cu8wGqX1q5vsEJiL73f5NG9SvCPGcc0bn+xb2CGsZ3aWoMWt3R/K5Fmzyv8iyeD2T5utASvMCD0p8w/P
       x-amz-request-id:
-      - WJCS7HDT8DQ70RCC
+      - JG9312RQPVENNEN1
       x-amz-server-side-encryption:
       - AES256
     status:

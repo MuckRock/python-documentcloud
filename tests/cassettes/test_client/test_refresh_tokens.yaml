@@ -1,48 +1,48 @@
 interactions:
 - request:
-    body: '{"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNTkzNjE3MSwianRpIjoiNGNkODJiZWMyZWIyNDI4MjlkN2ExZWZiYjExNzMzYTciLCJ1c2VyX2lkIjoiZjYwMjllOGEtZDhhMi00MTg4LThhMjEtY2QwNzNhMDJlZTVjIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.MG4HgbD0MIL4n495SIJe530zFcLX7ndmuFxeuPnBJVK5HBR4Bji3NUdB7SWeBJrRd6l2SWcUPdJ7EKRBHiB03jzjRjWSN6YRkhk6TTyEulBY7E-leyMFmR8NZFA8P8PW7EDzOdWiE63nNMBJ9gCT4ufaHKFQdCJOtYvpAdkVfjH4NWTCSjyHydVXEVCxuM3iuiAcwMfasqLQTi7ZV_8L0j1h2MBH1vppFtdaNg4M3cLeRacBXd2Ot3Ayzr9CyYcP9OZEfh1jUr2JRbQe-ePNcMtZj5hQVXwfScbhGkTXBVUr5_Fo8A4KOdhAEw30VjRkXkVZGzOav_IMh02J8YPbIQ"}'
+    body: '{"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1ODgxNjU5MSwiaWF0IjoxNzU4NzMwMTkxLCJqdGkiOiJjMzM5NDM3NGU1NWQ0OGJhYmZkM2Q5ODA4MTcyOWIyMyIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.ggMI0ZbqQjezXYRxxQh-KJR_fLKczG0jtakHIgC0vIXG9WA95_I48wmYIEOlI0OLDlaXzTaMF9tLLIjp-ebEX90USq5YG8g3LjhfqHh6xwPEnYjL4AE0I-nXs0PDs6wOusE4CJK3-tG3DIFxpoQxTnDB3isUQXj5utVHfHqSCq0KoIWEJgGNEY9LLAx473O-Zbu3u0Q_TwR0qvFtzqwLrUqOA_gPW5zkZaacQi2Meaww-ZsqeRsxBu0Lw58sXormsiF7bf3oTzFHW98EcmnvoYWgkD5PMt29Q-P9FAtG7p_nsRk-e-vAqmtFdTAX8FSAiUbtld20XjflmekSDM0DwQ"}'
     headers:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
-      - '659'
+      - '682'
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.32.3
+      - python-requests/2.32.5
     method: POST
     uri: https://dev.squarelet.com/api/refresh/
   response:
     body:
-      string: '{"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1ODUwMDcyLCJqdGkiOiI3NTJiZmYxZjA0Zjc0NTcxYmMxYzdmMDUxMTYwMGJmOSIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.Lwv4fBxxxWw0AL5Mvwu1wH6V8LP9oG-cXgFQ4u0d3RXj8HD8rHYjw6f84TJN5pfQlpwlQ-8MP0oOTXLgmywx2vb11kAmomIgs6Gjcbwcb3tkan5gIcznvTnI03Thg3802oyuLjD-Su7fd5_ZZVo0-rHRczas4JJ5vwz7hhNWu2gx6Fu9mXe--zAUrTL9SKHHuN0RaXT8PLB2i4ysm0E6wcEPjFrDcdyOPJQAZ4YuDm1cuuzO1DhOAado_BlQ16KsSjpzyurR5Kh3SHZkizFQntwV-uK7d1G7f-kBEyiPbtD-y1_Z3wJg01yObr16ALLZf2sB8y4vew_MkYocUvkjsQ","refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczNTkzNjE3MiwianRpIjoiMGM5NWIxYWU1NmFlNDNkMWEyNjkyOWVkZWExZjE5YWEiLCJ1c2VyX2lkIjoiZjYwMjllOGEtZDhhMi00MTg4LThhMjEtY2QwNzNhMDJlZTVjIiwiYXVkIjpbInNxdWFyZWxldCIsIm11Y2tyb2NrIiwiZG9jdW1lbnRjbG91ZCJdLCJpc3MiOlsic3F1YXJlbGV0Il19.sY3JadSkQhxGWuOZ3P-Xszq28OD4esSr9-erkicSTWkA3qxNF8D73A4GQYBRUpWCwUXo0zvjOLRPGS8Zcij5gsfW2G5ffXShhAvMdMMwKe9qlcrwJhs1vSyhn-3v5ZOY255dM05rD_hhWqfCiVaqcHb0UL1GQH7u0kAQatCa-qEXInIf1xdHENFtdwC90cb26cU4_H4Mcmj4oGD6JIpSbosijF_Fk3h5P-h0Cn5Cn94p7Pq-LeLR6hZjQduTG06NMG0ClkyvkB-fPZsWMLwdGTxLYlgh91Z_9biPip5-vNklroSLFsGimQteQmmtQ4eawI4QHap8xj1exrFE5uz5VA"}'
+      string: '{"access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4NzMwNDkxLCJpYXQiOjE3NTg3MzAxOTEsImp0aSI6IjcyOTJhMWNhYWY4NTQwM2E4YTRjMDVjYTE1ZDljNmU1IiwidXNlcl9pZCI6ImY2MDI5ZThhLWQ4YTItNDE4OC04YTIxLWNkMDczYTAyZWU1YyIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjpbInNxdWFyZWxldCJdfQ.hlXq8g9UWgMLRt5g6cEOb_BYtP-woF7kkaVLRnBF9fg8R8lvBHLoWGeR33F81jutZYHeYcU_9scB7Z3K7rQ1X5KHpxRsRWaXY6j0IsaTGsS_kvcoFqGF3QJf0nCVDjKM3U7JaaUUDMAyLegPhF3y2vUZNzuh2ZFWss4peMhx_v8hvF-oEMU1PB9Ywpl7JOsH-aegOnehlEIkE6b-GbttsUQZiMj8ZbsztMLZpCTdMy5f6FAzZvaKbuhWxM12ESSiiU6dK310W-blBgr3rw2P2Bri2IIw0IPKJ4PDexhK3VPEXAQXqsSHpsfxY9FaEBM50kVlsJwcBcwBNyik_lfRmg","refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1ODgxNjU5MSwiaWF0IjoxNzU4NzMwMTkxLCJqdGkiOiI0MjFiZjM2NzAyZDE0YTAzODNlZWQ4NDQ4NTEzNWQ1NyIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.XhRKpGzq3GBBLqLC6UsuiHqcxxgb7urP8mg7hNlb3OKmBT6KgDN1GoLqzYhYcwAggqyf_NsFngL8aaDGKl_7NiII6PiCTB_sS_qp83TkR41-VPcx-RFZxJ25AYK4ju0cnaoZQrk6j1HilHS7FLC2-g9yeprF4Xw-Jh480Rh5bkNjXQAlqTNDVj2XnnKptfOJxEvK-uOrWQCRMqHyfb_RzAVj1JbWKgihCzSj_Wos5HkUufB-yQWm4z6UjXnEk8E1qhbZ8v2zixrUvRGsc5wUTyJTJkHN65xkHID5U1wy8JaWZQ4a2M3AP6QmQLSTZPc935FqlcLH9Z4OtCxkCTFLFw"}'
     headers:
       Allow:
       - POST, OPTIONS
       Connection:
       - keep-alive
       Content-Length:
-      - '1313'
+      - '1359'
       Content-Type:
       - application/json
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Thu, 02 Jan 2025 20:29:32 GMT
+      - Wed, 24 Sep 2025 16:09:52 GMT
       Referrer-Policy:
       - same-origin
       Server:
       - nginx/1.25.2
       Server-Timing:
-      - TimerPanel_utime;dur=36.98900000000549;desc="User CPU time", TimerPanel_stime;dur=1.0019999999997253;desc="System
-        CPU time", TimerPanel_total;dur=37.991000000005215;desc="Total CPU time",
-        TimerPanel_total_time;dur=42.78707504272461;desc="Elapsed time", SQLPanel_sql_time;dur=0.46563148498535156;desc="SQL
-        2 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
+      - TimerPanel_utime;dur=89.72099999999728;desc="User CPU time", TimerPanel_stime;dur=1.9790000000057262;desc="System
+        CPU time", TimerPanel_total;dur=91.700000000003;desc="Total CPU time", TimerPanel_total_time;dur=105.28306599735515;desc="Elapsed
+        time", SQLPanel_sql_time;dur=2.6969259924953803;desc="SQL 9 queries", CachePanel_total_time;dur=0;desc="Cache
+        0 Calls"
       Set-Cookie:
-      - op_browser_state=c253bb5b9d23f0670eb45f87ff522c6dad5d1366f8084ced5ef3c567;
+      - op_browser_state=f5448717470b879d75a31d1e1e832e10c24a7586f91c49d672dea82f;
         Path=/
       Vary:
       - Accept, Origin, Cookie
@@ -50,6 +50,8 @@ interactions:
       - nosniff
       X-Frame-Options:
       - DENY
+      djdt-store-id:
+      - ebb14b2ad52b419ca9dec9f662ab2b58
     status:
       code: 200
       message: OK

@@ -5,9 +5,9 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1ODUwMDMwLCJqdGkiOiI4YTA4YmMwNmI4ODE0ZTA0YTRlMjAxOTJkMDc0OTE2MiIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.VzUHJ6CcrWOE8zbAM3wZ4O3lQnaMhGzOp3QJniEzuLH6uae9o9Rvlkc94bFiZIOnlhTwUYlWJJQTh1wtmQriQLMoA56q-43Y3F-dUTXC6oGN5iCcrOD7VplGZc6oBDrPtRrayxJSE8GKs1yY7-oWgYhBRhI7Omekpk-g83fM-uXfVH1pQlvKqTFDsGFoFNn8xzIEQDoxuHJilj2dPHkxdBcF-dInTlokE8tjOTLyVggKYfyp0bqIz8UjyfPjXMqcsbPJOlFhf9hRE8Ha23HMNdFiuVM9sHnQP1fBpC8Ti3QOdqLoqSvRenviB80erRiM-c1-nRYFPeJN_SUnOjpY3w
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4NzMwNDI5LCJpYXQiOjE3NTg3MzAxMjksImp0aSI6IjEyMzE1OGFkOWExYjQ3YTE5ZDdhMjdlYjMwNTdmMzRkIiwidXNlcl9pZCI6ImY2MDI5ZThhLWQ4YTItNDE4OC04YTIxLWNkMDczYTAyZWU1YyIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjpbInNxdWFyZWxldCJdfQ.LduwXStVTHJGEoNw9eO-xQ0OVLF6b-kaeq-qXOCGJ06mc6JygXWOE7D9NnV7m-PzdtTKCGyQtOCe1RvU51ho5yFNJUwlLcYlmABbOQnvWOuuyqYvzoGXwULm99lV8KWW2Aetmldo_pUU3LY0VJS4Qe13ZaussP1Emsr68_uvy99FU8Xkm_jQqt4qoUDWuj-IeXkVj024Mv70VrCOBiTs_fmRHJixo12aNadUe9D0MhHoJxgBmRiRDqlq0Tu-jjP5I2_wY-c7iVSMUJTFInXHKRJadBaavvllrLZ4t47nc9G-ustuqnT_i8vrkN95LJmL87EK6NoVzS_O84c6DySZDA
       Connection:
       - keep-alive
       Content-Length:
@@ -15,13 +15,13 @@ interactions:
       Content-Type:
       - application/json
       User-Agent:
-      - python-requests/2.32.3
+      - python-requests/2.32.5
     method: POST
     uri: https://api.dev.documentcloud.org/api/projects/
   response:
     body:
-      string: '{"id":200071,"created_at":"2025-01-02T20:29:10.954754Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
-        Factory","updated_at":"2025-01-02T20:29:10.955008Z","user":100000,"pinned":true}'
+      string: '{"id":200057,"created_at":"2025-09-24T16:09:18.182482Z","description":"","edit_access":true,"add_remove_access":true,"private":true,"slug":"project-factory","title":"Project
+        Factory","updated_at":"2025-09-24T16:09:18.182658Z","user":100000,"pinned":true}'
     headers:
       Allow:
       - GET, POST, HEAD, OPTIONS
@@ -36,7 +36,7 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Thu, 02 Jan 2025 20:29:10 GMT
+      - Wed, 24 Sep 2025 16:09:18 GMT
       Referrer-Policy:
       - same-origin
       Server:
@@ -56,15 +56,15 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate, br
+      - gzip, deflate
       Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzM1ODUwMDMwLCJqdGkiOiI4YTA4YmMwNmI4ODE0ZTA0YTRlMjAxOTJkMDc0OTE2MiIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.VzUHJ6CcrWOE8zbAM3wZ4O3lQnaMhGzOp3QJniEzuLH6uae9o9Rvlkc94bFiZIOnlhTwUYlWJJQTh1wtmQriQLMoA56q-43Y3F-dUTXC6oGN5iCcrOD7VplGZc6oBDrPtRrayxJSE8GKs1yY7-oWgYhBRhI7Omekpk-g83fM-uXfVH1pQlvKqTFDsGFoFNn8xzIEQDoxuHJilj2dPHkxdBcF-dInTlokE8tjOTLyVggKYfyp0bqIz8UjyfPjXMqcsbPJOlFhf9hRE8Ha23HMNdFiuVM9sHnQP1fBpC8Ti3QOdqLoqSvRenviB80erRiM-c1-nRYFPeJN_SUnOjpY3w
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4NzMwNDI5LCJpYXQiOjE3NTg3MzAxMjksImp0aSI6IjEyMzE1OGFkOWExYjQ3YTE5ZDdhMjdlYjMwNTdmMzRkIiwidXNlcl9pZCI6ImY2MDI5ZThhLWQ4YTItNDE4OC04YTIxLWNkMDczYTAyZWU1YyIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjpbInNxdWFyZWxldCJdfQ.LduwXStVTHJGEoNw9eO-xQ0OVLF6b-kaeq-qXOCGJ06mc6JygXWOE7D9NnV7m-PzdtTKCGyQtOCe1RvU51ho5yFNJUwlLcYlmABbOQnvWOuuyqYvzoGXwULm99lV8KWW2Aetmldo_pUU3LY0VJS4Qe13ZaussP1Emsr68_uvy99FU8Xkm_jQqt4qoUDWuj-IeXkVj024Mv70VrCOBiTs_fmRHJixo12aNadUe9D0MhHoJxgBmRiRDqlq0Tu-jjP5I2_wY-c7iVSMUJTFInXHKRJadBaavvllrLZ4t47nc9G-ustuqnT_i8vrkN95LJmL87EK6NoVzS_O84c6DySZDA
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.32.3
+      - python-requests/2.32.5
     method: GET
-    uri: https://api.dev.documentcloud.org/api/projects/200071/documents/?per_page=100&expand=document
+    uri: https://api.dev.documentcloud.org/api/projects/200057/documents/?per_page=100&expand=document
   response:
     body:
       string: '{"count":0,"next":null,"previous":null,"results":[]}'
@@ -84,7 +84,7 @@ interactions:
       Cross-Origin-Opener-Policy:
       - same-origin
       Date:
-      - Thu, 02 Jan 2025 20:29:11 GMT
+      - Wed, 24 Sep 2025 16:09:18 GMT
       Referrer-Policy:
       - same-origin
       Server:
