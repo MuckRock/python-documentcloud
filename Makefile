@@ -20,7 +20,7 @@ test-create-short: test-clean-short
 
 # run all tests using the pre-recorded HTTP requests - will fail on missing request
 test:
-	pytest --record-mode=none --block-network
+	pytest --record-mode=none --block-network -vv
 
 # run tests using pre-recorded HTTP requets if they exist, and recording them if missing
 test-dev:

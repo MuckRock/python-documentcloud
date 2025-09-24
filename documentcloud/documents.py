@@ -74,8 +74,11 @@ class Document(BaseAPIObject):
     def __getattr__(self, attr):
         """Generate methods for fetching resources"""
         p_image = re.compile(
-            r"^get_(?P<size>thumbnail|small|normal|large|xlarge)_image_url(?P<list>_list)?$"
+            r"^get_"
+            r"(?P<size>thumbnail|small|normal|large|xlarge)_image_url"
+            r"(?P<list>_list)?$"
         )
+
         get = attr.startswith("get_")
         url = attr.endswith("_url")
         text = attr.endswith("_text")
@@ -230,9 +233,15 @@ class Document(BaseAPIObject):
 
         return all_results
 
-    def process(self):
-        """Reprocess the document"""
-        self._client.post(f"{self.api_path}/{self.id}/process/")
+    def process(self, **kwargs):
+        """Process the document, used on upload and for reprocessing"""
+        payload = {}
+        if "force_ocr" in kwargs:
+            payload["force_ocr"] = kwargs["force_ocr"]
+        if "ocr_engine" in kwargs:
+            payload["ocr_engine"] = kwargs["ocr_engine"]
+
+        self._client.post(f"{self.api_path}/{self.id}/process/", json=payload)
 
 
 class DocumentClient(BaseAPIClient):
@@ -310,6 +319,7 @@ class DocumentClient(BaseAPIClient):
             "title",
             "data",
             "force_ocr",
+            "ocr_engine",
             "projects",
             "delayed_index",
             "revision_control",
@@ -333,21 +343,55 @@ class DocumentClient(BaseAPIClient):
 
         return params
 
+    def _extract_ocr_options(self, kwargs):
+        """
+        Extract and validate OCR options from kwargs.
+
+        Returns:
+            force_ocr (bool)
+            ocr_engine (str)
+        """
+        force_ocr = kwargs.pop("force_ocr", False)
+        ocr_engine = kwargs.pop("ocr_engine", "tess4")
+
+        if not isinstance(force_ocr, bool):
+            raise ValueError("force_ocr must be a boolean")
+
+        if ocr_engine and ocr_engine not in ("tess4", "textract"):
+            raise ValueError(
+                "ocr_engine must be either 'tess4' for tesseract or 'textract'"
+            )
+
+        return force_ocr, ocr_engine
+
     def _get_title(self, name):
         """Get the default title for a document from its path"""
         return name.split(os.sep)[-1].rsplit(".", 1)[0]
 
     def _upload_url(self, file_url, **kwargs):
         """Upload a document from a publicly accessible URL"""
+        # extract process-related args
+        force_ocr, ocr_engine = self._extract_ocr_options(kwargs)
+
+        # create the document
         params = self._format_upload_parameters(file_url, **kwargs)
         params["file_url"] = file_url
+        if force_ocr:
+            params["force_ocr"] = force_ocr
+            params["ocr_engine"] = ocr_engine
         response = self.client.post("documents/", json=params)
-        return Document(self.client, response.json())
+        create_json = response.json()
+
+        # wrap in Document object
+        doc = Document(self.client, create_json)
+
+        return doc
 
     def _upload_file(self, file_, **kwargs):
         """Upload a document directly"""
         # create the document
-        force_ocr = kwargs.pop("force_ocr", False)
+        force_ocr, ocr_engine = self._extract_ocr_options(kwargs)
+
         params = self._format_upload_parameters(file_.name, **kwargs)
         response = self.client.post("documents/", json=params)
 
@@ -357,12 +401,12 @@ class DocumentClient(BaseAPIClient):
         response = requests_retry_session().put(presigned_url, data=file_.read())
 
         # begin processing the document
-        doc_id = create_json["id"]
-        response = self.client.post(
-            f"documents/{doc_id}/process/", json={"force_ocr": force_ocr}
-        )
+        doc = Document(self.client, create_json)
 
-        return Document(self.client, create_json)
+        # begin processing
+        doc.process(force_ocr=force_ocr, ocr_engine=ocr_engine)
+
+        return doc
 
     def _collect_files(self, path, extensions):
         """Find the paths to files with specified extensions under a directory"""
@@ -379,165 +423,98 @@ class DocumentClient(BaseAPIClient):
 
     def upload_directory(self, path, handle_errors=False, extensions=".pdf", **kwargs):
         """Upload files with specified extensions in a directory"""
-        # pylint: disable=too-many-locals, too-many-branches
-
-        # Do not set the same title for all documents
+        # pylint:disable=too-many-locals
         kwargs.pop("title", None)
 
-        # If extensions are specified as None, it will check for all supported
-        # filetypes.
         if extensions is None:
             extensions = SUPPORTED_EXTENSIONS
-
-        # Convert single extension to a list if provided
         if extensions and not isinstance(extensions, list):
             extensions = [extensions]
-
-        # Checks to see if the extensions are supported, raises an error if not.
         invalid_extensions = set(extensions) - set(SUPPORTED_EXTENSIONS)
         if invalid_extensions:
             raise ValueError(
                 f"Invalid extensions provided: {', '.join(invalid_extensions)}"
             )
 
-        # Loop through the path and get all the files with matching extensions
         path_list = self._collect_files(path, extensions)
-
         logger.info(
             "Upload directory on %s: Found %d files to upload", path, len(path_list)
         )
 
-        # Upload all the files using the bulk API to reduce the number
-        # of API calls and improve performance
         obj_list = []
+        force_ocr, ocr_engine = self._extract_ocr_options(kwargs)
         params = self._format_upload_parameters("", **kwargs)
-        for i, file_paths in enumerate(grouper(path_list, BULK_LIMIT)):
-            # Grouper will put None's on the end of the last group
-            file_paths = [p for p in file_paths if p is not None]
 
+        for i, file_paths in enumerate(grouper(path_list, BULK_LIMIT)):
+            file_paths = [p for p in file_paths if p is not None]
             logger.info("Uploading group %d:\n%s", i + 1, "\n".join(file_paths))
 
-            # Create the documents
-            logger.info("Creating the documents...")
-            try:
-                response = self.client.post(
-                    "documents/",
-                    json=[
-                        merge_dicts(
-                            params,
-                            {
-                                "title": self._get_title(p),
-                                "original_extension": os.path.splitext(
-                                    os.path.basename(p)
-                                )[1]
-                                .lower()
-                                .lstrip("."),
-                            },
-                        )
-                        for p in file_paths
-                    ],
-                )
-            except (APIError, RequestException) as exc:
-                if handle_errors:
-                    logger.info(
-                        "Error creating the following documents: %s\n%s",
-                        exc,
-                        "\n".join(file_paths),
-                    )
-                    continue
-                else:
-                    raise
+            create_json = self._create_documents(file_paths, params, handle_errors)
+            sorted_create_json = sorted(create_json, key=lambda j: j["title"])
+            sorted_file_paths = sorted(file_paths, key=self._get_title)
+            obj_list.extend(sorted_create_json)
+            presigned_urls = [j["presigned_url"] for j in sorted_create_json]
 
-            # Upload the files directly to storage
-            create_json = response.json()
-            obj_list.extend(create_json)
-            presigned_urls = [j["presigned_url"] for j in create_json]
-            for url, file_path in zip(presigned_urls, file_paths):
-                logger.info("Uploading %s to S3...", file_path)
-                try:
-                    with open(file_path, "rb") as file:
-                        response = requests_retry_session().put(url, data=file.read())
-                    self.client.raise_for_status(response)
-                except (APIError, RequestException) as exc:
-                    if handle_errors:
-                        logger.info(
-                            "Error uploading the following document: %s %s",
-                            exc,
-                            file_path,
-                        )
-                        continue
-                    else:
-                        raise
-
-            # Begin processing the documents
-            logger.info("Processing the documents...")
-            doc_ids = [j["id"] for j in create_json]
-            try:
-                response = self.client.post("documents/process/", json={"ids": doc_ids})
-            except (APIError, RequestException) as exc:
-                if handle_errors:
-                    logger.info(
-                        "Error creating the following documents: %s\n%s",
-                        exc,
-                        "\n".join(file_paths),
-                    )
-                    continue
-                else:
-                    raise
+            self._upload_files_to_s3(sorted_file_paths, presigned_urls, handle_errors)
+            self._process_documents(create_json, force_ocr, ocr_engine, handle_errors)
 
         logger.info("Upload directory complete")
-
-        # Pass back the list of documents
         return [Document(self.client, d) for d in obj_list]
 
-    def upload_urls(self, url_list, handle_errors=False, **kwargs):
-        """Upload documents from a list of URLs"""
-
-        # Do not set the same title for all documents
-        kwargs.pop("title", None)
-
-        obj_list = []
-        params = self._format_upload_parameters("", **kwargs)
-        for i, url_group in enumerate(grouper(url_list, BULK_LIMIT)):
-            # Grouper will put None's on the end of the last group
-            url_group = [url for url in url_group if url is not None]
-
-            logger.info("Uploading group %d: %s", i + 1, "\n".join(url_group))
-
-            # Create the documents
-            logger.info("Creating the documents...")
-            try:
-                response = self.client.post(
-                    "documents/",
-                    json=[
-                        merge_dicts(
-                            params,
-                            {
-                                "title": self._get_title(url),
-                                "file_url": url,
-                            },
-                        )
-                        for url in url_group
-                    ],
+    def _create_documents(self, file_paths, params, handle_errors):
+        body = [
+            merge_dicts(
+                params,
+                {
+                    "title": self._get_title(p),
+                    "original_extension": os.path.splitext(os.path.basename(p))[1]
+                    .lower()
+                    .lstrip("."),
+                },
+            )
+            for p in sorted(file_paths)
+        ]
+        try:
+            response = self.client.post("documents/", json=body)
+        except (APIError, RequestException) as exc:
+            if handle_errors:
+                logger.info(
+                    "Error creating the following documents: %s\n%s",
+                    exc,
+                    "\n".join(file_paths),
                 )
+                return []
+            else:
+                raise
+        return response.json()
+
+    def _upload_files_to_s3(self, file_paths, presigned_urls, handle_errors):
+        for url, file_path in zip(presigned_urls, file_paths):
+            logger.info("Uploading %s to S3...", file_path)
+            try:
+                with open(file_path, "rb") as f:
+                    response = requests_retry_session().put(url, data=f.read())
+                self.client.raise_for_status(response)
             except (APIError, RequestException) as exc:
                 if handle_errors:
                     logger.info(
-                        "Error creating the following documents: %s\n%s",
-                        str(exc),
-                        "\n".join(url_group),
+                        "Error uploading the following document: %s %s", exc, file_path
                     )
-                    continue
                 else:
                     raise
 
-            create_json = response.json()
-            obj_list.extend(create_json)
-
-        logger.info("Upload URLs complete")
-
-        # Pass back the list of documents
-        return [Document(self.client, d) for d in obj_list]
+    def _process_documents(self, create_json, force_ocr, ocr_engine, handle_errors):
+        payload = [
+            {"id": j["id"], "force_ocr": force_ocr, "ocr_engine": ocr_engine}
+            for j in create_json
+        ]
+        try:
+            self.client.post("documents/process/", json=payload)
+        except (APIError, RequestException) as exc:
+            if handle_errors:
+                logger.info("Error processing documents: %s", exc)
+            else:
+                raise
 
 
 class Mention:
