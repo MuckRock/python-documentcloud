@@ -89,6 +89,13 @@ DocumentClient
       ``original_extension`` to the extension of the file type, such as
       ``docx`` or ``jpg``.
 
+      .. note::
+         If you are looking to upload large sets of documents, consider using
+         the `batch upload script <https://github.com/MuckRock/dc_batch_upload>`_,
+         which is optimized for bulk uploads with built-in retry and error handling.
+         We have battle-tested the script on our CIA CREST Database which included
+         almost a million documents. We have `video guides <https://www.youtube.com/watch?v=PJ1xVn_j5-A&list=PLBGm5TjywchPVVxUcf_Yv89okARrnMZb1>`_
+         on how to get started with the script on macOS, Windows, and Linux.
 
    .. method:: upload_directory(path, handle_errors=False, extensions=".pdf" **kwargs)
 

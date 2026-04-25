@@ -87,6 +87,16 @@ You can also provide URLs that link to PDFs, if that's the kind of thing you're 
 
     >>> client.documents.upload("http://ord.legistar.com/Chicago/attachments/e3a0cbcb-044d-4ec3-9848-23c5692b1943.pdf")
 
+
+
+Uploading large sets of documents
+----------------------------------
+
+If you are looking to upload large sets of documents using the API, we *strongly* recommend using our
+`batch upload script <https://github.com/MuckRock/dc_batch_upload>`_, which is optimized for bulk uploads and handles retries,
+rate limiting, and error logging automatically. We have battle-tested the script on our CIA Crest Database which included almost a million documents. We have `video guides <https://www.youtube.com/watch?v=PJ1xVn_j5-A&list=PLBGm5TjywchPVVxUcf_Yv89okARrnMZb1>`_ on how to get started with the script on macOS, Windows and Linux. 
+
+
 Uploading a document that is not a PDF
 -------------------------------------------------
 
