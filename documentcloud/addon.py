@@ -195,7 +195,7 @@ class AddOn(BaseAddOn):
         "Store persistent data for this run"
         if not self.id:
             print("Run ID not set. Try again later or check if something went wrong.")
-            return
+            return None
 
         if not isinstance(data, dict):
             raise TypeError("Invalid data")

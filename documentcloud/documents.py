@@ -24,8 +24,10 @@ from .toolbox import grouper, is_url, merge_dicts, requests_retry_session
 from .users import User
 
 try:
+    # Standard Library
     from urllib.parse import urlparse
 except ImportError:
+    # Third Party
     from urlparse import urlparse
 
 logger = logging.getLogger("documentcloud")

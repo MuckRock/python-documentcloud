@@ -41,10 +41,10 @@ coverage:
 check:
 	pylint documentcloud
 	black documentcloud
-	isort -rc documentcloud
+	isort documentcloud
 	pylint tests
 	black tests
-	isort -rc tests
+	isort tests
 
 # release a new version of the package to PyPI
 ship:

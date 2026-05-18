@@ -7,6 +7,8 @@ import pytest
 # DocumentCloud
 from documentcloud.addon import AddOn
 
+# pylint: disable=redefined-outer-name
+
 
 @pytest.fixture
 def addon():
