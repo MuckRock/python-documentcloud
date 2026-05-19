@@ -1,6 +1,14 @@
 Changelog
 ---------
 
+4.6.0
+~~~~~
+* Added load_run_data and store_run_data on the Add-On class to access AddOn run data.
+
+4.5.0 
+~~~~~
+* Added OCR handling to upload and process methods. 
+
 4.4.1
 ~~~~~
 * Fixes access to xlarge images. 
