@@ -56,7 +56,7 @@ class TestStoreRunData:
         addon.store_run_data({"foo": "bar"})
 
         addon.client.patch.assert_called_once_with(
-            "addon_runs/run-123/", json={"foo": "bar"}
+            "addon_runs/run-123/", json={"data": {"foo": "bar"}}
         )
 
     def test_no_op_when_no_run_id(self, addon, capsys):
@@ -103,3 +103,39 @@ class TestStoreEventData:
     def test_no_op_when_no_event_id(self, addon):
         assert addon.store_event_data({"x": 1}) is None
         addon.client.patch.assert_not_called()
+
+
+@pytest.fixture
+def real_addon(client, addon_run):
+    """An AddOn wired to the real `client` fixture and a freshly created run."""
+    instance = AddOn.__new__(AddOn)
+    instance.id = addon_run
+    instance.addon_id = None
+    instance.event_id = None
+    instance.documents = None
+    instance.query = None
+    instance.user_id = None
+    instance.org_id = None
+    instance.data = {}
+    instance.title = "Test AddOn"
+    instance.client = client
+    return instance
+
+
+class TestRunDataVCR:
+    """VCR-recorded round-trip tests against the dev DC.
+
+    Recording: set DC_TEST_ADDON_RUN_ID to an existing AddOnRun UUID on your
+    local dev DC, then run `make test-dev` (or `pytest --record-mode=new_episodes`).
+    """
+
+    def test_load_run_data_returns_dict(self, real_addon):
+        result = real_addon.load_run_data()
+        assert isinstance(result, dict)
+
+    def test_store_then_load_run_data_round_trip(self, real_addon):
+        payload = {"foo": "bar", "n": 42}
+        real_addon.store_run_data(payload)
+        loaded = real_addon.load_run_data()
+        assert loaded.get("foo") == "bar"
+        assert loaded.get("n") == 42

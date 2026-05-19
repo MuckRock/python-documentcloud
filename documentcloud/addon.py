@@ -200,7 +200,7 @@ class AddOn(BaseAddOn):
         if not isinstance(data, dict):
             raise TypeError("Invalid data")
 
-        return self.client.patch(f"addon_runs/{self.id}/", json=data)
+        return self.client.patch(f"addon_runs/{self.id}/", json={"data": data})
 
     def load_event_data(self):
         """Load persistent data for this event"""

@@ -1,0 +1,98 @@
+interactions:
+- request:
+    body: '{"data": {"foo": "bar", "n": 42}}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5MTk1NTcxLCJpYXQiOjE3NzkxOTUyNzEsImp0aSI6IjQzYzM5MjBhN2JhZTQ3YWNhMGZhZmFkNDAwM2RhMzFhIiwidXNlcl9pZCI6ImUyZGI3MmU2LTU5ZDAtNDNlNC1hNWYwLTU1M2JjYTY4MGUyMiIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjoic3F1YXJlbGV0In0.LWZGVfF5v7LgFFHvmo5q6i0hHMdytd5EhwvgIxCDj8N6UPKB-74JIUfIJhqJnAOiTGWlP3g-jUI3a8QLjIyRQjlVW03xwCeeNy0NWVBShdbdj8-s8X2JO1Xs8vMZ4YcyQhYUMK6Ow9ARzsAE7GDLQCh0zRROgbYuWv_ZJcEmN3RUGiJVpkLCiEu7vvfXUdb3Tn-1hnRW1mWxuU200u6hi-Of3hALQILuE-VB8bCaHABujpsy8sjZERukCIeNME52ZanvQxYeWb9DVgurehknPft_w5VXdYlO4webYJrgn0enbVm2Chw14iKjCP-6Xq6wivRz5SiwOsnfQGcU3bDoLA
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '33'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.31.0 test-user
+    method: PATCH
+    uri: https://api.dev.documentcloud.org/api/addon_runs/27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe/
+  response:
+    body:
+      string: '{"uuid":"27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe","addon":10,"event":null,"user":100003,"status":"queued","progress":0,"message":"","file_url":null,"file_expires_at":null,"dismissed":false,"rating":0,"comment":"","credits_spent":0,"created_at":"2026-05-19T12:41:37.038271Z","updated_at":"2026-05-19T12:54:31.765179Z","data":{"foo":"bar","n":42}}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '342'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Tue, 19 May 2026 12:54:31 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.29.8
+      Vary:
+      - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5MTk1NTcxLCJpYXQiOjE3NzkxOTUyNzEsImp0aSI6IjQzYzM5MjBhN2JhZTQ3YWNhMGZhZmFkNDAwM2RhMzFhIiwidXNlcl9pZCI6ImUyZGI3MmU2LTU5ZDAtNDNlNC1hNWYwLTU1M2JjYTY4MGUyMiIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjoic3F1YXJlbGV0In0.LWZGVfF5v7LgFFHvmo5q6i0hHMdytd5EhwvgIxCDj8N6UPKB-74JIUfIJhqJnAOiTGWlP3g-jUI3a8QLjIyRQjlVW03xwCeeNy0NWVBShdbdj8-s8X2JO1Xs8vMZ4YcyQhYUMK6Ow9ARzsAE7GDLQCh0zRROgbYuWv_ZJcEmN3RUGiJVpkLCiEu7vvfXUdb3Tn-1hnRW1mWxuU200u6hi-Of3hALQILuE-VB8bCaHABujpsy8sjZERukCIeNME52ZanvQxYeWb9DVgurehknPft_w5VXdYlO4webYJrgn0enbVm2Chw14iKjCP-6Xq6wivRz5SiwOsnfQGcU3bDoLA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0 test-user
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/addon_runs/27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe/
+  response:
+    body:
+      string: '{"uuid":"27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe","addon":10,"event":null,"user":100003,"status":"queued","progress":0,"message":"","file_url":null,"file_expires_at":null,"dismissed":false,"rating":0,"comment":"","credits_spent":0,"created_at":"2026-05-19T12:41:37.038271Z","updated_at":"2026-05-19T12:54:31.765179Z","data":{"n":42,"foo":"bar"}}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '342'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Tue, 19 May 2026 12:54:31 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.29.8
+      Vary:
+      - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+version: 1

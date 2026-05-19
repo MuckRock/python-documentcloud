@@ -1,0 +1,209 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU4NzMwNDI5LCJpYXQiOjE3NTg3MzAxMjksImp0aSI6IjEyMzE1OGFkOWExYjQ3YTE5ZDdhMjdlYjMwNTdmMzRkIiwidXNlcl9pZCI6ImY2MDI5ZThhLWQ4YTItNDE4OC04YTIxLWNkMDczYTAyZWU1YyIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjpbInNxdWFyZWxldCJdfQ.LduwXStVTHJGEoNw9eO-xQ0OVLF6b-kaeq-qXOCGJ06mc6JygXWOE7D9NnV7m-PzdtTKCGyQtOCe1RvU51ho5yFNJUwlLcYlmABbOQnvWOuuyqYvzoGXwULm99lV8KWW2Aetmldo_pUU3LY0VJS4Qe13ZaussP1Emsr68_uvy99FU8Xkm_jQqt4qoUDWuj-IeXkVj024Mv70VrCOBiTs_fmRHJixo12aNadUe9D0MhHoJxgBmRiRDqlq0Tu-jjP5I2_wY-c7iVSMUJTFInXHKRJadBaavvllrLZ4t47nc9G-ustuqnT_i8vrkN95LJmL87EK6NoVzS_O84c6DySZDA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0 test-user
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/addon_runs/27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe/
+  response:
+    body:
+      string: '{"detail":"Given token not valid for any token type","code":"token_not_valid","messages":[{"token_class":"AccessToken","token_type":"access","message":"Token
+        is invalid or expired"}]}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '183'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Tue, 19 May 2026 12:54:31 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.29.8
+      Vary:
+      - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 403
+      message: Forbidden
+- request:
+    body: '{"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1ODgxNjUyOSwiaWF0IjoxNzU4NzMwMTI5LCJqdGkiOiIzZWI4MzExNmQzNTA0Njc0YTViZGFiOGEyYjFkNDA0ZiIsInVzZXJfaWQiOiJmNjAyOWU4YS1kOGEyLTQxODgtOGEyMS1jZDA3M2EwMmVlNWMiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6WyJzcXVhcmVsZXQiXX0.jl0ql4G-9ZFn0yOWSyzlXLjBXaQF9ZzWoHf7vxfrK9e4MnQ5jZyCLrFR7-nkjbKy9q9WAjlO3u3ZV3bzYW0xobiOuZcvTEiucy8qnzQlXLDLOjMy1JLnyh7VJI4Si40BSs5l-UfSvUv3854l6V_fxwcx0asLFVclT0PrDnAuNt50uxxgsSAwzrsquqPOASuG_6DHiD-DIE-MrWYiNc2Z5fy7eQFRt600oTOPRfLLmVixlqN33QfHO6GZQsM20vinJxyOXWvjtsGmcaJooxIkyU56HLObx6fxokzEGKzvHXLeF7zbrZuHaww8fPmFTtq-QjaY7Pt2vxmJnbBIIvRh-g"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '682'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://dev.squarelet.com/api/refresh/
+  response:
+    body:
+      string: '{"detail":"Token is invalid","code":"token_not_valid"}'
+    headers:
+      Allow:
+      - POST, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Tue, 19 May 2026 12:54:31 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.29.8
+      Server-Timing:
+      - TimerPanel_utime;dur=28.828999999973348;desc="User CPU time", TimerPanel_stime;dur=0.0;desc="System
+        CPU time", TimerPanel_total;dur=28.828999999973348;desc="Total CPU time",
+        TimerPanel_total_time;dur=39.24408298917115;desc="Elapsed time", SQLPanel_sql_time;dur=0.6609990086872131;desc="SQL
+        3 queries", CachePanel_total_time;dur=0;desc="Cache 0 Calls"
+      Set-Cookie:
+      - op_browser_state=4b30254fc88d36c6b0a21c762b8607d5e34f30f158a79440cb58e2a0;
+        Path=/
+      Vary:
+      - Accept, Origin, Cookie
+      WWW-Authenticate:
+      - Bearer realm="api"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      djdt-store-id:
+      - 6cecf048e9574b87865d35848218f804
+    status:
+      code: 401
+      message: Unauthorized
+- request:
+    body: '{"username": "test-user", "password": "test-password"}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '54'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.31.0
+    method: POST
+    uri: https://dev.squarelet.com/api/token/
+  response:
+    body:
+      string: '{"refresh":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3OTI4MTY3MSwiaWF0IjoxNzc5MTk1MjcxLCJqdGkiOiI2Zjc4M2JjNWI1MTc0ZWQ2OGQwODQ3ZGM4NGQ2ZjM0ZCIsInVzZXJfaWQiOiJlMmRiNzJlNi01OWQwLTQzZTQtYTVmMC01NTNiY2E2ODBlMjIiLCJhdWQiOlsic3F1YXJlbGV0IiwibXVja3JvY2siLCJkb2N1bWVudGNsb3VkIl0sImlzcyI6InNxdWFyZWxldCJ9.QlB40rVEix4qjfXJjHYw_NuSvM-1WS-kEY-yxTMl-CJYvTcBob_9L8O-wMQ0oegrC9HrE2W4kCOJcJrtTfMYiNspILWa4mB04VGagwQuuQRO_kvk8km3A6wa5-Vg-P6rGOTac6iBmM1SKCVI_FQ58o8ZDAs0fhcteA7RUDWOvP3ihV51qre6_z4WlxpwO-pKcv9_DZ6uldXt5UI-eEkXYQKb4_MxHZEu_MN6QMRzFGxWNJ8OfvUfjjeT2k6BrcB3cVi9m-E0sNBmHLFNkPgVGU4gqCCop2ifiRFU1ItLYYPwWRzCYoJHshudCwMgHVSfT15JwA-OhtYr_bBvSN-7YA","access":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5MTk1NTcxLCJpYXQiOjE3NzkxOTUyNzEsImp0aSI6IjQzYzM5MjBhN2JhZTQ3YWNhMGZhZmFkNDAwM2RhMzFhIiwidXNlcl9pZCI6ImUyZGI3MmU2LTU5ZDAtNDNlNC1hNWYwLTU1M2JjYTY4MGUyMiIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjoic3F1YXJlbGV0In0.LWZGVfF5v7LgFFHvmo5q6i0hHMdytd5EhwvgIxCDj8N6UPKB-74JIUfIJhqJnAOiTGWlP3g-jUI3a8QLjIyRQjlVW03xwCeeNy0NWVBShdbdj8-s8X2JO1Xs8vMZ4YcyQhYUMK6Ow9ARzsAE7GDLQCh0zRROgbYuWv_ZJcEmN3RUGiJVpkLCiEu7vvfXUdb3Tn-1hnRW1mWxuU200u6hi-Of3hALQILuE-VB8bCaHABujpsy8sjZERukCIeNME52ZanvQxYeWb9DVgurehknPft_w5VXdYlO4webYJrgn0enbVm2Chw14iKjCP-6Xq6wivRz5SiwOsnfQGcU3bDoLA"}'
+    headers:
+      Allow:
+      - POST, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1353'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Tue, 19 May 2026 12:54:31 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.29.8
+      Server-Timing:
+      - TimerPanel_utime;dur=284.20699999992394;desc="User CPU time", TimerPanel_stime;dur=412.77900000000045;desc="System
+        CPU time", TimerPanel_total;dur=696.9859999999244;desc="Total CPU time", TimerPanel_total_time;dur=237.52075000084005;desc="Elapsed
+        time", SQLPanel_sql_time;dur=14.25995901809074;desc="SQL 4 queries", CachePanel_total_time;dur=0;desc="Cache
+        0 Calls"
+      Set-Cookie:
+      - op_browser_state=4b30254fc88d36c6b0a21c762b8607d5e34f30f158a79440cb58e2a0;
+        Path=/
+      Vary:
+      - Accept, Origin, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      djdt-store-id:
+      - aab09d28b4fa48cabacca76d0eb9ff1e
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc5MTk1NTcxLCJpYXQiOjE3NzkxOTUyNzEsImp0aSI6IjQzYzM5MjBhN2JhZTQ3YWNhMGZhZmFkNDAwM2RhMzFhIiwidXNlcl9pZCI6ImUyZGI3MmU2LTU5ZDAtNDNlNC1hNWYwLTU1M2JjYTY4MGUyMiIsImF1ZCI6WyJzcXVhcmVsZXQiLCJtdWNrcm9jayIsImRvY3VtZW50Y2xvdWQiXSwiaXNzIjoic3F1YXJlbGV0In0.LWZGVfF5v7LgFFHvmo5q6i0hHMdytd5EhwvgIxCDj8N6UPKB-74JIUfIJhqJnAOiTGWlP3g-jUI3a8QLjIyRQjlVW03xwCeeNy0NWVBShdbdj8-s8X2JO1Xs8vMZ4YcyQhYUMK6Ow9ARzsAE7GDLQCh0zRROgbYuWv_ZJcEmN3RUGiJVpkLCiEu7vvfXUdb3Tn-1hnRW1mWxuU200u6hi-Of3hALQILuE-VB8bCaHABujpsy8sjZERukCIeNME52ZanvQxYeWb9DVgurehknPft_w5VXdYlO4webYJrgn0enbVm2Chw14iKjCP-6Xq6wivRz5SiwOsnfQGcU3bDoLA
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0 test-user
+    method: GET
+    uri: https://api.dev.documentcloud.org/api/addon_runs/27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe/
+  response:
+    body:
+      string: '{"uuid":"27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe","addon":10,"event":null,"user":100003,"status":"queued","progress":0,"message":"","file_url":null,"file_expires_at":null,"dismissed":false,"rating":0,"comment":"","credits_spent":0,"created_at":"2026-05-19T12:41:37.038271Z","updated_at":"2026-05-19T12:41:37.039319Z","data":{}}'
+    headers:
+      Allow:
+      - GET, PUT, PATCH, DELETE, HEAD, OPTIONS
+      Connection:
+      - keep-alive
+      Content-Language:
+      - en
+      Content-Length:
+      - '324'
+      Content-Type:
+      - application/json
+      Cross-Origin-Opener-Policy:
+      - same-origin
+      Date:
+      - Tue, 19 May 2026 12:54:31 GMT
+      Referrer-Policy:
+      - same-origin
+      Server:
+      - nginx/1.29.8
+      Vary:
+      - Accept, Origin, Accept-Language, Cookie
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,7 +1,5 @@
-# Future
-from __future__ import division, print_function, unicode_literals
-
 # Standard Library
+import os
 import time
 from uuid import uuid4
 
@@ -19,7 +17,7 @@ AUTH_URI = "https://dev.squarelet.com/api/"
 USERNAME = "test-user"
 PASSWORD = "test-password"
 TIMEOUT = 2.0
-DEFAULT_DOCUMENT_URI = "https://assets.documentcloud.org/documents/20071460/test.pdf"
+DEFAULT_DOCUMENT_URI = "https://s3.documentcloud.org/documents/20071460/test.pdf"
 
 # pylint: disable=redefined-outer-name
 
@@ -148,6 +146,20 @@ def project(client, document_factory):
         )
         yield project
         project.delete()
+
+
+DEFAULT_ADDON_RUN_ID = "27d5bff2-2ff7-4b2e-bf5b-20ee9f02a1fe"
+
+
+@pytest.fixture(scope="session")
+def addon_run():
+    """Yield an AddOnRun UUID for VCR-based addon tests.
+
+    Defaults to the UUID baked into the recorded cassettes so replay works
+    out of the box. Override via DC_TEST_ADDON_RUN_ID to re-record against a
+    different run on the dev server.
+    """
+    yield os.environ.get("DC_TEST_ADDON_RUN_ID", DEFAULT_ADDON_RUN_ID)
 
 
 @pytest.fixture(scope="session")
