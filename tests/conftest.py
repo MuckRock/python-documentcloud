@@ -17,7 +17,7 @@ AUTH_URI = "https://dev.squarelet.com/api/"
 USERNAME = "test-user"
 PASSWORD = "test-password"
 TIMEOUT = 2.0
-DEFAULT_DOCUMENT_URI = "https://s3.documentcloud.org/documents/20071460/test.pdf"
+DEFAULT_DOCUMENT_URI = "https://assets.documentcloud.org/documents/20071460/test.pdf"
 
 # pylint: disable=redefined-outer-name
 

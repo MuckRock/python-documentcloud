@@ -16,17 +16,17 @@ jobs:
         python-version: ["3.10", "3.11"]
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
-        
+        uses: actions/checkout@v6
+
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
-      
+
       - name: Install dependencies
         run: |
           pip install vcrpy pytest==7.4.2 requests pytest-mock python-documentcloud pytest-xdist pytest-recording python-squarelet
-        
+
       - name: Run pre-recorded tests
         run: |
           make test
@@ -36,17 +36,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v6
 
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v6
         with:
-          python-version: 3.8
-          
+          python-version: "3.11"
+
       - name: Install dependencies for imports
         run: |
-           pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml pytest vcrpy python-squarelet
-           
+          pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml pytest vcrpy python-squarelet
+
       - name: Install pylint and black
         run: |
           pip install pylint black
