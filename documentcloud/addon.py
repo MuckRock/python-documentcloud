@@ -182,6 +182,26 @@ class AddOn(BaseAddOn):
             f"addon_runs/{self.id}/", json={"file_name": file_name}
         )
 
+    def load_run_data(self):
+        "Load persistent data from this run"
+        if not self.id:
+            return {}
+
+        response = self.client.get(f"addon_runs/{self.id}/")
+        response.raise_for_status()
+        return response.json().get("data", {})
+
+    def store_run_data(self, data):
+        "Store persistent data for this run"
+        if not self.id:
+            print("Run ID not set. Try again later or check if something went wrong.")
+            return None
+
+        if not isinstance(data, dict):
+            raise TypeError("Invalid data")
+
+        return self.client.patch(f"addon_runs/{self.id}/", json={"data": data})
+
     def load_event_data(self):
         """Load persistent data for this event"""
         if not self.event_id:
