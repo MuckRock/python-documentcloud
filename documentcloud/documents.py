@@ -9,6 +9,7 @@ import os
 import re
 import warnings
 from functools import partial
+from urllib.parse import urlparse
 
 # Third Party
 from requests.exceptions import RequestException
@@ -22,13 +23,6 @@ from .organizations import Organization
 from .sections import SectionClient
 from .toolbox import grouper, is_url, merge_dicts, requests_retry_session
 from .users import User
-
-try:
-    # Standard Library
-    from urllib.parse import urlparse
-except ImportError:
-    # Third Party
-    from urlparse import urlparse
 
 logger = logging.getLogger("documentcloud")
 
