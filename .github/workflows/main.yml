@@ -1,5 +1,4 @@
 name: Run Pre-recorded Tests
-
 on:
   pull_request:
     branches:
@@ -7,7 +6,6 @@ on:
   push:
     branches:
       - master
-
 jobs:
   run-tests:
     runs-on: ubuntu-latest
@@ -17,40 +15,26 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v6
-
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python-version }}
-
       - name: Install dependencies
-        run: |
-          pip install vcrpy pytest==7.4.2 requests pytest-mock python-documentcloud pytest-xdist pytest-recording python-squarelet
-
+        run: pip install -e ".[test]"
       - name: Run pre-recorded tests
-        run: |
-          make test
-        working-directory: .
-
+        run: make test
   pylint-and-black:
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
         uses: actions/checkout@v6
-
       - name: Set up Python 3.11
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-
-      - name: Install dependencies for imports
-        run: |
-          pip install python-dateutil requests urllib3 fastjsonschema ratelimit listcrunch pyyaml pytest vcrpy python-squarelet
-
-      - name: Install pylint and black
-        run: |
-          pip install pylint black
-
+      - name: Install dependencies
+        run: pip install -e ".[dev,test]"
       - name: Run pylint and black on ./documentcloud and ./tests
         run: |
-          pylint ./documentcloud ./tests; black --check ./documentcloud ./tests
+          pylint ./documentcloud ./tests
+          black --check ./documentcloud ./tests

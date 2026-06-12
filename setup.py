@@ -27,6 +27,7 @@ setup(
         "pyyaml",
         "fastjsonschema",
         "python-squarelet",
+        "token-bucket",
     ),
     extras_require={
         "dev": [
@@ -40,6 +41,7 @@ setup(
         "test": [
             "pytest",
             "pytest-mock",
+            "pytest-xdist",
             "pytest-recording",
             "vcrpy",
         ],

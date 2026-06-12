@@ -9,6 +9,7 @@ import pytest
 import ratelimit
 
 # DocumentCloud
+from documentcloud import DocumentCloud
 from documentcloud.constants import RATE_LIMIT
 from documentcloud.exceptions import APIError, CredentialsFailedError
 
@@ -111,3 +112,77 @@ def test_expired_refresh_token(short_client, record_mode):
     assert short_client.users.get("me")
     # check the refresh token was updated
     assert old_refresh_token != short_client.refresh_token
+
+
+def test_endpoint_rate_limit_burst_exhaustion():
+    """Token bucket should block after burst capacity is exhausted"""
+    client = DocumentCloud()
+    # Exhaust the search burst (capacity=50)
+    _pattern_method, _pattern, limiter, bucket_key = client._endpoint_limiters[0]
+    for _ in range(50):
+        limiter.consume(bucket_key)
+    assert not limiter.consume(bucket_key)
+
+
+def test_endpoint_rate_limit_method_specificity():
+    """GET and POST to documents/ should use different limiters"""
+    client = DocumentCloud()
+    limiters = {(pm, p): lim for pm, p, lim, _ in client._endpoint_limiters}
+    assert limiters[("GET", "files/")] is not limiters[("POST", "documents/")]
+
+
+def test_endpoint_rate_limit_pattern_ordering():
+    """documents/search should match before documents/"""
+    client = DocumentCloud()
+    url = "documents/search/"
+    matched = next(
+        p for pm, p, _, _ in client._endpoint_limiters if pm == "GET" and p in url
+    )
+    assert matched == "documents/search"
+
+
+def test_asset_rate_limit_burst_exhaustion():
+    """Asset token bucket should block after burst capacity is exhausted"""
+    client = DocumentCloud()
+    limiter = client.documents._asset_limiter
+    for _ in range(100):
+        limiter.consume("asset")
+    assert not limiter.consume("asset")
+
+
+def test_asset_rate_limit_refills():
+    """Asset token bucket should refill over time"""
+    client = DocumentCloud()
+    limiter = client.documents._asset_limiter
+    for _ in range(100):
+        limiter.consume("asset")
+    assert not limiter.consume("asset")
+    time.sleep(5)
+    assert limiter.consume("asset")
+
+
+def test_endpoint_rate_limit_buckets_are_independent():
+    """Exhausting one endpoint's bucket should not affect another"""
+    client = DocumentCloud()
+    limiters = {(pm, p): (lim, bk) for pm, p, lim, bk in client._endpoint_limiters}
+    search_limiter, search_key = limiters[("GET", "documents/search")]
+    files_limiter, files_key = limiters[("GET", "files/")]
+
+    # Exhaust search bucket
+    for _ in range(50):
+        search_limiter.consume(search_key)
+    assert not search_limiter.consume(search_key)
+
+    # Files bucket should still have tokens
+    assert files_limiter.consume(files_key)
+
+
+def test_endpoint_rate_limit_no_match_for_unrecognized_url():
+    """Unrecognized URLs should not match any endpoint limiter"""
+    client = DocumentCloud()
+    url = "users/me/"
+    matched = next(
+        (p for pm, p, _, _ in client._endpoint_limiters if p in url),
+        None,
+    )
+    assert matched is None
