@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+4.7.0
+~~~~~
+* Added burst-based sane rate limits to several endpoints. 
+
 4.6.0
 ~~~~~
 * Added load_run_data and store_run_data on the Add-On class to access AddOn run data.
