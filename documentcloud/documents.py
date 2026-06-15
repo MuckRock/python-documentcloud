@@ -7,11 +7,13 @@ import datetime
 import logging
 import os
 import re
+import time
 import warnings
 from functools import partial
 from urllib.parse import urlparse
 
 # Third Party
+import token_bucket
 from requests.exceptions import RequestException
 
 # Local
@@ -27,6 +29,8 @@ from .users import User
 logger = logging.getLogger("documentcloud")
 
 IMAGE_SIZES = ["thumbnail", "small", "normal", "large", "xlarge"]
+
+DEFAULT_USER_AGENT = "python-documentcloud"
 
 
 class Document(BaseAPIObject):
@@ -164,12 +168,17 @@ class Document(BaseAPIObject):
 
         if base_netloc == url_netloc:
             # if the url host is the same as the base api host,
-            # sent the request with the client in order to include
+            # send the request with the client in order to include
             # authentication credentials
             response = self._client.get(url, full_url=True)
         else:
-            response = requests_retry_session().get(
-                url, headers={"User-Agent": "python-documentcloud2"}
+            response = self._client.documents.asset_get(
+                url,
+                headers={
+                    "User-Agent": self._client.session.headers.get(
+                        "User-Agent", DEFAULT_USER_AGENT
+                    )
+                },
             )
         if fmt == "text":
             return response.content.decode("utf8")
@@ -245,6 +254,26 @@ class DocumentClient(BaseAPIClient):
 
     api_path = "documents"
     resource = Document
+
+    def __init__(self, client):
+        super().__init__(client)
+        # Rate limit for public document asset fetches (S3-hosted).
+        # Private document assets go through the API client and are limited there.
+        # Token bucket: burst of 100, sustained at 15/min (0.25/sec).
+        storage = token_bucket.MemoryStorage()
+        self._asset_limiter = token_bucket.Limiter(
+            rate=15 / 60,
+            capacity=100,
+            storage=storage,
+        )
+        self._asset_session = requests_retry_session()
+
+    def asset_get(self, url, **kwargs):
+        if not self._asset_limiter.consume("asset"):
+            logger.warning("Rate limit reached for asset fetch, throttling...")
+            while not self._asset_limiter.consume("asset"):
+                time.sleep(0.1)
+        return self._asset_session.get(url, **kwargs)
 
     def search(self, query, **params):
         """Return documents matching a search query"""

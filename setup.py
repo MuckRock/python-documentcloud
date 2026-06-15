@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="python-documentcloud",
-    version="4.6.0",
+    version="4.7.0",
     description="A simple Python wrapper for the DocumentCloud API",
     author="Mitchell Kotler",
     author_email="mitch@muckrock.com",
@@ -27,6 +27,7 @@ setup(
         "pyyaml",
         "fastjsonschema",
         "python-squarelet",
+        "token-bucket",
     ),
     extras_require={
         "dev": [
@@ -40,6 +41,7 @@ setup(
         "test": [
             "pytest",
             "pytest-mock",
+            "pytest-xdist",
             "pytest-recording",
             "vcrpy",
         ],
