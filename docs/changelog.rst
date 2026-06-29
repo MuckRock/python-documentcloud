@@ -1,6 +1,10 @@
 Changelog
 ---------
 
+4.8.0
+~~~~~
+* Fixes coordinates for annotations. Credit: @synapticlee
+
 4.7.0
 ~~~~~
 * Added burst-based sane rate limits to several endpoints. 
