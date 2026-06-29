@@ -79,7 +79,7 @@ class AnnotationClient(ChildAPIClient):
         x2=None,
         y2=None,
     ):
-        coords = [x1, y2, x2, y2]
+        coords = [x1, y1, x2, y2]
         if not (all(c is None for c in coords) or all(c is not None for c in coords)):
             raise ValueError(
                 "x1, y2, x2, y2 must either all be None or all be not None"
